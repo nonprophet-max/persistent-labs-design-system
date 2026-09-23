@@ -1,0 +1,427 @@
+{
+  "date": "2026-09-23T20:15:40.252Z",
+  "site": "https://persistent-labs-design-bible.netlify.app/",
+  "deploy_id": "6ab4329e31131bda217d95f1",
+  "passed": true,
+  "browser": "153.0.8010.53",
+  "assets": [
+    {
+      "path": "404.html",
+      "status": 200,
+      "sha256": "0158605b2a480f8c283f61c18ab6c22e03dbda60abf5aaa8a70480e30f558e6c",
+      "matchesLocal": false,
+      "normalizedSha256": "f7c7648d10e32ab0e0339aa0d4844681565d39be613de0f2bb831a1c90f373f7",
+      "matchesLocalWithoutVerifiedHostingAdditions": true
+    },
+    {
+      "path": "assets/fireflow.svg",
+      "status": 200,
+      "sha256": "8d96a5bc66aff522de3a3fa67beebb53cfa6c91fbdf12e81ad10f66a8d3a9fa7",
+      "matchesLocal": true,
+      "normalizedSha256": "8d96a5bc66aff522de3a3fa67beebb53cfa6c91fbdf12e81ad10f66a8d3a9fa7",
+      "matchesLocalWithoutVerifiedHostingAdditions": true
+    },
+    {
+      "path": "assets/fonts/OFL-Red-Hat-Display.txt",
+      "status": 200,
+      "sha256": "435fbfb7e66988b2a06686a4cb966faec733f35d8fe100a1601573c27f3e0bb8",
+      "matchesLocal": true,
+      "normalizedSha256": "435fbfb7e66988b2a06686a4cb966faec733f35d8fe100a1601573c27f3e0bb8",
+      "matchesLocalWithoutVerifiedHostingAdditions": true
+    },
+    {
+      "path": "assets/fonts/OFL-Red-Hat-Mono.txt",
+      "status": 200,
+      "sha256": "435fbfb7e66988b2a06686a4cb966faec733f35d8fe100a1601573c27f3e0bb8",
+      "matchesLocal": true,
+      "normalizedSha256": "435fbfb7e66988b2a06686a4cb966faec733f35d8fe100a1601573c27f3e0bb8",
+      "matchesLocalWithoutVerifiedHostingAdditions": true
+    },
+    {
+      "path": "assets/fonts/OFL-Red-Hat-Text.txt",
+      "status": 200,
+      "sha256": "435fbfb7e66988b2a06686a4cb966faec733f35d8fe100a1601573c27f3e0bb8",
+      "matchesLocal": true,
+      "normalizedSha256": "435fbfb7e66988b2a06686a4cb966faec733f35d8fe100a1601573c27f3e0bb8",
+      "matchesLocalWithoutVerifiedHostingAdditions": true
+    },
+    {
+      "path": "assets/fonts/SOURCES.md",
+      "status": 200,
+      "sha256": "080d5d65156b84b5bf97362be9daa319e772560ed4e1d7dfed2a8eb00e545d2b",
+      "matchesLocal": true,
+      "normalizedSha256": "080d5d65156b84b5bf97362be9daa319e772560ed4e1d7dfed2a8eb00e545d2b",
+      "matchesLocalWithoutVerifiedHostingAdditions": true
+    },
+    {
+      "path": "assets/fonts/red-hat-display-latin-variable.woff2",
+      "status": 200,
+      "sha256": "39d2ddd13759cf61a3342d25f1f342d220e379f0e157bd963ee9cd5dd461d718",
+      "matchesLocal": true,
+      "normalizedSha256": "39d2ddd13759cf61a3342d25f1f342d220e379f0e157bd963ee9cd5dd461d718",
+      "matchesLocalWithoutVerifiedHostingAdditions": true
+    },
+    {
+      "path": "assets/fonts/red-hat-mono-latin-variable.woff2",
+      "status": 200,
+      "sha256": "9914ffa64379b1ff4d69d246db13d7d84acceed0872b3a29008ae55020a8ff75",
+      "matchesLocal": true,
+      "normalizedSha256": "9914ffa64379b1ff4d69d246db13d7d84acceed0872b3a29008ae55020a8ff75",
+      "matchesLocalWithoutVerifiedHostingAdditions": true
+    },
+    {
+      "path": "assets/fonts/red-hat-text-latin-variable.woff2",
+      "status": 200,
+      "sha256": "cecc57ca573b6fb67f9ea6236fc7350aae9756a2ab528ab95382a96e8c754038",
+      "matchesLocal": true,
+      "normalizedSha256": "cecc57ca573b6fb67f9ea6236fc7350aae9756a2ab528ab95382a96e8c754038",
+      "matchesLocalWithoutVerifiedHostingAdditions": true
+    },
+    {
+      "path": "assets/galactica.svg",
+      "status": 200,
+      "sha256": "ac0839e3ff716d97970681203730c57eb4dc4072b00fd08ef2ba6f94fa5cdcf9",
+      "matchesLocal": true,
+      "normalizedSha256": "ac0839e3ff716d97970681203730c57eb4dc4072b00fd08ef2ba6f94fa5cdcf9",
+      "matchesLocalWithoutVerifiedHostingAdditions": true
+    },
+    {
+      "path": "assets/lanni.svg",
+      "status": 200,
+      "sha256": "2bab97b2090a2e36689f4e12cf39ae54c4eb947c9620a142130633b0cc1bc9e6",
+      "matchesLocal": true,
+      "normalizedSha256": "2bab97b2090a2e36689f4e12cf39ae54c4eb947c9620a142130633b0cc1bc9e6",
+      "matchesLocalWithoutVerifiedHostingAdditions": true
+    },
+    {
+      "path": "assets/memorytree.svg",
+      "status": 200,
+      "sha256": "bc482935b3a14cc51238957c60beac7a817e224e3c8d54651de45df3b7c61472",
+      "matchesLocal": true,
+      "normalizedSha256": "bc482935b3a14cc51238957c60beac7a817e224e3c8d54651de45df3b7c61472",
+      "matchesLocalWithoutVerifiedHostingAdditions": true
+    },
+    {
+      "path": "assets/persistent-labs.svg",
+      "status": 200,
+      "sha256": "010ddf357f0bb0b4bdbe7b9b36bccbc602acf15e0e8d88fb01ac72999f097ee6",
+      "matchesLocal": true,
+      "normalizedSha256": "010ddf357f0bb0b4bdbe7b9b36bccbc602acf15e0e8d88fb01ac72999f097ee6",
+      "matchesLocalWithoutVerifiedHostingAdditions": true
+    },
+    {
+      "path": "assets/privateinference.svg",
+      "status": 200,
+      "sha256": "3d3d663047057953a15760923965d05799ac2236b221e443f19d68bc04126549",
+      "matchesLocal": true,
+      "normalizedSha256": "3d3d663047057953a15760923965d05799ac2236b221e443f19d68bc04126549",
+      "matchesLocalWithoutVerifiedHostingAdditions": true
+    },
+    {
+      "path": "assets/unfazed.svg",
+      "status": 200,
+      "sha256": "eb579043e1e37c456da5c70084200e1705c16d65086bb82daf55890df71b2b02",
+      "matchesLocal": true,
+      "normalizedSha256": "eb579043e1e37c456da5c70084200e1705c16d65086bb82daf55890df71b2b02",
+      "matchesLocalWithoutVerifiedHostingAdditions": true
+    },
+    {
+      "path": "index.html",
+      "status": 200,
+      "sha256": "5c83fdcf4157d1d660bbb6d378a466cfd02ae8e065c16a68831117b5b4ed655c",
+      "matchesLocal": false,
+      "normalizedSha256": "1900b5ea16550f9fce11e2350c3e0b21b2f61a0496f620f179fc9c981aa5307f",
+      "matchesLocalWithoutVerifiedHostingAdditions": true
+    },
+    {
+      "path": "robots.txt",
+      "status": 200,
+      "sha256": "331ea9090db0c9f6f597bd9840fd5b171830f6e0b3ba1cb24dfa91f0c95aedc1",
+      "matchesLocal": true,
+      "normalizedSha256": "331ea9090db0c9f6f597bd9840fd5b171830f6e0b3ba1cb24dfa91f0c95aedc1",
+      "matchesLocalWithoutVerifiedHostingAdditions": true
+    },
+    {
+      "path": "tokens/design-tokens.json",
+      "status": 200,
+      "sha256": "7198afd7cdbc03c881cdf0d81ed8d6d29501df1868b3fa8692d0a225f72eaf08",
+      "matchesLocal": true,
+      "normalizedSha256": "7198afd7cdbc03c881cdf0d81ed8d6d29501df1868b3fa8692d0a225f72eaf08",
+      "matchesLocalWithoutVerifiedHostingAdditions": true
+    },
+    {
+      "path": "tokens/persistent-labs.tokens.css",
+      "status": 200,
+      "sha256": "701a7acd33f63f654120e8a1a4bd125f1b6039b2eb56f19613105ffd905d3d11",
+      "matchesLocal": true,
+      "normalizedSha256": "701a7acd33f63f654120e8a1a4bd125f1b6039b2eb56f19613105ffd905d3d11",
+      "matchesLocalWithoutVerifiedHostingAdditions": true
+    }
+  ],
+  "privatePaths": [
+    {
+      "path": "plugins/persistent-labs-brand/skills/persistent-labs-brand/SKILL.md",
+      "status": 404
+    },
+    {
+      "path": "reviews/release-verification.json",
+      "status": 404
+    },
+    {
+      "path": "reference/original-design-bible.html",
+      "status": 404
+    },
+    {
+      "path": "src/products.json",
+      "status": 404
+    },
+    {
+      "path": ".git/config",
+      "status": 404
+    },
+    {
+      "path": "README.md",
+      "status": 404
+    }
+  ],
+  "links": [
+    {
+      "kind": "desktop-chapter",
+      "href": "#principles",
+      "passed": true
+    },
+    {
+      "kind": "desktop-chapter",
+      "href": "#brand",
+      "passed": true
+    },
+    {
+      "kind": "desktop-chapter",
+      "href": "#logo",
+      "passed": true
+    },
+    {
+      "kind": "desktop-chapter",
+      "href": "#color",
+      "passed": true
+    },
+    {
+      "kind": "desktop-chapter",
+      "href": "#type",
+      "passed": true
+    },
+    {
+      "kind": "desktop-chapter",
+      "href": "#layout",
+      "passed": true
+    },
+    {
+      "kind": "desktop-chapter",
+      "href": "#spacing",
+      "passed": true
+    },
+    {
+      "kind": "desktop-chapter",
+      "href": "#shape",
+      "passed": true
+    },
+    {
+      "kind": "desktop-chapter",
+      "href": "#components",
+      "passed": true
+    },
+    {
+      "kind": "desktop-chapter",
+      "href": "#motion",
+      "passed": true
+    },
+    {
+      "kind": "desktop-chapter",
+      "href": "#voice",
+      "passed": true
+    },
+    {
+      "kind": "desktop-chapter",
+      "href": "#fireflow",
+      "passed": true
+    },
+    {
+      "kind": "desktop-chapter",
+      "href": "#unfazed",
+      "passed": true
+    },
+    {
+      "kind": "desktop-chapter",
+      "href": "#lanni",
+      "passed": true
+    },
+    {
+      "kind": "desktop-chapter",
+      "href": "#privateinference",
+      "passed": true
+    },
+    {
+      "kind": "desktop-chapter",
+      "href": "#galactica",
+      "passed": true
+    },
+    {
+      "kind": "desktop-chapter",
+      "href": "#decisions",
+      "passed": true
+    },
+    {
+      "kind": "desktop-chapter",
+      "href": "#tokens",
+      "passed": true
+    },
+    {
+      "kind": ".quick-nav a",
+      "href": "#principles",
+      "passed": true
+    },
+    {
+      "kind": ".quick-nav a",
+      "href": "#brand",
+      "passed": true
+    },
+    {
+      "kind": ".quick-nav a",
+      "href": "#tokens",
+      "passed": true
+    },
+    {
+      "kind": ".quick-nav a",
+      "href": "#decisions",
+      "passed": true
+    },
+    {
+      "kind": ".portfolio-row",
+      "href": "#fireflow",
+      "passed": true
+    },
+    {
+      "kind": ".portfolio-row",
+      "href": "#unfazed",
+      "passed": true
+    },
+    {
+      "kind": ".portfolio-row",
+      "href": "#lanni",
+      "passed": true
+    },
+    {
+      "kind": ".portfolio-row",
+      "href": "#privateinference",
+      "passed": true
+    },
+    {
+      "kind": ".portfolio-row",
+      "href": "#galactica",
+      "passed": true
+    },
+    {
+      "kind": "mobile-chapter",
+      "href": "#principles",
+      "passed": true
+    },
+    {
+      "kind": "mobile-chapter",
+      "href": "#brand",
+      "passed": true
+    },
+    {
+      "kind": "mobile-chapter",
+      "href": "#logo",
+      "passed": true
+    },
+    {
+      "kind": "mobile-chapter",
+      "href": "#color",
+      "passed": true
+    },
+    {
+      "kind": "mobile-chapter",
+      "href": "#type",
+      "passed": true
+    },
+    {
+      "kind": "mobile-chapter",
+      "href": "#layout",
+      "passed": true
+    },
+    {
+      "kind": "mobile-chapter",
+      "href": "#spacing",
+      "passed": true
+    },
+    {
+      "kind": "mobile-chapter",
+      "href": "#shape",
+      "passed": true
+    },
+    {
+      "kind": "mobile-chapter",
+      "href": "#components",
+      "passed": true
+    },
+    {
+      "kind": "mobile-chapter",
+      "href": "#motion",
+      "passed": true
+    },
+    {
+      "kind": "mobile-chapter",
+      "href": "#voice",
+      "passed": true
+    },
+    {
+      "kind": "mobile-chapter",
+      "href": "#fireflow",
+      "passed": true
+    },
+    {
+      "kind": "mobile-chapter",
+      "href": "#unfazed",
+      "passed": true
+    },
+    {
+      "kind": "mobile-chapter",
+      "href": "#lanni",
+      "passed": true
+    },
+    {
+      "kind": "mobile-chapter",
+      "href": "#privateinference",
+      "passed": true
+    },
+    {
+      "kind": "mobile-chapter",
+      "href": "#galactica",
+      "passed": true
+    },
+    {
+      "kind": "mobile-chapter",
+      "href": "#decisions",
+      "passed": true
+    },
+    {
+      "kind": "mobile-chapter",
+      "href": "#tokens",
+      "passed": true
+    }
+  ],
+  "headers": {
+    "x-robots-tag": "noindex, nofollow",
+    "x-content-type-options": "nosniff",
+    "referrer-policy": "strict-origin-when-cross-origin"
+  },
+  "hosting_additions": [
+    "Netlify hosting HTML comment on index.html",
+    "Netlify public hosting badge script and one final newline on both HTML pages; the exact additions were inspected and removed only for the content hash comparison"
+  ],
+  "failures": [],
+  "limitations": [
+    "Chromium only; no assistive-technology audit."
+  ]
+}

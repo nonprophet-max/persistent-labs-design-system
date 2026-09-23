@@ -29,7 +29,7 @@ Local fonts and licenses are in `assets/fonts/`. The font-face declarations in `
 
 ## Current verification status
 
-Edition 2.3 adds the Galactica.com lockup, a website menu bar, a static Netlify build and six standalone brand skill plugins. Static checks cover token contrast, product hierarchy, links, headings, fonts and plugin portability. A new browser launch was attempted but blocked by the execution sandbox; rendered and interaction verification remain pending. Historical browser evidence is explicitly archived and does not verify this edition.
+Edition 2.3 adds the Galactica.com lockup, a website menu bar, a static Netlify build and six standalone brand skill plugins. Static and standalone plugin checks pass. Current Chromium checks pass at five widths (320–1440px) in both themes, with no runtime errors, request warnings, contrast findings, overflow or undersized controls. All 52 local screenshots were visually reviewed, with no material layout findings. See [current verification](reviews/release-verification.json) and [live deployment checks](reviews/deployment-verification.json). Historical browser evidence remains archived separately.
 
 ## Verify
 
@@ -59,7 +59,12 @@ Build the shareable site with `npm run build:site`. Netlify publishes only `dist
 
 See [BRAND-SKILLS.md](BRAND-SKILLS.md) for the complete brand skill and five independent product plugins, invocation names and chatbot-compatible documents. Rebuild them with `npm run build:skills` and check with `npm run check:skills`.
 
-The repository destination requested by the owner is **nonprophet-max/persistent-labs-design-system**, private. External publication status is recorded separately in the handoff; the presence of deploy configuration does not mean a deploy or push succeeded.
+Published on 23 September 2026:
+
+- [Live reading site](https://persistent-labs-design-bible.netlify.app/), verified on desktop and mobile.
+- [Private GitHub repository](https://github.com/nonprophet-max/persistent-labs-design-system), branch `codex/design-bible`; private visibility was verified through GitHub.
+
+The public deployment passes 45 navigation checks, 19 file checks and six checks that private source paths return 404. Netlify adds its hosting comment and public badge script to the HTML; after removing those exact additions and a trailing newline for comparison, the served page content matches the site build. Other assets match byte for byte. Only the isolated public site directory was uploaded.
 
 ## Rights and provenance
 

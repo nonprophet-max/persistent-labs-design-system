@@ -1,7 +1,7 @@
 {
-  "date": "2026-09-23T19:10:32.577583+00:00",
+  "date": "2026-09-23T20:18:17.334894+00:00",
   "edition": "2.3",
-  "status": "static-and-skill-checks-passed-browser-verification-pending",
+  "status": "published-and-verified",
   "artifact": "index.html",
   "artifact_sha256": "97a5b8d73c5580d90835385f16dd92952e4bb76f81cb8631b92a05fced542f6d",
   "site_artifact_sha256": "1900b5ea16550f9fce11e2350c3e0b21b2f61a0496f620f179fc9c981aa5307f",
@@ -32,22 +32,64 @@
     "record": "reviews/skill-forward-test/resolution.md"
   },
   "browser_checks": {
-    "passed": null,
-    "status": "blocked",
-    "reason": "Chromium launch blocked by current execution sandbox",
-    "prior_verified_edition": "2.1"
+    "passed": true,
+    "status": "passed",
+    "browser": "153.0.8010.53",
+    "record": "reviews/evidence/browser-qa.json",
+    "viewport_widths": [
+      320,
+      390,
+      768,
+      1024,
+      1440
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "failures": 0,
+    "request_warnings": 0
   },
   "publication": {
     "requested_github_repository": "nonprophet-max/persistent-labs-design-system",
     "required_visibility": "private",
+    "verified_visibility": "private",
+    "github_url": "https://github.com/nonprophet-max/persistent-labs-design-system",
+    "github_state": "created and pushed; private visibility verified through GitHub API",
+    "branch": "codex/design-bible",
+    "content_commit": "0c7afb92b160dc01f30876a68342409d0dad36eb",
     "netlify_site_id": "489b2a3d-2cf8-4522-878a-685de960d77f",
-    "netlify_state": "project created; upload blocked by network DNS restrictions",
-    "github_state": "connection verified; remote repository creation and push pending"
+    "netlify_deploy_id": "6ab4329e31131bda217d95f1",
+    "netlify_state": "ready; production publication confirmed by Netlify API and live checks",
+    "netlify_url": "https://persistent-labs-design-bible.netlify.app/",
+    "netlify_deploy_url": "https://6ab4329e31131bda217d95f1--persistent-labs-design-bible.netlify.app",
+    "uploaded_content": "isolated dist files plus staging netlify.toml only; no private source files",
+    "deployment_record": "reviews/deployment-verification.json",
+    "live_checks": {
+      "passed": true,
+      "navigation_actions": 45,
+      "file_checks": 19,
+      "excluded_private_paths": 6
+    },
+    "hosting_additions": [
+      "Netlify hosting HTML comment on index.html",
+      "Netlify public hosting badge script and one final newline on both HTML pages; the exact additions were inspected and removed only for the content hash comparison"
+    ]
   },
   "original_unchanged": true,
   "limits": [
-    "No current browser rendering or interaction pass.",
+    "Chromium only; no Safari, Firefox, screen-reader or full WCAG audit.",
+    "Automated contrast checks use solid composited backgrounds.",
     "No cross-host installation/runtime certification for every chatbot or agent.",
-    "Independent skill forward-test validates guidance and portability, not technical product claims."
-  ]
+    "Independent skill forward-test validates guidance and portability, not technical product claims.",
+    "The public site is shareable by URL and requests no indexing; noindex is not access control."
+  ],
+  "visual_review": {
+    "status": "passed",
+    "reviewer": "publishing agent",
+    "local_screenshots": 52,
+    "production_screenshots": 2,
+    "material_findings": 0,
+    "independent_review_round": false
+  }
 }

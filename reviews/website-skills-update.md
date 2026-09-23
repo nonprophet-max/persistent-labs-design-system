@@ -17,6 +17,6 @@ Six standalone packages contain SKILL.md, Codex and Claude plugin manifests, bra
 - Standalone reference paths, token parity, SVG parsing, font references and chatbot documents checked by the repository’s dependency-free package check.
 - Public build local links and exclusion of private directories checked.
 - Independent forward-test reviewed a portfolio handoff and standalone FireFlow/Galactica use. Its findings are recorded separately.
-- Browser launch was attempted again; the current sandbox blocks Chromium. No edition 2.3 rendered layout or interaction pass is claimed.
+- Chromium verification completed on 23 September 2026 after approved browser access: all five widths and both themes pass, with no runtime errors or request warnings. All 52 local screenshots and two production screenshots were visually reviewed with no material layout findings.
 
-The original design bible is preserved unchanged. Netlify and GitHub actions are tracked separately from these static validation results; a prepared build is not evidence of a live deployment or a pushed repository.
+The original design bible is preserved unchanged. The [reading site](https://persistent-labs-design-bible.netlify.app/) is published on the existing Netlify project. The [GitHub repository](https://github.com/nonprophet-max/persistent-labs-design-system) is published on `codex/design-bible` with private visibility verified. Live checks pass for 19 files, 45 navigation actions and six private paths returning 404. Netlify’s hosting comment, public badge script and final newline are the only differences between the uploaded and served HTML. See [release verification](release-verification.json) and [deployment verification](deployment-verification.json).
