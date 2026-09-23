@@ -9,6 +9,8 @@
     "check": "python3 scripts/build.py && python3 scripts/check.py && node scripts/qa.mjs",
     "test:workflow": "python3 -m unittest discover -s review-workflow -p 'test_*.py' -v",
     "build:site": "python3 scripts/build.py && python3 scripts/build_site.py",
+    "build:pages": "python3 scripts/build_pages.py",
+    "check:pages": "node scripts/qa-pages.mjs",
     "build:skills": "python3 scripts/package_skills.py",
     "check:static": "python3 scripts/check.py",
     "check:skills": "python3 scripts/check_skills.py"

@@ -1,0 +1,7 @@
+# Separate site configuration; the original reading site uses netlify.toml.
+[build]
+  command = "python3 scripts/build_pages.py"
+  publish = "dist-pages"
+
+[build.environment]
+  NODE_VERSION = "22"

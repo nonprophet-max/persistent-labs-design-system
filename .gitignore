@@ -9,4 +9,5 @@ review-workflow/runs/
 
 .netlify/
 dist/
+dist-pages/
 build/

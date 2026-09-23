@@ -66,6 +66,16 @@ Published on 23 September 2026:
 
 The public deployment passes 45 navigation checks, 19 file checks and six checks that private source paths return 404. Netlify adds its hosting comment and public badge script to the HTML; after removing those exact additions and a trailing newline for comparison, the served page content matches the site build. Other assets match byte for byte. Only the isolated public site directory was uploaded.
 
+## Separate-page website
+
+The separate-page edition has a home page, dedicated Foundations, Products, Tokens and Guidelines pages, and individual FireFlow, Unfazed.dev, Lanni, PrivateInference and Galactica pages. FireFlow's three core parts remain within its product page.
+
+[Open the separate-page site](https://persistent-labs-design-pages.netlify.app/). This is a separate Netlify project; the original reading link remains available. All ten live pages pass the browser checks across five widths and both themes. See [the release record](reviews/pages/release-verification.json).
+
+Run `npm run build:pages` to generate `dist-pages/` and `npm run check:pages` to run its browser review. The same `NODE_PATH` and `BROWSER_EXECUTABLE` options described above apply. `SITE_URL` can point the review at a deployed site; `QA_OUTPUT` selects a separate evidence directory. Use `netlify.pages.toml` for this site's build configuration. The original single-page site continues to use `netlify.toml` and `dist/`.
+
+See [the prepublication review](reviews/pages/review.md) for the findings, corrections and browser/visual evidence. The original design content and brand plugins remain unchanged.
+
 ## Rights and provenance
 
 Persistent Labs/product assets are included for the user’s requested design work; no general license is granted for those marks. Red Hat fonts retain their bundled SIL Open Font License. Unfazed’s existing mark is sourced from its public site and attributed in the source review. The supplied original design bible is retained as reference material.
