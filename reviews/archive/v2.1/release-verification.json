@@ -1,0 +1,70 @@
+{
+  "date": "2026-09-23T18:26:46.236713+00:00",
+  "edition": "2.1",
+  "status": "owner-directed-update-verified",
+  "artifact": "index.html",
+  "artifact_sha256": "d510f1339efaedd80f94c8dd246e8566729a41aa58ed2f6e1a2ff0f088acc9ff",
+  "product_architecture": {
+    "products": [
+      "fireflow",
+      "unfazed",
+      "lanni",
+      "privateinference"
+    ],
+    "coreParts": [
+      "orchestration-engine",
+      "memorytree",
+      "flamechorus"
+    ],
+    "standaloneMemory": false,
+    "memoryLinkTarget": "fireflow"
+  },
+  "change_record": "reviews/fireflow-architecture-update.md",
+  "prior_multi_agent_review": {
+    "rounds": 3,
+    "edition": "2.0",
+    "verification": "reviews/archive/v2.0/release-verification.json",
+    "note": "The current owner-directed architecture change received targeted browser and visual verification, not another multi-agent review round."
+  },
+  "browser_report_sha256": "1b3cf5584a38a5a5ef86859181304c9855da17f12a4f23aa69cef93912503444",
+  "browser_checks": {
+    "passed": true,
+    "viewport_widths": [
+      320,
+      390,
+      768,
+      1024,
+      1440
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "runtime_errors": 0,
+    "warnings": 0
+  },
+  "visual_checks": [
+    "FireFlow three-part overview: desktop light and mobile dark",
+    "Integrated FireFlow interface: mobile light"
+  ],
+  "token_and_asset_checks": {
+    "passed": true,
+    "contrast_pairs": 81
+  },
+  "git": {
+    "branch": "codex/design-bible",
+    "committed": false,
+    "pushed": false
+  },
+  "open_decisions": [
+    "PI positioning and palette remain proposals.",
+    "Proposed FireFlow and Lanni product marks and MemoryTree component icon await owner adoption.",
+    "Lanni availability remains unverified."
+  ],
+  "limits": [
+    "No screen-reader, Safari or Firefox testing.",
+    "No independent technical verification of product claims.",
+    "No print/PDF layout certification."
+  ],
+  "original_unchanged": true
+}

@@ -1,0 +1,53 @@
+{
+  "date": "2026-09-23T19:10:32.577583+00:00",
+  "edition": "2.3",
+  "status": "static-and-skill-checks-passed-browser-verification-pending",
+  "artifact": "index.html",
+  "artifact_sha256": "97a5b8d73c5580d90835385f16dd92952e4bb76f81cb8631b92a05fced542f6d",
+  "site_artifact_sha256": "1900b5ea16550f9fce11e2350c3e0b21b2f61a0496f620f179fc9c981aa5307f",
+  "product_architecture": {
+    "products": [
+      "fireflow",
+      "unfazed",
+      "lanni",
+      "privateinference",
+      "galactica"
+    ],
+    "coreParts": [
+      "orchestration-engine",
+      "memorytree",
+      "flamechorus"
+    ]
+  },
+  "static_checks": {
+    "passed": true,
+    "contrast_pairs": 87,
+    "plugin_packages": 6,
+    "plugin_schema_and_frontmatter": "passed with unchanged bundled validators and installed Node YAML parser bridge",
+    "standalone_package_checks": "passed",
+    "public_site_local_links": "passed"
+  },
+  "independent_skill_review": {
+    "result": "passed with documentation corrections applied",
+    "record": "reviews/skill-forward-test/resolution.md"
+  },
+  "browser_checks": {
+    "passed": null,
+    "status": "blocked",
+    "reason": "Chromium launch blocked by current execution sandbox",
+    "prior_verified_edition": "2.1"
+  },
+  "publication": {
+    "requested_github_repository": "nonprophet-max/persistent-labs-design-system",
+    "required_visibility": "private",
+    "netlify_site_id": "489b2a3d-2cf8-4522-878a-685de960d77f",
+    "netlify_state": "project created; upload blocked by network DNS restrictions",
+    "github_state": "connection verified; remote repository creation and push pending"
+  },
+  "original_unchanged": true,
+  "limits": [
+    "No current browser rendering or interaction pass.",
+    "No cross-host installation/runtime certification for every chatbot or agent.",
+    "Independent skill forward-test validates guidance and portability, not technical product claims."
+  ]
+}

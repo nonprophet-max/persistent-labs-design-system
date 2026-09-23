@@ -1,0 +1,892 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Persistent Labs Design Bible</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800&family=Red+Hat+Text:wght@400;500;600&family=Red+Hat+Mono:wght@400;500&display=swap">
+<style>
+/* ---------- Page tokens (derived from the brand itself) ---------- */
+:root{
+  color-scheme: light;
+  --bg:#FFFFFF; --bg-alt:#FFF5E6; --surface:#F6F6F6; --surface-2:#FFFFFF;
+  --ink:#1C1E21; --ink-2:rgba(28,30,33,.72); --muted:rgba(28,30,33,.58);
+  --line:rgba(27,27,27,.12); --line-soft:rgba(27,27,27,.06);
+  --accent-text:#8B6914; --accent-fill:#FBD78E; --accent-fill-hover:#FFCB63; --on-accent:#1C1D1D;
+  --chip-bg:rgba(139,105,20,.10); --chip-line:rgba(139,105,20,.22);
+  --bad-bg:rgba(240,68,56,.07); --bad-line:rgba(240,68,56,.22); --bad-text:#B42318;
+  --ok-text:#1A6B24; --warn-text:#8A5A00;
+  --shadow:0 14px 36px rgba(0,0,0,.08);
+  --f-display:"Red Hat Display", "Helvetica Neue", Arial, sans-serif;
+  --f-text:"Red Hat Text", "Helvetica Neue", Arial, sans-serif;
+  --f-mono:"Red Hat Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --bg:#1C1E21; --bg-alt:#16181A; --surface:#25272A; --surface-2:#2A2C2F;
+    --ink:#FFFFFF; --ink-2:rgba(255,255,255,.75); --muted:rgba(255,255,255,.58);
+    --line:rgba(255,255,255,.10); --line-soft:rgba(255,255,255,.05);
+    --accent-text:#FBD78E; --chip-bg:rgba(251,215,142,.10); --chip-line:rgba(251,215,142,.22);
+    --bad-bg:rgba(240,68,56,.12); --bad-line:rgba(240,68,56,.30); --bad-text:#FF8A7E;
+    --ok-text:#6FD47A; --warn-text:#F1C14E; --shadow:0 14px 40px rgba(0,0,0,.45);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --bg:#1C1E21; --bg-alt:#16181A; --surface:#25272A; --surface-2:#2A2C2F;
+  --ink:#FFFFFF; --ink-2:rgba(255,255,255,.75); --muted:rgba(255,255,255,.58);
+  --line:rgba(255,255,255,.10); --line-soft:rgba(255,255,255,.05);
+  --accent-text:#FBD78E; --chip-bg:rgba(251,215,142,.10); --chip-line:rgba(251,215,142,.22);
+  --bad-bg:rgba(240,68,56,.12); --bad-line:rgba(240,68,56,.30); --bad-text:#FF8A7E;
+  --ok-text:#6FD47A; --warn-text:#F1C14E; --shadow:0 14px 40px rgba(0,0,0,.45);
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-display);font-size:16px;line-height:1.55;letter-spacing:-.01em;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:clamp(16px,4vw,40px);padding-block:0 96px}
+a{color:var(--accent-text)}
+h1,h2,h3,h4{margin:0;text-wrap:balance;font-weight:700}
+p{margin:0}
+code,.mono{font-family:var(--f-mono);font-size:.86em}
+:focus-visible{outline:2px solid var(--accent-text);outline-offset:3px;border-radius:6px}
+
+/* ---------- Masthead ---------- */
+.mast{padding-block:40px 56px;border-bottom:1px solid var(--line);display:grid;gap:28px}
+.mast-top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.lockup{display:flex;align-items:center;gap:14px;font-weight:500;font-size:22px;letter-spacing:-.02em}
+.lockup svg{width:52px;height:auto;color:var(--ink)}
+.docmeta{font-family:var(--f-mono);font-size:12.5px;color:var(--muted);display:flex;gap:18px;flex-wrap:wrap}
+.mast h1{font-size:clamp(44px,7.4vw,104px);line-height:1.02;letter-spacing:-.03em;max-width:14ch}
+.mast h1 span{color:var(--accent-text)}
+.mast .lead{font-size:clamp(18px,1.7vw,22px);line-height:1.4;color:var(--ink-2);max-width:62ch;font-weight:400}
+.sources{display:flex;flex-wrap:wrap;gap:8px}
+
+/* ---------- Layout with TOC ---------- */
+.body{display:grid;grid-template-columns:220px minmax(0,1fr);gap:56px;margin-top:48px}
+.toc{position:sticky;top:calc(env(safe-area-inset-top,0px) + 24px);align-self:start;font-family:var(--f-text);font-size:13.5px;display:grid;gap:2px;max-height:calc(100vh - 48px);overflow:auto}
+.toc a{color:var(--muted);text-decoration:none;padding:5px 10px;border-radius:8px;display:flex;gap:10px}
+.toc a:hover{color:var(--ink);background:var(--line-soft)}
+.toc a b{font-family:var(--f-mono);font-weight:500;color:var(--accent-text);min-width:1.6em}
+.toc .toc-h{font-family:var(--f-display);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:12px 10px 6px}
+@media (max-width:920px){.body{grid-template-columns:minmax(0,1fr);gap:24px}.toc{position:static;max-height:none;grid-template-columns:repeat(auto-fill,minmax(min(100%,150px),1fr));border:1px solid var(--line);border-radius:18px;padding:10px}.toc .toc-h{grid-column:1/-1}}
+
+section.ch{padding-block:56px 8px;border-top:1px solid var(--line);scroll-margin-top:24px}
+section.ch:first-child{border-top:0;padding-top:0}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-text);display:flex;gap:10px;align-items:center;margin-bottom:12px}
+.eyebrow .n{font-family:var(--f-mono);font-weight:500;letter-spacing:0}
+.ch > h2{font-size:clamp(32px,4vw,52px);line-height:1.05;letter-spacing:-.03em;margin-bottom:14px}
+.intro{font-size:18px;line-height:1.5;color:var(--ink-2);max-width:66ch;margin-bottom:32px}
+h3.sub{font-size:22px;letter-spacing:-.02em;line-height:1.15;margin:40px 0 14px}
+h3.sub:first-of-type{margin-top:8px}
+.note{font-size:14.5px;color:var(--muted);max-width:70ch;margin-top:12px}
+.prose{max-width:70ch;display:grid;gap:12px;color:var(--ink-2)}
+.prose strong{color:var(--ink)}
+
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr))}
+.panel{background:var(--surface);border-radius:22px;padding:24px;display:grid;gap:10px;align-content:start}
+.panel h4{font-size:18px;letter-spacing:-.015em;line-height:1.2}
+.panel p{font-size:15px;color:var(--ink-2);line-height:1.5}
+.tag{display:inline-flex;align-items:center;gap:6px;font-family:var(--f-text);font-size:12.5px;font-weight:500;padding:4px 11px;border-radius:99px;background:var(--chip-bg);border:1px solid var(--chip-line);color:var(--accent-text);white-space:nowrap;justify-self:start}
+.tag.plain{background:transparent;border-color:var(--line);color:var(--muted)}
+
+/* ---------- Tables ---------- */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:16px;margin-top:4px}
+table{border-collapse:collapse;width:100%;font-size:14px;font-family:var(--f-text)}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+thead th{font-family:var(--f-display);font-size:11.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);background:var(--line-soft);white-space:nowrap}
+td.k{font-weight:600;color:var(--ink);white-space:nowrap}
+td .mono,td code{white-space:nowrap}
+.num{font-variant-numeric:tabular-nums}
+.pass{color:var(--ok-text);font-weight:600}.fail{color:var(--bad-text);font-weight:600}.warn{color:var(--warn-text);font-weight:600}
+
+/* ---------- Swatches (specimens: fixed colors on purpose) ---------- */
+.sw{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--surface-2);display:grid;grid-template-rows:112px auto}
+.sw .chip{position:relative}
+.sw .chip i{position:absolute;right:10px;top:10px;font-style:normal;font-family:var(--f-mono);font-size:11px;padding:2px 7px;border-radius:99px;background:rgba(0,0,0,.35);color:#fff}
+.sw .meta{padding:12px 14px 14px;display:grid;gap:2px}
+.sw .meta b{font-size:15px;letter-spacing:-.01em}
+.sw .meta .hex{font-family:var(--f-mono);font-size:12.5px;color:var(--ink)}
+.sw .meta small{font-size:12.5px;color:var(--muted);line-height:1.4;margin-top:4px}
+.sw.small{grid-template-rows:72px auto}
+.ramp{display:flex;flex-wrap:wrap;border-radius:16px;overflow:hidden;border:1px solid var(--line)}
+.ramp div{flex:1 0 72px;min-height:84px;padding:8px;display:flex;align-items:flex-end;font-family:var(--f-mono);font-size:11px}
+.grad{height:120px;border-radius:22px;border:1px solid var(--line)}
+.gradcard{display:grid;gap:10px}
+.gradcard code{font-size:12px;color:var(--muted);word-break:break-word;white-space:normal}
+
+/* ---------- Type specimens ---------- */
+.spec{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;padding-block:20px;border-bottom:1px solid var(--line);align-items:baseline}
+.spec:last-child{border-bottom:0}
+.spec .lab{font-family:var(--f-mono);font-size:12px;color:var(--muted);display:grid;gap:3px}
+.spec .lab b{font-family:var(--f-display);font-size:14px;color:var(--ink);font-weight:600}
+.spec .s{overflow-wrap:anywhere}
+@media (max-width:700px){.spec{grid-template-columns:1fr;gap:8px}}
+.fam{border-radius:22px;padding:26px;background:var(--surface);display:grid;gap:14px}
+.fam .big{font-size:64px;line-height:1;letter-spacing:-.03em}
+.fam .weights{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:17px}
+
+/* ---------- Stages: brand-fixed specimen areas ---------- */
+.stage{border-radius:26px;padding:clamp(20px,3vw,36px);display:grid;gap:22px;position:relative;overflow:hidden}
+.stage.dark{background:#1C1E21;color:#fff}
+.stage.light{background:#F6F6F6;color:#1C1E21;border:1px solid var(--line)}
+.stage.cream{background:linear-gradient(135deg,#FFFFFF 0%,#FDF5E5 45%,#FAE3B6 100%);color:#1C1E21;border:1px solid var(--line)}
+.stage .cap{font-family:var(--f-mono);font-size:11.5px;opacity:.55;letter-spacing:0}
+.row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+
+/* brand components (literal brand values) */
+.b-btn{font-family:var(--f-text);font-size:17px;font-weight:400;letter-spacing:-.02em;height:52px;min-width:min(220px,100%);padding:0 28px;border-radius:62px;display:inline-flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;transition:background .4s,color .4s,border-color .4s}
+.b-primary{background:#FBD78E;color:#2B2B2B;border:1px solid #1C1E21}
+.b-primary:hover{background:#FFCB63}
+.b-secondary{background:rgba(255,255,255,.9);color:#2B2B2B;border:1px solid rgba(255,255,255,.9)}
+.b-secondary:hover{border-color:#1C1E21}
+.b-ghost{height:38px;min-width:0;font-size:15px;background:transparent;color:#2B2B2B;border:1px solid rgba(28,30,33,.35)}
+.b-ghost:hover{background:#1C1E21;color:#fff;border-color:#1C1E21}
+.b-outline-dark{height:auto;min-width:0;padding:7px 20px;font-family:var(--f-display);font-size:15px;font-weight:600;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:43px}
+.b-tag{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:57px;border:1px solid rgba(251,215,142,.2);background:rgba(251,215,142,.1);color:#FBD78E;font-family:var(--f-text);font-size:14px;font-weight:500}
+.b-eyebrow{color:#FBD78E;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.b-status{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:99px;font-family:var(--f-text);font-size:13px;font-weight:500}
+.navbar{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px;padding:0 20px;border-radius:40px;background:rgba(255,255,255,.9);backdrop-filter:blur(20px);color:#2B2B2B;flex-wrap:wrap}
+.navbar nav{display:flex;gap:22px;font-family:var(--f-text);font-size:15px}
+@media (max-width:760px){.navbar nav{display:none}}
+.navbar .lk{display:flex;align-items:center;gap:10px;font-weight:500;font-size:18px}
+.navbar .lk svg{width:40px;color:#1C1E21}
+
+.c-dark{background:rgba(255,255,255,.05);border-radius:30px;padding:22px;display:grid;gap:10px}
+.c-dark h5,.c-light h5,.c-prod h5{margin:0;font-size:26px;line-height:1.1;letter-spacing:-.02em;font-weight:700}
+.c-dark p{font-size:15px;opacity:.6;line-height:1.3}
+.c-hover{background:linear-gradient(0deg,rgba(0,0,0,.2),rgba(0,0,0,.2)),#1C1E21;border:1px solid transparent;border-radius:38px;padding:30px;display:grid;gap:12px;transition:box-shadow .3s,border .3s;min-height:220px;align-content:end}
+.c-hover:hover{box-shadow:0 0 200px 0 rgba(251,215,142,.16);border-color:rgba(251,215,142,.2)}
+.c-hover:hover h5{color:#FBD78E}
+.c-hover h5{transition:color .3s}
+.c-light{background:#F6F6F6;border:1px solid #1C1E21;border-radius:38px;padding:22px 30px 24px;color:#1C1E21;display:grid;gap:6px}
+.c-light .stat{font-size:64px;font-weight:300;line-height:1.1;letter-spacing:-.02em}
+.c-light p{font-size:15px;opacity:.6;line-height:1.3}
+.c-prod{border-radius:18px;padding:26px 24px;border:1px solid rgba(255,255,255,.09);background:linear-gradient(180deg,rgba(255,215,84,.05),rgba(255,255,255,0) 40%),rgba(255,255,255,.02);display:grid;gap:10px;position:relative;overflow:hidden}
+.c-prod::before{content:"";position:absolute;inset:0;background:radial-gradient(90% 60% at 100% 0%,rgba(255,204,51,.10),transparent 55%);pointer-events:none}
+.c-prod .tile{width:44px;height:44px;border-radius:12px;border:1px solid rgba(255,215,84,.3);background:rgba(255,215,84,.12);display:grid;place-items:center;color:#FFD754;font-family:var(--f-mono);font-size:14px}
+.c-prod .tl{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#FFD754}
+.c-prod ul{margin:0;padding:0;list-style:none;display:grid;gap:9px;font-size:13.5px;color:rgba(255,250,241,.9)}
+.c-prod li{position:relative;padding-left:20px}
+.c-prod li::before{content:"";position:absolute;left:2px;top:7px;width:7px;height:7px;border-radius:50%;background:#FFD754;box-shadow:0 0 0 3px rgba(255,215,84,.18)}
+.gborder{position:relative;border-radius:40px;padding:6px;background:linear-gradient(270deg,#FBD78E 0%,#E28B5F 38%,#3E859E 67%,#96AB70 100%) 0 0/300% 300%;animation:gshift 10s ease infinite alternate}
+.gborder > div{background:#F6F6F6;border-radius:36px;padding:28px 32px;color:#1C1E21}
+@keyframes gshift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.chat{display:grid;gap:10px;background:#121212;border-radius:18px;padding:18px;border:1px solid #2B2B2B;font-family:var(--f-display);font-size:13.5px;color:#D9D9D9}
+.chat .who{font-size:11.5px;color:#818181;display:flex;justify-content:space-between}
+.chat .ai{background:#1A1A1A;border-radius:12px;padding:12px 14px;display:grid;gap:8px}
+.chat .me{background:#FBD78E;color:#171717;border-radius:12px;padding:10px 14px;justify-self:end;max-width:80%}
+.chat .opt{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#242424;border:1px solid #2B2B2B;border-radius:10px;padding:8px 10px}
+.chat .opt.sel{border-color:#24AC2B;background:rgba(36,172,43,.08)}
+.chat .pbtn{font-size:11.5px;border-radius:99px;padding:4px 12px;background:#2B2B2B;color:#fff;white-space:nowrap}
+.chat .pbtn.go{background:#24AC2B}
+
+/* spacing viz */
+.space-row{display:grid;grid-template-columns:70px 80px minmax(0,1fr);gap:14px;align-items:center;font-family:var(--f-mono);font-size:12.5px;padding-block:5px}
+.space-row .bar{max-width:100%;height:14px;border-radius:4px;background:var(--accent-fill)}
+.radius-demo{display:flex;flex-wrap:wrap;gap:14px}
+.radius-demo div{width:108px;height:84px;background:var(--surface);border:1px solid var(--line);display:flex;align-items:flex-end;padding:8px 10px;font-family:var(--f-mono);font-size:11.5px;color:var(--muted)}
+
+/* do / don't */
+.dd{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+.dd > div{border-radius:18px;padding:18px 20px;border:1px solid var(--line);display:grid;gap:8px;align-content:start}
+.dd h4{font-size:13px;letter-spacing:.07em;text-transform:uppercase}
+.dd .do h4{color:var(--ok-text)} .dd .dont h4{color:var(--bad-text)}
+.dd ul{margin:0;padding-left:18px;display:grid;gap:6px;font-size:14.5px;color:var(--ink-2)}
+
+/* review */
+.sev{font-family:var(--f-mono);font-size:11px;font-weight:500;padding:2px 8px;border-radius:99px;white-space:nowrap}
+.sev.h{background:var(--bad-bg);color:var(--bad-text);border:1px solid var(--bad-line)}
+.sev.m{background:var(--chip-bg);color:var(--accent-text);border:1px solid var(--chip-line)}
+.sev.l{background:var(--line-soft);color:var(--muted);border:1px solid var(--line)}
+.score{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:12px}
+.score div{background:var(--surface);border-radius:16px;padding:14px 16px;display:grid;gap:2px}
+.score b{font-size:30px;font-weight:300;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.score small{font-size:13px;color:var(--muted)}
+.pgthumb{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:16px}
+.pgthumb .panel{gap:8px}
+.decision{border-left:3px solid var(--accent-fill);padding:4px 0 4px 16px;display:grid;gap:4px}
+pre.tokens{background:#16181A;color:#E8E6E1;border-radius:18px;padding:22px;overflow-x:auto;font-family:var(--f-mono);font-size:12.5px;line-height:1.6;margin:0;border:1px solid var(--line)}
+pre.tokens .c{color:#8C8F94}
+pre.tokens .v{color:#FBD78E}
+.copy{font-family:var(--f-text);font-size:13px;padding:6px 14px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header class="mast">
+  <div class="mast-top">
+    <div class="lockup" aria-label="Persistent Labs">
+      <svg viewBox="0 0 47 21" aria-hidden="true"><g fill="currentColor" opacity=".55"><path d="M4.39736 20.0548C-1.94875 15.1978 -1.28266 5.82736 5.46964 1.67684C7.69121 0.311941 10.3883 -0.250189 12.9525 0.103068C13.5801 0.187772 14.1971 0.321567 14.7929 0.514077C13.5637 0.550654 12.348 0.665198 11.1622 0.944338C5.41959 2.16197 1.02265 7.51087 1.75419 13.4594C2.0006 15.8254 3.0623 18.0807 4.39736 20.0548Z"/><path d="M6.89844 17.0713C8.09585 18.1677 9.59743 19.1658 11.2184 19.0407C13.516 18.8578 15.5268 16.9106 17.1217 15.3609C21.6274 11.0842 30.0478 -1.45781 37.0571 1.18921C38.3604 1.68974 39.4144 2.73892 40.1074 3.88436C39.4086 3.34629 38.6781 2.87753 37.9138 2.58106C35.9617 1.79466 34.0819 2.46171 32.4552 3.60137C30.7678 4.78819 29.349 6.25705 27.9042 7.80002C25.5565 10.3315 23.3311 13.0017 20.8256 15.4379C19.195 17.0078 17.4519 18.5306 15.4045 19.5682C11.948 21.3479 8.72344 20.6193 6.8994 17.0713H6.89844Z"/><path d="M13.8281 4.46155C16.8525 3.89076 19.742 6.03917 21.8962 7.90364C24.0543 9.79986 25.9832 12.0224 28.0777 13.91C29.4706 15.142 30.949 16.2624 32.8857 16.686C29.8296 17.2548 26.9853 15.1719 24.7945 13.2891C22.6287 11.3967 20.7036 9.16554 18.6187 7.2645C17.2115 5.99971 15.7359 4.87833 13.8281 4.46155Z"/><path d="M42.4229 0.945841C48.769 5.80288 48.1029 15.1733 41.3506 19.3238C39.13 20.6887 36.4329 21.2509 33.8677 20.8967C33.2402 20.812 32.6232 20.6782 32.0273 20.4857C33.2565 20.4491 34.4722 20.3345 35.6581 20.0554C41.4016 18.8387 45.7986 13.4898 45.067 7.54125C44.8206 5.17529 43.7589 2.92004 42.4239 0.945841H42.4229Z"/></g></svg>
+      Persistent Labs
+    </div>
+    <div class="docmeta"><span>Design Bible · v1.1 draft for review</span><span>23 Sep 2026</span></div>
+  </div>
+  <h1>Persistent Labs <span>design bible</span></h1>
+  <p class="lead">The visual system behind Persistent Labs, FireFlow, Flame Chorus, MemoryTree and Lanni: typography, color, layout, spacing, components, motion and voice. It was reverse-engineered from the live CSS of the marketing site, the docs, the product app and the <em>FF_intro</em> PDF, then reconciled into a single set of rules.</p>
+  <div class="sources">
+    <span class="tag plain">persistentai.org</span><span class="tag plain">persistentai.org/lanni</span><span class="tag plain">docs.persistentai.org</span><span class="tag plain">stage.persistentai.org (app tokens)</span><span class="tag plain">FF_intro.pdf (4 pp.)</span><span class="tag plain">Substack · HackMD stack vision</span>
+  </div>
+</header>
+
+<div class="body">
+<nav class="toc" aria-label="Contents">
+  <div class="toc-h">Foundations</div>
+  <a href="#principles"><b>01</b>Principles</a>
+  <a href="#brand"><b>02</b>Logo &amp; naming</a>
+  <a href="#color"><b>03</b>Color</a>
+  <a href="#type"><b>04</b>Typography</a>
+  <a href="#layout"><b>05</b>Layout &amp; grid</a>
+  <a href="#spacing"><b>06</b>Spacing</a>
+  <a href="#shape"><b>07</b>Shape &amp; effects</a>
+  <div class="toc-h">Application</div>
+  <a href="#components"><b>08</b>Components</a>
+  <a href="#motion"><b>09</b>Motion</a>
+  <a href="#imagery"><b>10</b>Imagery &amp; icons</a>
+  <a href="#voice"><b>11</b>Voice &amp; copy</a>
+  <a href="#surfaces"><b>12</b>Surfaces</a>
+  <div class="toc-h">Reference</div>
+  <a href="#pdf"><b>13</b>PDF review</a>
+  <a href="#decisions"><b>14</b>Open decisions</a>
+  <a href="#tokens"><b>15</b>Token sheet</a>
+</nav>
+
+<main>
+<section class="ch" id="principles">
+  <div class="eyebrow"><span class="n">01</span>Foundations</div>
+  <h2>Principles</h2>
+  <p class="intro">Persistent Labs sells deterministic, regulated infrastructure for AI agents. The brand has to feel calm and engineered, but warm enough that people trust it with money. Across every surface that comes down to the same pairing: a near-black graphite canvas, one warm gold, heavy geometric headlines and a lot of air.</p>
+  <div class="grid g2">
+    <div class="panel"><h4>1. Graphite first, gold second</h4><p>The default ground is ink <code>#1C1E21</code>. Gold <code>#FBD78E</code> marks the single most important thing in view: the primary action, a highlighted phrase or a live state. When gold is everywhere, nothing is important.</p></div>
+    <div class="panel"><h4>2. Engineered, not ornamental</h4><p>Show the machinery: real flow graphs, execution logs, typed ports, audit trails. Proof beats metaphor. Diagrams and product screenshots count as primary imagery, not decoration.</p></div>
+    <div class="panel"><h4>3. Heavy headlines, quiet body</h4><p>Headlines are Red Hat Display Bold with tight tracking (−3%) and tight leading (1.04–1.05). Body copy steps down to white at 50–75% opacity, so the hierarchy comes from contrast and weight rather than color.</p></div>
+    <div class="panel"><h4>4. Soft geometry</h4><p>Large radii (30–40 px on cards), fully rounded pills for every button and tag, and no hard corners on containers. The softness balances the density of the technical content.</p></div>
+    <div class="panel"><h4>5. Light as a material</h4><p>Depth comes from glows, not drop shadows: 200 px gold or aurora blurs, prismatic hero footage, and gradient borders that shift slowly. Keep glows to one or two per viewport.</p></div>
+    <div class="panel"><h4>6. Honest comparison</h4><p>Green, yellow and red are reserved for truthful capability ratings, including FireFlow's own gaps. Semantic color never doubles as decoration.</p></div>
+  </div>
+</section>
+
+<section class="ch" id="brand">
+  <div class="eyebrow"><span class="n">02</span>Foundations</div>
+  <h2>Logo, lockups &amp; naming</h2>
+  <p class="intro">The mark is a looped “∞/X” ribbon made of four strokes, rendered at about 50% opacity in ink or white so it reads as a watermark-like signature. The wordmark sets “Persistent Labs” in Red Hat Display Medium. FireFlow has its own flame-and-pixel mark with an italic “fireflow” wordmark, and appears as a co-brand.</p>
+  <div class="grid g3">
+    <div class="stage dark" style="min-height:180px;align-content:center;justify-items:center">
+      <div class="lockup" style="color:#fff"><svg viewBox="0 0 47 21" style="width:60px;color:#fff" aria-hidden="true"><use href="#pai-mark"/></svg>Persistent Labs</div>
+      <span class="cap">Primary · on ink #1C1E21</span>
+    </div>
+    <div class="stage light" style="min-height:180px;align-content:center;justify-items:center">
+      <div class="lockup" style="color:#1C1E21"><svg viewBox="0 0 47 21" style="width:60px;color:#1C1E21" aria-hidden="true"><use href="#pai-mark"/></svg>Persistent Labs</div>
+      <span class="cap">Primary · on paper #F6F6F6 / white</span>
+    </div>
+    <div class="stage cream" style="min-height:180px;align-content:center;justify-items:center">
+      <div class="lockup" style="color:#1C1E21;gap:18px"><svg viewBox="0 0 47 21" style="width:52px;color:#1C1E21" aria-hidden="true"><use href="#pai-mark"/></svg>Persistent Labs <span style="width:1px;height:30px;background:#1C1E21;opacity:.6"></span><span style="font-style:italic;font-weight:700;color:#3A3C3F">fireflow</span></div>
+      <span class="cap">Co-brand lockup (from the PDF) · mark placeholder for the flame</span>
+    </div>
+  </div>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g id="pai-mark" fill="currentColor" opacity=".55"><path d="M4.39736 20.0548C-1.94875 15.1978 -1.28266 5.82736 5.46964 1.67684C7.69121 0.311941 10.3883 -0.250189 12.9525 0.103068C13.5801 0.187772 14.1971 0.321567 14.7929 0.514077C13.5637 0.550654 12.348 0.665198 11.1622 0.944338C5.41959 2.16197 1.02265 7.51087 1.75419 13.4594C2.0006 15.8254 3.0623 18.0807 4.39736 20.0548Z"/><path d="M6.89844 17.0713C8.09585 18.1677 9.59743 19.1658 11.2184 19.0407C13.516 18.8578 15.5268 16.9106 17.1217 15.3609C21.6274 11.0842 30.0478 -1.45781 37.0571 1.18921C38.3604 1.68974 39.4144 2.73892 40.1074 3.88436C39.4086 3.34629 38.6781 2.87753 37.9138 2.58106C35.9617 1.79466 34.0819 2.46171 32.4552 3.60137C30.7678 4.78819 29.349 6.25705 27.9042 7.80002C25.5565 10.3315 23.3311 13.0017 20.8256 15.4379C19.195 17.0078 17.4519 18.5306 15.4045 19.5682C11.948 21.3479 8.72344 20.6193 6.8994 17.0713H6.89844Z"/><path d="M13.8281 4.46155C16.8525 3.89076 19.742 6.03917 21.8962 7.90364C24.0543 9.79986 25.9832 12.0224 28.0777 13.91C29.4706 15.142 30.949 16.2624 32.8857 16.686C29.8296 17.2548 26.9853 15.1719 24.7945 13.2891C22.6287 11.3967 20.7036 9.16554 18.6187 7.2645C17.2115 5.99971 15.7359 4.87833 13.8281 4.46155Z"/><path d="M42.4229 0.945841C48.769 5.80288 48.1029 15.1733 41.3506 19.3238C39.13 20.6887 36.4329 21.2509 33.8677 20.8967C33.2402 20.812 32.6232 20.6782 32.0273 20.4857C33.2565 20.4491 34.4722 20.3345 35.6581 20.0554C41.4016 18.8387 45.7986 13.4898 45.067 7.54125C44.8206 5.17529 43.7589 2.92004 42.4239 0.945841H42.4229Z"/></g></defs></svg>
+
+  <h3 class="sub">Logo rules</h3>
+  <div class="dd">
+    <div class="do"><h4>Do</h4><ul>
+      <li>Keep clear space equal to the mark's height on every side.</li>
+      <li>Render the mark in ink <code>#1C1E21</code> or white at 50–60% opacity. On the website header it animates a gold <code>#FBD78E</code> shine sweep.</li>
+      <li>Size the web header lockup at about 60 px mark width (3.125 vw at 1920) plus the 154 px wordmark.</li>
+      <li>In co-brand lockups, separate the two brands with a 1 px vertical ink rule.</li>
+    </ul></div>
+    <div class="dont"><h4>Don't</h4><ul>
+      <li>Recolor the mark gold, or fill it with a gradient (the shine is a transient effect only).</li>
+      <li>Set the wordmark in a weight other than Medium, or letter-space it.</li>
+      <li>Put the mark on busy imagery without a solid or glass container.</li>
+      <li>Stack the wordmark under the mark. The lockup is horizontal only.</li>
+    </ul></div>
+  </div>
+
+  <h3 class="sub">Product &amp; brand naming</h3>
+  <p class="note" style="margin:0 0 14px">The sources are inconsistent (see §14). These are the canonical spellings this bible recommends.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Use</th><th>Avoid</th><th>Role</th><th>Signature color</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Persistent Labs</td><td>Persistent AI, PersistentAI*, PersistentLabs</td><td>Company / master brand (two words, as in the logo)</td><td><code>#1C1E21</code> ink</td></tr>
+      <tr><td class="k">FireFlow</td><td>Fireflow, fireflow (except in the logo)</td><td>The orchestrator / execution engine</td><td><code>#F7931A</code> flame orange</td></tr>
+      <tr><td class="k">Flame Chorus</td><td>FlameChorus</td><td>The multi-agent chat engine (AG-UI)</td><td><code>#FBD78E</code> gold</td></tr>
+      <tr><td class="k">MemoryTree</td><td>Memory Tree, Memory Agent, Memory system</td><td>The persistent memory layer</td><td><code>#8ECFFB</code> sky blue</td></tr>
+      <tr><td class="k">Lanni</td><td>LANNI</td><td>The consumer/pro agent built on the stack</td><td><code>#FF6741</code> coral</td></tr>
+    </tbody></table></div>
+  <p class="note">*Legacy spellings. The docs and body copy wrote “PersistentAI” as one word, while the logo and © line used “Persistent AI”. Both are replaced by <b>Persistent Labs</b>, two words, in every context: the logo wordmark, running text, the footer and the © line.</p>
+</section>
+
+<section class="ch" id="color">
+  <div class="eyebrow"><span class="n">03</span>Foundations</div>
+  <h2>Color</h2>
+  <p class="intro">This is a dark-first system with a single warm accent. Every value below was taken from production CSS: the website (styled-components), the docs (VitePress overrides) and the app (Tailwind v4 theme). PDF values were sampled from the rendered pages.</p>
+
+  <h3 class="sub">Core palette</h3>
+  <div class="grid g4">
+    <div class="sw"><div class="chip" style="background:#1C1E21"><i>core</i></div><div class="meta"><b>Ink</b><span class="hex">#1C1E21</span><small>Default page ground on web and PDF frames, dark text on light, button borders.</small></div></div>
+    <div class="sw"><div class="chip" style="background:#121212"><i>core</i></div><div class="meta"><b>Void</b><span class="hex">#121212</span><small>App background (<code>bgDarkBack</code>); the deepest featured card.</small></div></div>
+    <div class="sw"><div class="chip" style="background:#FBD78E"><i>accent</i></div><div class="meta"><b>Gold</b><span class="hex">#FBD78E</span><small>Primary CTA, highlighted words, eyebrows, active states, user chat bubble.</small></div></div>
+    <div class="sw"><div class="chip" style="background:#FFCB63"><i>state</i></div><div class="meta"><b>Gold · hover</b><span class="hex">#FFCB63</span><small>Primary button hover on web. The docs use <code>#FFCC33</code>, a near-duplicate.</small></div></div>
+    <div class="sw"><div class="chip" style="background:#FFFFFF"><i>core</i></div><div class="meta"><b>White</b><span class="hex">#FFFFFF</span><small>Headlines on ink; secondary buttons at 90%; glass header.</small></div></div>
+    <div class="sw"><div class="chip" style="background:#F6F6F6"><i>core</i></div><div class="meta"><b>Paper</b><span class="hex">#F6F6F6</span><small>Light cards and panels sitting on ink (stat cards, Composable Platform).</small></div></div>
+    <div class="sw"><div class="chip" style="background:#2B2B2B"><i>text</i></div><div class="meta"><b>Graphite text</b><span class="hex">#2B2B2B</span><small>Text on gold and white buttons and in nav links.</small></div></div>
+    <div class="sw"><div class="chip" style="background:#FFFAF1"><i>text</i></div><div class="meta"><b>Warm white</b><span class="hex">#FFFAF1</span><small>Docs dark-mode text; carries the gold warmth into neutrals.</small></div></div>
+  </div>
+
+  <h3 class="sub">Gold family</h3>
+  <div class="ramp" role="img" aria-label="Gold ramp">
+    <div style="background:#FFEBB8;color:#1C1E21">#FFEBB8</div>
+    <div style="background:#FFE085;color:#1C1E21">#FFE085</div>
+    <div style="background:#FBD78E;color:#1C1E21">#FBD78E</div>
+    <div style="background:#FFD754;color:#1C1E21">#FFD754</div>
+    <div style="background:#FFCB63;color:#1C1E21">#FFCB63</div>
+    <div style="background:#EABD64;color:#1C1E21">#EABD64</div>
+    <div style="background:#E6B82E;color:#1C1E21">#E6B82E</div>
+    <div style="background:#A07D19;color:#fff">#A07D19</div>
+    <div style="background:#8B6914;color:#fff">#8B6914</div>
+    <div style="background:#5C460C;color:#fff">#5C460C</div>
+  </div>
+  <p class="note"><b>Rule:</b> use <code>#FBD78E</code> for gold fills and gold text on dark. On white or cream, gold text fails contrast (1.38:1), so use <strong>Gold-ink <code>#8B6914</code></strong> instead (5.09:1, the docs' light-mode brand color). <code>#FFD754</code> is the docs' dark-mode link and icon gold. <code>#EABD64</code> is the app's <code>--color-primary</code>. Treat both as sanctioned variants, not new accents.</p>
+
+  <h3 class="sub">Product accents</h3>
+  <p class="note" style="margin:0 0 14px">Each product has its own accent (from the Lanni “Three products” section). Use it only to identify that product: eyebrows, dots and inline product names. Never use one as a page-wide accent.</p>
+  <div class="grid g4">
+    <div class="sw small"><div class="chip" style="background:#F7931A"></div><div class="meta"><b>FireFlow orange</b><span class="hex">#F7931A</span><small>Orchestrator</small></div></div>
+    <div class="sw small"><div class="chip" style="background:#8ECFFB"></div><div class="meta"><b>MemoryTree sky</b><span class="hex">#8ECFFB</span><small>Memory layer</small></div></div>
+    <div class="sw small"><div class="chip" style="background:#FBD78E"></div><div class="meta"><b>Flame Chorus gold</b><span class="hex">#FBD78E</span><small>Chat engine</small></div></div>
+    <div class="sw small"><div class="chip" style="background:#FF6741"></div><div class="meta"><b>Lanni coral</b><span class="hex">#FF6741</span><small>Lanni hover and slide accents</small></div></div>
+  </div>
+
+  <h3 class="sub">Signature gradients &amp; light</h3>
+  <div class="grid g2">
+    <div class="gradcard"><div class="grad" style="background:linear-gradient(270deg,#FBD78E 0%,#E28B5F 38%,#3E859E 67%,#96AB70 100%)"></div><b>Aurora border</b><code>linear-gradient(270deg, #FBD78E 0%, #E28B5F 38%, #3E859E 67%, #96AB70 100%)</code><span class="note" style="margin:0">Animated 300% background-size, 10 s alternate. Used as a 8 px ring around the key light panel. The same hues appear in the PDF's product panel.</span></div>
+    <div class="gradcard"><div class="grad" style="background:linear-gradient(90deg,#38829B 0%,#4E7768 39.42%,#BAA565 69.23%,#A87B40 88.94%)"></div><b>Title gradient (text-clip)</b><code>linear-gradient(90deg, #38829B, #4E7768 39%, #BAA565 69%, #A87B40 89%)</code><span class="note" style="margin:0">For one headline on the featured dark card only. Fades to white on hover.</span></div>
+    <div class="gradcard"><div class="grad" style="background:#1C1E21;position:relative;overflow:hidden"><div style="position:absolute;inset:-40%;background:linear-gradient(91deg,#FFE2AA 8.75%,#FFFFFF 58%,#78FFE7 115%);filter:blur(40px);opacity:.35;transform:rotate(-49deg);mix-blend-mode:hard-light"></div></div><b>Prism glow</b><code>linear-gradient(91deg, #FFE2AA 8.75%, #FFF 58%, #78FFE7 115%) · blur 200px · hard-light · 16–20%</code><span class="note" style="margin:0">Ambient diagonal light (−49°) behind CTAs and stack sections.</span></div>
+    <div class="gradcard"><div class="grad" style="background:linear-gradient(135deg,#FFFFFF 0%,#FDF5E5 40%,#FDEED2 70%,#FAE3B6 100%)"></div><b>Paper-to-dawn (print/PDF)</b><code>linear-gradient(135deg, #FFFFFF, #FDF5E5 40%, #FDEED2 70%, #FAE3B6)</code><span class="note" style="margin:0">The light ground in the PDF. It is the only sanctioned cream, used for collateral and never for the website.</span></div>
+  </div>
+
+  <h3 class="sub">Neutral scale &amp; opacity ladder</h3>
+  <div class="ramp" role="img" aria-label="Neutral scale">
+    <div style="background:#111111;color:#fff">#111</div><div style="background:#121212;color:#fff">#121212</div><div style="background:#16181A;color:#fff">#16181A</div><div style="background:#1A1A1A;color:#fff">#1A1A1A</div><div style="background:#1C1E21;color:#fff">#1C1E21</div><div style="background:#242424;color:#fff">#242424</div><div style="background:#2B2B2B;color:#fff">#2B2B2B</div><div style="background:#3F4142;color:#fff">#3F4142</div><div style="background:#7C7C7C;color:#fff">#7C7C7C</div><div style="background:#818181;color:#fff">#818181</div><div style="background:#D9D9D9;color:#1C1E21">#D9D9D9</div><div style="background:#EFEFEF;color:#1C1E21">#EFEFEF</div><div style="background:#F6F6F6;color:#1C1E21">#F6F6F6</div>
+  </div>
+  <p class="note">On ink, never introduce new greys. Step white down by opacity instead:</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Opacity of #FFF on ink</th><th>Role</th><th>Effective</th><th>Contrast</th></tr></thead>
+    <tbody class="num">
+      <tr><td class="k">100%</td><td>Headlines, emphasized spans</td><td><code>#FFFFFF</code></td><td class="pass">16.7 : 1</td></tr>
+      <tr><td class="k">75%</td><td>Lead / feature body</td><td><code>#C6C7C8</code></td><td class="pass">9.9 : 1</td></tr>
+      <tr><td class="k">60%</td><td>Standard body on cards</td><td><code>#A4A5A6</code></td><td class="pass">6.8 : 1</td></tr>
+      <tr><td class="k">50%</td><td>Secondary body, list items</td><td><code>#8E8E90</code></td><td class="pass">5.1 : 1</td></tr>
+      <tr><td class="k">40%</td><td>Footer, legal (large text only)</td><td><code>#77787A</code></td><td class="warn">3.8 : 1</td></tr>
+      <tr><td class="k">35%</td><td>Disabled and inactive labels; ghost-button border</td><td><code>#6B6D6F</code></td><td class="fail">3.2 : 1</td></tr>
+      <tr><td class="k">20% / 10% / 5% / 4%</td><td>Borders · dividers · card fill · section wash</td><td>—</td><td>non-text</td></tr>
+    </tbody></table></div>
+
+  <h3 class="sub">Semantic &amp; status</h3>
+  <div class="grid g4">
+    <div class="sw small"><div class="chip" style="background:#24AC2B"></div><div class="meta"><b>Success</b><span class="hex">#24AC2B</span><small>App <code>elSecondary1</code>; confirmed booking and “Book now”.</small></div></div>
+    <div class="sw small"><div class="chip" style="background:#EC5042"></div><div class="meta"><b>Danger</b><span class="hex">#EC5042</span><small>App <code>elSecondary2</code>; errors and destructive actions.</small></div></div>
+    <div class="sw small"><div class="chip" style="background:#F1AA4E"></div><div class="meta"><b>Warning</b><span class="hex">#F1AA4E</span><small>App file-scope warn.</small></div></div>
+    <div class="sw small"><div class="chip" style="background:#01A0FD"></div><div class="meta"><b>Info / link-blue</b><span class="hex">#01A0FD</span><small>App <code>azure</code>; routes and map pins in secondary role.</small></div></div>
+  </div>
+  <h3 class="sub">Comparison-matrix tones</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Tone</th><th>Cell fill · light</th><th>Cell fill · dark</th><th>Text</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td class="k"><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#D8E8C5;margin-right:8px"></span>Green</td><td><code>rgba(46,160,96,.14)</code></td><td><code>rgba(52,191,113,.16)</code></td><td>Ink (see PDF fix)</td><td>Strength</td></tr>
+      <tr><td class="k"><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#F3E9BE;margin-right:8px"></span>Yellow</td><td><code>rgba(224,168,32,.16)</code></td><td><code>rgba(232,184,56,.16)</code></td><td>Ink</td><td>Maturing / partial</td></tr>
+      <tr><td class="k"><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#F3D9C7;margin-right:8px"></span>Red</td><td><code>rgba(228,70,58,.12)</code></td><td><code>rgba(235,84,72,.16)</code></td><td>Ink</td><td>Genuine gap</td></tr>
+      <tr><td class="k">Header</td><td colspan="2"><code>#20242E</code> (light) · <code>#161A22</code> (dark); hero column head in gold</td><td>White</td><td>—</td></tr>
+    </tbody></table></div>
+  <p class="note">Numbered stage badges (docs) use four 135° bands: red <code>#F04438→#E0352B</code>, orange <code>#FB9A2D→#F5840F</code>, blue <code>#2BA7E6→#1F8FD0</code> and violet <code>#8A6BF0→#7B4DDB</code>. They are for ordered, severity-grouped lists only.</p>
+
+  <h3 class="sub">Contrast audit of core pairs</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Foreground</th><th>Background</th><th>Ratio</th><th>WCAG</th></tr></thead>
+    <tbody class="num">
+      <tr><td>Gold #FBD78E</td><td>Ink #1C1E21</td><td>12.1 : 1</td><td class="pass">AAA</td></tr>
+      <tr><td>Graphite #2B2B2B</td><td>Gold #FBD78E</td><td>10.3 : 1</td><td class="pass">AAA</td></tr>
+      <tr><td>FireFlow #F7931A</td><td>Ink</td><td>7.3 : 1</td><td class="pass">AAA</td></tr>
+      <tr><td>Sky #8ECFFB</td><td>Ink</td><td>9.9 : 1</td><td class="pass">AAA</td></tr>
+      <tr><td>Coral #FF6741</td><td>Ink</td><td>5.8 : 1</td><td class="pass">AA</td></tr>
+      <tr><td>Coral #FF6741</td><td>White</td><td>2.9 : 1</td><td class="fail">Fail: avoid</td></tr>
+      <tr><td>Gold-ink #8B6914</td><td>White</td><td>5.1 : 1</td><td class="pass">AA</td></tr>
+      <tr><td>Gold #FBD78E</td><td>White</td><td>1.4 : 1</td><td class="fail">Never</td></tr>
+      <tr><td>Ink at 60%</td><td>Paper #F6F6F6</td><td>4.3 : 1</td><td class="warn">AA large only</td></tr>
+      <tr><td>Muted #818181</td><td>Void #121212</td><td>4.8 : 1</td><td class="pass">AA</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="ch" id="type">
+  <div class="eyebrow"><span class="n">04</span>Foundations</div>
+  <h2>Typography</h2>
+  <p class="intro">The whole system uses one superfamily, <strong>Red Hat</strong>, in three cuts, all free on Google Fonts. Display carries headlines and most body copy, Text carries interface controls, and Mono carries code and data. The docs ship Inter as a VitePress default but override it with Red Hat Display, and the app uses Red Hat Display too. Aeonik Pro is loaded in the app, but it is legacy: don't use it in new work.</p>
+  <div class="grid g3">
+    <div class="fam"><span class="tag">Primary · headlines + body</span><div class="big" style="font-family:var(--f-display);font-weight:700">Aa</div><b style="font-size:20px">Red Hat Display</b><div class="weights" style="font-family:var(--f-display)"><span style="font-weight:300">Light</span><span>Regular</span><span style="font-weight:500">Medium</span><span style="font-weight:600">Semi</span><span style="font-weight:700">Bold</span><span style="font-weight:800">Extra</span></div></div>
+    <div class="fam"><span class="tag">UI · buttons, nav, tags</span><div class="big" style="font-family:var(--f-text);font-weight:500">Aa</div><b style="font-size:20px">Red Hat Text</b><div class="weights" style="font-family:var(--f-text)"><span>Regular 400</span><span style="font-weight:500">Medium 500</span></div></div>
+    <div class="fam"><span class="tag">Code · data · IDs</span><div class="big" style="font-family:var(--f-mono)">{ }</div><b style="font-size:20px">Red Hat Mono</b><div class="weights" style="font-family:var(--f-mono);font-size:15px"><span>.fflow  exec_7f3a  0x742d…</span></div></div>
+  </div>
+  <p class="note">Fallback stack: <code>"Red Hat Display", "Red Hat Display Fallback" (Arial, size-adjust 99.15%), sans-serif</code>. The site ships metric-matched Arial fallbacks, so keep them to avoid layout shift.</p>
+
+  <h3 class="sub">Type scale</h3>
+  <p class="note" style="margin:0 0 8px">The website sets type in viewport units against a <b>1920 px desktop artboard</b> (1 vw = 19.2 px) and a <b>420 px mobile artboard</b>, switching at 920 px. Canonical pixel values at each artboard are below. For non-fluid media (PDF, slides, email), use the desktop column scaled to the canvas.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Token</th><th>Desktop @1920</th><th>Mobile @420</th><th>Weight</th><th>Leading</th><th>Tracking</th><th>Use</th></tr></thead>
+    <tbody class="num">
+      <tr><td class="k">display-xl</td><td>128 px · 6.667vw</td><td>52 px</td><td>700</td><td>1.04</td><td>−3%</td><td>Product hero (“Agents that <span style="color:var(--accent-text)">do more</span>”)</td></tr>
+      <tr><td class="k">display</td><td>74 px · 3.85vw</td><td>55 px</td><td>700</td><td>1.04</td><td>−3%</td><td>Home hero H1</td></tr>
+      <tr><td class="k">h1</td><td>64 px · 3.333vw</td><td>32 px</td><td>700</td><td>1.05</td><td>−3%</td><td>Section titles</td></tr>
+      <tr><td class="k">h2</td><td>52 px · 2.71vw</td><td>42 px</td><td>700</td><td>1.20</td><td>−3%</td><td>CTA block title</td></tr>
+      <tr><td class="k">stat</td><td>82 px · 4.271vw</td><td>54 px</td><td><b>300</b></td><td>1.30</td><td>−2%</td><td>Big numbers ($5m+, 85%)</td></tr>
+      <tr><td class="k">h3</td><td>38 px · 1.979vw</td><td>32 px</td><td>700</td><td>1.04–1.10</td><td>−3%</td><td>Sub-section, slide titles</td></tr>
+      <tr><td class="k">h4 / card title</td><td>36 px · 1.875vw</td><td>26 px</td><td>700</td><td>1.10</td><td>−2%</td><td>Card headings</td></tr>
+      <tr><td class="k">h5</td><td>28 px · 1.458vw</td><td>26 px</td><td>700</td><td>1.04</td><td>−3%</td><td>Small card titles</td></tr>
+      <tr><td class="k">lead</td><td>28 px · 1.458vw</td><td>18 px</td><td>400 (300 alt)</td><td>1.25</td><td>−2%</td><td>Hero subtitle</td></tr>
+      <tr><td class="k">body-l</td><td>24 px · 1.25vw</td><td>16 px</td><td>400</td><td>1.30</td><td>−2%</td><td>Section intros</td></tr>
+      <tr><td class="k">body</td><td>21 px · 1.094vw</td><td>16 px</td><td>400</td><td>1.30</td><td>−2%</td><td>Feature copy</td></tr>
+      <tr><td class="k">body-s</td><td>18 px · 0.938vw</td><td>14–16 px</td><td>400</td><td>1.30</td><td>−2%</td><td>Card copy</td></tr>
+      <tr><td class="k">ui</td><td>18 px · 0.94vw</td><td>16–21 px</td><td>400 Text</td><td>1.20</td><td>−2%</td><td>Buttons, nav (Red Hat Text)</td></tr>
+      <tr><td class="k">tag</td><td>16 px · 0.833vw</td><td>14 px</td><td>500 Text</td><td>1.20</td><td>−2%</td><td>Pills and labels</td></tr>
+      <tr><td class="k">eyebrow</td><td>14 px · 0.729vw</td><td>12 px</td><td>600</td><td>1.30</td><td>+0 to +6%, CAPS</td><td>Role labels in gold</td></tr>
+    </tbody></table></div>
+
+  <h3 class="sub">Specimens</h3>
+  <div class="stage dark" style="gap:0;padding-block:12px">
+    <div class="spec"><div class="lab"><b>display</b>700 · 1.04 · −3%</div><div class="s" style="font-size:clamp(34px,4.6vw,64px);font-weight:700;line-height:1.04;letter-spacing:-.03em">Meet FireFlow, the execution layer for financial institutions</div></div>
+    <div class="spec"><div class="lab"><b>h1 + gold span</b>700 · 1.05</div><div class="s" style="font-size:clamp(28px,3.4vw,48px);font-weight:700;line-height:1.05;letter-spacing:-.03em">Three products, <span style="color:#FBD78E">One execution layer</span></div></div>
+    <div class="spec"><div class="lab"><b>stat</b>300 · 1.3</div><div class="s" style="font-size:clamp(44px,4.4vw,64px);font-weight:300;letter-spacing:-.02em;line-height:1.1">$5m+ &nbsp;85% &nbsp;80%+</div></div>
+    <div class="spec"><div class="lab"><b>lead</b>400 · 1.25</div><div class="s" style="font-size:clamp(17px,1.6vw,22px);line-height:1.25;letter-spacing:-.02em">Deterministic orchestration infrastructure to deploy regulatory-grade, perimeter-contained AI agents in weeks, not years.</div></div>
+    <div class="spec"><div class="lab"><b>body · 60%</b>400 · 1.3</div><div class="s" style="font-size:16px;line-height:1.3;opacity:.6;max-width:60ch">Agents run in isolated environments with only the permissions they need. A misbehaving agent cannot reach beyond its scope into other workflows, the host or external data.</div></div>
+    <div class="spec"><div class="lab"><b>eyebrow</b>600 · caps</div><div class="s"><span class="b-eyebrow">Co-founder &amp; CTO</span> &nbsp; <span style="color:#F7931A;font-family:var(--f-text);font-size:14px;font-weight:500">● #1 The Orchestrator</span></div></div>
+    <div class="spec"><div class="lab"><b>mono</b>400</div><div class="s" style="font-family:var(--f-mono);font-size:14px;opacity:.8">DBOS.recv() · bank-assistant.fflow · exec 7f3a…c21 · 25+ event types</div></div>
+  </div>
+
+  <h3 class="sub">Typesetting rules</h3>
+  <div class="dd">
+    <div class="do"><h4>Do</h4><ul>
+      <li>Track headlines at −3% (for example, −0.1vw on 3.333vw). Track body at −2%.</li>
+      <li>Emphasize one phrase per headline with gold, or with Bold inside Regular body.</li>
+      <li>Keep body line length at 55–70 characters. Card copy maxes out near 36–45 characters.</li>
+      <li>Use weight 300 only for large numerals and the occasional lead.</li>
+      <li>Set sentence case everywhere. Reserve CAPS for eyebrows and tiny labels.</li>
+    </ul></div>
+    <div class="dont"><h4>Don't</h4><ul>
+      <li>Use Inter, Aeonik Pro or system fonts in brand work.</li>
+      <li>Set Red Hat Text for headlines. It is for controls only.</li>
+      <li>Use italics for emphasis. Italic is reserved for case-study captions and the “fireflow” logotype.</li>
+      <li>Center long paragraphs. Only centered section titles and short CTA copy are allowed.</li>
+      <li>Go below 12 px in print or 14 px on screen.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="ch" id="layout">
+  <div class="eyebrow"><span class="n">05</span>Foundations</div>
+  <h2>Layout &amp; grid</h2>
+  <p class="intro">The website is a <strong>fluid proportional canvas</strong> rather than a column grid. Every dimension is a vw fraction of the artboard, so a composition keeps exactly the same proportions from 1280 to 2560 px. Below 920 px the layout switches to a 420 px mobile artboard and stacks into a single column.</p>
+  <div class="grid g3">
+    <div class="panel"><span class="tag">Artboards</span><h4>1920 desktop · 420 mobile</h4><p>Convert with <code>vw = px / 19.2</code> on desktop and <code>vw = px / 4.2</code> on mobile. There is one breakpoint: <code>max-width: 920px</code>.</p></div>
+    <div class="panel"><span class="tag">Containers</span><h4>1520 · 1386 · 1800</h4><p>Main container <b>79.17vw</b> (1520 px, 200 px side margins). Narrow reading container <b>72.2vw</b> (1386). Hero container <b>93.75vw</b> (1800). All are centered. Mobile container is <b>90.48vw</b> (380 px, 20 px gutters).</p></div>
+    <div class="panel"><span class="tag">Header</span><h4>Floating glass pill</h4><p>70 px tall (3.64vw), 30 px from the top, 24 px inner padding, 40 px radius, white at 90% with 20 px backdrop blur. Nav is absolutely centered; the CTA sits right.</p></div>
+  </div>
+
+  <h3 class="sub">Composition patterns</h3>
+  <div class="grid g2">
+    <div class="panel"><h4>Hero, left-weighted</h4><p>Copy column about 50vw wide, inset 10.4vw from the container edge, 16.6vw from the top. Full-bleed prismatic video or 3D object behind it on the right. Social icons sit above the H1.</p></div>
+    <div class="panel"><h4>Hero, centered (product)</h4><p>Centered display-xl headline with a gold span, 59vw subtitle, and two 280×52 pills side by side with a 12 px gap. The hero fills at least 100svh minus 200 px.</p></div>
+    <div class="panel"><h4>Section title + card row</h4><p>Centered H1 flanked by 590 px gradient hairlines (white at 10%, fading out). Card row gap is 42 px (2.188vw). Cards are fixed at 434 px (22.6vw) in rows of three.</p></div>
+    <div class="panel"><h4>Split feature (alternating)</h4><p>Screenshot (727 px) on one side, a 653 px text column on the other, and the order flips on every other row. Product eyebrow sits in the product's accent color with a dot. Rows are 160 px apart.</p></div>
+    <div class="panel"><h4>Light panel on dark</h4><p>A full-width Paper <code>#F6F6F6</code> panel (72 px radius) wrapped in the animated aurora ring. It holds accordion rows for dense “what it does / why it matters” content.</p></div>
+    <div class="panel"><h4>Carousel</h4><p>Horizontal cards (432×530) with 223 px dark edge fades (<code>#16181A→transparent</code>), dot pagination and 57 px arrow buttons at 50% opacity.</p></div>
+  </div>
+
+  <h3 class="sub">Docs &amp; app layout</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Surface</th><th>Grid</th><th>Key metrics</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Docs (VitePress)</td><td>Nav + 272 px sidebar + content + outline</td><td>Nav 64 px; content max about 688 px; card grid <code>auto-fill minmax(220px,1fr)</code>, gap 16; product trio 3→1 columns at 960 px; feature grid 3→2→1 at 1024/768.</td></tr>
+      <tr><td class="k">App (Tailwind v4)</td><td>Floating header card; map or canvas + chat split</td><td>Spacing unit 4 px (<code>--spacing: .25rem</code>); containers xs–5xl (320–1024 px); radius scale 4/6/8/12/16/24/32.</td></tr>
+      <tr><td class="k">PDF (1258×1537 pt)</td><td>Portrait page, 26 pt ink frame, 2-column (≈55/45) on p.1</td><td>Content inset about 42 pt; card rows of 4; full-width tables; dark “band” modules closing each page.</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="ch" id="spacing">
+  <div class="eyebrow"><span class="n">06</span>Foundations</div>
+  <h2>Spacing</h2>
+  <p class="intro">The observed values cluster on an 8-based rhythm with a few large section jumps. Canonical tokens are below, shown at the 1920 artboard with the vw equivalent. On mobile, multiply the desktop ratio by about 2.9, or use the listed mobile value.</p>
+  <div style="display:grid;gap:2px;max-width:760px">
+    <div class="space-row"><b>space-1</b><span>4 px</span><div class="bar" style="width:4px"></div></div>
+    <div class="space-row"><b>space-2</b><span>8 px</span><div class="bar" style="width:8px"></div></div>
+    <div class="space-row"><b>space-3</b><span>12 px</span><div class="bar" style="width:12px"></div></div>
+    <div class="space-row"><b>space-4</b><span>16 px</span><div class="bar" style="width:16px"></div></div>
+    <div class="space-row"><b>space-5</b><span>20 px</span><div class="bar" style="width:20px"></div></div>
+    <div class="space-row"><b>space-6</b><span>24 px</span><div class="bar" style="width:24px"></div></div>
+    <div class="space-row"><b>space-8</b><span>32 px</span><div class="bar" style="width:32px"></div></div>
+    <div class="space-row"><b>space-10</b><span>40 px</span><div class="bar" style="width:40px"></div></div>
+    <div class="space-row"><b>space-12</b><span>48 px</span><div class="bar" style="width:48px"></div></div>
+    <div class="space-row"><b>space-16</b><span>64 px</span><div class="bar" style="width:64px"></div></div>
+    <div class="space-row"><b>space-20</b><span>80 px</span><div class="bar" style="width:80px"></div></div>
+    <div class="space-row"><b>space-30</b><span>120 px</span><div class="bar" style="width:120px"></div></div>
+    <div class="space-row"><b>space-45</b><span>180 px</span><div class="bar" style="width:180px"></div></div>
+    <div class="space-row"><b>space-60</b><span>240 px</span><div class="bar" style="width:240px"></div></div>
+  </div>
+  <div class="tbl" style="margin-top:24px"><table>
+    <thead><tr><th>Context</th><th>Desktop @1920</th><th>Mobile @420</th><th>Source value</th></tr></thead>
+    <tbody class="num">
+      <tr><td class="k">Section top padding</td><td>180 px (120–240)</td><td>50 px</td><td>9.375vw / 11.9vw</td></tr>
+      <tr><td class="k">Title → content</td><td>42–64 px</td><td>20 px</td><td>2.188–3.385vw</td></tr>
+      <tr><td class="k">Headline → subtitle</td><td>12–16 px</td><td>12 px</td><td>0.625–0.833vw</td></tr>
+      <tr><td class="k">Subtitle → buttons</td><td>32–34 px</td><td>44 px</td><td>1.67–1.77vw</td></tr>
+      <tr><td class="k">Card grid gap</td><td>30–42 px</td><td>20 px</td><td>1.56–2.188vw</td></tr>
+      <tr><td class="k">Card padding</td><td>22–50 px (40 typical)</td><td>20–25 px</td><td>1.146–2.604vw</td></tr>
+      <tr><td class="k">Card inner stack gap</td><td>12–33 px</td><td>12–25 px</td><td>0.625–1.719vw</td></tr>
+      <tr><td class="k">Button pair gap</td><td>12–30 px</td><td>12–16 px (stacked)</td><td>0.625–1.56vw</td></tr>
+      <tr><td class="k">Docs cards</td><td colspan="2">padding 20–26 px, gap 16–18 px (fixed px)</td><td>VitePress overrides</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="ch" id="shape">
+  <div class="eyebrow"><span class="n">07</span>Foundations</div>
+  <h2>Shape, borders &amp; effects</h2>
+  <h3 class="sub">Radius scale</h3>
+  <div class="radius-demo">
+    <div style="border-radius:8px">8 · inputs, badges</div>
+    <div style="border-radius:12px">12 · screenshots, icon tiles</div>
+    <div style="border-radius:18px">18 · docs cards, media</div>
+    <div style="border-radius:26px">26 · mobile cards</div>
+    <div style="border-radius:30px">30 · dark cards</div>
+    <div style="border-radius:38px">38 · feature cards</div>
+    <div style="border-radius:52px">52 · CTA panels</div>
+    <div style="border-radius:72px">72 · hero panels</div>
+    <div style="border-radius:999px">pill · all buttons</div>
+  </div>
+  <p class="note">Desktop sources: 1.563vw = 30 px; 1.979vw = 38 px; 2.708vw = 52 px; 3.75vw = 72 px. Mobile cards use 6.19vw = 26 px. Nest radii so that inner radius = outer radius − padding (the aurora ring is 80 → 72).</p>
+
+  <h3 class="sub">Borders, glows &amp; glass</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Effect</th><th>Value</th><th>Use</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Hairline on dark</td><td><code>1px rgba(255,255,255,.10–.20)</code></td><td>Dividers, card borders, screenshot frames</td></tr>
+      <tr><td class="k">Gradient hairline</td><td><code>linear-gradient(180deg, transparent, rgba(255,255,255,.2))</code> masked to a 1 px ring</td><td>Proof cards (border that lights from below)</td></tr>
+      <tr><td class="k">Ink border on light</td><td><code>1px #1C1E21</code></td><td>Paper stat cards, primary button</td></tr>
+      <tr><td class="k">Gold hover glow</td><td><code>box-shadow: 0 0 200px rgba(251,215,142,.16)</code> + <code>border rgba(251,215,142,.2)</code></td><td>Carousel and feature cards on hover</td></tr>
+      <tr><td class="k">Gold bloom</td><td><code>#FBD78E</code> ellipse, opacity .35, <code>blur(200px)</code></td><td>Behind product-page CTA</td></tr>
+      <tr><td class="k">Headline ember</td><td><code>text-shadow: 0 0 36px rgba(255,63,63,.5)</code> on gold text</td><td>One accent subtitle per page, at most</td></tr>
+      <tr><td class="k">Glass header</td><td><code>rgba(255,255,255,.9)</code> + <code>backdrop-filter: blur(20px)</code></td><td>Site nav only</td></tr>
+      <tr><td class="k">Card wash</td><td><code>linear-gradient(rgba(255,255,255,.06) 1%, transparent 71%), #1C1E21</code></td><td>Proof and feature cards</td></tr>
+      <tr><td class="k">Docs elevation</td><td><code>0 14px 36px rgba(0,0,0,.12)</code> + <code>translateY(-3px)</code></td><td>Docs product-card hover (the only drop shadow)</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="ch" id="components">
+  <div class="eyebrow"><span class="n">08</span>Application</div>
+  <h2>Components</h2>
+  <p class="intro">These are live specimens built with the production values. The stages below are deliberately fixed to brand colors rather than following your theme, because they show the components as they ship.</p>
+
+  <h3 class="sub">Navigation</h3>
+  <div class="stage dark">
+    <div class="navbar">
+      <div class="lk"><svg viewBox="0 0 47 21" aria-hidden="true"><use href="#pai-mark"/></svg>Persistent Labs</div>
+      <nav aria-label="Specimen"><span>Lanni</span><span>Docs</span><span>GitHub</span><span>Why FireFlow</span><span>Architecture Review</span></nav>
+      <button class="b-btn b-ghost" type="button">Get in touch</button>
+    </div>
+    <span class="cap">Header · 70 px · r40 · white 90% + blur(20px) · nav Red Hat Text 18 px #2B2B2B · hover underline 4% thickness</span>
+  </div>
+
+  <h3 class="sub">Buttons</h3>
+  <div class="grid g2">
+    <div class="stage dark">
+      <div class="row"><button class="b-btn b-primary" type="button">Schedule a Demo</button><button class="b-btn b-secondary" type="button">Read the Docs</button></div>
+      <div class="row"><button class="b-btn b-outline-dark" type="button">Explore the developer docs</button></div>
+      <span class="cap">Primary: gold, 1 px ink border, 280×52, r62, hover #FFCB63 · Secondary: white 90% · Outline: white 35% border, Display 600</span>
+    </div>
+    <div class="stage light">
+      <div class="row"><button class="b-btn b-primary" type="button">Get Started →</button><button class="b-btn b-ghost" type="button">Get in touch</button></div>
+      <span class="cap">On light: same gold primary; ghost uses ink 35% border and inverts to ink fill on hover (0.4 s)</span>
+    </div>
+  </div>
+  <div class="tbl" style="margin-top:14px"><table>
+    <thead><tr><th>Variant</th><th>Fill</th><th>Text</th><th>Border</th><th>Hover</th><th>Size</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Primary</td><td><code>#FBD78E</code></td><td><code>#2B2B2B</code> Text 400</td><td><code>1px #1C1E21</code></td><td><code>#FFCB63</code> (Lanni: <code>#FF6741</code> with label swap)</td><td>280×52 desktop · 100%×42–55 mobile</td></tr>
+      <tr><td class="k">Secondary</td><td><code>rgba(255,255,255,.9)</code></td><td><code>#2B2B2B</code></td><td>same as fill</td><td>ink border</td><td>same</td></tr>
+      <tr><td class="k">Ghost (light)</td><td>transparent</td><td><code>#2B2B2B</code></td><td><code>rgba(28,30,33,.35)</code></td><td>ink fill, white text</td><td>230×38</td></tr>
+      <tr><td class="k">Outline (dark)</td><td>transparent</td><td>white, Display 600</td><td><code>rgba(255,255,255,.35)</code></td><td>—</td><td>padding 7×20, r43</td></tr>
+      <tr><td class="k">Docs brand</td><td><code>#FBD78E</code></td><td><code>#1C1D1D</code> 600</td><td>none</td><td><code>#FFCC33</code> light · <code>#FFE085</code> dark</td><td>VitePress default</td></tr>
+    </tbody></table></div>
+
+  <h3 class="sub">Tags, eyebrows &amp; status</h3>
+  <div class="stage dark">
+    <div class="row">
+      <span class="b-tag">The Stack · What you get</span>
+      <span class="b-eyebrow">Co-founder &amp; CEO</span>
+      <span class="b-status" style="background:#FBD78E;color:#1C1E21">✓ in production</span>
+      <span class="b-status" style="background:#1C1E21;color:#FBD78E;border:1px solid rgba(251,215,142,.35)">&lt;/&gt; part of the stack</span>
+      <span class="b-status" style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.6)">⚙ in development</span>
+    </div>
+    <span class="cap">Tag: gold 10% fill, 20% border, r57, Text 500 · Status chips (from the PDF): production = gold, stack = ink, development = muted</span>
+  </div>
+
+  <h3 class="sub">Cards</h3>
+  <div class="stage dark">
+    <div class="grid g3">
+      <div class="c-dark"><span class="b-eyebrow">Co-founder &amp; CTO</span><h5>Vladimir Maslyakov</h5><p>Tech leader with 27+ years across fintech, finance and web3.</p></div>
+      <div class="c-hover"><h5>Sandboxed Execution</h5><p style="opacity:.6;font-size:15px;line-height:1.3;margin:0">Agents run in isolated environments with only the permissions they need.</p></div>
+      <div class="c-prod"><div class="tile">⌘</div><h5 style="font-size:19px">FireFlow Engine</h5><span class="tl">Build &amp; run agents</span><ul><li>Durable, exactly-once execution on DBOS</li><li>320+ typed building blocks</li></ul></div>
+    </div>
+    <span class="cap">Dark card: white 5%, r30 · Feature card: ink + 20% black overlay, r38, gold glow on hover (try it) · Docs product card: gold-tinted wash, r18, gold dot bullets</span>
+  </div>
+  <div class="stage dark" style="margin-top:16px">
+    <div class="grid g3">
+      <div class="c-light"><span class="stat">$5m+</span><b style="font-size:20px">Direct Build Cost</b><p>Estimated sunk cost for in-house deterministic infrastructure before going live.</p></div>
+      <div class="gborder" style="grid-column:span 2"><div><h5 style="font-size:32px;margin:0 0 6px;letter-spacing:-.03em">Composable Agent Platform</h5><p style="opacity:.8;margin:0">Beyond safety: the platform layer institution teams build on directly.</p></div></div>
+    </div>
+    <span class="cap">Stat card: Paper, 1 px ink border, r38, numeral 300 · Aurora panel: animated gradient ring around Paper</span>
+  </div>
+
+  <h3 class="sub">Chat &amp; generative UI (app)</h3>
+  <div class="grid g2">
+    <div class="chat" aria-label="Chat specimen">
+      <div class="who"><span>AI Assistant</span><span>Today 11:50</span></div>
+      <div class="ai">Of the three places near Cais do Sodré, only one accepts online bookings.
+        <div class="opt sel"><span>Rua do Alecrim · 4.8</span><span class="pbtn go">Book now</span></div>
+        <div class="opt"><span>Cais do Tejo · 4.6</span><span class="pbtn">Show phone</span></div>
+      </div>
+      <div class="me">Good, send everyone a calendar reminder.</div>
+    </div>
+    <div class="panel"><h4>Chat rules</h4><p>Ground <code>#121212</code>; assistant surfaces <code>#1A1A1A</code> and <code>#242424</code>; borders <code>#2B2B2B</code>; content text <code>#D9D9D9</code>; meta <code>#818181</code>. The <b>user bubble is gold</b> <code>#FBD78E</code> with <code>#171717</code> text, which is the only gold block in the chat. Interactive cards (options, maps, balances, transactions) replace plain text whenever an action is possible. A selected or confirmed option gets a green <code>#24AC2B</code> ring and a filled green action pill.</p></div>
+  </div>
+
+  <h3 class="sub">Tables</h3>
+  <div class="grid g2">
+    <div class="panel"><h4>Feature table (“what it enables / without it”)</h4><p>Header row on <code>#F2F2F2</code> with 12 px uppercase labels. Rows are separated by a 1 px divider or zebra fill. The consequence column is tinted <code>rgba(240,68,56,.06)</code> with a red hairline on its left. Feature names are bold ink; body is ink at 72%.</p></div>
+    <div class="panel"><h4>Comparison matrix</h4><p>Separated rows (8 px spacing) with 12 px radii at the ends. The header is dark <code>#20242E</code> and the hero column head is gold. The parameter column is Paper. Cells use tone fills (§03), and <b>text stays ink</b>: colored text on colored fills fails contrast (see the PDF review).</p></div>
+  </div>
+</section>
+
+<section class="ch" id="motion">
+  <div class="eyebrow"><span class="n">09</span>Application</div>
+  <h2>Motion</h2>
+  <p class="intro">Motion is slow and considered, like light moving across glass. Nothing bounces.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Token</th><th>Value</th><th>Use</th></tr></thead>
+    <tbody>
+      <tr><td class="k">duration-ui</td><td><code>0.4s</code> ease</td><td>Button fill and border changes, social icons, nav</td></tr>
+      <tr><td class="k">duration-card</td><td><code>0.3s</code></td><td>Card glow and border, title color, arrows</td></tr>
+      <tr><td class="k">duration-disclose</td><td><code>0.35s</code> grid-rows + <code>0.25s</code> opacity</td><td>Accordions (<code>grid-template-rows: 0fr → 1fr</code>)</td></tr>
+      <tr><td class="k">duration-fast</td><td><code>0.15s cubic-bezier(.2,0,.2,1)</code></td><td>App controls (Tailwind default and ff-file scope)</td></tr>
+      <tr><td class="k">ambient</td><td><code>10s ease infinite alternate</code></td><td>Aurora ring position drift</td></tr>
+      <tr><td class="k">pulse</td><td><code>3s ease-in-out infinite alternate</code>, opacity 1→0.2</td><td>Ambient hero light layers</td></tr>
+      <tr><td class="k">shine</td><td>Gold 30% bar, 45° sweep across the logo mark</td><td>Logo hover and load</td></tr>
+      <tr><td class="k">scroll reveal</td><td>Text mask wipe with 2 px backdrop blur; lines scale from 0 (<code>scaleX</code>)</td><td>Product-page hero and timeline connectors</td></tr>
+    </tbody></table></div>
+  <p class="note">Always honor <code>prefers-reduced-motion: reduce</code> (the docs already disable all transitions). Content must be readable at rest, so never park copy at opacity 0 waiting on scroll.</p>
+</section>
+
+<section class="ch" id="imagery">
+  <div class="eyebrow"><span class="n">10</span>Application</div>
+  <h2>Imagery &amp; iconography</h2>
+  <div class="grid g2">
+    <div class="panel"><h4>Hero imagery: prismatic glass</h4><p>Dark, soft-focus footage of glass monoliths and prisms splitting light into thin spectral edges (<code>sphere.mp4</code>, the Lanni hero). The palette stays near-monochrome, with rainbow only at the refracted edges. Blend with <code>mix-blend-mode: lighten</code> or <code>screen</code> at 50%.</p></div>
+    <div class="panel"><h4>Product proof: real UI</h4><p>Real screenshots of the flow editor (typed-port node graph with colored wires), the VFS and executions panels, and the chat app. Frame them in macOS-style windows at radius 12–18 with a 1 px white-20% border. Don't use fake dashboards.</p></div>
+    <div class="panel"><h4>3D glyph tiles</h4><p>Iridescent chrome or glass icons (shield, coin, padlock) on dark rounded tiles with a cyan-to-lilac rim light, used on feature carousel cards.</p></div>
+    <div class="panel"><h4>Line illustrations</h4><p>Isometric outline drawings (cube, ring, arrow) with one flat color block (lime, gold or coral). They sit in the top-right corner of Paper stat cards and bleed off the edge.</p></div>
+    <div class="panel"><h4>UI icons</h4><p>Outline icons in the 1.5 px stroke Lucide/Tabler style at 16–24 px, filled in ink on light and white on dark. Social icons are round (circle plus glyph) and invert on hover.</p></div>
+    <div class="panel"><h4>Maps &amp; data</h4><p>Dark map tiles, a gold route line, and red star pins with white rings. For charts use Plotly (supported in chat) restyled to the palette: gold first series, then sky and orange, with grid at white 10%.</p></div>
+  </div>
+</section>
+
+<section class="ch" id="voice">
+  <div class="eyebrow"><span class="n">11</span>Application</div>
+  <h2>Voice &amp; copy</h2>
+  <p class="intro">The voice is confident and specific, written for risk owners. It names the failure mode and then the guarantee. It uses short declaratives and contrast pairs.</p>
+  <div class="grid g2">
+    <div class="panel"><h4>Patterns that work</h4><p>• <b>Contrast pairs:</b> “Don't become a node / Own the rails.” “Most agents answer. Lanni executes.”<br>• <b>Numbers as proof:</b> “$5m+”, “2–4 years”, “25+ event types”, always with a source in parentheses.<br>• <b>Mechanism named:</b> “DBOS persists every step before proceeding.”<br>• <b>One gold phrase</b> per headline: “Agents that <i>do more</i>”.</p></div>
+    <div class="panel"><h4>House style</h4><p>• Sentence case for headings. Title Case only on buttons (“Schedule a Demo”). Pick one and keep it; sentence case is recommended.<br>• Use an en dash for ranges (2–4 years) and an em dash for asides. Never use a spaced hyphen as a dash.<br>• Say “agents”, “flows”, “nodes” and “rooms”, which are the product nouns.<br>• Keep it regulatory-grade: no hype adjectives, no emoji, no exclamation marks.<br>• Use British or US spelling consistently. The site mixes “specialised” with “organization”.</p></div>
+  </div>
+</section>
+
+<section class="ch" id="surfaces">
+  <div class="eyebrow"><span class="n">12</span>Application</div>
+  <h2>Surfaces</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Surface</th><th>Ground</th><th>Accent</th><th>Type</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Marketing web</td><td>Ink <code>#1C1E21</code> (dark only)</td><td>Gold <code>#FBD78E</code></td><td>Display + Text</td><td>Fluid vw; light Paper panels as contrast moments; prismatic video.</td></tr>
+      <tr><td class="k">Product pages (Lanni)</td><td>Ink, with <code>#111→#1A1B1C</code> panels</td><td>Gold + product accents + coral</td><td>Display</td><td>More theatrical: 128 px hero, bloom, scroll wipes.</td></tr>
+      <tr><td class="k">Docs</td><td>Light <code>#FFF</code>/<code>#FFF5E6</code> sidebar · dark <code>#1C1D1D</code>/<code>#151616</code></td><td>Gold-ink <code>#8B6914</code> light · <code>#FFD754</code> dark</td><td>Display (Mono for code)</td><td>Both themes; the only surface with a true light mode.</td></tr>
+      <tr><td class="k">App (Flame Chorus UI)</td><td>Void <code>#121212</code>, surfaces <code>#1A1A1A</code>/<code>#242424</code></td><td>Gold user bubble, <code>#EABD64</code> primary</td><td>Display</td><td>Tailwind tokens; green success for confirmations.</td></tr>
+      <tr><td class="k">Print / PDF / decks</td><td>Paper-to-dawn gradient inside an ink frame</td><td>Gold cards, gold numerals</td><td>Display</td><td>Dark “band” modules for key arguments; see §13.</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="ch" id="pdf">
+  <div class="eyebrow"><span class="n">13</span>Reference</div>
+  <h2>Review: FF_intro.pdf</h2>
+  <p class="intro">This is a four-page investor and partner brief (1258 × 1537 pt, a screen-first portrait format, exported from Acrobat Pro in July 2026). It is the most complete expression of the brand's <em>light</em> mode, and it is the reference for all print collateral. Below: what it establishes, page by page, followed by the defects to fix before it circulates further.</p>
+
+  <div class="score">
+    <div><b>8.5</b><small>Visual identity &amp; polish</small></div>
+    <div><b>7</b><small>Hierarchy &amp; layout</small></div>
+    <div><b>5</b><small>Accessibility &amp; legibility</small></div>
+    <div><b>6</b><small>Consistency with site/docs</small></div>
+    <div><b>6.5</b><small>Copy &amp; naming hygiene</small></div>
+  </div>
+  <p class="note">These are subjective scores out of 10, meant to rank the fixes, not to grade the work.</p>
+
+  <h3 class="sub">What it establishes for the system</h3>
+  <div class="grid g2">
+    <div class="panel"><h4>A light mode for collateral</h4><p>The PDF puts the brand on a white-to-dawn gradient (<code>#FFFFFF → #FDEED2 → #FAE3B6</code>) inside a 26 pt ink frame <code>#1D1E22</code>. That gives the dark-first system a sanctioned warm-light variant without inventing new colors.</p></div>
+    <div class="panel"><h4>The same type system</h4><p>The glyphs are Red Hat Display throughout (embedded as Type 3 outlines). The scale uses heavy 700 headlines with −3% tracking, and body at 300–400 in ink at about 70–80%, which matches the website.</p></div>
+    <div class="panel"><h4>Gold as a surface</h4><p>Gold appears as a <em>fill</em> for featured cards (<code>#FDD687</code> ≈ brand <code>#FBD78E</code>), highlight chips (“no other open-source solutions”) and the “2–4 years.” pill (gold text on an ink capsule, 12:1).</p></div>
+    <div class="panel"><h4>Status-chip language</h4><p>“in production” (gold chip), “part of the stack” (ink chip with a code icon) and “in development” (muted chip on a faded card) form a clear maturity vocabulary. The bible adopts it as the Status component (§08).</p></div>
+    <div class="panel"><h4>The aurora, printed</h4><p>The product panel on p.2 is a mesh gradient of teal <code>#365D6E</code>, olive <code>#868E5A</code>, coral <code>#E88F67</code> and cream. It is the same family as the website's animated aurora ring (<code>#3E859E · #96AB70 · #E28B5F · #FBD78E</code>).</p></div>
+    <div class="panel"><h4>Dark “argument bands”</h4><p>Each page closes on an ink band (r≈30) with a gold headline and outlined sub-cards (“Why a bank should not go down this path alone”, “Useful Links”). It is a strong, repeatable closing device.</p></div>
+  </div>
+
+  <h3 class="sub">Page by page</h3>
+  <div class="pgthumb">
+    <div class="panel"><span class="tag">p.1 · Narrative</span><h4>“Built for the moments where a text reply isn't enough”</h4><p>A two-column layout (about 55/45). The left column is the story in alternating white and cream bands with gold bullet dots and a gold gradient pull-quote card with the mark. The right column holds four dark app screenshots (Lisbon, hike, anime room, idle cash) with italic underlined captions that link to Figma prototypes. It is the strongest page, because it shows the product instead of describing it.</p></div>
+    <div class="panel"><span class="tag">p.2 · What is FireFlow</span><h4>Products + feature table</h4><p>An H1 plus a bold lead, bullet focus areas, the aurora product panel with three products in white text, a gold highlight chip, then an eyebrow (“PLATFORM EVOLUTION”) and a large H1 above an eight-row feature table whose “without it” column is tinted red. The logic is clear, but the page is text-heavy.</p></div>
+    <div class="panel"><span class="tag">p.3 · Production-grade</span><h4>Staggered status cards + stages</h4><p>Four cards at stepped heights (a staircase that suggests maturity): two dark, one gold, one faded. Then a two-line headline with the gold-on-ink “2–4 years.” pill, a five-row stage table, and the dark argument band with Gartner and Knight Capital proof points. This is the best-composed page.</p></div>
+    <div class="panel"><span class="tag">p.4 · Market comparison</span><h4>22-row comparison matrix</h4><p>Five columns: FireFlow + Flame Chorus against LangFlow + Temporal, n8n and Claude Code. The cells are tone-coded green, yellow and red, with a dark header and a “Useful Links” band. It is dense and informative, but the least legible page in the document.</p></div>
+  </div>
+
+  <h3 class="sub">Issues &amp; fixes</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Sev.</th><th>Where</th><th>Issue</th><th>Fix</th></tr></thead>
+    <tbody>
+      <tr><td><span class="sev h">High</span></td><td>p.4 matrix</td><td>Colored text on same-hue fills fails contrast: yellow <code>#C09D3D</code> on <code>#F3E9BE</code> is <b>2.1:1</b>, red <code>#DA6B65</code> on <code>#F3D9C7</code> is <b>2.5:1</b>, and green <code>#12921F</code> on <code>#D8E8C5</code> is 3.2:1, all at about 8 pt.</td><td>Set all cell text in ink (12.9:1) and let the fill carry the tone. If colored text is required, use the dark tones <code>#1A6B24</code>, <code>#7A5A12</code> and <code>#A8322B</code> (≥4.9:1). Raise the size to ≥9 pt.</td></tr>
+      <tr><td><span class="sev h">High</span></td><td>Whole file</td><td>Every font is embedded as <b>Type 3 with no names</b>. Text extraction garbles (“Postgre L”, “  00 standard blocks”, “eady-made”), which breaks search, copy/paste and screen readers, and fails accessibility review at banks.</td><td>Re-export with real embedded OpenType (Red Hat Display subset) and PDF/UA tagging. Don't flatten or outline text.</td></tr>
+      <tr><td><span class="sev h">High</span></td><td>p.3 vs site/docs</td><td>Contradictory proof numbers: “around 300 standard blocks” (PDF), “146+ pre-built nodes” (Lanni page), “320+ typed building blocks” (docs).</td><td>Choose one audited figure and update all three sources. Put the number in a shared facts sheet.</td></tr>
+      <tr><td><span class="sev m">Med</span></td><td>p.3</td><td>The faded in-development card goes too far. Its italic “Status:” line is about <code>#B0A99B</code> on <code>#F2E7D3</code> (<b>1.9:1</b>), the “in development” chip is 3.0:1, and the body is 4.2:1. (The p.1 grey intro copy passes at 7.4:1.)</td><td>Show “in development” with the chip and a dashed border instead of washing out the text. Keep all text at ≥4.5:1 (ink 60% or darker).</td></tr>
+      <tr><td><span class="sev m">Med</span></td><td>All pages</td><td>Naming drift: “PersistentAI” / “Persistent AI” (now Persistent Labs), “Memory” / “Memory Agent” / “Memory system”, “FireFlow Engine” / “FireFlow”, and the site's “MemoryTree” is absent.</td><td>Apply the naming table in §02. The PDF should say MemoryTree.</td></tr>
+      <tr><td><span class="sev m">Med</span></td><td>p.4</td><td>The table header reads “<b>Parametre</b>” (French spelling).</td><td>Change to “Parameter”, or better “Capability”.</td></tr>
+      <tr><td><span class="sev m">Med</span></td><td>p.1–2</td><td>Spaced hyphens used as dashes (“FireFlow Engine - A platform…”, “Memory - Built-in…”).</td><td>Use an em dash or a colon: “FireFlow Engine — a platform…”.</td></tr>
+      <tr><td><span class="sev h">High</span></td><td>p.2</td><td>White body text over the gold and orange pole of the aurora panel drops to about <b>1.7–2.6:1</b> (Memory Agent copy, right half). The Flame Chorus copy on the teal side passes at about 4.4–5.8:1.</td><td>Add a 30–40% ink scrim under the text column, or move the light pole of the gradient away from the copy.</td></tr>
+      <tr><td><span class="sev l">Low</span></td><td>p.2</td><td>The “PLATFORM EVOLUTION” eyebrow labels a table that isn't about evolution.</td><td>Rename it to “Capabilities” or drop it.</td></tr>
+      <tr><td><span class="sev l">Low</span></td><td>p.1</td><td>Case captions are italic and underlined with an arrow glyph. Their link affordance is clear, but they are the only italics in the brand.</td><td>Keep them, and codify “italic = external case link” in the style guide.</td></tr>
+      <tr><td><span class="sev l">Low</span></td><td>Format</td><td>The custom page size (17.5 × 21.3 in) prints badly on A4 or Letter and has no bleed.</td><td>Also export an A4 or Letter edition, or a 16:9 deck, from the same components.</td></tr>
+      <tr><td><span class="sev l">Low</span></td><td>p.3</td><td>The Knight Capital fact needs a source line, like the Gartner claim has.</td><td>Add a small source footnote. The brand's pattern is sources in parentheses.</td></tr>
+    </tbody></table></div>
+
+  <h3 class="sub">Palette sampled from the PDF</h3>
+  <div class="grid g4">
+    <div class="sw small"><div class="chip" style="background:#1D1E22"></div><div class="meta"><b>Frame ink</b><span class="hex">#1D1E22</span><small>≈ Ink #1C1E21</small></div></div>
+    <div class="sw small"><div class="chip" style="background:#FDEED2"></div><div class="meta"><b>Dawn</b><span class="hex">#FDEED2</span><small>page gradient mid</small></div></div>
+    <div class="sw small"><div class="chip" style="background:#FAE3B6"></div><div class="meta"><b>Dawn deep</b><span class="hex">#FAE3B6</span><small>page gradient end</small></div></div>
+    <div class="sw small"><div class="chip" style="background:#FDD687"></div><div class="meta"><b>Card gold</b><span class="hex">#FDD687</span><small>≈ Gold #FBD78E</small></div></div>
+    <div class="sw small"><div class="chip" style="background:#F2E7D3"></div><div class="meta"><b>Faded card</b><span class="hex">#F2E7D3</span><small>in-development state</small></div></div>
+    <div class="sw small"><div class="chip" style="background:#F2F2F2"></div><div class="meta"><b>Table head</b><span class="hex">#F2F2F2</span><small>≈ Paper</small></div></div>
+    <div class="sw small"><div class="chip" style="background:#FFF0E9"></div><div class="meta"><b>“Without it” tint</b><span class="hex">#FFF0E9</span><small>red-tinted column</small></div></div>
+    <div class="sw small"><div class="chip" style="background:linear-gradient(90deg,#365D6E,#868E5A,#E88F67,#FFF1D7)"></div><div class="meta"><b>Printed aurora</b><span class="hex">#365D6E → #FFF1D7</span><small>product panel</small></div></div>
+  </div>
+</section>
+
+<section class="ch" id="decisions">
+  <div class="eyebrow"><span class="n">14</span>Reference</div>
+  <h2>Open decisions for your review</h2>
+  <p class="intro">The sources disagree in a few places. The bible currently follows the recommendation on each line. Please confirm or overrule these before this becomes a skill.</p>
+  <div class="grid g2">
+    <div class="decision"><b>1. Company name</b><span class="note" style="margin:0"><b>Resolved: Persistent Labs</b>, which replaces both “Persistent AI” (logo, ©) and “PersistentAI” (docs, Lanni copy). The logo wordmark, site footer, © line and docs all need updating.</span></div>
+    <div class="decision"><b>2. Memory product name</b><span class="note" style="margin:0">MemoryTree (site) vs Memory Tree (docs) vs Memory / Memory Agent / Memory system (PDF). <b>Recommended: MemoryTree.</b></span></div>
+    <div class="decision"><b>3. Gold hover value</b><span class="note" style="margin:0"><code>#FFCB63</code> (site) vs <code>#FFCC33</code> (docs). <b>Recommended: #FFCB63</b>, which is softer and closer to the base gold.</span></div>
+    <div class="decision"><b>4. App primary gold</b><span class="note" style="margin:0">The app's <code>--color-primary #EABD64</code> vs brand <code>#FBD78E</code>. <b>Recommended: keep #EABD64 only as a pressed/active state</b> and use #FBD78E as primary.</span></div>
+    <div class="decision"><b>5. Light-mode website?</b><span class="note" style="margin:0">The marketing site is dark-only. Docs and the PDF prove a light mode. <b>Recommended: keep web dark-only</b>, with light reserved for docs and collateral.</span></div>
+    <div class="decision"><b>6. Button casing</b><span class="note" style="margin:0">“Schedule a Demo” (Title) vs “Get in touch” (sentence) on the same header. <b>Recommended: sentence case everywhere.</b></span></div>
+    <div class="decision"><b>7. Node count</b><span class="note" style="margin:0">146+, ~300 or 320+. The design system can't settle this, so you need to supply the correct figure.</span></div>
+    <div class="decision"><b>8. Legacy fonts</b><span class="note" style="margin:0">Aeonik Pro (app) and Inter (docs default) are both still loaded. <b>Recommended: remove both</b> and use Red Hat only.</span></div>
+  </div>
+</section>
+
+<section class="ch" id="tokens">
+  <div class="eyebrow"><span class="n">15</span>Reference</div>
+  <h2>Token sheet</h2>
+  <p class="intro">This token sheet is ready to paste into CSS. It will also become the core of the design skill.</p>
+  <div style="display:flex;justify-content:flex-end;margin-bottom:10px"><button class="copy" id="copy-tokens" type="button">Copy tokens</button></div>
+<pre class="tokens" id="tokens-src"><span class="c">/* Persistent Labs — core tokens v1.1 */</span>
+:root {
+  <span class="c">/* color · core */</span>
+  --pl-ink: <span class="v">#1C1E21</span>;        --pl-void: <span class="v">#121212</span>;
+  --pl-gold: <span class="v">#FBD78E</span>;       --pl-gold-hover: <span class="v">#FFCB63</span>;
+  --pl-gold-ink: <span class="v">#8B6914</span>;   <span class="c">/* gold for text on light */</span>
+  --pl-white: <span class="v">#FFFFFF</span>;      --pl-paper: <span class="v">#F6F6F6</span>;
+  --pl-graphite: <span class="v">#2B2B2B</span>;   --pl-warm-white: <span class="v">#FFFAF1</span>;
+  <span class="c">/* color · products */</span>
+  --pl-fireflow: <span class="v">#F7931A</span>;   --pl-memorytree: <span class="v">#8ECFFB</span>;
+  --pl-chorus: <span class="v">#FBD78E</span>;     --pl-lanni: <span class="v">#FF6741</span>;
+  <span class="c">/* color · semantic (app) */</span>
+  --pl-success: <span class="v">#24AC2B</span>;    --pl-danger: <span class="v">#EC5042</span>;
+  --pl-warning: <span class="v">#F1AA4E</span>;    --pl-info: <span class="v">#01A0FD</span>;
+  <span class="c">/* app surfaces */</span>
+  --pl-app-bg: <span class="v">#121212</span>;  --pl-app-surface: <span class="v">#1A1A1A</span>;
+  --pl-app-hover: <span class="v">#242424</span>; --pl-app-border: <span class="v">#2B2B2B</span>;
+  --pl-app-text: <span class="v">#D9D9D9</span>;  --pl-app-muted: <span class="v">#818181</span>;
+  <span class="c">/* text on ink (white opacity ladder) */</span>
+  --pl-on-ink-1: <span class="v">#FFFFFF</span>; --pl-on-ink-2: <span class="v">rgba(255,255,255,.75)</span>;
+  --pl-on-ink-3: <span class="v">rgba(255,255,255,.60)</span>; --pl-on-ink-4: <span class="v">rgba(255,255,255,.50)</span>;
+  --pl-line-ink: <span class="v">rgba(255,255,255,.10)</span>; --pl-fill-ink: <span class="v">rgba(255,255,255,.05)</span>;
+  <span class="c">/* gradients */</span>
+  --pl-aurora: <span class="v">linear-gradient(270deg,#FBD78E 0%,#E28B5F 38%,#3E859E 67%,#96AB70 100%)</span>;
+  --pl-title-grad: <span class="v">linear-gradient(90deg,#38829B 0%,#4E7768 39%,#BAA565 69%,#A87B40 89%)</span>;
+  --pl-prism: <span class="v">linear-gradient(91deg,#FFE2AA 8.75%,#FFFFFF 58%,#78FFE7 115%)</span>;
+  --pl-dawn: <span class="v">linear-gradient(135deg,#FFFFFF 0%,#FDF5E5 40%,#FDEED2 70%,#FAE3B6 100%)</span>;
+  <span class="c">/* type */</span>
+  --pl-font-display: <span class="v">"Red Hat Display", Arial, sans-serif</span>;
+  --pl-font-text: <span class="v">"Red Hat Text", Arial, sans-serif</span>;
+  --pl-font-mono: <span class="v">"Red Hat Mono", ui-monospace, monospace</span>;
+  --pl-track-head: <span class="v">-0.03em</span>; --pl-track-body: <span class="v">-0.02em</span>;
+  --pl-lh-display: <span class="v">1.04</span>; --pl-lh-head: <span class="v">1.1</span>; --pl-lh-body: <span class="v">1.3</span>; --pl-lh-ui: <span class="v">1.2</span>;
+  <span class="c">/* fluid type (1920 artboard, floors for small screens) */</span>
+  --pl-fs-display-xl: <span class="v">clamp(52px, 6.667vw, 128px)</span>;
+  --pl-fs-display: <span class="v">clamp(44px, 3.85vw, 74px)</span>;
+  --pl-fs-h1: <span class="v">clamp(32px, 3.333vw, 64px)</span>;
+  --pl-fs-h3: <span class="v">clamp(26px, 1.979vw, 38px)</span>;
+  --pl-fs-h4: <span class="v">clamp(24px, 1.875vw, 36px)</span>;
+  --pl-fs-stat: <span class="v">clamp(54px, 4.271vw, 82px)</span>;
+  --pl-fs-lead: <span class="v">clamp(18px, 1.458vw, 28px)</span>;
+  --pl-fs-body: <span class="v">clamp(16px, 1.094vw, 21px)</span>;
+  --pl-fs-body-s: <span class="v">clamp(14px, 0.938vw, 18px)</span>;
+  --pl-fs-ui: <span class="v">clamp(16px, 0.94vw, 18px)</span>;
+  --pl-fs-eyebrow: <span class="v">clamp(12px, 0.729vw, 14px)</span>;
+  <span class="c">/* space (8-based) */</span>
+  --pl-s1:4px; --pl-s2:8px; --pl-s3:12px; --pl-s4:16px; --pl-s5:20px; --pl-s6:24px;
+  --pl-s8:32px; --pl-s10:40px; --pl-s12:48px; --pl-s16:64px; --pl-s20:80px;
+  --pl-s30:120px; --pl-s45:180px; --pl-s60:240px;
+  --pl-section: <span class="v">clamp(50px, 9.375vw, 180px)</span>;
+  --pl-container: <span class="v">min(79.17vw, 1520px)</span>; <span class="c">/* mobile: 90.48vw */</span>
+  <span class="c">/* radius */</span>
+  --pl-r-sm:8px; --pl-r-md:12px; --pl-r-lg:18px; --pl-r-card:30px; --pl-r-feature:38px;
+  --pl-r-panel:52px; --pl-r-hero:72px; --pl-r-pill:999px;
+  <span class="c">/* effects & motion */</span>
+  --pl-glow-gold: <span class="v">0 0 200px rgba(251,215,142,.16)</span>;
+  --pl-glass: <span class="v">rgba(255,255,255,.9)</span>; --pl-glass-blur: <span class="v">20px</span>;
+  --pl-t-ui: <span class="v">.4s ease</span>; --pl-t-card: <span class="v">.3s ease</span>; --pl-t-fast: <span class="v">.15s cubic-bezier(.2,0,.2,1)</span>;
+  --pl-breakpoint: <span class="v">920px</span>;
+}</pre>
+  <p class="note" style="margin-top:28px">Sources: <a href="https://persistentai.org" target="_blank" rel="noopener">persistentai.org</a> · <a href="https://persistentai.org/lanni" target="_blank" rel="noopener">/lanni</a> · <a href="https://docs.persistentai.org" target="_blank" rel="noopener">docs.persistentai.org</a> · stage.persistentai.org (theme tokens, wallet-gated UI not reviewed) · <a href="https://persistentai.substack.com/p/fireflow-how-fireflow-brings-ai-agents" target="_blank" rel="noopener">Substack: How FireFlow brings AI agents…</a> · <a href="https://hackmd.io/@20Hsjk76R5GSQhXY76NPUQ/BykmTkKRZe" target="_blank" rel="noopener">HackMD: FireFlow Stack Vision</a> · FF_intro.pdf. All values were captured on 23 Sep 2026.</p>
+</section>
+<script>
+(function(){
+  var b=document.getElementById('copy-tokens'); if(!b) return;
+  b.addEventListener('click',function(){
+    var t=document.getElementById('tokens-src').innerText;
+    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('tokens-src'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected. Press ⌘C';}
+    try{navigator.clipboard.writeText(t).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy tokens'},1600)},sel);}catch(e){sel()}
+  });
+})();
+</script>
+</main>
+</div>
+</div>
+</body>
+</html>

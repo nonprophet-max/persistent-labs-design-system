@@ -1,0 +1,9 @@
+{
+  "name": "unfazed-brand",
+  "version": "2.3.0",
+  "description": "Create and review Unfazed.dev branded interfaces, pages, copy and collateral using its identity specifications. Use for Unfazed.dev work, not unrelated brands.",
+  "author": {
+    "name": "Persistent Labs"
+  },
+  "skills": "./skills/"
+}

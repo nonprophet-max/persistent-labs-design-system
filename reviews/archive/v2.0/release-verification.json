@@ -1,0 +1,59 @@
+{
+  "date": "2026-09-23T18:15:26.130434+00:00",
+  "status": "working-edition-passed",
+  "artifact": "index.html",
+  "artifact_sha256": "f1d3b545fd9af35b3c49dbbacee52a1c3f8eda64fd806a718053293fca3c43b9",
+  "original_archive_sha256": "57142736e3ac0bc89f4d24affa316e6161fcf57e427b1dbe826b06c085fcb1d1",
+  "original_unchanged": true,
+  "live_review_rounds": 3,
+  "final_reviews": {
+    "round-3-strategy.md": "2f71a718e6c8a8948158c404295b7aa13f4f93a7805d0335a49fd04bbd42aaef",
+    "round-3-design.md": "117d433e66c96f95b8fde2ea3cb0d00f06164dd3961cf5c1dba959ee76b31205"
+  },
+  "browser_report_sha256": "5756d97138dd041c7862884fa58964883051ed86be5815880285b91970b5205c",
+  "browser_checks": {
+    "passed": true,
+    "viewport_widths": [
+      320,
+      390,
+      768,
+      1024,
+      1440
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "runtime_errors": 0,
+    "warnings": 0,
+    "fonts_loaded": [
+      "Red Hat Display",
+      "Red Hat Text",
+      "Red Hat Mono"
+    ]
+  },
+  "token_and_asset_checks": {
+    "passed": true,
+    "contrast_pairs": 69
+  },
+  "workflow_tests": {
+    "passed": true,
+    "count": 11,
+    "method": "offline fake reviewer processes; not model review calls"
+  },
+  "git": {
+    "branch": "codex/design-bible",
+    "committed": false,
+    "pushed": false
+  },
+  "open_decisions": [
+    "MemoryTree is the provisional fifth product; user named four.",
+    "New FireFlow, Lanni and MemoryTree symbols and PI positioning/palette remain proposals.",
+    "Lanni product availability remains unverified."
+  ],
+  "limits": [
+    "No screen-reader, Safari or Firefox testing.",
+    "No independent technical verification of product claims.",
+    "No print/PDF layout certification."
+  ]
+}

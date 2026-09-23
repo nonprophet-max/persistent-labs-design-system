@@ -1,0 +1,22 @@
+{
+  "name": "persistent-labs-design-bible",
+  "version": "2.3.0",
+  "private": true,
+  "type": "module",
+  "description": "Persistent Labs design bible and independent review workflow",
+  "scripts": {
+    "build": "python3 scripts/build.py",
+    "check": "python3 scripts/build.py && python3 scripts/check.py && node scripts/qa.mjs",
+    "test:workflow": "python3 -m unittest discover -s review-workflow -p 'test_*.py' -v",
+    "build:site": "python3 scripts/build.py && python3 scripts/build_site.py",
+    "build:skills": "python3 scripts/package_skills.py",
+    "check:static": "python3 scripts/check.py",
+    "check:skills": "python3 scripts/check_skills.py"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}

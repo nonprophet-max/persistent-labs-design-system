@@ -1,0 +1,4 @@
+interface:
+  display_name: "Galactica Brand"
+  short_description: "Galactica identity, assets and design guidance"
+  default_prompt: "Use $galactica-brand to apply the Galactica brand to this task."

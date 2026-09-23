@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Persistent Labs independent design review v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["role", "round", "target_sha256", "complete", "summary", "inspected_files", "checks", "limitations", "findings", "prior_findings"],
+  "properties": {
+    "role": {"type": "string", "enum": ["strategy", "visual", "accessibility"]},
+    "round": {"type": "integer", "minimum": 1},
+    "target_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "complete": {"type": "boolean"},
+    "summary": {"type": "string", "minLength": 1},
+    "inspected_files": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "checks": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "limitations": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "severity", "kind", "location", "title", "evidence", "recommendation"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^(strategy|visual|accessibility)-[0-9]{3,}$"},
+          "severity": {"type": "string", "enum": ["blocker", "high", "medium", "low"]},
+          "kind": {"type": "string", "enum": ["measured", "observed", "strategic"]},
+          "location": {"type": "string", "minLength": 1},
+          "title": {"type": "string", "minLength": 1},
+          "evidence": {"type": "string", "minLength": 1},
+          "recommendation": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "prior_findings": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "status", "evidence"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^(strategy|visual|accessibility)-[0-9]{3,}$"},
+          "status": {"type": "string", "enum": ["resolved", "unresolved"]},
+          "evidence": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}

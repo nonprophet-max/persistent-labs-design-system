@@ -1,0 +1,4 @@
+interface:
+  display_name: "PrivateInference Brand"
+  short_description: "PrivateInference identity, assets and design guidance"
+  default_prompt: "Use $privateinference-brand to apply the PrivateInference brand to this task."

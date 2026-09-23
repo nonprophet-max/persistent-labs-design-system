@@ -1,0 +1,608 @@
+{
+  "date": "2026-09-23T18:26:05.193Z",
+  "artifact": "index.html",
+  "sha256": "d510f1339efaedd80f94c8dd246e8566729a41aa58ed2f6e1a2ff0f088acc9ff",
+  "browser": "153.0.8010.53",
+  "passed": true,
+  "failures": [],
+  "warnings": [],
+  "matrix": [
+    {
+      "theme": "light",
+      "width": 320,
+      "pageOverflow": false,
+      "overflow": [],
+      "bad": [],
+      "smallTargets": [],
+      "tested": 797
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "pageOverflow": false,
+      "overflow": [],
+      "bad": [],
+      "smallTargets": [],
+      "tested": 797
+    },
+    {
+      "theme": "light",
+      "width": 768,
+      "pageOverflow": false,
+      "overflow": [],
+      "bad": [],
+      "smallTargets": [],
+      "tested": 814
+    },
+    {
+      "theme": "light",
+      "width": 1024,
+      "pageOverflow": false,
+      "overflow": [],
+      "bad": [],
+      "smallTargets": [],
+      "tested": 848
+    },
+    {
+      "theme": "light",
+      "width": 1440,
+      "pageOverflow": false,
+      "overflow": [],
+      "bad": [],
+      "smallTargets": [],
+      "tested": 848
+    },
+    {
+      "theme": "dark",
+      "width": 320,
+      "pageOverflow": false,
+      "overflow": [],
+      "bad": [],
+      "smallTargets": [],
+      "tested": 797
+    },
+    {
+      "theme": "dark",
+      "width": 390,
+      "pageOverflow": false,
+      "overflow": [],
+      "bad": [],
+      "smallTargets": [],
+      "tested": 797
+    },
+    {
+      "theme": "dark",
+      "width": 768,
+      "pageOverflow": false,
+      "overflow": [],
+      "bad": [],
+      "smallTargets": [],
+      "tested": 814
+    },
+    {
+      "theme": "dark",
+      "width": 1024,
+      "pageOverflow": false,
+      "overflow": [],
+      "bad": [],
+      "smallTargets": [],
+      "tested": 848
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "pageOverflow": false,
+      "overflow": [],
+      "bad": [],
+      "smallTargets": [],
+      "tested": 848
+    }
+  ],
+  "structure": {
+    "duplicateIds": [],
+    "brokenAnchors": [],
+    "headings": [
+      {
+        "level": 1,
+        "text": "Distinct.By design.Persistent.By nature."
+      },
+      {
+        "level": 2,
+        "text": "A system with staying power."
+      },
+      {
+        "level": 3,
+        "text": "Keep the recognizable parts."
+      },
+      {
+        "level": 3,
+        "text": "Show how it works."
+      },
+      {
+        "level": 3,
+        "text": "Make reading effortless."
+      },
+      {
+        "level": 3,
+        "text": "Make the next action clear."
+      },
+      {
+        "level": 3,
+        "text": "Keep evidence beside claims."
+      },
+      {
+        "level": 2,
+        "text": "Built by Persistent Labs."
+      },
+      {
+        "level": 3,
+        "text": "Four products. A clear hierarchy."
+      },
+      {
+        "level": 3,
+        "text": "Core parts, one FireFlow identity."
+      },
+      {
+        "level": 3,
+        "text": "The endorsement has one job."
+      },
+      {
+        "level": 2,
+        "text": "A signature, not a watermark."
+      },
+      {
+        "level": 2,
+        "text": "Warmth, with discipline."
+      },
+      {
+        "level": 3,
+        "text": "Foregrounds belong to surfaces."
+      },
+      {
+        "level": 3,
+        "text": "Light surfaces"
+      },
+      {
+        "level": 3,
+        "text": "Dark surfaces"
+      },
+      {
+        "level": 3,
+        "text": "Semantic colors stay semantic."
+      },
+      {
+        "level": 2,
+        "text": "Three cuts. One clear hierarchy."
+      },
+      {
+        "level": 2,
+        "text": "Let the content set the limits."
+      },
+      {
+        "level": 3,
+        "text": "Three working thresholds"
+      },
+      {
+        "level": 3,
+        "text": "Overflow must be intentional"
+      },
+      {
+        "level": 2,
+        "text": "Space communicates structure."
+      },
+      {
+        "level": 2,
+        "text": "Soft edges. Precise relationships."
+      },
+      {
+        "level": 3,
+        "text": "One rule for nested corners."
+      },
+      {
+        "level": 2,
+        "text": "Every state is part of the design."
+      },
+      {
+        "level": 3,
+        "text": "Fields explain what they need."
+      },
+      {
+        "level": 2,
+        "text": "Make movement explain change."
+      },
+      {
+        "level": 3,
+        "text": "Build an image language from the product."
+      },
+      {
+        "level": 3,
+        "text": "Primary imagery"
+      },
+      {
+        "level": 3,
+        "text": "Secondary material"
+      },
+      {
+        "level": 2,
+        "text": "Confidence comes from clarity."
+      },
+      {
+        "level": 3,
+        "text": "Apply the system by surface."
+      },
+      {
+        "level": 3,
+        "text": "Marketing & product UI"
+      },
+      {
+        "level": 3,
+        "text": "Docs & collateral"
+      },
+      {
+        "level": 2,
+        "text": "FireFlow"
+      },
+      {
+        "level": 3,
+        "text": "Make every step count."
+      },
+      {
+        "level": 3,
+        "text": "Three core parts. One product."
+      },
+      {
+        "level": 4,
+        "text": "FireFlow orchestration engine"
+      },
+      {
+        "level": 4,
+        "text": "MemoryTree"
+      },
+      {
+        "level": 4,
+        "text": "FlameChorus"
+      },
+      {
+        "level": 3,
+        "text": "Audience & position"
+      },
+      {
+        "level": 3,
+        "text": "Mark & lockup"
+      },
+      {
+        "level": 3,
+        "text": "Color & hierarchy"
+      },
+      {
+        "level": 3,
+        "text": "Typography"
+      },
+      {
+        "level": 3,
+        "text": "Geometry & layout"
+      },
+      {
+        "level": 3,
+        "text": "Motion & imagery"
+      },
+      {
+        "level": 3,
+        "text": "Voice & example"
+      },
+      {
+        "level": 3,
+        "text": "Component contract"
+      },
+      {
+        "level": 3,
+        "text": "The system in use."
+      },
+      {
+        "level": 3,
+        "text": "Do"
+      },
+      {
+        "level": 3,
+        "text": "Avoid"
+      },
+      {
+        "level": 3,
+        "text": "FireFlow orchestration engine"
+      },
+      {
+        "level": 4,
+        "text": "Role & hierarchy"
+      },
+      {
+        "level": 4,
+        "text": "Visual specification"
+      },
+      {
+        "level": 4,
+        "text": "Interaction contract"
+      },
+      {
+        "level": 3,
+        "text": "MemoryTree"
+      },
+      {
+        "level": 4,
+        "text": "Role & hierarchy"
+      },
+      {
+        "level": 4,
+        "text": "Mark & color"
+      },
+      {
+        "level": 4,
+        "text": "Typography & geometry"
+      },
+      {
+        "level": 4,
+        "text": "Motion & voice"
+      },
+      {
+        "level": 4,
+        "text": "Interaction contract"
+      },
+      {
+        "level": 3,
+        "text": "FlameChorus"
+      },
+      {
+        "level": 4,
+        "text": "Role & hierarchy"
+      },
+      {
+        "level": 4,
+        "text": "Color & typography"
+      },
+      {
+        "level": 4,
+        "text": "Geometry & motion"
+      },
+      {
+        "level": 4,
+        "text": "Interaction contract"
+      },
+      {
+        "level": 2,
+        "text": "Unfazed.dev"
+      },
+      {
+        "level": 3,
+        "text": "Let your agents ship."
+      },
+      {
+        "level": 3,
+        "text": "Audience & position"
+      },
+      {
+        "level": 3,
+        "text": "Mark & lockup"
+      },
+      {
+        "level": 3,
+        "text": "Color & hierarchy"
+      },
+      {
+        "level": 3,
+        "text": "Typography"
+      },
+      {
+        "level": 3,
+        "text": "Geometry & layout"
+      },
+      {
+        "level": 3,
+        "text": "Motion & imagery"
+      },
+      {
+        "level": 3,
+        "text": "Voice & example"
+      },
+      {
+        "level": 3,
+        "text": "Component contract"
+      },
+      {
+        "level": 3,
+        "text": "The system in use."
+      },
+      {
+        "level": 3,
+        "text": "Do"
+      },
+      {
+        "level": 3,
+        "text": "Avoid"
+      },
+      {
+        "level": 2,
+        "text": "Lanni"
+      },
+      {
+        "level": 3,
+        "text": "From intent to action."
+      },
+      {
+        "level": 3,
+        "text": "Audience & position"
+      },
+      {
+        "level": 3,
+        "text": "Mark & lockup"
+      },
+      {
+        "level": 3,
+        "text": "Color & hierarchy"
+      },
+      {
+        "level": 3,
+        "text": "Typography"
+      },
+      {
+        "level": 3,
+        "text": "Geometry & layout"
+      },
+      {
+        "level": 3,
+        "text": "Motion & imagery"
+      },
+      {
+        "level": 3,
+        "text": "Voice & example"
+      },
+      {
+        "level": 3,
+        "text": "Component contract"
+      },
+      {
+        "level": 3,
+        "text": "The system in use."
+      },
+      {
+        "level": 3,
+        "text": "Do"
+      },
+      {
+        "level": 3,
+        "text": "Avoid"
+      },
+      {
+        "level": 2,
+        "text": "PrivateInference"
+      },
+      {
+        "level": 3,
+        "text": "A clear boundary for AI."
+      },
+      {
+        "level": 3,
+        "text": "Audience & position"
+      },
+      {
+        "level": 3,
+        "text": "Mark & lockup"
+      },
+      {
+        "level": 3,
+        "text": "Color & hierarchy"
+      },
+      {
+        "level": 3,
+        "text": "Typography"
+      },
+      {
+        "level": 3,
+        "text": "Geometry & layout"
+      },
+      {
+        "level": 3,
+        "text": "Motion & imagery"
+      },
+      {
+        "level": 3,
+        "text": "Voice & example"
+      },
+      {
+        "level": 3,
+        "text": "Component contract"
+      },
+      {
+        "level": 3,
+        "text": "The system in use."
+      },
+      {
+        "level": 3,
+        "text": "Do"
+      },
+      {
+        "level": 3,
+        "text": "Avoid"
+      },
+      {
+        "level": 2,
+        "text": "A living system needs a record."
+      },
+      {
+        "level": 3,
+        "text": "Diagnose the original."
+      },
+      {
+        "level": 3,
+        "text": "Review the revised system."
+      },
+      {
+        "level": 3,
+        "text": "Verify the corrections."
+      },
+      {
+        "level": 3,
+        "text": "Decisions carried forward."
+      },
+      {
+        "level": 3,
+        "text": "Release checklist."
+      },
+      {
+        "level": 3,
+        "text": "Source inventory & original archive."
+      },
+      {
+        "level": 2,
+        "text": "One source of truth."
+      }
+    ],
+    "h1Count": 1,
+    "fonts": [
+      {
+        "family": "Red Hat Display",
+        "status": "loaded"
+      },
+      {
+        "family": "Red Hat Text",
+        "status": "loaded"
+      },
+      {
+        "family": "Red Hat Mono",
+        "status": "loaded"
+      }
+    ]
+  },
+  "architecture": {
+    "products": [
+      "fireflow",
+      "unfazed",
+      "lanni",
+      "privateinference"
+    ],
+    "coreParts": [
+      "orchestration-engine",
+      "memorytree",
+      "flamechorus"
+    ],
+    "standaloneMemory": false,
+    "memoryLinkTarget": "fireflow"
+  },
+  "interactionChecks": [
+    "mobile menu",
+    "Escape",
+    "anchor navigation",
+    "theme toggle + persistence",
+    "field error + recovery",
+    "demo feedback",
+    "copy feedback",
+    "reduced motion",
+    "640px reflow",
+    "four-product hierarchy",
+    "nested MemoryTree navigation",
+    "FireFlow feedback routing"
+  ],
+  "limitations": [
+    "Automated contrast scan uses solid composited backgrounds; does not certify WCAG conformance.",
+    "No assistive-technology, Safari or Firefox test performed.",
+    "Screenshots require visual review."
+  ]
+}

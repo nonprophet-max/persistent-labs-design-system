@@ -1,0 +1,19 @@
+{
+  "name": "privateinference-brand",
+  "version": "2.3.0",
+  "description": "Create and review PrivateInference branded interfaces, pages, copy and collateral using its identity specifications. Use for PrivateInference work, not unrelated brands.",
+  "author": {
+    "name": "Persistent Labs"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "PrivateInference Brand",
+    "shortDescription": "PrivateInference identity, assets and design guidance",
+    "longDescription": "Create and review PrivateInference branded interfaces, pages, copy and collateral using its identity specifications. Use for PrivateInference work, not unrelated brands.",
+    "developerName": "Persistent Labs",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "Use $privateinference-brand for this design brief.",
+    "brandColor": "#C4B5FD"
+  }
+}

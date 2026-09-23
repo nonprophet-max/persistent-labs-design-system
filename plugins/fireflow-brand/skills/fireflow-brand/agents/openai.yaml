@@ -1,0 +1,4 @@
+interface:
+  display_name: "FireFlow Brand"
+  short_description: "FireFlow identity, assets and design guidance"
+  default_prompt: "Use $fireflow-brand to apply the FireFlow brand to this task."

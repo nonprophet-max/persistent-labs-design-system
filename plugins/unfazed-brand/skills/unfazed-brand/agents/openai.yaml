@@ -1,0 +1,4 @@
+interface:
+  display_name: "Unfazed.dev Brand"
+  short_description: "Unfazed.dev identity, assets and design guidance"
+  default_prompt: "Use $unfazed-brand to apply the Unfazed.dev brand to this task."

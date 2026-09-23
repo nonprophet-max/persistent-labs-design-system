@@ -1,0 +1,104 @@
+/* Persistent Labs v2.3 — generated from design-tokens.json. */
+:root {
+  /* core */
+  --pl-ink: #1C1E21;
+  --pl-void: #121212;
+  --pl-gold: #FBD78E;
+  --pl-gold-hover: #FFCB63;
+  --pl-gold-pressed: #EABD64;
+  --pl-gold-ink: #76580D;
+  --pl-white: #FFFFFF;
+  --pl-paper: #F6F6F6;
+  --pl-cream: #FFF5E6;
+  --pl-text-dark: #FFFFFF;
+  --pl-text-dark-secondary: #CBCDD0;
+  --pl-text-dark-muted: #A8ADB4;
+  --pl-text-light: #1C1E21;
+  --pl-text-light-secondary: #50545B;
+  --pl-text-light-muted: #62666D;
+  --pl-surface-dark: #25272A;
+  --pl-surface-light: #FFFFFF;
+  --pl-control-dark: #828891;
+  --pl-control-light: #70757D;
+  --pl-success-dark: #83D995;
+  --pl-success-light: #246938;
+  --pl-warning-dark: #F1C14E;
+  --pl-warning-light: #785300;
+  --pl-danger-dark: #FF9A8F;
+  --pl-danger-light: #AE3024;
+  --pl-info-dark: #8ECFFB;
+  --pl-info-light: #215F8B;
+  /* type */
+  --pl-font-display: "Red Hat Display", "Helvetica Neue", Arial, sans-serif;
+  --pl-font-text: "Red Hat Text", "Helvetica Neue", Arial, sans-serif;
+  --pl-font-mono: "Red Hat Mono", ui-monospace, monospace;
+  --pl-display-xl: clamp(2.75rem, 1.5rem + 4vw, 8rem);
+  --pl-display: clamp(2.5rem, 1.5rem + 3vw, 5.5rem);
+  --pl-h1: clamp(2rem, 1.5rem + 2vw, 4rem);
+  --pl-h2: clamp(1.75rem, 1.25rem + 1.5vw, 3rem);
+  --pl-h3: clamp(1.5rem, 1.25rem + 1vw, 2rem);
+  --pl-h4: 1.25rem;
+  --pl-h5: 1.125rem;
+  --pl-lead: clamp(1.125rem, 1rem + .5vw, 1.5rem);
+  --pl-body: 1rem;
+  --pl-body-l: 1.125rem;
+  --pl-body-s: .875rem;
+  --pl-ui: 1rem;
+  --pl-tag: .875rem;
+  --pl-eyebrow: .75rem;
+  --pl-track-head: -.03em;
+  --pl-track-body: 0;
+  --pl-lh-display: 1.04;
+  --pl-lh-head: 1.15;
+  --pl-lh-body: 1.6;
+  --pl-lh-ui: 1.4;
+  /* space */
+  --pl-s1: 4px;
+  --pl-s2: 8px;
+  --pl-s3: 12px;
+  --pl-s4: 16px;
+  --pl-s5: 20px;
+  --pl-s6: 24px;
+  --pl-s8: 32px;
+  --pl-s10: 40px;
+  --pl-s12: 48px;
+  --pl-s16: 64px;
+  --pl-s20: 80px;
+  --pl-s24: 96px;
+  --pl-s30: 120px;
+  /* layout */
+  --pl-gutter: clamp(20px, 4vw, 64px);
+  --pl-container: 1520px;
+  --pl-reading: 66ch;
+  --pl-section: clamp(64px, 7vw, 120px);
+  --pl-grid-gap: clamp(16px, 2vw, 32px);
+  --pl-target: 44px;
+  /* radius */
+  --pl-r-input: 8px;
+  --pl-r-tile: 12px;
+  --pl-r-card: 24px;
+  --pl-r-feature: 40px;
+  --pl-r-hero: 64px;
+  --pl-r-pill: 999px;
+  /* motion */
+  --pl-t-fast: 150ms;
+  --pl-t-ui: 200ms;
+  --pl-t-panel: 300ms;
+  --pl-t-ease: cubic-bezier(.2, 0, .2, 1);
+}
+[data-product="lanni"] {
+  --product-accent: #FF6741;
+  --product-accent-ink: #A6381C;
+  --product-on-accent: #1C1E21;
+  --product-hover: #FF8566;
+  --product-pressed: #F06440;
+  --product-tint: #FFF0EB;
+}
+/* Semantic context must be scoped on fixed specimen surfaces too. */
+[data-surface="dark"] { --surface: var(--pl-ink); --text: var(--pl-text-dark); --text-secondary: var(--pl-text-dark-secondary); --text-muted: var(--pl-text-dark-muted); --action: var(--pl-gold); --on-action: var(--pl-ink); --action-hover: var(--pl-gold-hover); --action-pressed: var(--pl-gold-pressed); --control-border: var(--pl-control-dark); --focus: var(--pl-gold); }
+[data-surface="light"] { --surface: var(--pl-white); --text: var(--pl-text-light); --text-secondary: var(--pl-text-light-secondary); --text-muted: var(--pl-text-light-muted); --action: var(--pl-gold); --on-action: var(--pl-ink); --action-hover: var(--pl-gold-hover); --action-pressed: var(--pl-gold-pressed); --control-border: var(--pl-control-light); --focus: var(--pl-gold-ink); }
+/* Pair product accent with ink on dark surfaces; accent-ink is text on light. */
+[data-product] { --action: var(--product-accent); --on-action: var(--product-on-accent); --action-hover: var(--product-hover); --action-pressed: var(--product-pressed); }
+[data-product][data-surface="dark"] { --focus: var(--product-accent); }
+[data-product][data-surface="light"] { --focus: var(--product-accent-ink); }
+@media (prefers-reduced-motion: reduce) { :root { --pl-t-fast: 0ms; --pl-t-ui: 0ms; --pl-t-panel: 0ms; } }

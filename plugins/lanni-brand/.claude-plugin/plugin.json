@@ -1,0 +1,9 @@
+{
+  "name": "lanni-brand",
+  "version": "2.3.0",
+  "description": "Create and review Lanni branded interfaces, pages, copy and collateral using its identity specifications. Use for Lanni work, not unrelated brands.",
+  "author": {
+    "name": "Persistent Labs"
+  },
+  "skills": "./skills/"
+}

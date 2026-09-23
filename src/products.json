@@ -1,0 +1,324 @@
+[
+  {
+    "id": "fireflow",
+    "name": "FireFlow",
+    "role": "Orchestration, persistent memory & chat UX",
+    "status": "Established product · extended identity",
+    "headline": "Make every step count.",
+    "description": "One product with three core parts: the FireFlow orchestration engine, MemoryTree for persistent memory and FlameChorus for chat UX.",
+    "evidence": "The owner defines FireFlow as one product comprising the FireFlow orchestration engine, MemoryTree and FlameChorus. This hierarchy supersedes earlier stack and portfolio descriptions. The proposed node mark and visual extensions remain concepts.",
+    "source": "https://docs.persistentai.org/",
+    "sourceLabel": "FireFlow documentation",
+    "specs": [
+      [
+        "Audience & position",
+        "For technical teams building agent experiences. Present FireFlow as one product: its orchestration engine handles workflows and execution, MemoryTree provides persistent memory, and FlameChorus provides the chat UX engine. Let documented behavior carry the proof."
+      ],
+      [
+        "Mark & lockup",
+        "Set FireFlow in Red Hat Display 700. Preserve the italic fireflow spelling only inside an approved original logotype. The proposed three-step F mark is a schematic motif. Minimum mark: 24px; clear space: one node width on all sides."
+      ],
+      [
+        "Color & hierarchy",
+        "Flame orange identifies FireFlow and its primary actions. Sky blue may identify MemoryTree and warm gold may identify FlameChorus within FireFlow diagrams and component labels. These are subordinate component accents, not separate product identities. Keep semantic state colors separate."
+      ],
+      [
+        "Typography",
+        "Red Hat Display 700 for headlines; Red Hat Text 400/500 for UI; Red Hat Mono 400/500 for run identifiers and event details. Keep log text at 14px with 1.6 leading and tabular figures."
+      ],
+      [
+        "Geometry & layout",
+        "24px marketing cards, 8px workflow nodes, 2px connectors and 12px ports. Align flows left to right on wide screens; stack with explicit arrows on mobile. Keep 24px between independent steps."
+      ],
+      [
+        "Motion & imagery",
+        "Illustrate actual state transitions with a 200ms opacity change. Keep completed steps visible. Use real execution traces and diagrams; label sample runs as illustrative. No perpetual ‘running’ animation in static marketing."
+      ],
+      [
+        "Voice & example",
+        "Direct, specific, operational. Proposed headline: ‘Make every step count.’ CTA: ‘Inspect the workflow’. Avoid ‘exactly once’ without stating the transaction boundary and applicable guarantees."
+      ],
+      [
+        "Component contract",
+        "Use one FireFlow product shell and one primary action for each task. Within it, distinguish orchestration state, memory provenance and conversation state through labels and structure. Every core part inherits the shared accessibility and interaction rules."
+      ]
+    ],
+    "do": "Show inputs, transitions and outcomes together.",
+    "avoid": "Flame decoration, unexplained performance claims and orange success indicators.",
+    "radius": "8px nodes · 24px cards · pill CTA",
+    "voice": "Precise / operational / accountable",
+    "components": [
+      {
+        "id": "orchestration-engine",
+        "name": "FireFlow orchestration engine",
+        "role": "Orchestration & execution",
+        "description": "The workflow and execution part of FireFlow.",
+        "mark": "fireflow",
+        "specs": [
+          [
+            "Role & hierarchy",
+            "Name the engine explicitly when describing workflow behavior. FireFlow on its own names the complete product, including memory and chat UX."
+          ],
+          [
+            "Visual specification",
+            "Inherit FireFlow orange and Red Hat typography. Use 8px workflow nodes, 2px connectors and 12px ports. Keep node labels at 14px with 1.6 leading and a 24px step gap."
+          ],
+          [
+            "Interaction contract",
+            "Show named steps, textual execution states, timestamps and details. Errors identify the affected step and available recovery. Never use orange alone to indicate success."
+          ]
+        ]
+      },
+      {
+        "id": "memorytree",
+        "name": "MemoryTree",
+        "role": "Persistent memory",
+        "description": "The persistent-memory part of FireFlow.",
+        "mark": "memorytree",
+        "specs": [
+          [
+            "Role & hierarchy",
+            "MemoryTree is a core part of FireFlow. Refer to it as “MemoryTree, FireFlow’s persistent memory” when context is needed. It does not receive a peer-level product listing or an independent Persistent Labs endorsement."
+          ],
+          [
+            "Mark & color",
+            "Retain the proposed three-node symbol as an optional component icon. Minimum icon: 24px; clear space: one node diameter. Sky #8ECFFB on dark and deep blue #215F8B on white identify memory inside FireFlow; primary product actions remain FireFlow orange."
+          ],
+          [
+            "Typography & geometry",
+            "Inherit Red Hat Display, Text and Mono from FireFlow. Use 16px body / 1.6, 16px collection cards, 8px source rows and 2px tree connectors. Tree indentation is 24px on desktop and 16px on mobile."
+          ],
+          [
+            "Motion & voice",
+            "Use 200ms disclosure that preserves the parent position. Be organized, contextual and traceable. Use provenance and source references; avoid limitless-memory or sentience claims."
+          ],
+          [
+            "Interaction contract",
+            "A memory entry shows title, source, scope and update time. Make missing-source and empty states explicit. Do not infer retention, deletion behavior or availability of graph/retrieval features beyond documented capabilities."
+          ]
+        ]
+      },
+      {
+        "id": "flamechorus",
+        "name": "FlameChorus",
+        "role": "Chat UX engine",
+        "description": "The chat user-experience part of FireFlow.",
+        "mark": "",
+        "specs": [
+          [
+            "Role & hierarchy",
+            "Use FlameChorus as one word. Describe it as “FlameChorus, FireFlow’s chat UX engine.” It is a core part of the FireFlow product, not a separate product identity."
+          ],
+          [
+            "Color & typography",
+            "Warm gold #FBD78E on graphite and gold ink #76580D on white may label conversation diagrams. Inherit Red Hat Display and Text; dialogue uses 16px / 1.6. Primary actions inherit FireFlow orange."
+          ],
+          [
+            "Geometry & motion",
+            "Use 16px conversation bubbles and 24px enclosing panels, with a 16px gap between speakers. Introduce new content with a restrained 200ms transition; honor reduced motion."
+          ],
+          [
+            "Interaction contract",
+            "Distinguish user messages, agent responses and action states with labels and structure. Separate a proposed action from execution and completion. Preserve conversation context and explain the next step without claiming unsupported capabilities."
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unfazed",
+    "name": "Unfazed.dev",
+    "role": "Deployment for agents",
+    "status": "Live identity · preserved & documented",
+    "headline": "Let your agents ship.",
+    "description": "Spare, dry and useful. The existing lowercase wordmark and unimpressed face carry the personality.",
+    "evidence": "The live site uses a compact white layout, system typography, a blue accent and the unimpressed face mark. Its deployment offering includes static sites, services and persistent Linux environments. These are source observations; the endorsed family treatment is new.",
+    "source": "https://unfazed.dev/",
+    "sourceLabel": "Unfazed live site",
+    "specs": [
+      [
+        "Audience & position",
+        "For developers and the agents they use to deploy software. Keep the path to deployment obvious: show the command, explain the destination, then present the next action."
+      ],
+      [
+        "Mark & lockup",
+        "Preserve the source unimpressed face and lowercase unfazed wordmark. Use ‘Unfazed.dev’ for the portfolio listing and ‘unfazed’ for the wordmark. Minimum face: 24px; clear space: half its height. Endorse separately in the footer."
+      ],
+      [
+        "Color & hierarchy",
+        "White #FFFFFF and ink #141414 are the primary grounds. Preserve the source blue, oklch(0.55 0.16 256), for links and actions. Use a lighter blue on dark surfaces; do not force the parent gold into the product interface."
+      ],
+      [
+        "Typography",
+        "Retain the existing system sans and system mono stacks inside the product. This is an explicit exception to Red Hat. Use 16px body / 1.6 and 14px code / 1.6 as the normalized accessible baseline."
+      ],
+      [
+        "Geometry & layout",
+        "Preserve the narrow 680px reading shell and 6px input/button corners. Use a 20px mobile gutter and allow commands to wrap or scroll in a labelled region. Keep the interface flat with fine, visible rules."
+      ],
+      [
+        "Motion & imagery",
+        "Show commands, outputs and deployment destinations. Use immediate textual feedback with a 150ms color transition. The face is a signature, not a bouncing mascot. Avoid cinematic gradients and prismatic imagery."
+      ],
+      [
+        "Voice & example",
+        "Dry, concise, quietly confident. Existing headline: ‘let your agents ship’. Proposed CTA: ‘Read the deployment guide’. Keep instructions literal and use the source’s restrained lowercase treatment for campaign headlines."
+      ],
+      [
+        "Component contract",
+        "A command panel names the destination and distinguishes example output from live status. Copy controls announce success or failure. Errors include the next useful step; agent actions remain inspectable."
+      ]
+    ],
+    "do": "Keep the face, the whitespace and the useful instruction.",
+    "avoid": "Gold pills, glossy cards and a fabricated infrastructure guarantee.",
+    "radius": "6px controls · 6px panels",
+    "voice": "Dry / direct / unhurried"
+  },
+  {
+    "id": "lanni",
+    "name": "Lanni",
+    "role": "An agent for getting things done",
+    "status": "Existing brand · extended identity",
+    "headline": "From intent to action.",
+    "description": "A warmer, conversational expression of the same engineered foundation.",
+    "evidence": "The original bible and the Lanni site position Lanni as an agent built on FireFlow. Coral is an observed accent. The action-card patterns and proposed headline below are design recommendations, not a statement that these exact screens are deployed. The source mixes coming-soon and launch language; current availability is not verified.",
+    "source": "https://persistentai.org/lanni",
+    "sourceLabel": "Lanni product page",
+    "specs": [
+      [
+        "Audience & position",
+        "For people delegating work to an agent. Explain what Lanni will do, what it needs from the person and what has actually happened. Favor understandable actions over orchestration terminology."
+      ],
+      [
+        "Mark & lockup",
+        "Use Lanni in Red Hat Display 600, title case. Proposed symbol: an L-shaped conversation corner with a separate action dot. Minimum mark: 24px; clear space: one dot diameter. This is a proposed mark, not an extracted official asset."
+      ],
+      [
+        "Color & hierarchy",
+        "Keep coral #FF6741 as the product signature with ink labels on filled actions. Use deep coral for text on white. Reserve gold for Persistent Labs endorsement; do not change a button label or product color on hover."
+      ],
+      [
+        "Typography",
+        "Red Hat Display 600/700 for short headlines; Red Hat Text 400/500 for dialogue and actions. Use 16px chat copy / 1.6. Mono is limited to machine identifiers and technical disclosure."
+      ],
+      [
+        "Geometry & layout",
+        "24px conversation panels, 16px message bubbles, pill action buttons. Keep 16px between speakers and 8px between a label and its supporting copy. A conversation should work in a single mobile column."
+      ],
+      [
+        "Motion & imagery",
+        "An action card enters in 200ms and holds its position as status changes. Favor a simple result preview over abstract glass art. Display progress only when real work is occurring, with a reduced-motion alternative."
+      ],
+      [
+        "Voice & example",
+        "Human, capable, plainspoken. Proposed headline: ‘From intent to action.’ CTA: ‘Review the action’. Prefer ‘Here’s the draft’ over anthropomorphic confidence or claims that completion is guaranteed."
+      ],
+      [
+        "Component contract",
+        "Action cards state the proposed action, affected resource and review step. Distinguish draft, awaiting review, running, complete and failed in text. Make it possible to inspect or cancel before consequential actions."
+      ]
+    ],
+    "do": "Make the next action and its current state unmistakable.",
+    "avoid": "Human-like promises, simulated completion and unexplained tool jargon.",
+    "radius": "16px bubbles · 24px panels · pill CTA",
+    "voice": "Human / capable / clear"
+  },
+  {
+    "id": "privateinference",
+    "name": "PrivateInference",
+    "role": "PI · upcoming brand",
+    "status": "Upcoming · proposed identity & positioning",
+    "headline": "A clear boundary for AI.",
+    "description": "A bold mathematical π. Quiet lavender. A disciplined identity built around clarity and control.",
+    "evidence": "The user supplied the name PrivateInference, abbreviation PI and a bold π logo requirement. All positioning, palette and interface direction in this chapter is proposed. Product architecture, availability and privacy claims have not been provided or verified.",
+    "source": "",
+    "sourceLabel": "User brief · 23 Sep 2026",
+    "specs": [
+      [
+        "Audience & position",
+        "Proposed audience: teams evaluating control over inference and data handling. Confirm the target buyer and actual deployment model before writing launch copy. ‘A clear boundary for AI’ is a creative direction, not a privacy guarantee."
+      ],
+      [
+        "Mark & lockup",
+        "Use the supplied bold vector π as the primary symbol, never the letters ‘PI’ drawn to imitate it. Full lockup: π + PrivateInference. PI is the verbal abbreviation. Minimum symbol: 24px; clear space: one stem width (16/96 of the mark viewBox)."
+      ],
+      [
+        "Color & hierarchy",
+        "Ink, white and proposed lavender #C4B5FD. Use deep violet #6544A2 for light-surface text. Keep the π monochrome in ink, white or the single accent. No gradient fill, shield, padlock or security-seal treatment."
+      ],
+      [
+        "Typography",
+        "Red Hat Display 700 for the full name and headlines; Red Hat Text 400/500 for policy descriptions; Red Hat Mono 400 for endpoint and environment identifiers. The logo is a vector path and never depends on font glyph availability."
+      ],
+      [
+        "Geometry & layout",
+        "12px configuration panels, 8px fields and pill primary actions. Define boundaries with a 1px visible rule. Keep 24px between policy groups. Use simple diagrams that distinguish a verified boundary from a proposed architecture."
+      ],
+      [
+        "Motion & imagery",
+        "Static by default. Use 150ms state changes for explicit selections. Prefer named environments and readable data-flow diagrams. Do not suggest encryption, isolation or locality through decorative shields."
+      ],
+      [
+        "Voice & example",
+        "Measured, exact, transparent about limits. Proposed CTA: ‘Explore the concept’. Avoid ‘zero retention’, ‘air-gapped’, ‘private by default’, ‘never leaves your device’ or compliance claims until architecture and policy substantiate them."
+      ],
+      [
+        "Component contract",
+        "A proposed environment panel separates deployment location, access scope and retention policy. Every unknown reads ‘Not specified’. Show supporting evidence alongside future verified claims. Do not display a green security badge for an unverified property."
+      ]
+    ],
+    "do": "Use the bold π and name the boundaries that can be verified.",
+    "avoid": "Implied privacy guarantees and security claims without evidence.",
+    "radius": "8px fields · 12px panels · pill CTA",
+    "voice": "Measured / exact / transparent"
+  },
+  {
+    "id": "galactica",
+    "name": "Galactica",
+    "role": "Privacy technology across AI & blockchain",
+    "status": "Live product · proposed family adaptation",
+    "headline": "Privacy. With purpose.",
+    "description": "Privacy technology for AI and blockchain. A clear identity built around people, proof and control over disclosure.",
+    "evidence": "Galactica is live; its positioning across AI and blockchain follows the owner’s brief. The public site emphasizes identity, zkCertificates and selective disclosure. Its indexed homepage preview suggests monochrome imagery, schematic lines and an orange accent. The palette, typography, layouts and headline below are proposed family adaptations, not measured website specifications.",
+    "source": "https://galactica.com/",
+    "sourceLabel": "Galactica live site",
+    "specs": [
+      [
+        "Audience & position",
+        "For teams building and evaluating privacy technology across AI and blockchain. Lead with the application and explain the mechanism. Identity and selective disclosure are established public themes; AI positioning follows the owner’s brief. Verify the particular AI offering before describing its capabilities."
+      ],
+      [
+        "Mark & lockup",
+        "Use Galactica.com as the full wordmark, including .com and the bold orange dot. The supplied outlined lockup follows the owner’s direction using Red Hat Display 700; it is a family adaptation, not an extracted website master. Keep the dot #F7931A in full-color lockups on light or dark backgrounds. Minimum width: 160px; clear space: one capital-height. Use the full lockup, never the dot as a standalone logo."
+      ],
+      [
+        "Color & hierarchy",
+        "Carry the public preview’s orange-and-monochrome direction into a restrained proposed palette: copper #F4A77A on graphite, copper ink #97502A on white, and porcelain #FFF1E8. Keep most surfaces neutral. Copper marks a selected path or disclosure boundary; it never means verified, secure or successful. Exact source color values were not retrieved. The wordmark’s bold dot uses orange #F7931A, distinct from the copper interface accent."
+      ],
+      [
+        "Typography",
+        "Use Red Hat Display 600/700 for the proposed family treatment, Red Hat Text 400/500 for reading, and Red Hat Mono for certificate identifiers only. Body: 16px / 1.6; supporting labels: 14px / 1.5. This is a typography adaptation, not a claim about the live site’s fonts. Preserve the supplied owner-directed Galactica.com lockup independently."
+      ],
+      [
+        "Geometry & layout",
+        "Use 24px enclosing panels, 12px disclosure groups, 8px controls and 1px visible boundaries. Keep 24px between information groups and a 20px mobile gutter. Read paired panels left to right on desktop, then top to bottom on mobile: what a service requests, followed by what would be disclosed."
+      ],
+      [
+        "Motion & imagery",
+        "Use restrained monochrome human imagery and precise schematic lines, with copper reserved for the relevant connection. The proof diagram here is a proposed explanatory motif, never a logo. Use 150–200ms changes for selection; avoid rotating orbits, decorative scanning and simulated verification. Honor reduced motion."
+      ],
+      [
+        "Voice & example",
+        "Assured, lucid, evidence-led. Proposed headline: “Privacy. With purpose.” Descriptor: “Privacy technology across AI & blockchain.” CTA: “Review the disclosure”. Explain what is disclosed, to whom and for what purpose. Keep token-market content separate from the core firm narrative."
+      ],
+      [
+        "Component contract",
+        "A disclosure review names the requester, purpose, requested statement, disclosed fields and relevant limits before consent. Separate pending, approved and completed in text. The illustrative screen in this chapter neither creates a proof nor asserts a deployed capability. Explain real processing, retention and revocation behavior from current documentation."
+      ]
+    ],
+    "do": "Keep the complete Galactica.com wordmark and its bold orange dot; make disclosure scope readable before an action.",
+    "avoid": "Turning a copper accent into a security badge, speculative AI claims, or conflating Galactica with the upcoming PI brand.",
+    "radius": "8px controls · 12px disclosure groups · 24px panels",
+    "voice": "Assured / lucid / evidence-led"
+  }
+]

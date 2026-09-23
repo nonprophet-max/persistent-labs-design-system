@@ -1,0 +1,4 @@
+# Local model reports may contain private draft content. Commit curated review
+# summaries deliberately; raw sessions stay local by default.
+runs/
+__pycache__/

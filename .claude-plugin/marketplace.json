@@ -1,0 +1,38 @@
+{
+  "name": "persistent-labs-brands",
+  "owner": {
+    "name": "Persistent Labs"
+  },
+  "plugins": [
+    {
+      "name": "persistent-labs-brand",
+      "source": "./plugins/persistent-labs-brand",
+      "description": "Brand guidance for Persistent Labs"
+    },
+    {
+      "name": "fireflow-brand",
+      "source": "./plugins/fireflow-brand",
+      "description": "Brand guidance for FireFlow"
+    },
+    {
+      "name": "unfazed-brand",
+      "source": "./plugins/unfazed-brand",
+      "description": "Brand guidance for Unfazed.dev"
+    },
+    {
+      "name": "lanni-brand",
+      "source": "./plugins/lanni-brand",
+      "description": "Brand guidance for Lanni"
+    },
+    {
+      "name": "privateinference-brand",
+      "source": "./plugins/privateinference-brand",
+      "description": "Brand guidance for PrivateInference"
+    },
+    {
+      "name": "galactica-brand",
+      "source": "./plugins/galactica-brand",
+      "description": "Brand guidance for Galactica"
+    }
+  ]
+}

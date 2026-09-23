@@ -1,0 +1,9 @@
+{
+  "name": "persistent-labs-brand",
+  "version": "2.3.0",
+  "description": "Create and review work using the full Persistent Labs design bible and its five product identities. Use for parent-brand or multi-product work; use the individual product skill for work confined to one product.",
+  "author": {
+    "name": "Persistent Labs"
+  },
+  "skills": "./skills/"
+}

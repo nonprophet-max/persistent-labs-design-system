@@ -1,0 +1,9 @@
+{
+  "name": "fireflow-brand",
+  "version": "2.3.0",
+  "description": "Create and review FireFlow branded interfaces, pages, copy and collateral using its identity specifications. Use for FireFlow work, not unrelated brands. Includes the FireFlow orchestration engine, MemoryTree and FlameChorus as parts of one product.",
+  "author": {
+    "name": "Persistent Labs"
+  },
+  "skills": "./skills/"
+}

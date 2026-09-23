@@ -1,0 +1,19 @@
+{
+  "name": "galactica-brand",
+  "version": "2.3.0",
+  "description": "Create and review Galactica branded interfaces, pages, copy and collateral using its identity specifications. Use for Galactica work, not unrelated brands.",
+  "author": {
+    "name": "Persistent Labs"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Galactica Brand",
+    "shortDescription": "Galactica identity, assets and design guidance",
+    "longDescription": "Create and review Galactica branded interfaces, pages, copy and collateral using its identity specifications. Use for Galactica work, not unrelated brands.",
+    "developerName": "Persistent Labs",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "Use $galactica-brand for this design brief.",
+    "brandColor": "#F4A77A"
+  }
+}

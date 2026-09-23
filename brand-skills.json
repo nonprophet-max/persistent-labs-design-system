@@ -1,0 +1,47 @@
+{
+  "version": "2.3.0",
+  "plugins": [
+    {
+      "name": "persistent-labs-brand",
+      "product": "Persistent Labs",
+      "skill": "plugins/persistent-labs-brand/skills/persistent-labs-brand/SKILL.md",
+      "chatbot": "plugins/persistent-labs-brand/chatbot.md",
+      "plugin": "plugins/persistent-labs-brand"
+    },
+    {
+      "name": "fireflow-brand",
+      "product": "FireFlow",
+      "skill": "plugins/fireflow-brand/skills/fireflow-brand/SKILL.md",
+      "chatbot": "plugins/fireflow-brand/chatbot.md",
+      "plugin": "plugins/fireflow-brand"
+    },
+    {
+      "name": "unfazed-brand",
+      "product": "Unfazed.dev",
+      "skill": "plugins/unfazed-brand/skills/unfazed-brand/SKILL.md",
+      "chatbot": "plugins/unfazed-brand/chatbot.md",
+      "plugin": "plugins/unfazed-brand"
+    },
+    {
+      "name": "lanni-brand",
+      "product": "Lanni",
+      "skill": "plugins/lanni-brand/skills/lanni-brand/SKILL.md",
+      "chatbot": "plugins/lanni-brand/chatbot.md",
+      "plugin": "plugins/lanni-brand"
+    },
+    {
+      "name": "privateinference-brand",
+      "product": "PrivateInference",
+      "skill": "plugins/privateinference-brand/skills/privateinference-brand/SKILL.md",
+      "chatbot": "plugins/privateinference-brand/chatbot.md",
+      "plugin": "plugins/privateinference-brand"
+    },
+    {
+      "name": "galactica-brand",
+      "product": "Galactica",
+      "skill": "plugins/galactica-brand/skills/galactica-brand/SKILL.md",
+      "chatbot": "plugins/galactica-brand/chatbot.md",
+      "plugin": "plugins/galactica-brand"
+    }
+  ]
+}

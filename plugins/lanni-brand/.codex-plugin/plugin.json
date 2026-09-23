@@ -1,0 +1,19 @@
+{
+  "name": "lanni-brand",
+  "version": "2.3.0",
+  "description": "Create and review Lanni branded interfaces, pages, copy and collateral using its identity specifications. Use for Lanni work, not unrelated brands.",
+  "author": {
+    "name": "Persistent Labs"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Lanni Brand",
+    "shortDescription": "Lanni identity, assets and design guidance",
+    "longDescription": "Create and review Lanni branded interfaces, pages, copy and collateral using its identity specifications. Use for Lanni work, not unrelated brands.",
+    "developerName": "Persistent Labs",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "Use $lanni-brand for this design brief.",
+    "brandColor": "#FF6741"
+  }
+}

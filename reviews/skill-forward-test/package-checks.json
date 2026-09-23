@@ -1,0 +1,233 @@
+{
+  "persistent-labs-brand": {
+    "markdown_local_links_checked": 17,
+    "missing_links": [],
+    "links_escaping_package": [],
+    "fonts": [
+      {
+        "url": "fonts/red-hat-display-latin-variable.woff2",
+        "exists": true,
+        "woff2_header": "wOF2"
+      },
+      {
+        "url": "fonts/red-hat-text-latin-variable.woff2",
+        "exists": true,
+        "woff2_header": "wOF2"
+      },
+      {
+        "url": "fonts/red-hat-mono-latin-variable.woff2",
+        "exists": true,
+        "woff2_header": "wOF2"
+      }
+    ],
+    "svg_assets": [
+      {
+        "file": "unfazed.svg",
+        "viewBox": "0 0 1024 1024",
+        "text_elements": 0,
+        "circle_fills": []
+      },
+      {
+        "file": "galactica.svg",
+        "viewBox": "0 0 6635 1020",
+        "text_elements": 0,
+        "circle_fills": [
+          "#F7931A"
+        ]
+      },
+      {
+        "file": "fireflow.svg",
+        "viewBox": "0 0 96 96",
+        "text_elements": 0,
+        "circle_fills": []
+      },
+      {
+        "file": "lanni.svg",
+        "viewBox": "0 0 96 96",
+        "text_elements": 0,
+        "circle_fills": [
+          null
+        ]
+      },
+      {
+        "file": "memorytree.svg",
+        "viewBox": "0 0 96 96",
+        "text_elements": 0,
+        "circle_fills": []
+      },
+      {
+        "file": "persistent-labs.svg",
+        "viewBox": "0 0 47 21",
+        "text_elements": 0,
+        "circle_fills": []
+      },
+      {
+        "file": "privateinference.svg",
+        "viewBox": "0 0 96 96",
+        "text_elements": 0,
+        "circle_fills": []
+      }
+    ],
+    "token_products": [
+      "fireflow",
+      "unfazed",
+      "lanni",
+      "privateinference",
+      "galactica"
+    ],
+    "hashes": {
+      "SKILL.md": "de9272f9f23c0dd39a58f116aabf8b568f4bea0898e47f79a0d0c25de124b417",
+      "references/assets.md": "3ef831bb708f6af849fbd9f26fe78a69d57c580f5867a75131fa94f70aecd087",
+      "references/unfazed.md": "b4d51d705918bc91e92cf04344acb06e33e136c27df8827f8a8d5644c57a5cef",
+      "references/foundations.md": "02748bbe428e368f53d46b4bec55cb7b5b3728e380288529ca6801e848d1600a",
+      "references/fireflow.md": "234751840da5bd10ef5083d9bd390cabb9e81f38671cce62ded107ebcf8f40e8",
+      "references/design-bible.md": "116651704e8ee2aa449083ef2a420e06285587e54cf27c6ba4c3d30f6fa84a35",
+      "references/lanni.md": "6b0c4e634b5370470b362c26c292f51645cef691a5cd4155da8fd52c1c2f43a9",
+      "references/galactica.md": "e838b45ec0d849bd3ae9bbd0507e419513d24169bc28c76194342c7328ec385e",
+      "references/design-tokens.json": "7198afd7cdbc03c881cdf0d81ed8d6d29501df1868b3fa8692d0a225f72eaf08",
+      "references/privateinference.md": "3b8df1fc41482b3a69e8e564d63c0121355bb5745dcb446ac56ff3fe061eaa45",
+      "agents/openai.yaml": "115c64ddf0cc292fc6546a64470e83253ed44eb106972054331154ac00786666",
+      "assets/unfazed.svg": "eb579043e1e37c456da5c70084200e1705c16d65086bb82daf55890df71b2b02",
+      "assets/galactica.svg": "ac0839e3ff716d97970681203730c57eb4dc4072b00fd08ef2ba6f94fa5cdcf9",
+      "assets/tokens.css": "701a7acd33f63f654120e8a1a4bd125f1b6039b2eb56f19613105ffd905d3d11",
+      "assets/fireflow.svg": "8d96a5bc66aff522de3a3fa67beebb53cfa6c91fbdf12e81ad10f66a8d3a9fa7",
+      "assets/lanni.svg": "2bab97b2090a2e36689f4e12cf39ae54c4eb947c9620a142130633b0cc1bc9e6",
+      "assets/memorytree.svg": "bc482935b3a14cc51238957c60beac7a817e224e3c8d54651de45df3b7c61472",
+      "assets/fonts.css": "3e311f274e4467f09781db7ea5b7e8e7ff608ccfacc4e1f5642a291cb8367121",
+      "assets/persistent-labs.svg": "010ddf357f0bb0b4bdbe7b9b36bccbc602acf15e0e8d88fb01ac72999f097ee6",
+      "assets/privateinference.svg": "3d3d663047057953a15760923965d05799ac2236b221e443f19d68bc04126549",
+      "assets/fonts/red-hat-text-latin-variable.woff2": "cecc57ca573b6fb67f9ea6236fc7350aae9756a2ab528ab95382a96e8c754038",
+      "assets/fonts/SOURCES.md": "080d5d65156b84b5bf97362be9daa319e772560ed4e1d7dfed2a8eb00e545d2b",
+      "assets/fonts/red-hat-display-latin-variable.woff2": "39d2ddd13759cf61a3342d25f1f342d220e379f0e157bd963ee9cd5dd461d718",
+      "assets/fonts/red-hat-mono-latin-variable.woff2": "9914ffa64379b1ff4d69d246db13d7d84acceed0872b3a29008ae55020a8ff75",
+      "assets/fonts/OFL-Red-Hat-Display.txt": "435fbfb7e66988b2a06686a4cb966faec733f35d8fe100a1601573c27f3e0bb8",
+      "assets/fonts/OFL-Red-Hat-Mono.txt": "435fbfb7e66988b2a06686a4cb966faec733f35d8fe100a1601573c27f3e0bb8",
+      "assets/fonts/OFL-Red-Hat-Text.txt": "435fbfb7e66988b2a06686a4cb966faec733f35d8fe100a1601573c27f3e0bb8"
+    }
+  },
+  "fireflow-brand": {
+    "markdown_local_links_checked": 8,
+    "missing_links": [],
+    "links_escaping_package": [],
+    "fonts": [
+      {
+        "url": "fonts/red-hat-display-latin-variable.woff2",
+        "exists": true,
+        "woff2_header": "wOF2"
+      },
+      {
+        "url": "fonts/red-hat-text-latin-variable.woff2",
+        "exists": true,
+        "woff2_header": "wOF2"
+      },
+      {
+        "url": "fonts/red-hat-mono-latin-variable.woff2",
+        "exists": true,
+        "woff2_header": "wOF2"
+      }
+    ],
+    "svg_assets": [
+      {
+        "file": "fireflow.svg",
+        "viewBox": "0 0 96 96",
+        "text_elements": 0,
+        "circle_fills": []
+      },
+      {
+        "file": "memorytree.svg",
+        "viewBox": "0 0 96 96",
+        "text_elements": 0,
+        "circle_fills": []
+      },
+      {
+        "file": "persistent-labs.svg",
+        "viewBox": "0 0 47 21",
+        "text_elements": 0,
+        "circle_fills": []
+      }
+    ],
+    "token_products": [
+      "fireflow"
+    ],
+    "hashes": {
+      "SKILL.md": "552da7ef738b53d6ee0f7d7a39397173ef5a42854c1258f5055f6d02e684a55b",
+      "references/assets.md": "b874a51dcf9ce17a3d8c6ddb654467d2aef8b9553ab95dd1f40c5c97aed8658a",
+      "references/brand.md": "234751840da5bd10ef5083d9bd390cabb9e81f38671cce62ded107ebcf8f40e8",
+      "references/foundations.md": "02748bbe428e368f53d46b4bec55cb7b5b3728e380288529ca6801e848d1600a",
+      "references/design-tokens.json": "f649164c12cb36b9f026ddc06618c97b1cfb1f95da36f540d8823e894332af22",
+      "agents/openai.yaml": "37d878e3304810222b7e13681be77e2e08d562f0bc995aa7f2269bff14b83d1f",
+      "assets/tokens.css": "b9cbb926cfae6af6e3d7731ec44968a5f72bff6c1ef41cc329b74a2548cfc8be",
+      "assets/fireflow.svg": "8d96a5bc66aff522de3a3fa67beebb53cfa6c91fbdf12e81ad10f66a8d3a9fa7",
+      "assets/memorytree.svg": "bc482935b3a14cc51238957c60beac7a817e224e3c8d54651de45df3b7c61472",
+      "assets/fonts.css": "3e311f274e4467f09781db7ea5b7e8e7ff608ccfacc4e1f5642a291cb8367121",
+      "assets/persistent-labs.svg": "010ddf357f0bb0b4bdbe7b9b36bccbc602acf15e0e8d88fb01ac72999f097ee6",
+      "assets/fonts/red-hat-text-latin-variable.woff2": "cecc57ca573b6fb67f9ea6236fc7350aae9756a2ab528ab95382a96e8c754038",
+      "assets/fonts/SOURCES.md": "080d5d65156b84b5bf97362be9daa319e772560ed4e1d7dfed2a8eb00e545d2b",
+      "assets/fonts/red-hat-display-latin-variable.woff2": "39d2ddd13759cf61a3342d25f1f342d220e379f0e157bd963ee9cd5dd461d718",
+      "assets/fonts/red-hat-mono-latin-variable.woff2": "9914ffa64379b1ff4d69d246db13d7d84acceed0872b3a29008ae55020a8ff75",
+      "assets/fonts/OFL-Red-Hat-Display.txt": "435fbfb7e66988b2a06686a4cb966faec733f35d8fe100a1601573c27f3e0bb8",
+      "assets/fonts/OFL-Red-Hat-Mono.txt": "435fbfb7e66988b2a06686a4cb966faec733f35d8fe100a1601573c27f3e0bb8",
+      "assets/fonts/OFL-Red-Hat-Text.txt": "435fbfb7e66988b2a06686a4cb966faec733f35d8fe100a1601573c27f3e0bb8"
+    }
+  },
+  "galactica-brand": {
+    "markdown_local_links_checked": 7,
+    "missing_links": [],
+    "links_escaping_package": [],
+    "fonts": [
+      {
+        "url": "fonts/red-hat-display-latin-variable.woff2",
+        "exists": true,
+        "woff2_header": "wOF2"
+      },
+      {
+        "url": "fonts/red-hat-text-latin-variable.woff2",
+        "exists": true,
+        "woff2_header": "wOF2"
+      },
+      {
+        "url": "fonts/red-hat-mono-latin-variable.woff2",
+        "exists": true,
+        "woff2_header": "wOF2"
+      }
+    ],
+    "svg_assets": [
+      {
+        "file": "galactica.svg",
+        "viewBox": "0 0 6635 1020",
+        "text_elements": 0,
+        "circle_fills": [
+          "#F7931A"
+        ]
+      },
+      {
+        "file": "persistent-labs.svg",
+        "viewBox": "0 0 47 21",
+        "text_elements": 0,
+        "circle_fills": []
+      }
+    ],
+    "token_products": [
+      "galactica"
+    ],
+    "hashes": {
+      "SKILL.md": "0f62154b22dc15a3656664ee4e74d1f853de3efc55c12d5d378f008c22ae0bc5",
+      "references/assets.md": "331e7e5ddd5c716cab52d7986d73177e227e08d284680bc599f70754f641e21e",
+      "references/brand.md": "e838b45ec0d849bd3ae9bbd0507e419513d24169bc28c76194342c7328ec385e",
+      "references/foundations.md": "02748bbe428e368f53d46b4bec55cb7b5b3728e380288529ca6801e848d1600a",
+      "references/design-tokens.json": "eea29060b485eb247d26529304427decc181bf7c9eef3666f94fb4e2ee743141",
+      "agents/openai.yaml": "583438412d95adb34ac80df8dfaf520a5d33b91dca2dc3fd8cac682e89f7650c",
+      "assets/galactica.svg": "ac0839e3ff716d97970681203730c57eb4dc4072b00fd08ef2ba6f94fa5cdcf9",
+      "assets/tokens.css": "91bc98844cd441c31b73592fdc5707829d2305be4aaa2b8568aa7684d3c2b0e8",
+      "assets/fonts.css": "3e311f274e4467f09781db7ea5b7e8e7ff608ccfacc4e1f5642a291cb8367121",
+      "assets/persistent-labs.svg": "010ddf357f0bb0b4bdbe7b9b36bccbc602acf15e0e8d88fb01ac72999f097ee6",
+      "assets/fonts/red-hat-text-latin-variable.woff2": "cecc57ca573b6fb67f9ea6236fc7350aae9756a2ab528ab95382a96e8c754038",
+      "assets/fonts/SOURCES.md": "080d5d65156b84b5bf97362be9daa319e772560ed4e1d7dfed2a8eb00e545d2b",
+      "assets/fonts/red-hat-display-latin-variable.woff2": "39d2ddd13759cf61a3342d25f1f342d220e379f0e157bd963ee9cd5dd461d718",
+      "assets/fonts/red-hat-mono-latin-variable.woff2": "9914ffa64379b1ff4d69d246db13d7d84acceed0872b3a29008ae55020a8ff75",
+      "assets/fonts/OFL-Red-Hat-Display.txt": "435fbfb7e66988b2a06686a4cb966faec733f35d8fe100a1601573c27f3e0bb8",
+      "assets/fonts/OFL-Red-Hat-Mono.txt": "435fbfb7e66988b2a06686a4cb966faec733f35d8fe100a1601573c27f3e0bb8",
+      "assets/fonts/OFL-Red-Hat-Text.txt": "435fbfb7e66988b2a06686a4cb966faec733f35d8fe100a1601573c27f3e0bb8"
+    }
+  }
+}

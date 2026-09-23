@@ -1,0 +1,4 @@
+interface:
+  display_name: "Lanni Brand"
+  short_description: "Lanni identity, assets and design guidance"
+  default_prompt: "Use $lanni-brand to apply the Lanni brand to this task."

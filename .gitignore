@@ -1,0 +1,12 @@
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+.env
+.env.*
+!.env.example
+review-workflow/runs/
+
+.netlify/
+dist/
+build/
