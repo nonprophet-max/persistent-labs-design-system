@@ -1,4 +1,4 @@
-/* Persistent Labs v2.3 — generated from design-tokens.json. */
+/* Persistent Labs v2.4 — generated from design-tokens.json. */
 :root {
   /* core */
   --pl-ink: #1C1E21;
@@ -103,3 +103,5 @@
 [data-product][data-surface="light"] { --focus: var(--product-accent-ink); }
 [data-product="unfazed"][data-surface="light"] { --action: #2570CC; --on-action: #FFFFFF; --action-hover: #1D5BA7; --action-pressed: #174A89; }
 @media (prefers-reduced-motion: reduce) { :root { --pl-t-fast: 0ms; --pl-t-ui: 0ms; --pl-t-panel: 0ms; } }
+
+/* Pi accessible application mappings; source primitives remain unchanged. */

@@ -1,0 +1,76 @@
+{
+  "edition": "2.4",
+  "date": "2026-10-09",
+  "source": "assets/pi/brand-identity.pdf",
+  "repository": {
+    "url": "https://github.com/nonprophet-max/persistent-labs-design-system",
+    "branch": "codex/design-bible",
+    "visibility": "public",
+    "visibility_basis": "Explicit owner confirmation in this session"
+  },
+  "hashes": {
+    "index.html": "ca132d7efe230c41c70098df36d2e3e6c50620eb8dee5f377c20d20d4affbdf8",
+    "src/products.json": "da2d196498118d3860b99f51881ad67674bf7305d157b9c14d9ba655d10dbebf",
+    "tokens/design-tokens.json": "2b559f64fc9289af94f5343b9bc2007a107ca6058a0d24c7d012c6c32816bff1",
+    "tokens/persistent-labs.tokens.css": "07927b9a91573cb42f8e565dbb13a50ede19f5145c68ed107db670ee0e26e2ef",
+    "assets/pi/brand-identity.pdf": "f7ad60d71d1fecf9433996562ede36d6e02b64ffa73b434f41e92028e58623bf",
+    "assets/pi/provenance.json": "820c23106bfbd4a6fb61fbd13c7b165864741c8923dd01e0fbda7fb5424a4e4e",
+    "assets/pi/font-provenance.json": "45c0289bd661efb316667dfbedf112eca3efbe3e623c48e68ac0cdcbc74da32c",
+    "dist/index.html": "6bdfb5c81a5b5bdb1251107c51901ae952b4a7fae86ae51d16cdf7844a936263",
+    "dist-pages/products/privateinference/index.html": "f76978a30ca85d925044e80c919b4ab6543a6bd159b7091a3a2360f979a497a6",
+    "plugins/privateinference-brand/skills/privateinference-brand/SKILL.md": "bb81df389691ca7a7c22e5725c56178883f393961aaf6f849908f3d40d2cf6a3",
+    "plugins/privateinference-brand/chatbot.md": "74de997eeb3f0da04dbff6ae1b0bad8cc6028ba46e8a5581b42061b72d088bd6"
+  },
+  "deployments": [
+    {
+      "site_id": "489b2a3d-2cf8-4522-878a-685de960d77f",
+      "site": "https://persistent-labs-design-bible.netlify.app",
+      "deploy_id": "6ac8ea31db28a6ca10bf4ed5",
+      "state": "ready",
+      "file_count": 38,
+      "zip_sha256": "47c36986ecdf233f46c7bf1625b1e1dbc813f669084f41c28ac6dfcd38d7d778",
+      "folder": "dist",
+      "production_verified": true,
+      "deploy_url": "https://6ac8ea31db28a6ca10bf4ed5--persistent-labs-design-bible.netlify.app"
+    },
+    {
+      "site_id": "04e05890-2a17-4aae-a575-b8cb4b263cb0",
+      "site": "https://persistent-labs-design-pages.netlify.app",
+      "deploy_id": "6ac8ea37db28a6ca70bf4eb6",
+      "state": "ready",
+      "file_count": 50,
+      "zip_sha256": "e99e938a015c52f4f89a8a9606a20515d781d7c7240b01b2f356b4cec47a61f2",
+      "folder": "dist-pages",
+      "production_verified": true,
+      "deploy_url": "https://6ac8ea37db28a6ca70bf4eb6--persistent-labs-design-pages.netlify.app"
+    }
+  ],
+  "checks": {
+    "static_color_pairs": 107,
+    "standalone_plugins": 6,
+    "skill_frontmatter": 6,
+    "local_reading_combinations": 10,
+    "local_pages_combinations": 100,
+    "live_pages_combinations": 100,
+    "live_reading_widths": [
+      390,
+      1440
+    ],
+    "live_assets_matching_bytes": 59
+  },
+  "evidence": [
+    "reading-browser-qa.json",
+    "pages-browser-qa.json",
+    "production-pages-browser-qa.json",
+    "production-reading-checks.json",
+    "live-assets.json",
+    "skill-forward-report.md",
+    "skill-forward-closure.md",
+    "review.md"
+  ],
+  "limitations": [
+    "Chromium only; no Safari, Firefox or screen-reader certification",
+    "Solid-background contrast checks are not a complete accessibility audit",
+    "Prior review records apply to their recorded artifact hashes"
+  ]
+}

@@ -225,52 +225,52 @@
   },
   {
     "id": "privateinference",
-    "name": "PrivateInference",
-    "role": "PI · upcoming brand",
-    "status": "Upcoming · proposed identity & positioning",
-    "headline": "A clear boundary for AI.",
-    "description": "A bold mathematical π. Quiet lavender. A disciplined identity built around clarity and control.",
-    "evidence": "The user supplied the name PrivateInference, abbreviation PI and a bold π logo requirement. All positioning, palette and interface direction in this chapter is proposed. Product architecture, availability and privacy claims have not been provided or verified.",
-    "source": "",
-    "sourceLabel": "User brief · 23 Sep 2026",
+    "name": "Private Inference",
+    "role": "Pi · identity from the supplied PDF",
+    "status": "Upcoming product · supplied identity",
+    "headline": "The Private Inference identity.",
+    "description": "A warm gold disc. An asymmetric four-point flare. Poppins typography, with space to breathe.",
+    "evidence": "The owner supplied Pi Brand Identity(upd).pdf on 9 October 2026 as the new source of truth. Its logo artwork, Poppins family and two palettes replace the earlier π and lavender concept. The PDF defines visual identity, not product capabilities or availability.",
+    "source": "assets/pi/brand-identity.pdf",
+    "sourceLabel": "Source: Pi Brand Identity(upd).pdf · page 1",
     "specs": [
       [
-        "Audience & position",
-        "Proposed audience: teams evaluating control over inference and data handling. Confirm the target buyer and actual deployment model before writing launch copy. ‘A clear boundary for AI’ is a creative direction, not a privacy guarantee."
+        "Name & source authority",
+        "Display the name as Private Inference, with a space; Pi is the short name used in the supplied identity sheet. The owner-designated PDF supersedes the older mathematical π mark, lavender palette and Red Hat product typography. Keep the existing privateinference asset and skill identifiers for compatibility."
       ],
       [
-        "Mark & lockup",
-        "Use the supplied bold vector π as the primary symbol, never the letters ‘PI’ drawn to imitate it. Full lockup: π + PrivateInference. PI is the verbal abbreviation. Minimum symbol: 24px; clear space: one stem width (16/96 of the mark viewBox)."
+        "Mark & lockups",
+        "Use the extracted source artwork: a pale gold disc containing an asymmetric dark four-point flare. Preserve its offset center, orientation, curves, disc and relative spacing. The source provides horizontal and vertically stacked lockups, a standalone logomark and a standalone logotype. Use the outlined wordmark; do not retype it or substitute a π glyph."
       ],
       [
-        "Color & hierarchy",
-        "Ink, white and proposed lavender #C4B5FD. Use deep violet #6544A2 for light-surface text. Keep the π monochrome in ink, white or the single accent. No gradient fill, shield, padlock or security-seal treatment."
+        "Color · source palettes",
+        "Light Palette: #FBD78E, #1E1E1E, #FFFFFF, #BFBFBF. Dark Palette: #E5B14A, #F5F5F5, #1A1A1A, #7F7F7F. Preserve these values and the PDF’s palette names. The source shows dark lettering on light, light lettering on charcoal, and white artwork on gold. Exact vector colors are retained in the extracted assets."
       ],
       [
-        "Typography",
-        "Red Hat Display 700 for the full name and headlines; Red Hat Text 400/500 for policy descriptions; Red Hat Mono 400 for endpoint and environment identifiers. The logo is a vector path and never depends on font glyph availability."
+        "Typography · source family",
+        "Poppins is the main typeface. The sheet lists Thin 100, Extralight 200, Light 300, Regular 400, Medium 500, Semibold 600, Bold 700 and Extrabold 800. These eight upright Latin webfonts and their OFL license are bundled. Use Poppins inside Pi surfaces; the design-bible navigation retains the parent typography. The outlined logotype is independent of the live font."
       ],
       [
-        "Geometry & layout",
-        "12px configuration panels, 8px fields and pill primary actions. Define boundaries with a 1px visible rule. Keep 24px between policy groups. Use simple diagrams that distinguish a verified boundary from a proposed architecture."
+        "Accessible application · implementation guidance",
+        "Use #1E1E1E text on #FBD78E and #1A1A1A text on #E5B14A for actions. Preserve white-on-gold logo artwork, but do not use that combination for body copy. Light grey #BFBFBF on white and #7F7F7F on #1A1A1A fail 4.5:1 for normal text; use dark ink on light and #F5F5F5 on dark for readable secondary copy. These mappings implement the palette; the PDF does not specify semantic roles."
       ],
       [
-        "Motion & imagery",
-        "Static by default. Use 150ms state changes for explicit selections. Prefer named environments and readable data-flow diagrams. Do not suggest encryption, isolation or locality through decorative shields."
+        "Spacing & geometry · implementation guidance",
+        "The source gives no numerical clear-space, minimum-size or radius rules. Preserve each supplied lockup’s proportions. For this walkthrough, allow at least half a disc diameter around a logo, target a 240px horizontal lockup and a 32px standalone mark, and use a stacked lockup when space is tight. These are practical recommendations, not measured PDF specifications. Keep 24px group gaps and content-driven panels."
       ],
       [
-        "Voice & example",
-        "Measured, exact, transparent about limits. Proposed CTA: ‘Explore the concept’. Avoid ‘zero retention’, ‘air-gapped’, ‘private by default’, ‘never leaves your device’ or compliance claims until architecture and policy substantiate them."
+        "Voice & content boundaries",
+        "No approved tagline, audience, positioning, voice system or technical privacy claims are provided. “Pi Lorem Ipsum” is placeholder copy and must not appear in production lockups. Use clear descriptive writing; confirm deployment, retention, encryption, locality, compliance and availability before making claims. The earlier upcoming-product status is unchanged by this visual identity sheet."
       ],
       [
-        "Component contract",
-        "A proposed environment panel separates deployment location, access scope and retention policy. Every unknown reads ‘Not specified’. Show supporting evidence alongside future verified claims. Do not display a green security badge for an unverified property."
+        "Motion & component contract · implementation guidance",
+        "The PDF provides no motion system or UI component specification. Keep the local example static except for explicit feedback and reduced-motion-aware state changes. Retain the family’s 44px control targets and clear focus treatment. Label mock interfaces as illustrative and unknown product properties as Not specified. Exported Pi light/dark surface tokens override parent colors. Hover swaps the two source golds; pressed adds a 2px inset dark edge and focus uses a 3px outline with 4px offset. These interaction choices are implementation guidance. Consume the scoped --action and --action-pressed variables for the chosen surface; flat product tokens default to the light mapping."
       ]
     ],
-    "do": "Use the bold π and name the boundaries that can be verified.",
-    "avoid": "Implied privacy guarantees and security claims without evidence.",
-    "radius": "8px fields · 12px panels · pill CTA",
-    "voice": "Measured / exact / transparent"
+    "do": "Use the supplied disc-and-flare logo, the two-word name, Poppins and the exact source palettes.",
+    "avoid": "The superseded π, lavender, retyped logos, placeholder taglines and unsupported privacy claims.",
+    "radius": "Implementation: 12px panels · source dimensions unspecified",
+    "voice": "Clear descriptions · no approved tagline supplied"
   },
   {
     "id": "galactica",

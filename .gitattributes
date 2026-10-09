@@ -1,0 +1,4 @@
+# Preserve supplied PDF bytes and avoid treating PDF object streams as text.
+*.pdf binary
+# Preserve the upstream font license verbatim, including its whitespace.
+**/OFL-Poppins.txt -whitespace

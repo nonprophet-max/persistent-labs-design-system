@@ -1,13 +1,13 @@
 ---
 name: privateinference-brand
-description: "Create and review PrivateInference branded interfaces, pages, copy and collateral using its identity specifications. Use for PrivateInference work, not unrelated brands."
+description: "Create and review Private Inference branded interfaces, pages, copy and collateral using its identity specifications. Use for Private Inference work, not unrelated brands."
 ---
 
-# PrivateInference brand
+# Private Inference brand
 
 ## Brand essentials
 
-PrivateInference is upcoming. Its abbreviation is PI and its symbol is the supplied bold vector π, not a font glyph or improvised P/I monogram. Lavender and positioning remain proposals. Do not invent deployment, retention, encryption or locality guarantees.
+Use Private Inference (two words), or Pi. The owner-supplied Pi Brand Identity(upd).pdf is authoritative: use the original gold disc with its asymmetric four-point flare, outlined lockups, Poppins 100–800, and the exact light/dark palettes. This supersedes the earlier mathematical π, lavender and Red Hat product treatment. Never publish the source’s placeholder tagline. Upcoming status is inherited from the owner brief; the PDF establishes no capabilities. Do not invent deployment, retention, encryption or locality guarantees.
 
 Read [the product identity](references/brand.md) for positioning, logo, palette, typography, geometry, motion, voice and component behavior.
 
@@ -34,65 +34,123 @@ Deliver the requested artifact and briefly explain any meaningful deviations, un
 
 Product identities / 15
 
-## PrivateInference
+## Private Inference
 
-PI · upcoming brand
+Pi · identity from the supplied PDF
 
 15
 
-Upcoming · proposed identity & positioning
+Upcoming product · supplied identity
 
-### A clear boundary for AI.
+### Logo, color and typography.
 
-A bold mathematical π. Quiet lavender. A disciplined identity built around clarity and control.
+A warm gold disc. An asymmetric four-point flare. Poppins typography, with space to breathe.
 
 by Persistent Labs
 
-The user supplied the name PrivateInference, abbreviation PI and a bold π logo requirement. All positioning, palette and interface direction in this chapter is proposed. Product architecture, availability and privacy claims have not been provided or verified. User brief · 23 Sep 2026
+The owner supplied Pi Brand Identity(upd).pdf on 9 October 2026 as the new source of truth. Its logo artwork, Poppins family and two palettes replace the earlier π and lavender concept. The PDF defines visual identity, not product capabilities or availability. Source: Pi Brand Identity(upd).pdf · page 1 ↗
 
-**Signature on dark**#C4B5FDForeground on graphite; ink label on fill.
+### One identity. Four formats.
 
-**Signature on light**#6544A2Text on white.
+Original outlined artwork extracted from the supplied PDF. The color treatments below preserve the source examples.
 
-**Product tint**#F2EDFFDecorative light surface; ink text.
+Horizontal lockup
 
-**Shared graphite**#1C1E21Neutral foundation.
+Light lettering on charcoal
 
-### Audience & position
+Vertical lockup
 
-Proposed audience: teams evaluating control over inference and data handling. Confirm the target buyer and actual deployment model before writing launch copy. ‘A clear boundary for AI’ is a creative direction, not a privacy guarantee.
+Standalone logomark
 
-### Mark & lockup
+Standalone logotype
 
-Use the supplied bold vector π as the primary symbol, never the letters ‘PI’ drawn to imitate it. Full lockup: π + PrivateInference. PI is the verbal abbreviation. Minimum symbol: 24px; clear space: one stem width (16/96 of the mark viewBox).
+White artwork on gold
 
-### Color & hierarchy
+### Light Palette
 
-Ink, white and proposed lavender #C4B5FD. Use deep violet #6544A2 for light-surface text. Keep the π monochrome in ink, white or the single accent. No gradient fill, shield, padlock or security-seal treatment.
+**Gold**#FBD78ESource value · PDF page 1
 
-### Typography
+**Ink**#1E1E1ESource value · PDF page 1
 
-Red Hat Display 700 for the full name and headlines; Red Hat Text 400/500 for policy descriptions; Red Hat Mono 400 for endpoint and environment identifiers. The logo is a vector path and never depends on font glyph availability.
+**White**#FFFFFFSource value · PDF page 1
 
-### Geometry & layout
+**Grey**#BFBFBFSource value · PDF page 1
 
-12px configuration panels, 8px fields and pill primary actions. Define boundaries with a 1px visible rule. Keep 24px between policy groups. Use simple diagrams that distinguish a verified boundary from a proposed architecture.
+### Dark Palette
 
-### Motion & imagery
+**Gold**#E5B14ASource value · PDF page 1
 
-Static by default. Use 150ms state changes for explicit selections. Prefer named environments and readable data-flow diagrams. Do not suggest encryption, isolation or locality through decorative shields.
+**Light neutral**#F5F5F5Source value · PDF page 1
 
-### Voice & example
+**Charcoal**#1A1A1ASource value · PDF page 1
 
-Measured, exact, transparent about limits. Proposed CTA: ‘Explore the concept’. Avoid ‘zero retention’, ‘air-gapped’, ‘private by default’, ‘never leaves your device’ or compliance claims until architecture and policy substantiate them.
+**Grey**#7F7F7FSource value · PDF page 1
 
-### Component contract
+The PDF names these palettes but does not assign UI roles. Preserve every source value; use tested foreground/background pairs for reading and controls. White on gold is a supplied logo treatment, not a body-text pairing.
 
-A proposed environment panel separates deployment location, access scope and retention policy. Every unknown reads ‘Not specified’. Show supporting evidence alongside future verified claims. Do not display a green security badge for an unverified property.
+### Poppins, from Thin to Extrabold.
+
+Aa
+
+Main typeface · Poppins
+
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+abcdefghijklmnopqrstuvwxyz
+1234567890
+
+Thin 100
+
+Extralight 200
+
+Light 300
+
+Regular 400
+
+Medium 500
+
+Semibold 600
+
+Bold 700
+
+Extrabold 800
+
+Eight upright Latin weights are bundled for offline use. The source does not specify a type-size scale or an approved tagline. “Pi Lorem Ipsum” is placeholder copy and is omitted from production assets.
+
+### Name & source authority
+
+Display the name as Private Inference, with a space; Pi is the short name used in the supplied identity sheet. The owner-designated PDF supersedes the older mathematical π mark, lavender palette and Red Hat product typography. Keep the existing privateinference asset and skill identifiers for compatibility.
+
+### Mark & lockups
+
+Use the extracted source artwork: a pale gold disc containing an asymmetric dark four-point flare. Preserve its offset center, orientation, curves, disc and relative spacing. The source provides horizontal and vertically stacked lockups, a standalone logomark and a standalone logotype. Use the outlined wordmark; do not retype it or substitute a π glyph.
+
+### Color · source palettes
+
+Light Palette: #FBD78E, #1E1E1E, #FFFFFF, #BFBFBF. Dark Palette: #E5B14A, #F5F5F5, #1A1A1A, #7F7F7F. Preserve these values and the PDF’s palette names. The source shows dark lettering on light, light lettering on charcoal, and white artwork on gold. Exact vector colors are retained in the extracted assets.
+
+### Typography · source family
+
+Poppins is the main typeface. The sheet lists Thin 100, Extralight 200, Light 300, Regular 400, Medium 500, Semibold 600, Bold 700 and Extrabold 800. These eight upright Latin webfonts and their OFL license are bundled. Use Poppins inside Pi surfaces; the design-bible navigation retains the parent typography. The outlined logotype is independent of the live font.
+
+### Accessible application · implementation guidance
+
+Use #1E1E1E text on #FBD78E and #1A1A1A text on #E5B14A for actions. Preserve white-on-gold logo artwork, but do not use that combination for body copy. Light grey #BFBFBF on white and #7F7F7F on #1A1A1A fail 4.5:1 for normal text; use dark ink on light and #F5F5F5 on dark for readable secondary copy. These mappings implement the palette; the PDF does not specify semantic roles.
+
+### Spacing & geometry · implementation guidance
+
+The source gives no numerical clear-space, minimum-size or radius rules. Preserve each supplied lockup’s proportions. For this walkthrough, allow at least half a disc diameter around a logo, target a 240px horizontal lockup and a 32px standalone mark, and use a stacked lockup when space is tight. These are practical recommendations, not measured PDF specifications. Keep 24px group gaps and content-driven panels.
+
+### Voice & content boundaries
+
+No approved tagline, audience, positioning, voice system or technical privacy claims are provided. “Pi Lorem Ipsum” is placeholder copy and must not appear in production lockups. Use clear descriptive writing; confirm deployment, retention, encryption, locality, compliance and availability before making claims. The earlier upcoming-product status is unchanged by this visual identity sheet.
+
+### Motion & component contract · implementation guidance
+
+The PDF provides no motion system or UI component specification. Keep the local example static except for explicit feedback and reduced-motion-aware state changes. Retain the family’s 44px control targets and clear focus treatment. Label mock interfaces as illustrative and unknown product properties as Not specified. Exported Pi light/dark surface tokens override parent colors. Hover swaps the two source golds; pressed adds a 2px inset dark edge and focus uses a 3px outline with 4px offset. These interaction choices are implementation guidance. Consume the scoped --action and --action-pressed variables for the chosen surface; flat product tokens default to the light mapping.
 
 ### The system in use.
 
-PrivateInferenceIllustrative interface / not live data
+Illustrative interface / not live data
 
 **Deployment location**Not specified
 
@@ -106,21 +164,17 @@ Local specimen. No product action will run.
 
 ### Do
 
-Use the bold π and name the boundaries that can be verified.
+Use the supplied disc-and-flare logo, the two-word name, Poppins and the exact source palettes.
 
 ### Avoid
 
-Implied privacy guarantees and security claims without evidence.
+The superseded π, lavender, retyped logos, placeholder taglines and unsupported privacy claims.
 
-Download π vector ↓
-
-Solid white / primary
-
-Solid ink / reversed
+Download logomark ↓Download horizontal lockup ↓Download vertical lockup ↓Download logotype ↓Download dark-ground lockup ↓Download white-on-gold lockup ↓Download source PDF ↓
 
 # Persistent Labs shared foundations
 
-Edition 2.3. Product-specific exceptions take precedence inside their own product surfaces.
+Edition 2.4. Product-specific exceptions take precedence inside their own product surfaces.
 
 Foundations / 01
 
@@ -130,7 +184,7 @@ One parent. Distinct products. A shared standard of care. This edition turns the
 
 01
 
-**Working edition 2.3 · 23 September 2026.** Core rules are reconciled recommendations. Existing identities, proposed extensions and unconfirmed product decisions are labelled separately. The original bible is preserved in the reference archive.
+**Working edition 2.4 · 9 October 2026.** Core rules are reconciled recommendations. Existing identities, proposed extensions and unconfirmed product decisions are labelled separately. The original bible is preserved in the reference archive.
 
 01
 
@@ -173,13 +227,13 @@ Use an endorsed portfolio: the product leads with its own promise; “by Persist
 FireFlowEstablished product · extended identityOrchestration, persistent memory & chat UX↗
 Unfazed.devLive identity · preserved & documentedDeployment for agents↗
 LanniExisting brand · extended identityAn agent for getting things done↗
-PrivateInferenceUpcoming · proposed identity & positioningPI · upcoming brand↗05GalacticaLive product · proposed family adaptationPrivacy technology across AI & blockchain↗
+Private InferenceUpcoming product · supplied identityPi · identity from the supplied PDF↗05GalacticaLive product · proposed family adaptationPrivacy technology across AI & blockchain↗
 
 **FireFlow is one product.** Its three core parts are the FireFlow orchestration engine, MemoryTree for persistent memory and FlameChorus, the chat UX engine. They sit within the FireFlow chapter and share its product identity.
 
 ### Five products. A clear hierarchy.
 
-Persistent Labs creates FireFlow, Unfazed.dev, Lanni, PrivateInference and Galactica. Lanni is built on FireFlow. Galactica is a live privacy technology firm across AI and blockchain; PrivateInference is an upcoming brand. Their listing together does not imply a shared technical architecture.
+Persistent Labs creates FireFlow, Unfazed.dev, Lanni, Private Inference and Galactica. Lanni is built on FireFlow. Galactica is a live privacy technology firm across AI and blockchain; Private Inference is an upcoming brand. Their listing together does not imply a shared technical architecture.
 
 ### Core parts, one FireFlow identity.
 
@@ -208,7 +262,7 @@ Persistent LabsReversed / graphite on white
 | Minimum size | Ribbon: 40px wide in the parent lockup; complete lockup: 180px wide. Use 24px minimum for separate product symbols. |
 | Color | Solid white on ink, solid ink on white. Full opacity for identification. Faded marks are decorative only and have no independent meaning. |
 | Narrow screens | Keep a readable horizontal lockup. Move the product endorsement to its own line; do not squeeze a co-brand row. |
-| Avoid | Distortion, gradient fills, clipped ribbons, reconstructed official product marks and substituting a guessed font glyph for the PI logo. |
+| Avoid | Distortion, gradient fills, clipped ribbons, reconstructed official product marks and substituting a font glyph for Pi’s source artwork. |
 
 Downloadable vector masters are in assets/persistent-labs.svg and the individual product chapters. New product symbols are labelled concepts.
 
@@ -253,8 +307,8 @@ Primary #FFFFFF · secondary #CBCDD0 · muted #A8ADB4. Use the light product acc
 | Unfazed.dev dark accent | #8AB8F6 | #1C1E21 | 8.17:1 |
 | Lanni light text | #A6381C | #FFFFFF | 6.55:1 |
 | Lanni dark accent | #FF6741 | #1C1E21 | 5.78:1 |
-| PrivateInference light text | #6544A2 | #FFFFFF | 7.24:1 |
-| PrivateInference dark accent | #C4B5FD | #1C1E21 | 9.05:1 |
+| Private Inference light text | #1E1E1E | #FFFFFF | 16.67:1 |
+| Private Inference portfolio accent | #FBD78E | #1C1E21 | 12.10:1 |
 | Galactica light text | #97502A | #FFFFFF | 6.01:1 |
 | Galactica dark accent | #F4A77A | #1C1E21 | 8.48:1 |
 
@@ -275,7 +329,7 @@ Foundations / 05
 
 ## Three cuts. One clear hierarchy.
 
-Red Hat Display makes the statement. Red Hat Text handles reading and controls. Red Hat Mono makes technical detail legible. Unfazed retains its established system-font identity.
+Red Hat Display makes the statement. Red Hat Text handles reading and controls. Red Hat Mono makes technical detail legible. Unfazed retains system fonts; Pi uses Poppins within its product surfaces.
 
 05
 
@@ -315,7 +369,7 @@ run_example_001 · illustrative data
 
 Sizes use rem floors and bounded fluid growth. Body tracking is 0; headings use −.03em. Keep prose within 55–70 characters and left aligned. Main body starts at 16px; supporting copy at 14px; short metadata may use 11–12px with strong contrast. Size token names do not determine HTML heading levels.
 
-The font files and open license are bundled for offline use. Arial and system mono remain intentional fallbacks if fonts cannot load. Unfazed uses system sans and mono by design.
+The font files and open license are bundled for offline use. Arial and system mono remain intentional fallbacks if fonts cannot load. Unfazed uses system sans and mono by design. Pi’s eight Poppins weights are bundled separately and take precedence within Pi surfaces.
 
 Foundations / 06
 
@@ -503,9 +557,9 @@ Use real product views, clear diagrams and meaningful interface details. Label i
 
 ### Secondary material
 
-The original prismatic glass can remain a parent campaign motif. Keep it away from small text and operational interfaces. FireFlow uses execution diagrams, memory provenance and conversation states; Unfazed uses commands; Lanni uses actions; PI uses explicit boundaries.
+The original prismatic glass can remain a parent campaign motif. Keep it away from small text and operational interfaces. FireFlow uses execution diagrams, memory provenance and conversation states; Unfazed uses commands; Lanni uses actions; Pi uses source artwork and clearly labelled interface examples.
 
-Icons use a consistent 24px grid and 2px strokes unless they are a supplied filled brand mark. Avoid emoji as interface icons. Do not animate the Unfazed face or the PI symbol as decorative loading states.
+Icons use a consistent 24px grid and 2px strokes unless they are a supplied filled brand mark. Avoid emoji as interface icons. Do not animate the Unfazed face or the Pi mark as decorative loading states.
 
 Foundations / 11
 
@@ -521,7 +575,7 @@ Name the action, explain the mechanism and give the reader a useful next step. E
 | Actions | Sentence case: “Inspect the workflow” | Title Case Everywhere or a label that changes on hover |
 | Technical copy | Name the mechanism when it explains the benefit | Acronyms without context or unqualified “exactly-once” promises |
 | Status | “Awaiting review”, “Complete”, “Failed” | Color dots that force people to infer meaning |
-| Product name | Persistent Labs; FireFlow; Unfazed.dev; Lanni; PrivateInference (PI); Galactica | PersistentAI as the new company name or Fireflow in body text |
+| Product name | Persistent Labs; FireFlow; Unfazed.dev; Lanni; Private Inference (Pi); Galactica | PersistentAI as the new company name or Fireflow in body text |
 | FireFlow core parts | FireFlow orchestration engine; MemoryTree (persistent memory); FlameChorus (chat UX engine) | Listing MemoryTree or FlameChorus as standalone products; Flame Chorus as two words |
 
 ### Apply the system by surface.
@@ -536,14 +590,14 @@ Use a light reading surface by default, optional dark view and product accents f
 
 ## Portable-package provenance
 
-Mentions of the source archive are provenance only. The original archive remains in the private source repository and is not required to apply these shared foundations.
+Mentions of the source archive are provenance only. The original archive remains in the source repository and is not required to apply these shared foundations.
 
 
 ## Machine-readable tokens
 
 ```json
 {
-  "version": "2.3",
+  "version": "2.4",
   "core": {
     "ink": "#1C1E21",
     "void": "#121212",
@@ -635,14 +689,79 @@ Mentions of the source archive are provenance only. The original archive remains
     "panel": "300ms",
     "ease": "cubic-bezier(.2, 0, .2, 1)"
   },
+  "identities": {
+    "privateinference": {
+      "name": "Private Inference",
+      "shortName": "Pi",
+      "source": "Pi Brand Identity(upd).pdf",
+      "sourceDate": "2026-10-09",
+      "sourcePage": 1,
+      "palettes": {
+        "light": [
+          "#FBD78E",
+          "#1E1E1E",
+          "#FFFFFF",
+          "#BFBFBF"
+        ],
+        "dark": [
+          "#E5B14A",
+          "#F5F5F5",
+          "#1A1A1A",
+          "#7F7F7F"
+        ]
+      },
+      "typography": {
+        "family": "Poppins",
+        "weights": [
+          100,
+          200,
+          300,
+          400,
+          500,
+          600,
+          700,
+          800
+        ]
+      },
+      "logo": "Source-extracted disc with asymmetric four-point flare; outlined horizontal, vertical and logotype variants.",
+      "implementationNote": "Semantic surface tokens are tested implementation guidance, not PDF specifications. Pressed actions use their original fill plus a 2px inset on-action-colored edge; focus uses a 3px outline with 4px offset. Flat product tokens default to the light mapping; use the scoped --action, --on-action and --action-pressed variables for a selected surface.",
+      "surfaces": {
+        "light": {
+          "surface": "#FFFFFF",
+          "text": "#1E1E1E",
+          "text-secondary": "#1E1E1E",
+          "text-muted": "#1E1E1E",
+          "action": "#FBD78E",
+          "on-action": "#1E1E1E",
+          "action-hover": "#E5B14A",
+          "action-pressed": "#FBD78E",
+          "control-border": "#7F7F7F",
+          "focus": "#1E1E1E"
+        },
+        "dark": {
+          "surface": "#1A1A1A",
+          "text": "#F5F5F5",
+          "text-secondary": "#F5F5F5",
+          "text-muted": "#F5F5F5",
+          "action": "#E5B14A",
+          "on-action": "#1A1A1A",
+          "action-hover": "#FBD78E",
+          "action-pressed": "#E5B14A",
+          "control-border": "#BFBFBF",
+          "focus": "#FBD78E"
+        }
+      }
+    }
+  },
   "products": {
     "privateinference": {
-      "accent": "#C4B5FD",
-      "accent-ink": "#6544A2",
-      "on-accent": "#1C1E21",
-      "hover": "#D5CAFF",
-      "pressed": "#AE9BEA",
-      "tint": "#F2EDFF"
+      "accent": "#FBD78E",
+      "accent-ink": "#1E1E1E",
+      "on-accent": "#1E1E1E",
+      "hover": "#E5B14A",
+      "pressed": "#FBD78E",
+      "tint": "#F5F5F5",
+      "font-family": "\"Poppins\", sans-serif"
     }
   },
   "components": {}

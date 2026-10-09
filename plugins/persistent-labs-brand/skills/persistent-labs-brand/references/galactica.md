@@ -26,7 +26,7 @@ Keep the name, the privacy and identity themes, and the public preview’s monoc
 
 ### Make the family connection.
 
-Use the shared reading grid, Red Hat typography, accessible color pairs and quiet maker endorsement. Give AI and blockchain separate editorial lanes. Galactica is live; PI remains an upcoming brand with its own π identity.
+Use the shared reading grid, Red Hat typography, accessible color pairs and quiet maker endorsement. Give AI and blockchain separate editorial lanes. Galactica is live; Pi remains an upcoming product with its own source-defined disc-and-flare identity.
 
 Source boundary: public text and an indexed [homepage preview](https://galactica.com/preview.jpg) informed this direction. Exact site CSS and direct image inspection were unavailable. Copper values and visual specifications are proposed family adaptations. The Galactica.com lockup, including its bold orange dot, follows the owner’s subsequent direction; the diagram is explanatory artwork.
 

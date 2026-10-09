@@ -1,5 +1,5 @@
 {
-  "version": "2.3",
+  "version": "2.4",
   "core": {
     "ink": "#1C1E21",
     "void": "#121212",
@@ -117,12 +117,13 @@
       "tint": "#FFF0EB"
     },
     "privateinference": {
-      "accent": "#C4B5FD",
-      "accent-ink": "#6544A2",
-      "on-accent": "#1C1E21",
-      "hover": "#D5CAFF",
-      "pressed": "#AE9BEA",
-      "tint": "#F2EDFF"
+      "accent": "#FBD78E",
+      "accent-ink": "#1E1E1E",
+      "on-accent": "#1E1E1E",
+      "hover": "#E5B14A",
+      "pressed": "#FBD78E",
+      "tint": "#F5F5F5",
+      "font-family": "\"Poppins\", sans-serif"
     },
     "galactica": {
       "accent": "#F4A77A",
@@ -159,6 +160,70 @@
         "hover": "#FFCB63",
         "pressed": "#EABD64",
         "tint": "#FFF5E6"
+      }
+    }
+  },
+  "identities": {
+    "privateinference": {
+      "name": "Private Inference",
+      "shortName": "Pi",
+      "source": "Pi Brand Identity(upd).pdf",
+      "sourceDate": "2026-10-09",
+      "sourcePage": 1,
+      "palettes": {
+        "light": [
+          "#FBD78E",
+          "#1E1E1E",
+          "#FFFFFF",
+          "#BFBFBF"
+        ],
+        "dark": [
+          "#E5B14A",
+          "#F5F5F5",
+          "#1A1A1A",
+          "#7F7F7F"
+        ]
+      },
+      "typography": {
+        "family": "Poppins",
+        "weights": [
+          100,
+          200,
+          300,
+          400,
+          500,
+          600,
+          700,
+          800
+        ]
+      },
+      "logo": "Source-extracted disc with asymmetric four-point flare; outlined horizontal, vertical and logotype variants.",
+      "implementationNote": "Semantic surface tokens are tested implementation guidance, not PDF specifications. Pressed actions use their original fill plus a 2px inset on-action-colored edge; focus uses a 3px outline with 4px offset. Flat product tokens default to the light mapping; use the scoped --action, --on-action and --action-pressed variables for a selected surface.",
+      "surfaces": {
+        "light": {
+          "surface": "#FFFFFF",
+          "text": "#1E1E1E",
+          "text-secondary": "#1E1E1E",
+          "text-muted": "#1E1E1E",
+          "action": "#FBD78E",
+          "on-action": "#1E1E1E",
+          "action-hover": "#E5B14A",
+          "action-pressed": "#FBD78E",
+          "control-border": "#7F7F7F",
+          "focus": "#1E1E1E"
+        },
+        "dark": {
+          "surface": "#1A1A1A",
+          "text": "#F5F5F5",
+          "text-secondary": "#F5F5F5",
+          "text-muted": "#F5F5F5",
+          "action": "#E5B14A",
+          "on-action": "#1A1A1A",
+          "action-hover": "#FBD78E",
+          "action-pressed": "#E5B14A",
+          "control-border": "#BFBFBF",
+          "focus": "#FBD78E"
+        }
       }
     }
   }

@@ -2,8 +2,7 @@
 
 Downloaded unchanged from Google's official Fonts CDN on 23 September 2026.
 These are upright, Latin-subset variable WOFF2 fonts. Other scripts use the
-declared system fallbacks; this bundle does not contain italic masters. The PI
-identity uses an SVG outline and does not depend on a font containing Greek pi.
+declared system fallbacks; this bundle does not contain italic masters. Pi uses its supplied outlined logo and its own Poppins typography.
 
 The weight ranges and Unicode coverage in `src/fonts.css` reproduce the official
 [Google Fonts CSS response](https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300..900&family=Red+Hat+Text:wght@300..700&family=Red+Hat+Mono:wght@300..700&display=swap).

@@ -1,0 +1,54 @@
+{
+  "css_source": "https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap",
+  "license_source": "https://raw.githubusercontent.com/google/fonts/main/ofl/poppins/OFL.txt",
+  "fonts": [
+    {
+      "weight": 100,
+      "file": "poppins-latin-100.woff2",
+      "url": "https://fonts.gstatic.com/s/poppins/v24/pxiGyp8kv8JHgFVrLPTucHtAOvWDSA.woff2",
+      "sha256": "ba433c0e3e2ccac378976ceb97c0c25dcbc81ec0989a0e111c504000bbf14fd2"
+    },
+    {
+      "weight": 200,
+      "file": "poppins-latin-200.woff2",
+      "url": "https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLFj_Z1xlFd2JQEk.woff2",
+      "sha256": "244dd57da310b3fe9a789ef87179bb433b8628016354c4ce80896fd7e4e53968"
+    },
+    {
+      "weight": 300,
+      "file": "poppins-latin-300.woff2",
+      "url": "https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDz8Z1xlFd2JQEk.woff2",
+      "sha256": "643e38d8c288a1da34a14a68a5012441929108d50054414ce8cc33fad36a2354"
+    },
+    {
+      "weight": 400,
+      "file": "poppins-latin-400.woff2",
+      "url": "https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2",
+      "sha256": "3dc5d0c52428fe1696264907a1054ebbaac07f8cbe45832c105f819c2ae397c0"
+    },
+    {
+      "weight": 500,
+      "file": "poppins-latin-500.woff2",
+      "url": "https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1xlFd2JQEk.woff2",
+      "sha256": "289e0afc8be731a86822349e54557296f145926496bd2138db1bac0db77f77a2"
+    },
+    {
+      "weight": 600,
+      "file": "poppins-latin-600.woff2",
+      "url": "https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z1xlFd2JQEk.woff2",
+      "sha256": "872e862918591a9e824dc03ed92f05729435ffbb8ebbb10eff7eda26592b1798"
+    },
+    {
+      "weight": 700,
+      "file": "poppins-latin-700.woff2",
+      "url": "https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1xlFd2JQEk.woff2",
+      "sha256": "197a3cbd7290c242c5c765268cdd69a9a39867fdc80cd13071f243a81c56fb76"
+    },
+    {
+      "weight": 800,
+      "file": "poppins-latin-800.woff2",
+      "url": "https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDD4Z1xlFd2JQEk.woff2",
+      "sha256": "4ef5511d8e7b39ae3f98ffed14d6071d7914e0c145fee5a79bb43aa962ff0fc4"
+    }
+  ]
+}

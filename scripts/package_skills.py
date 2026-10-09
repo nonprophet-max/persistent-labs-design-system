@@ -65,10 +65,10 @@ def dump(path,value):write(path,json.dumps(value,ensure_ascii=False,indent=2)+'\
 def copy(src,dst):dst.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(src,dst)
 
 foundations='# Persistent Labs shared foundations\n\nEdition '+T['version']+'. Product-specific exceptions take precedence inside their own product surfaces.\n\n'+ '\n'.join(md(s[4]) for s in SECTIONS if s[3]=='Foundations')
-complete='# Persistent Labs full design bible\n\nEdition '+T['version']+' · 23 September 2026.\n\n'+'\n'.join(md(s[4]) for s in SECTIONS)
+complete='# Persistent Labs full design bible\n\nEdition '+T['version']+' · 9 October 2026.\n\n'+'\n'.join(md(s[4]) for s in SECTIONS)
 # Local archive links in the reading page are provenance, not portable skill dependencies.
-complete+='\n## Portable-package provenance\n\nReferences above to original archives, review rounds and workflow guides describe records in the private source repository. They are historical context, not bundled dependencies or instructions to locate missing files. Applying this skill requires only the included references, tokens and assets. Current browser rendering remains unverified; do not inherit historical passes as proof for a new deliverable.\n'
-foundations+='\n## Portable-package provenance\n\nMentions of the source archive are provenance only. The original archive remains in the private source repository and is not required to apply these shared foundations.\n'
+complete+='\n## Portable-package provenance\n\nReferences above to original archives, review rounds and workflow guides describe records in the source repository. They are historical context, not bundled dependencies or instructions to locate missing files. Applying this skill requires only the included references, tokens and assets. Review records apply only to their recorded artifact hashes; validate each new deliverable independently.\n'
+foundations+='\n## Portable-package provenance\n\nMentions of the source archive are provenance only. The original archive remains in the source repository and is not required to apply these shared foundations.\n'
 common='''## Apply the identity
 
 Use this guidance for the requested brand and deliverable. Follow explicit owner directions when they override a proposed treatment, and record the change instead of silently mixing rules. Preserve the brief’s format and audience.
@@ -92,7 +92,7 @@ for plugin_name,label,p in entries:
     desc=('Create and review work using the full Persistent Labs design bible and its five product identities. Use for parent-brand or multi-product work; use the individual product skill for work confined to one product.' if is_parent else f'Create and review {label} branded interfaces, pages, copy and collateral using its identity specifications. Use for {label} work, not unrelated brands.')
     if p and p['id']=='fireflow':desc+=' Includes the FireFlow orchestration engine, MemoryTree and FlameChorus as parts of one product.'
     manifest={
-      'name':plugin_name,'version':'2.3.0','description':desc,'author':{'name':'Persistent Labs'},'skills':'./skills/',
+      'name':plugin_name,'version':'2.4.0','description':desc,'author':{'name':'Persistent Labs'},'skills':'./skills/',
       'interface':{'displayName':label+' Brand','shortDescription':('Full design bible and five product identities' if is_parent else label+' identity, assets and design guidance'),'longDescription':desc,'developerName':'Persistent Labs','category':'Productivity','capabilities':[],'defaultPrompt':'Use $'+plugin_name+' for this design brief.','brandColor':T['core']['gold'] if is_parent else T['products'][p['id']]['accent']}
     }
     dump(plugin/'.codex-plugin/plugin.json',manifest)
@@ -112,7 +112,7 @@ For parent-brand and portfolio work, read [the full design bible](references/des
 
 '''+ '\n'.join(f'- [{q["name"]}](references/{q["id"]}.md): {q["role"]}.' for q in PRODUCTS)+'''
 
-The portfolio is FireFlow, Unfazed.dev, Lanni, PrivateInference and Galactica. FireFlow contains its orchestration engine, MemoryTree (persistent memory) and FlameChorus (chat UX engine). Never promote those components into peer product brands. Lanni is built on FireFlow. Galactica is live; PrivateInference is upcoming. Their shared portfolio does not imply shared technical architecture.
+The portfolio is FireFlow, Unfazed.dev, Lanni, Private Inference and Galactica. FireFlow contains its orchestration engine, MemoryTree (persistent memory) and FlameChorus (chat UX engine). Never promote those components into peer product brands. Lanni is built on FireFlow. Galactica is live; Private Inference is upcoming. Their shared portfolio does not imply shared technical architecture.
 '''
         write(skill/'references/design-bible.md',complete)
         for q in PRODUCTS:write(skill/f'references/{q["id"]}.md',md(next(s[4] for s in SECTIONS if s[0]==q['id'])))
@@ -122,7 +122,8 @@ The portfolio is FireFlow, Unfazed.dev, Lanni, PrivateInference and Galactica. F
     else:
         chapter=md(next(s[4] for s in SECTIONS if s[0]==p['id']))
         write(skill/'references/brand.md',chapter)
-        selected={k:v for k,v in T.items() if k not in ('products','components')}
+        selected={k:v for k,v in T.items() if k not in ('products','components','identities')}
+        if p['id']=='privateinference':selected['identities']={'privateinference':T['identities']['privateinference']}
         selected['products']={p['id']:T['products'][p['id']]}
         selected['components']={'fireflow':T['components']['fireflow']} if p['id']=='fireflow' else {}
         asset_names=['persistent-labs',p['id']]+(['memorytree'] if p['id']=='fireflow' else [])
@@ -130,7 +131,7 @@ The portfolio is FireFlow, Unfazed.dev, Lanni, PrivateInference and Galactica. F
           'fireflow':'FireFlow is one product with three core parts: its orchestration engine, MemoryTree for persistent memory and FlameChorus for chat UX. Component accents are subordinate; primary actions stay FireFlow orange. Do not create separate MemoryTree or FlameChorus product brands.',
           'unfazed':'Preserve the unimpressed face, lowercase unfazed wordmark, white ground, system typography, blue accent and 6px corners. Use Unfazed.dev in the portfolio. Do not impose parent gold, pill controls or Red Hat inside Unfazed’s interface.',
           'lanni':'Lanni is built on FireFlow. Preserve coral and the human, clear voice. The L-shaped mark is a proposed extension, and current availability is unverified. Keep proposed actions, review, execution and completion distinguishable.',
-          'privateinference':'PrivateInference is upcoming. Its abbreviation is PI and its symbol is the supplied bold vector π, not a font glyph or improvised P/I monogram. Lavender and positioning remain proposals. Do not invent deployment, retention, encryption or locality guarantees.',
+          'privateinference':'Use Private Inference (two words), or Pi. The owner-supplied Pi Brand Identity(upd).pdf is authoritative: use the original gold disc with its asymmetric four-point flare, outlined lockups, Poppins 100–800, and the exact light/dark palettes. This supersedes the earlier mathematical π, lavender and Red Hat product treatment. Never publish the source’s placeholder tagline. Upcoming status is inherited from the owner brief; the PDF establishes no capabilities. Do not invent deployment, retention, encryption or locality guarantees.',
           'galactica':'Galactica is live and operates as a privacy technology firm across AI and blockchain. Use the full Galactica.com lockup with the bold orange dot #F7931A. The outlined supplied lockup follows owner direction; copper UI colors are proposed family adaptations. Keep Galactica distinct from upcoming PI and do not infer specific AI or privacy capabilities.'
         }[p['id']]
         body='## Brand essentials\n\n'+invariant+'\n\nRead [the product identity](references/brand.md) for positioning, logo, palette, typography, geometry, motion, voice and component behavior.\n\n'+common+'\n'+refs
@@ -145,29 +146,39 @@ The portfolio is FireFlow, Unfazed.dev, Lanni, PrivateInference and Galactica. F
             if other!=p['id']:css=re.sub(r'\[data-product="'+other+r'"\][^{]*\{[^}]*\}\n?','',css)
     write(skill/'assets/tokens.css',css)
     for name in asset_names:copy(ROOT/f'assets/{name}.svg',skill/f'assets/{name}.svg')
+    include_pi=is_parent or p['id']=='privateinference'
+    if include_pi:
+        shutil.copytree(ROOT/'assets/pi',skill/'assets/pi',dirs_exist_ok=True)
+        body_ref='\n- [Pi source PDF](../assets/pi/brand-identity.pdf), [vector provenance](../assets/pi/provenance.json), and [Poppins sources](../assets/pi/font-provenance.json).\n'
+    else:body_ref=''
     for font in (ROOT/'assets/fonts').iterdir():
-        if font.is_file():copy(font,skill/'assets/fonts'/font.name)
-    write(skill/'assets/fonts.css',re.sub(r'/\*.*?\*/', '/* Link this stylesheet from your page. Keep the adjacent fonts/ directory; rebase URLs if inlining. */', (ROOT/'src/fonts.css').read_text(), count=1, flags=re.S).replace('assets/fonts/','fonts/'))
+        if font.is_file() and (include_pi or ('poppins' not in font.name.lower())):copy(font,skill/'assets/fonts'/font.name)
+    font_css=(ROOT/'src/fonts.css').read_text()+('\n'+(ROOT/'src/pi-fonts.css').read_text() if include_pi else '')
+    write(skill/'assets/fonts.css',re.sub(r'/\*.*?\*/', '/* Link this stylesheet from your page. Keep the adjacent fonts/ directory; rebase URLs if inlining. */', font_css, count=1, flags=re.S).replace('assets/fonts/','fonts/'))
     font_sources=(ROOT/'assets/fonts/SOURCES.md').read_text()
     start=font_sources.index('The weight ranges')
     end=font_sources.index('| File |')
     font_sources=font_sources[:start]+'Load the bundled families by linking assets/fonts.css. Its URLs resolve relative to that stylesheet and its adjacent fonts/ directory. If you inline the CSS into a document, rebase the font URLs to that document. No project build script is required.\n\n'+font_sources[end:]
+    if include_pi:
+        font_sources+='\n## Poppins for Pi\n\nPoppins weights 100–800 are bundled as eight upright Latin WOFF2 files with OFL-Poppins.txt. Exact CDN URLs and hashes are in [Pi font provenance](../pi/font-provenance.json). The PDF specifies the family and weights; font sizes and UI roles are implementation guidance.\n'
     write(skill/'assets/fonts/SOURCES.md',font_sources)
     inventory='# Assets and provenance\n\n'+ '\n'.join(f'- [{name}.svg](../assets/{name}.svg)' for name in asset_names)+'''
 
-Use SVG assets directly, preserving their viewBox and proportions. Assets with currentColor inherit the chosen approved foreground when inlined; external SVG images use their own foreground. The Galactica.com dot is a fixed orange circle and remains orange in full-color lockups. Do not replace PI’s vector π with a font character.
+Use SVG assets directly, preserving their viewBox and proportions. Assets with currentColor inherit the chosen approved foreground when inlined; external SVG images use their own foreground. The Galactica.com dot is a fixed orange circle and remains orange in full-color lockups. Pi uses its source-extracted disc-and-flare mark. Its outlined wordmark must not be retyped or replaced by a mathematical π.
 
 The Persistent Labs ribbon and Unfazed face are retained source marks. FireFlow and Lanni marks and the MemoryTree component icon are proposed. The Galactica.com wordmark is an owner-directed family adaptation, outlined from Red Hat Display 700; it is not an extracted website master.
 
-Red Hat Display, Text and Mono are bundled with their SIL Open Font Licenses in assets/fonts. Include assets/fonts.css when using these webfonts. Unfazed uses system typography as its product exception. The brand marks and design bible are proprietary; the font licenses do not grant rights to the brand identities.
+Red Hat Display, Text and Mono are bundled with their SIL Open Font Licenses in assets/fonts. Include assets/fonts.css when using these webfonts. Unfazed uses system typography; Pi uses Poppins as its product exception. Poppins and the source PDF/variants are bundled in the Pi and parent plugins, with their own provenance and OFL license. The brand marks and design bible are proprietary; the font licenses do not grant rights to the brand identities.
 '''
+    if include_pi:
+        inventory+='\n## Pi source assets\n\n'+''.join(f'- [{name}.svg](../assets/pi/{name}.svg)\n' for name in ['mark','horizontal','vertical','logotype','horizontal-dark','horizontal-reversed'])+body_ref+'\nColors and path proportions follow the PDF. UI color roles, spacing and motion recommendations are applications, not additional source specifications. The mark SVG uses its own fixed source fills.\n'
     write(skill/'references/assets.md',inventory)
     # This portable document can be attached/pasted without a plugin runtime.
     chatbot=skill_text+'\n\n---\n\n'+(complete if is_parent else (skill/'references/brand.md').read_text()+'\n'+foundations)+'\n\n## Machine-readable tokens\n\n```json\n'+json.dumps(selected,indent=2)+'\n```\n'
     write(plugin/'chatbot.md',chatbot)
     catalog.append({'name':plugin_name,'product':label,'skill':f'plugins/{plugin_name}/skills/{plugin_name}/SKILL.md','chatbot':f'plugins/{plugin_name}/chatbot.md','plugin':f'plugins/{plugin_name}'})
 
-dump(ROOT/'brand-skills.json',{'version':'2.3.0','plugins':catalog})
+dump(ROOT/'brand-skills.json',{'version':'2.4.0','plugins':catalog})
 # A repository-local Claude catalog; no local app configuration is changed.
 dump(ROOT/'.claude-plugin/marketplace.json',{'name':'persistent-labs-brands','owner':{'name':'Persistent Labs'},'plugins':[{'name':c['name'],'source':'./'+c['plugin'],'description':'Brand guidance for '+c['product']} for c in catalog]})
 write(ROOT/'BRAND-SKILLS.md','''# Portable brand skills
@@ -192,6 +203,6 @@ Attach or paste the desired `chatbot.md` and give the actual task. It combines i
 
 Run `python3 scripts/package_skills.py` after changing the bible sources, then `python3 scripts/check_skills.py`. The packaging process derives references and tokens from the same sources as the web bible. Preserve owner decisions and product exceptions when extending the system.
 
-The GitHub repository is intended to remain private. Publishing the reading website does not publish this repository or its plugin catalog.
+The owner confirmed on 9 October 2026 that the GitHub repository should remain public. The website build includes the reading content and brand assets; plugin packages are maintained separately in this repository.
 ''')
 print('Packaged six independent brand skill plugins and chatbot documents.')

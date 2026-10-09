@@ -1,13 +1,13 @@
 ---
 name: privateinference-brand
-description: "Create and review PrivateInference branded interfaces, pages, copy and collateral using its identity specifications. Use for PrivateInference work, not unrelated brands."
+description: "Create and review Private Inference branded interfaces, pages, copy and collateral using its identity specifications. Use for Private Inference work, not unrelated brands."
 ---
 
-# PrivateInference brand
+# Private Inference brand
 
 ## Brand essentials
 
-PrivateInference is upcoming. Its abbreviation is PI and its symbol is the supplied bold vector π, not a font glyph or improvised P/I monogram. Lavender and positioning remain proposals. Do not invent deployment, retention, encryption or locality guarantees.
+Use Private Inference (two words), or Pi. The owner-supplied Pi Brand Identity(upd).pdf is authoritative: use the original gold disc with its asymmetric four-point flare, outlined lockups, Poppins 100–800, and the exact light/dark palettes. This supersedes the earlier mathematical π, lavender and Red Hat product treatment. Never publish the source’s placeholder tagline. Upcoming status is inherited from the owner brief; the PDF establishes no capabilities. Do not invent deployment, retention, encryption or locality guarantees.
 
 Read [the product identity](references/brand.md) for positioning, logo, palette, typography, geometry, motion, voice and component behavior.
 

@@ -1,4 +1,4 @@
-/* Persistent Labs v2.3 — generated from design-tokens.json. */
+/* Persistent Labs v2.4 — generated from design-tokens.json. */
 :root {
   /* core */
   --pl-ink: #1C1E21;
@@ -111,12 +111,13 @@
   --product-tint: #FFF0EB;
 }
 [data-product="privateinference"] {
-  --product-accent: #C4B5FD;
-  --product-accent-ink: #6544A2;
-  --product-on-accent: #1C1E21;
-  --product-hover: #D5CAFF;
-  --product-pressed: #AE9BEA;
-  --product-tint: #F2EDFF;
+  --product-accent: #FBD78E;
+  --product-accent-ink: #1E1E1E;
+  --product-on-accent: #1E1E1E;
+  --product-hover: #E5B14A;
+  --product-pressed: #FBD78E;
+  --product-tint: #F5F5F5;
+  --product-font-family: "Poppins", sans-serif;
 }
 [data-product="galactica"] {
   --product-accent: #F4A77A;
@@ -160,3 +161,31 @@
 [data-product][data-surface="light"] { --focus: var(--product-accent-ink); }
 [data-product="unfazed"][data-surface="light"] { --action: #2570CC; --on-action: #FFFFFF; --action-hover: #1D5BA7; --action-pressed: #174A89; }
 @media (prefers-reduced-motion: reduce) { :root { --pl-t-fast: 0ms; --pl-t-ui: 0ms; --pl-t-panel: 0ms; } }
+
+/* Pi accessible application mappings; source primitives remain unchanged. */
+[data-product="privateinference"][data-surface="light"], [data-product="privateinference"] [data-surface="light"] {
+  --surface: #FFFFFF;
+  --text: #1E1E1E;
+  --text-secondary: #1E1E1E;
+  --text-muted: #1E1E1E;
+  --action: #FBD78E;
+  --on-action: #1E1E1E;
+  --action-hover: #E5B14A;
+  --action-pressed: #FBD78E;
+  --control-border: #7F7F7F;
+  --focus: #1E1E1E;
+  font-family: var(--product-font-family);
+}
+[data-product="privateinference"][data-surface="dark"], [data-product="privateinference"] [data-surface="dark"] {
+  --surface: #1A1A1A;
+  --text: #F5F5F5;
+  --text-secondary: #F5F5F5;
+  --text-muted: #F5F5F5;
+  --action: #E5B14A;
+  --on-action: #1A1A1A;
+  --action-hover: #FBD78E;
+  --action-pressed: #E5B14A;
+  --control-border: #BFBFBF;
+  --focus: #FBD78E;
+  font-family: var(--product-font-family);
+}

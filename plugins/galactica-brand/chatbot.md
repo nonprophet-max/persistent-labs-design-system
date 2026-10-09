@@ -60,7 +60,7 @@ Keep the name, the privacy and identity themes, and the public preview’s monoc
 
 ### Make the family connection.
 
-Use the shared reading grid, Red Hat typography, accessible color pairs and quiet maker endorsement. Give AI and blockchain separate editorial lanes. Galactica is live; PI remains an upcoming brand with its own π identity.
+Use the shared reading grid, Red Hat typography, accessible color pairs and quiet maker endorsement. Give AI and blockchain separate editorial lanes. Galactica is live; Pi remains an upcoming product with its own source-defined disc-and-flare identity.
 
 Source boundary: public text and an indexed [homepage preview](https://galactica.com/preview.jpg) informed this direction. Exact site CSS and direct image inspection were unavailable. Copper values and visual specifications are proposed family adaptations. The Galactica.com lockup, including its bold orange dot, follows the owner’s subsequent direction; the diagram is explanatory artwork.
 
@@ -144,7 +144,7 @@ Owner-directed family lockup: Galactica.com, with a bold orange dot. The downloa
 
 # Persistent Labs shared foundations
 
-Edition 2.3. Product-specific exceptions take precedence inside their own product surfaces.
+Edition 2.4. Product-specific exceptions take precedence inside their own product surfaces.
 
 Foundations / 01
 
@@ -154,7 +154,7 @@ One parent. Distinct products. A shared standard of care. This edition turns the
 
 01
 
-**Working edition 2.3 · 23 September 2026.** Core rules are reconciled recommendations. Existing identities, proposed extensions and unconfirmed product decisions are labelled separately. The original bible is preserved in the reference archive.
+**Working edition 2.4 · 9 October 2026.** Core rules are reconciled recommendations. Existing identities, proposed extensions and unconfirmed product decisions are labelled separately. The original bible is preserved in the reference archive.
 
 01
 
@@ -197,13 +197,13 @@ Use an endorsed portfolio: the product leads with its own promise; “by Persist
 FireFlowEstablished product · extended identityOrchestration, persistent memory & chat UX↗
 Unfazed.devLive identity · preserved & documentedDeployment for agents↗
 LanniExisting brand · extended identityAn agent for getting things done↗
-PrivateInferenceUpcoming · proposed identity & positioningPI · upcoming brand↗05GalacticaLive product · proposed family adaptationPrivacy technology across AI & blockchain↗
+Private InferenceUpcoming product · supplied identityPi · identity from the supplied PDF↗05GalacticaLive product · proposed family adaptationPrivacy technology across AI & blockchain↗
 
 **FireFlow is one product.** Its three core parts are the FireFlow orchestration engine, MemoryTree for persistent memory and FlameChorus, the chat UX engine. They sit within the FireFlow chapter and share its product identity.
 
 ### Five products. A clear hierarchy.
 
-Persistent Labs creates FireFlow, Unfazed.dev, Lanni, PrivateInference and Galactica. Lanni is built on FireFlow. Galactica is a live privacy technology firm across AI and blockchain; PrivateInference is an upcoming brand. Their listing together does not imply a shared technical architecture.
+Persistent Labs creates FireFlow, Unfazed.dev, Lanni, Private Inference and Galactica. Lanni is built on FireFlow. Galactica is a live privacy technology firm across AI and blockchain; Private Inference is an upcoming brand. Their listing together does not imply a shared technical architecture.
 
 ### Core parts, one FireFlow identity.
 
@@ -232,7 +232,7 @@ Persistent LabsReversed / graphite on white
 | Minimum size | Ribbon: 40px wide in the parent lockup; complete lockup: 180px wide. Use 24px minimum for separate product symbols. |
 | Color | Solid white on ink, solid ink on white. Full opacity for identification. Faded marks are decorative only and have no independent meaning. |
 | Narrow screens | Keep a readable horizontal lockup. Move the product endorsement to its own line; do not squeeze a co-brand row. |
-| Avoid | Distortion, gradient fills, clipped ribbons, reconstructed official product marks and substituting a guessed font glyph for the PI logo. |
+| Avoid | Distortion, gradient fills, clipped ribbons, reconstructed official product marks and substituting a font glyph for Pi’s source artwork. |
 
 Downloadable vector masters are in assets/persistent-labs.svg and the individual product chapters. New product symbols are labelled concepts.
 
@@ -277,8 +277,8 @@ Primary #FFFFFF · secondary #CBCDD0 · muted #A8ADB4. Use the light product acc
 | Unfazed.dev dark accent | #8AB8F6 | #1C1E21 | 8.17:1 |
 | Lanni light text | #A6381C | #FFFFFF | 6.55:1 |
 | Lanni dark accent | #FF6741 | #1C1E21 | 5.78:1 |
-| PrivateInference light text | #6544A2 | #FFFFFF | 7.24:1 |
-| PrivateInference dark accent | #C4B5FD | #1C1E21 | 9.05:1 |
+| Private Inference light text | #1E1E1E | #FFFFFF | 16.67:1 |
+| Private Inference portfolio accent | #FBD78E | #1C1E21 | 12.10:1 |
 | Galactica light text | #97502A | #FFFFFF | 6.01:1 |
 | Galactica dark accent | #F4A77A | #1C1E21 | 8.48:1 |
 
@@ -299,7 +299,7 @@ Foundations / 05
 
 ## Three cuts. One clear hierarchy.
 
-Red Hat Display makes the statement. Red Hat Text handles reading and controls. Red Hat Mono makes technical detail legible. Unfazed retains its established system-font identity.
+Red Hat Display makes the statement. Red Hat Text handles reading and controls. Red Hat Mono makes technical detail legible. Unfazed retains system fonts; Pi uses Poppins within its product surfaces.
 
 05
 
@@ -339,7 +339,7 @@ run_example_001 · illustrative data
 
 Sizes use rem floors and bounded fluid growth. Body tracking is 0; headings use −.03em. Keep prose within 55–70 characters and left aligned. Main body starts at 16px; supporting copy at 14px; short metadata may use 11–12px with strong contrast. Size token names do not determine HTML heading levels.
 
-The font files and open license are bundled for offline use. Arial and system mono remain intentional fallbacks if fonts cannot load. Unfazed uses system sans and mono by design.
+The font files and open license are bundled for offline use. Arial and system mono remain intentional fallbacks if fonts cannot load. Unfazed uses system sans and mono by design. Pi’s eight Poppins weights are bundled separately and take precedence within Pi surfaces.
 
 Foundations / 06
 
@@ -527,9 +527,9 @@ Use real product views, clear diagrams and meaningful interface details. Label i
 
 ### Secondary material
 
-The original prismatic glass can remain a parent campaign motif. Keep it away from small text and operational interfaces. FireFlow uses execution diagrams, memory provenance and conversation states; Unfazed uses commands; Lanni uses actions; PI uses explicit boundaries.
+The original prismatic glass can remain a parent campaign motif. Keep it away from small text and operational interfaces. FireFlow uses execution diagrams, memory provenance and conversation states; Unfazed uses commands; Lanni uses actions; Pi uses source artwork and clearly labelled interface examples.
 
-Icons use a consistent 24px grid and 2px strokes unless they are a supplied filled brand mark. Avoid emoji as interface icons. Do not animate the Unfazed face or the PI symbol as decorative loading states.
+Icons use a consistent 24px grid and 2px strokes unless they are a supplied filled brand mark. Avoid emoji as interface icons. Do not animate the Unfazed face or the Pi mark as decorative loading states.
 
 Foundations / 11
 
@@ -545,7 +545,7 @@ Name the action, explain the mechanism and give the reader a useful next step. E
 | Actions | Sentence case: “Inspect the workflow” | Title Case Everywhere or a label that changes on hover |
 | Technical copy | Name the mechanism when it explains the benefit | Acronyms without context or unqualified “exactly-once” promises |
 | Status | “Awaiting review”, “Complete”, “Failed” | Color dots that force people to infer meaning |
-| Product name | Persistent Labs; FireFlow; Unfazed.dev; Lanni; PrivateInference (PI); Galactica | PersistentAI as the new company name or Fireflow in body text |
+| Product name | Persistent Labs; FireFlow; Unfazed.dev; Lanni; Private Inference (Pi); Galactica | PersistentAI as the new company name or Fireflow in body text |
 | FireFlow core parts | FireFlow orchestration engine; MemoryTree (persistent memory); FlameChorus (chat UX engine) | Listing MemoryTree or FlameChorus as standalone products; Flame Chorus as two words |
 
 ### Apply the system by surface.
@@ -560,14 +560,14 @@ Use a light reading surface by default, optional dark view and product accents f
 
 ## Portable-package provenance
 
-Mentions of the source archive are provenance only. The original archive remains in the private source repository and is not required to apply these shared foundations.
+Mentions of the source archive are provenance only. The original archive remains in the source repository and is not required to apply these shared foundations.
 
 
 ## Machine-readable tokens
 
 ```json
 {
-  "version": "2.3",
+  "version": "2.4",
   "core": {
     "ink": "#1C1E21",
     "void": "#121212",

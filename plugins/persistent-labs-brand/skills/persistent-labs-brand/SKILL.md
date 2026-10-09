@@ -12,10 +12,10 @@ For parent-brand and portfolio work, read [the full design bible](references/des
 - [FireFlow](references/fireflow.md): Orchestration, persistent memory & chat UX.
 - [Unfazed.dev](references/unfazed.md): Deployment for agents.
 - [Lanni](references/lanni.md): An agent for getting things done.
-- [PrivateInference](references/privateinference.md): PI · upcoming brand.
+- [Private Inference](references/privateinference.md): Pi · identity from the supplied PDF.
 - [Galactica](references/galactica.md): Privacy technology across AI & blockchain.
 
-The portfolio is FireFlow, Unfazed.dev, Lanni, PrivateInference and Galactica. FireFlow contains its orchestration engine, MemoryTree (persistent memory) and FlameChorus (chat UX engine). Never promote those components into peer product brands. Lanni is built on FireFlow. Galactica is live; PrivateInference is upcoming. Their shared portfolio does not imply shared technical architecture.
+The portfolio is FireFlow, Unfazed.dev, Lanni, Private Inference and Galactica. FireFlow contains its orchestration engine, MemoryTree (persistent memory) and FlameChorus (chat UX engine). Never promote those components into peer product brands. Lanni is built on FireFlow. Galactica is live; Private Inference is upcoming. Their shared portfolio does not imply shared technical architecture.
 
 ## Apply the identity
 

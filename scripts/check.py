@@ -89,10 +89,24 @@ if any(b>a+1 for a,b in zip(structure.headings,structure.headings[1:])):failures
 for path in re.findall(r'url\([\'"]?(assets/fonts/[^)\'\"]+)',document):
     if not (ROOT/path).is_file():failures.append('Missing font: '+path)
 font_files=list((ROOT/'assets/fonts').glob('*.woff2'))
-if len(font_files)!=3:failures.append('Expected three bundled WOFF2 families')
+if len(font_files)!=11:failures.append('Expected three Red Hat files and eight Poppins weights')
 for path in font_files:
     if path.read_bytes()[:4]!=b'wOF2':failures.append('Invalid WOFF2 magic: '+path.name)
-if len(list((ROOT/'assets/fonts').glob('OFL*.txt')))!=3:failures.append('Expected three font licenses')
+if len(list((ROOT/'assets/fonts').glob('OFL*.txt')))!=4:failures.append('Expected four font licenses')
 if not re.search(r'@font-face',document):failures.append('No local font declarations')
+# Source colors stay exact; functional UI pairs use accessible source combinations.
+pi=tokens['identities']['privateinference']
+assert pi['palettes']['light']==['#FBD78E','#1E1E1E','#FFFFFF','#BFBFBF']
+assert pi['palettes']['dark']==['#E5B14A','#F5F5F5','#1A1A1A','#7F7F7F']
+check_pair('Pi light action','#1E1E1E','#FBD78E')
+check_pair('Pi dark action','#1A1A1A','#E5B14A')
+check_pair('Pi dark reading','#F5F5F5','#1A1A1A')
+check_pair('Pi light reading','#1E1E1E','#FFFFFF')
+for surface, values in pi['surfaces'].items():
+    for role in ('text','text-secondary','text-muted'):check_pair('Pi '+surface+' '+role,values[role],values['surface'])
+    for state in ('action','action-hover','action-pressed'):check_pair('Pi '+surface+' '+state,values['on-action'],values[state])
+    check_pair('Pi '+surface+' control',values['control-border'],values['surface'],3)
+    check_pair('Pi '+surface+' focus',values['focus'],values['surface'],3)
+if (ROOT/'assets/privateinference.svg').read_bytes()!=(ROOT/'assets/pi/mark.svg').read_bytes():failures.append('Pi compatibility asset differs from source-extracted mark')
 if failures:raise SystemExit('\n'.join(failures))
-print(f'Passed: {checked} color pairs, five-product hierarchy, nested FireFlow core parts, anchors, headings, local references, three offline fonts and licenses.')
+print(f'Passed: {checked} color pairs, five-product hierarchy, nested FireFlow core parts, anchors, headings, local references, Red Hat and Poppins offline fonts and licenses.')

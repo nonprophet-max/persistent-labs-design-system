@@ -1,0 +1,170 @@
+{
+  "source": "Pi Brand Identity(upd).pdf",
+  "page": 1,
+  "owner_designation_date": "2026-10-09",
+  "source_sha256": "f7ad60d71d1fecf9433996562ede36d6e02b64ffa73b434f41e92028e58623bf",
+  "method": "Extracted original filled vector paths; translated to tight viewBoxes, with source RGB colors rounded to 8-bit sRGB. No retyping, redrawing, or placeholder taglines.",
+  "assets": [
+    {
+      "file": "mark.svg",
+      "drawing_indices": [
+        143,
+        144
+      ],
+      "source_bounds": [
+        983.00048828125,
+        535.99951171875,
+        1181.0001220703125,
+        733.9996337890625
+      ],
+      "sha256": "e8817e77f59d03ebcccddba68ce4434a12fd303ca78f24fa8bf3b09ea8a24be7"
+    },
+    {
+      "file": "horizontal.svg",
+      "drawing_indices": [
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140
+      ],
+      "source_bounds": [
+        1002.0283203125,
+        199.999755859375,
+        1669.971923828125,
+        313.9998474121094
+      ],
+      "sha256": "fbe8c5e5b77aa50c807c2cf23533243d72309b0a9b62ededd56e3efa583cb0ff"
+    },
+    {
+      "file": "vertical.svg",
+      "drawing_indices": [
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84
+      ],
+      "source_bounds": [
+        254.0,
+        208.13525390625,
+        642.000244140625,
+        683.86376953125
+      ],
+      "sha256": "2c5eb51bf726b71a9260d6dbf55d6d60df9fb06306fe20b23b18ac48931341c0"
+    },
+    {
+      "file": "logotype.svg",
+      "drawing_indices": [
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162
+      ],
+      "source_bounds": [
+        1435.68505859375,
+        618.0,
+        1744.314697265625,
+        652.0
+      ],
+      "sha256": "0998d36017db7710d8249b702183333a7aa565da892cc10b40c70dd3772e327f"
+    },
+    {
+      "file": "horizontal-dark.svg",
+      "drawing_indices": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "source_bounds": [
+        258.641845703125,
+        1024.7587890625,
+        765.3582763671875,
+        1111.2415771484375
+      ],
+      "sha256": "fa42cda9045310257b11539d8f54bcc4cde7337b28f578239d1befa247d76a66"
+    },
+    {
+      "file": "horizontal-reversed.svg",
+      "drawing_indices": [
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181
+      ],
+      "source_bounds": [
+        1146.6416015625,
+        1024.7646484375,
+        1653.3577880859375,
+        1111.2412109375
+      ],
+      "sha256": "4fc2751e07582798e56324cc4fad1d0b98404607f6c22f6784574a246935d863"
+    }
+  ]
+}

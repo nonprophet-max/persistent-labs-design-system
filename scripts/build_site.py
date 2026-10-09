@@ -11,9 +11,9 @@ OUT.mkdir()
 for folder in ('assets','tokens'):shutil.copytree(ROOT/folder,OUT/folder)
 html=(ROOT/'index.html').read_text()
 # The current bible is public. Source archives and internal review files stay in
-# the private repository; remove links to files outside the publish directory.
+# the source repository; remove links to files outside the publish directory.
 html=re.sub(r'<a\b[^>]*href="(?:reviews|reference|docs)/[^"]*"[^>]*>(.*?)</a>',r'\1',html,flags=re.S)
-html=html.replace('reference/original-design-bible.html','the private source archive')
+html=html.replace('reference/original-design-bible.html','the source archive')
 html=html.replace('<meta name="description"','<meta name="robots" content="noindex, nofollow"><meta name="description"',1)
 html=html.replace('</head>','<link rel="icon" href="assets/persistent-labs.svg" type="image/svg+xml"></head>',1)
 (OUT/'index.html').write_text(html)

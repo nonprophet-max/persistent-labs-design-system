@@ -53,6 +53,14 @@ try{
     check(JSON.stringify(structure.products)===JSON.stringify(expectedProduct?[expectedProduct]:[]),'page-isolation',{path:route.path,actual:structure.products});
     check(structure.productLinks.length===5&&structure.productLinks.every(a=>!a.hash),'product-page-links',{path:route.path});
     for(const family of ['Red Hat Display','Red Hat Text','Red Hat Mono'])check(structure.fonts.includes(family),'font-loading',{path:route.path,family});
+    if(expectedProduct==='privateinference'){
+      const piFonts=await page.evaluate(()=>({
+        loaded:[...document.fonts].filter(f=>f.family.replaceAll('"','')==='Poppins'&&f.status==='loaded').map(f=>+f.weight),
+        hero:getComputedStyle(document.querySelector('.pi-cover h2')).fontFamily,
+        panel:getComputedStyle(document.querySelector('[data-product=privateinference] .product-ui')).fontFamily
+      }));
+      check([100,200,300,400,500,600,700,800].every(w=>piFonts.loaded.includes(w))&&piFonts.hero.includes('Poppins')&&piFonts.panel.includes('Poppins'),'pi-source-fonts',{piFonts});
+    }
     for(const theme of ['light','dark']){
       await page.evaluate(theme=>document.documentElement.dataset.theme=theme,theme);
       for(const width of [320,390,768,1024,1440]){

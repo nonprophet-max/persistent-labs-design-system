@@ -11,4 +11,6 @@ Read `README.md` and the current review record before making changes.
 - Keep fixed light/dark specimens locally scoped. Test labels, states, controls and actual rendered examples, not only token swatches.
 - For a requested review loop, use separate strategy, visual and accessibility reviewers. Collect findings, let an integrator make corrections, then verify closure in another round. Reviewers are read-only. Use the versioned workflow prompts/schema and record evidence hashes.
 - Run the build and the checks appropriate to each change. Review screenshots after visual changes; do not claim visual QA based only on a source inspection.
-- Do not create external messages, publish, deploy, commit or push unless the user asks for that next step. The intended GitHub destination is private.
+- Do not create external messages, publish, deploy, commit or push unless the user asks for that next step. The owner confirmed on 9 October 2026 that the GitHub repository should remain public.
+
+- Pi follows the owner-supplied `assets/pi/brand-identity.pdf`: Private Inference (two words), the original disc-and-flare mark and outlined lockups, Poppins, and exact light/dark palettes. This supersedes the old π/lavender/Red Hat proposal. Preserve SVGs during normal builds. Keep UI mappings and layout recommendations distinct from source specifications; omit placeholder taglines.

@@ -34,7 +34,7 @@ for id, _, _, _, content in sections:
 
 def public_content(content, current):
     content = re.sub(r'<a\b[^>]*href="(?:reviews|reference|docs)/[^"]*"[^>]*>(.*?)</a>', r'\1', content, flags=re.S)
-    content = content.replace('reference/original-design-bible.html', 'the private source archive')
+    content = content.replace('reference/original-design-bible.html', 'the source archive')
     content = re.sub(r'((?:href|src)=")((?:assets|tokens)/[^\"]+)', r'\1/\2', content)
 
     def link(match):
@@ -78,7 +78,8 @@ if OUT.exists():
 OUT.mkdir()
 for folder in ('assets', 'tokens'):
     shutil.copytree(ROOT / folder, OUT / folder)
-styles = source['styles'].replace("url('assets/", "url('/assets/")
+styles = re.sub(r'''url\((['"]?)(assets/[^)'"\s]+)\1\)''',
+                lambda match: f"url('/{match[2]}')", source['styles'])
 # Preserve the canonical visual hierarchy when a chapter becomes a page.
 styles = re.sub(r'(?<![\w-])h([2-6])\b', lambda match: f':is(h{match[1]},[data-heading-level="{match[1]}"])', styles)
 styles += '\n' + (ROOT / 'src/pages.css').read_text()
@@ -114,11 +115,11 @@ for route, page in routes.items():
                 return f'</h{int(level)-1}>' if closing else f'<h{int(level)-1} data-heading-level="{level}"{attrs}>'
             content = re.sub(r'<(/?)h([2-6])(\b[^>]*)>', promote, content)
         body = '<div class="content"><nav class="breadcrumbs" aria-label="Breadcrumb">' + crumbs + '</nav>' + public_content(content, route)
-    footer = '<footer class="footer"><span>Persistent Labs / Design system 2.3<br>One foundation. Five product identities.</span><a href="/">Back to overview ↗</a></footer></div>'
+    footer = '<footer class="footer"><span>Persistent Labs / Design system 2.4<br>One foundation. Five product identities.</span><a href="/">Back to overview ↗</a></footer></div>'
     document = f'''<!doctype html>
 <html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><meta name="description" content="{E(page['title'])} — Persistent Labs design bible."><title>{E(page['title'])} — Persistent Labs</title><script>try{{document.documentElement.dataset.theme=localStorage.getItem('persistent-bible-theme')==='dark'?'dark':'light'}}catch{{}}</script><link rel="icon" href="/assets/persistent-labs.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/site.css"><script defer src="/assets/site.js"></script></head><body>
 <a class="skip" href="#main">Skip to content</a><header class="site-bar"><a class="home-link" href="/" aria-label="Persistent Labs design bible home">{source['logo']()}</a><nav class="quick-nav" aria-label="Main navigation">{top}</nav><button id="menu-toggle" type="button" aria-expanded="false" aria-controls="contents">Contents</button></header>
-<aside class="rail" id="contents"><div class="edition">Design bible / edition 02.3<br>23 September 2026</div><nav class="rail-nav" aria-label="Design bible contents">{navigation(route)}</nav><div class="rail-footer"><button class="theme-button" type="button" id="theme-toggle" aria-pressed="false">Switch to dark view</button></div></aside>
+<aside class="rail" id="contents"><div class="edition">Design bible / edition 02.4<br>9 October 2026</div><nav class="rail-nav" aria-label="Design bible contents">{navigation(route)}</nav><div class="rail-footer"><button class="theme-button" type="button" id="theme-toggle" aria-pressed="false">Switch to dark view</button></div></aside>
 <main class="page" id="main" tabindex="-1">{body}{footer}</main><div class="sr-only" id="live-status" role="status" aria-live="polite"></div><script type="application/json" id="token-json">{source['token_json']}</script></body></html>'''
     target = OUT / route.strip('/') / 'index.html'
     target.parent.mkdir(parents=True, exist_ok=True)

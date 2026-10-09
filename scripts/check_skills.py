@@ -11,7 +11,7 @@ checks=0
 for item in catalog:
     plugin=ROOT/item['plugin'];skill=(ROOT/item['skill']).parent
     manifest=json.loads((plugin/'.codex-plugin/plugin.json').read_text())
-    assert manifest['name']==plugin.name and manifest['version']=='2.3.0'
+    assert manifest['name']==plugin.name and manifest['version']=='2.4.0'
     entry=(skill/'SKILL.md').read_text()
     assert entry.startswith('---\nname: '+plugin.name+'\n')
     assert json.loads((plugin/'.claude-plugin/plugin.json').read_text())['name']==plugin.name
@@ -36,4 +36,12 @@ for name in ('persistent-labs-brand','galactica-brand'):
     svg=ROOT/f'plugins/{name}/skills/{name}/assets/galactica.svg'
     tree=ET.parse(svg);dot=tree.find('.//{http://www.w3.org/2000/svg}circle')
     assert tree.getroot().get('aria-label')=='Galactica.com' and dot.get('fill')=='#F7931A'
+for name in ('persistent-labs-brand','privateinference-brand'):
+    skill=ROOT/f'plugins/{name}/skills/{name}'
+    assert (skill/'assets/pi/brand-identity.pdf').read_bytes()==(ROOT/'assets/pi/brand-identity.pdf').read_bytes()
+    assert (skill/'assets/privateinference.svg').read_bytes()==(ROOT/'assets/pi/mark.svg').read_bytes()
+    for weight in range(100,900,100):assert (skill/f'assets/fonts/poppins-latin-{weight}.woff2').is_file()
+    assert (skill/'assets/fonts/OFL-Poppins.txt').is_file()
+    for asset in ('horizontal','vertical','logotype','horizontal-dark','horizontal-reversed'):
+        assert (skill/f'assets/pi/{asset}.svg').read_bytes()==(ROOT/f'assets/pi/{asset}.svg').read_bytes()
 print(f'Passed: {checks} self-contained plugins, scoped tokens, references, SVGs, font assets and chatbot documents.')

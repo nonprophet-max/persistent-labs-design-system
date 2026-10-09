@@ -1,5 +1,5 @@
 {
-  "version": "2.3.0",
+  "version": "2.4.0",
   "plugins": [
     {
       "name": "persistent-labs-brand",
@@ -31,7 +31,7 @@
     },
     {
       "name": "privateinference-brand",
-      "product": "PrivateInference",
+      "product": "Private Inference",
       "skill": "plugins/privateinference-brand/skills/privateinference-brand/SKILL.md",
       "chatbot": "plugins/privateinference-brand/chatbot.md",
       "plugin": "plugins/privateinference-brand"

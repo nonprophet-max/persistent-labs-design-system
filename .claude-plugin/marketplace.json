@@ -27,7 +27,7 @@
     {
       "name": "privateinference-brand",
       "source": "./plugins/privateinference-brand",
-      "description": "Brand guidance for PrivateInference"
+      "description": "Brand guidance for Private Inference"
     },
     {
       "name": "galactica-brand",

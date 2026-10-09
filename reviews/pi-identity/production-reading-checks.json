@@ -1,0 +1,56 @@
+{
+  "passed": true,
+  "site": "https://persistent-labs-design-bible.netlify.app/#privateinference",
+  "checks": [
+    {
+      "width": 390,
+      "overflow": false,
+      "title": "Private Inference",
+      "fonts": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600,
+        700,
+        800
+      ],
+      "palette": [
+        "#FBD78E",
+        "#1E1E1E",
+        "#FFFFFF",
+        "#BFBFBF",
+        "#E5B14A",
+        "#F5F5F5",
+        "#1A1A1A",
+        "#7F7F7F"
+      ]
+    },
+    {
+      "width": 1440,
+      "overflow": false,
+      "title": "Private Inference",
+      "fonts": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600,
+        700,
+        800
+      ],
+      "palette": [
+        "#FBD78E",
+        "#1E1E1E",
+        "#FFFFFF",
+        "#BFBFBF",
+        "#E5B14A",
+        "#F5F5F5",
+        "#1A1A1A",
+        "#7F7F7F"
+      ]
+    }
+  ]
+}

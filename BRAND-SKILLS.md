@@ -8,7 +8,7 @@ One full-system skill and five independent product plugins. Each product package
 | FireFlow | `$fireflow-brand` | [SKILL.md](plugins/fireflow-brand/skills/fireflow-brand/SKILL.md) | [chatbot.md](plugins/fireflow-brand/chatbot.md) |
 | Unfazed.dev | `$unfazed-brand` | [SKILL.md](plugins/unfazed-brand/skills/unfazed-brand/SKILL.md) | [chatbot.md](plugins/unfazed-brand/chatbot.md) |
 | Lanni | `$lanni-brand` | [SKILL.md](plugins/lanni-brand/skills/lanni-brand/SKILL.md) | [chatbot.md](plugins/lanni-brand/chatbot.md) |
-| PrivateInference | `$privateinference-brand` | [SKILL.md](plugins/privateinference-brand/skills/privateinference-brand/SKILL.md) | [chatbot.md](plugins/privateinference-brand/chatbot.md) |
+| Private Inference | `$privateinference-brand` | [SKILL.md](plugins/privateinference-brand/skills/privateinference-brand/SKILL.md) | [chatbot.md](plugins/privateinference-brand/chatbot.md) |
 | Galactica | `$galactica-brand` | [SKILL.md](plugins/galactica-brand/skills/galactica-brand/SKILL.md) | [chatbot.md](plugins/galactica-brand/chatbot.md) |
 
 ## Use with an agent
@@ -25,4 +25,4 @@ Attach or paste the desired `chatbot.md` and give the actual task. It combines i
 
 Run `python3 scripts/package_skills.py` after changing the bible sources, then `python3 scripts/check_skills.py`. The packaging process derives references and tokens from the same sources as the web bible. Preserve owner decisions and product exceptions when extending the system.
 
-The GitHub repository is intended to remain private. Publishing the reading website does not publish this repository or its plugin catalog.
+The owner confirmed on 9 October 2026 that the GitHub repository should remain public. The website build includes the reading content and brand assets; plugin packages are maintained separately in this repository.

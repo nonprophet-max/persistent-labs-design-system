@@ -1,0 +1,300 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "url": "https://persistent-labs-design-bible.netlify.app/assets/unfazed.svg",
+      "status": 200,
+      "sha256": "eb579043e1e37c456da5c70084200e1705c16d65086bb82daf55890df71b2b02"
+    },
+    {
+      "url": "https://persistent-labs-design-bible.netlify.app/assets/galactica.svg",
+      "status": 200,
+      "sha256": "ac0839e3ff716d97970681203730c57eb4dc4072b00fd08ef2ba6f94fa5cdcf9"
+    },
+    {
+      "url": "https://persistent-labs-design-bible.netlify.app/assets/fireflow.svg",
+      "status": 200,
+      "sha256": "8d96a5bc66aff522de3a3fa67beebb53cfa6c91fbdf12e81ad10f66a8d3a9fa7"
+    },
+    {
+      "url": "https://persistent-labs-design-bible.netlify.app/assets/lanni.svg",
+      "status": 200,
+      "sha256": "2bab97b2090a2e36689f4e12cf39ae54c4eb947c9620a142130633b0cc1bc9e6"
+    },
+    {
+      "url": "https://persistent-labs-design-bible.netlify.app/assets/memorytree.svg",
+      "status": 200,
+      "sha256": "bc482935b3a14cc51238957c60beac7a817e224e3c8d54651de45df3b7c61472"
+    },
+    {
+      "url": "https://persistent-labs-design-bible.netlify.app/assets/persistent-labs.svg",
+      "status": 200,
+      "sha256": "010ddf357f0bb0b4bdbe7b9b36bccbc602acf15e0e8d88fb01ac72999f097ee6"
+    },
+    {
+      "url": "https://persistent-labs-design-bible.netlify.app/assets/privateinference.svg",
+      "status": 200,
+      "sha256": "e8817e77f59d03ebcccddba68ce4434a12fd303ca78f24fa8bf3b09ea8a24be7"
+    },
+    {
+      "url": "https://persistent-labs-design-bible.netlify.app/tokens/persistent-labs.tokens.css",
+      "status": 200,
+      "sha256": "07927b9a91573cb42f8e565dbb13a50ede19f5145c68ed107db670ee0e26e2ef"
+    },
+    {
+      "url": "https://persistent-labs-design-bible.netlify.app/tokens/design-tokens.json",
+      "status": 200,
+      "sha256": "2b559f64fc9289af94f5343b9bc2007a107ca6058a0d24c7d012c6c32816bff1"
+    },
+    {
+      "url": "https://persistent-labs-design-bible.netlify.app/assets/pi/horizontal.svg",
+      "status": 200,
+      "sha256": "fbe8c5e5b77aa50c807c2cf23533243d72309b0a9b62ededd56e3efa583cb0ff"
+    },
+    {
+      "url": "https://persistent-labs-design-bible.netlify.app/assets/pi/provenance.json",
+      "status": 200,
+      "sha256": "820c23106bfbd4a6fb61fbd13c7b165864741c8923dd01e0fbda7fb5424a4e4e"
+    },
+    {
+      "url": "https://persistent-labs-design-bible.netlify.app/assets/pi/font-provenance.json",
+      "status": 200,
+      "sha256": "45c0289bd661efb316667dfbedf112eca3efbe3e623c48e68ac0cdcbc74da32c"
+    },
+    {
+      "url": "https://persistent-labs-design-bible.netlify.app/assets/pi/vertical.svg",
+      "status": 200,
+      "sha256": "2c5eb51bf726b71a9260d6dbf55d6d60df9fb06306fe20b23b18ac48931341c0"
+    },
+    {
+      "url": "https://persistent-labs-design-bible.netlify.app/assets/pi/logotype.svg",
+      "status": 200,
+      "sha256": "0998d36017db7710d8249b702183333a7aa565da892cc10b40c70dd3772e327f"
+    },
+    {
+      "url": "https://persistent-labs-design-bible.netlify.app/assets/pi/brand-identity.pdf",
+      "status": 200,
+      "sha256": "f7ad60d71d1fecf9433996562ede36d6e02b64ffa73b434f41e92028e58623bf"
+    },
+    {
+      "url": "https://persistent-labs-design-bible.netlify.app/assets/pi/mark.svg",
+      "status": 200,
+      "sha256": "e8817e77f59d03ebcccddba68ce4434a12fd303ca78f24fa8bf3b09ea8a24be7"
+    },
+    {
+      "url": "https://persistent-labs-design-bible.netlify.app/assets/pi/horizontal-dark.svg",
+      "status": 200,
+      "sha256": "fa42cda9045310257b11539d8f54bcc4cde7337b28f578239d1befa247d76a66"
+    },
+    {
+      "url": "https://persistent-labs-design-bible.netlify.app/assets/pi/horizontal-reversed.svg",
+      "status": 200,
+      "sha256": "4fc2751e07582798e56324cc4fad1d0b98404607f6c22f6784574a246935d863"
+    },
+    {
+      "url": "https://persistent-labs-design-bible.netlify.app/assets/fonts/red-hat-text-latin-variable.woff2",
+      "status": 200,
+      "sha256": "cecc57ca573b6fb67f9ea6236fc7350aae9756a2ab528ab95382a96e8c754038"
+    },
+    {
+      "url": "https://persistent-labs-design-bible.netlify.app/assets/fonts/poppins-latin-100.woff2",
+      "status": 200,
+      "sha256": "ba433c0e3e2ccac378976ceb97c0c25dcbc81ec0989a0e111c504000bbf14fd2"
+    },
+    {
+      "url": "https://persistent-labs-design-bible.netlify.app/assets/fonts/poppins-latin-800.woff2",
+      "status": 200,
+      "sha256": "4ef5511d8e7b39ae3f98ffed14d6071d7914e0c145fee5a79bb43aa962ff0fc4"
+    },
+    {
+      "url": "https://persistent-labs-design-bible.netlify.app/assets/fonts/poppins-latin-300.woff2",
+      "status": 200,
+      "sha256": "643e38d8c288a1da34a14a68a5012441929108d50054414ce8cc33fad36a2354"
+    },
+    {
+      "url": "https://persistent-labs-design-bible.netlify.app/assets/fonts/red-hat-display-latin-variable.woff2",
+      "status": 200,
+      "sha256": "39d2ddd13759cf61a3342d25f1f342d220e379f0e157bd963ee9cd5dd461d718"
+    },
+    {
+      "url": "https://persistent-labs-design-bible.netlify.app/assets/fonts/poppins-latin-200.woff2",
+      "status": 200,
+      "sha256": "244dd57da310b3fe9a789ef87179bb433b8628016354c4ce80896fd7e4e53968"
+    },
+    {
+      "url": "https://persistent-labs-design-bible.netlify.app/assets/fonts/poppins-latin-700.woff2",
+      "status": 200,
+      "sha256": "197a3cbd7290c242c5c765268cdd69a9a39867fdc80cd13071f243a81c56fb76"
+    },
+    {
+      "url": "https://persistent-labs-design-bible.netlify.app/assets/fonts/red-hat-mono-latin-variable.woff2",
+      "status": 200,
+      "sha256": "9914ffa64379b1ff4d69d246db13d7d84acceed0872b3a29008ae55020a8ff75"
+    },
+    {
+      "url": "https://persistent-labs-design-bible.netlify.app/assets/fonts/poppins-latin-600.woff2",
+      "status": 200,
+      "sha256": "872e862918591a9e824dc03ed92f05729435ffbb8ebbb10eff7eda26592b1798"
+    },
+    {
+      "url": "https://persistent-labs-design-bible.netlify.app/assets/fonts/poppins-latin-400.woff2",
+      "status": 200,
+      "sha256": "3dc5d0c52428fe1696264907a1054ebbaac07f8cbe45832c105f819c2ae397c0"
+    },
+    {
+      "url": "https://persistent-labs-design-bible.netlify.app/assets/fonts/poppins-latin-500.woff2",
+      "status": 200,
+      "sha256": "289e0afc8be731a86822349e54557296f145926496bd2138db1bac0db77f77a2"
+    },
+    {
+      "url": "https://persistent-labs-design-pages.netlify.app/assets/unfazed.svg",
+      "status": 200,
+      "sha256": "eb579043e1e37c456da5c70084200e1705c16d65086bb82daf55890df71b2b02"
+    },
+    {
+      "url": "https://persistent-labs-design-pages.netlify.app/assets/galactica.svg",
+      "status": 200,
+      "sha256": "ac0839e3ff716d97970681203730c57eb4dc4072b00fd08ef2ba6f94fa5cdcf9"
+    },
+    {
+      "url": "https://persistent-labs-design-pages.netlify.app/assets/fireflow.svg",
+      "status": 200,
+      "sha256": "8d96a5bc66aff522de3a3fa67beebb53cfa6c91fbdf12e81ad10f66a8d3a9fa7"
+    },
+    {
+      "url": "https://persistent-labs-design-pages.netlify.app/assets/lanni.svg",
+      "status": 200,
+      "sha256": "2bab97b2090a2e36689f4e12cf39ae54c4eb947c9620a142130633b0cc1bc9e6"
+    },
+    {
+      "url": "https://persistent-labs-design-pages.netlify.app/assets/memorytree.svg",
+      "status": 200,
+      "sha256": "bc482935b3a14cc51238957c60beac7a817e224e3c8d54651de45df3b7c61472"
+    },
+    {
+      "url": "https://persistent-labs-design-pages.netlify.app/assets/site.css",
+      "status": 200,
+      "sha256": "7e9408dd83fe2ed48d5895c8ce3f9baa3ac67ad3eba28bc2391745943ea479df"
+    },
+    {
+      "url": "https://persistent-labs-design-pages.netlify.app/assets/persistent-labs.svg",
+      "status": 200,
+      "sha256": "010ddf357f0bb0b4bdbe7b9b36bccbc602acf15e0e8d88fb01ac72999f097ee6"
+    },
+    {
+      "url": "https://persistent-labs-design-pages.netlify.app/assets/privateinference.svg",
+      "status": 200,
+      "sha256": "e8817e77f59d03ebcccddba68ce4434a12fd303ca78f24fa8bf3b09ea8a24be7"
+    },
+    {
+      "url": "https://persistent-labs-design-pages.netlify.app/tokens/persistent-labs.tokens.css",
+      "status": 200,
+      "sha256": "07927b9a91573cb42f8e565dbb13a50ede19f5145c68ed107db670ee0e26e2ef"
+    },
+    {
+      "url": "https://persistent-labs-design-pages.netlify.app/tokens/design-tokens.json",
+      "status": 200,
+      "sha256": "2b559f64fc9289af94f5343b9bc2007a107ca6058a0d24c7d012c6c32816bff1"
+    },
+    {
+      "url": "https://persistent-labs-design-pages.netlify.app/assets/pi/horizontal.svg",
+      "status": 200,
+      "sha256": "fbe8c5e5b77aa50c807c2cf23533243d72309b0a9b62ededd56e3efa583cb0ff"
+    },
+    {
+      "url": "https://persistent-labs-design-pages.netlify.app/assets/pi/provenance.json",
+      "status": 200,
+      "sha256": "820c23106bfbd4a6fb61fbd13c7b165864741c8923dd01e0fbda7fb5424a4e4e"
+    },
+    {
+      "url": "https://persistent-labs-design-pages.netlify.app/assets/pi/font-provenance.json",
+      "status": 200,
+      "sha256": "45c0289bd661efb316667dfbedf112eca3efbe3e623c48e68ac0cdcbc74da32c"
+    },
+    {
+      "url": "https://persistent-labs-design-pages.netlify.app/assets/pi/vertical.svg",
+      "status": 200,
+      "sha256": "2c5eb51bf726b71a9260d6dbf55d6d60df9fb06306fe20b23b18ac48931341c0"
+    },
+    {
+      "url": "https://persistent-labs-design-pages.netlify.app/assets/pi/logotype.svg",
+      "status": 200,
+      "sha256": "0998d36017db7710d8249b702183333a7aa565da892cc10b40c70dd3772e327f"
+    },
+    {
+      "url": "https://persistent-labs-design-pages.netlify.app/assets/pi/brand-identity.pdf",
+      "status": 200,
+      "sha256": "f7ad60d71d1fecf9433996562ede36d6e02b64ffa73b434f41e92028e58623bf"
+    },
+    {
+      "url": "https://persistent-labs-design-pages.netlify.app/assets/pi/mark.svg",
+      "status": 200,
+      "sha256": "e8817e77f59d03ebcccddba68ce4434a12fd303ca78f24fa8bf3b09ea8a24be7"
+    },
+    {
+      "url": "https://persistent-labs-design-pages.netlify.app/assets/pi/horizontal-dark.svg",
+      "status": 200,
+      "sha256": "fa42cda9045310257b11539d8f54bcc4cde7337b28f578239d1befa247d76a66"
+    },
+    {
+      "url": "https://persistent-labs-design-pages.netlify.app/assets/pi/horizontal-reversed.svg",
+      "status": 200,
+      "sha256": "4fc2751e07582798e56324cc4fad1d0b98404607f6c22f6784574a246935d863"
+    },
+    {
+      "url": "https://persistent-labs-design-pages.netlify.app/assets/fonts/red-hat-text-latin-variable.woff2",
+      "status": 200,
+      "sha256": "cecc57ca573b6fb67f9ea6236fc7350aae9756a2ab528ab95382a96e8c754038"
+    },
+    {
+      "url": "https://persistent-labs-design-pages.netlify.app/assets/fonts/poppins-latin-100.woff2",
+      "status": 200,
+      "sha256": "ba433c0e3e2ccac378976ceb97c0c25dcbc81ec0989a0e111c504000bbf14fd2"
+    },
+    {
+      "url": "https://persistent-labs-design-pages.netlify.app/assets/fonts/poppins-latin-800.woff2",
+      "status": 200,
+      "sha256": "4ef5511d8e7b39ae3f98ffed14d6071d7914e0c145fee5a79bb43aa962ff0fc4"
+    },
+    {
+      "url": "https://persistent-labs-design-pages.netlify.app/assets/fonts/poppins-latin-300.woff2",
+      "status": 200,
+      "sha256": "643e38d8c288a1da34a14a68a5012441929108d50054414ce8cc33fad36a2354"
+    },
+    {
+      "url": "https://persistent-labs-design-pages.netlify.app/assets/fonts/red-hat-display-latin-variable.woff2",
+      "status": 200,
+      "sha256": "39d2ddd13759cf61a3342d25f1f342d220e379f0e157bd963ee9cd5dd461d718"
+    },
+    {
+      "url": "https://persistent-labs-design-pages.netlify.app/assets/fonts/poppins-latin-200.woff2",
+      "status": 200,
+      "sha256": "244dd57da310b3fe9a789ef87179bb433b8628016354c4ce80896fd7e4e53968"
+    },
+    {
+      "url": "https://persistent-labs-design-pages.netlify.app/assets/fonts/poppins-latin-700.woff2",
+      "status": 200,
+      "sha256": "197a3cbd7290c242c5c765268cdd69a9a39867fdc80cd13071f243a81c56fb76"
+    },
+    {
+      "url": "https://persistent-labs-design-pages.netlify.app/assets/fonts/red-hat-mono-latin-variable.woff2",
+      "status": 200,
+      "sha256": "9914ffa64379b1ff4d69d246db13d7d84acceed0872b3a29008ae55020a8ff75"
+    },
+    {
+      "url": "https://persistent-labs-design-pages.netlify.app/assets/fonts/poppins-latin-600.woff2",
+      "status": 200,
+      "sha256": "872e862918591a9e824dc03ed92f05729435ffbb8ebbb10eff7eda26592b1798"
+    },
+    {
+      "url": "https://persistent-labs-design-pages.netlify.app/assets/fonts/poppins-latin-400.woff2",
+      "status": 200,
+      "sha256": "3dc5d0c52428fe1696264907a1054ebbaac07f8cbe45832c105f819c2ae397c0"
+    },
+    {
+      "url": "https://persistent-labs-design-pages.netlify.app/assets/fonts/poppins-latin-500.woff2",
+      "status": 200,
+      "sha256": "289e0afc8be731a86822349e54557296f145926496bd2138db1bac0db77f77a2"
+    }
+  ]
+}
