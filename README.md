@@ -83,3 +83,7 @@ Persistent Labs/product assets are included for the user’s requested design wo
 ## Pi source assets
 
 [The supplied PDF](assets/pi/brand-identity.pdf) is retained unchanged. Six outlined SVG variants and extraction provenance live in `assets/pi/`; `assets/privateinference.svg` preserves the prior asset URL with the current mark. The optional `scripts/extract_pi_assets.py` uses PyMuPDF to reproduce these checked-in vectors. Ordinary builds remain Python-standard-library only. Poppins 100–800 Latin webfonts and their OFL license are bundled in the Pi and parent skills; font provenance is recorded in `assets/pi/font-provenance.json`.
+
+## AI resource links
+
+Each generated walkthrough page includes a Build with AI panel, with a copyable skill URL and expandable plugin/chatbot links. Product pages use their own brand package; shared pages use Persistent Labs. These links and clipboard behavior pass local checks. The 9 October follow-up deployment is currently blocked by exhausted Netlify account credits; see [publishing status](reviews/skill-links/review.md).

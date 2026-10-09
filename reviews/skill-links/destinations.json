@@ -1,0 +1,113 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "brand": "persistent-labs-brand",
+      "resource": "skill",
+      "url": "https://raw.githubusercontent.com/nonprophet-max/persistent-labs-design-system/codex/design-bible/plugins/persistent-labs-brand/skills/persistent-labs-brand/SKILL.md",
+      "status": 200
+    },
+    {
+      "brand": "persistent-labs-brand",
+      "resource": "plugin",
+      "url": "https://github.com/nonprophet-max/persistent-labs-design-system/tree/codex/design-bible/plugins/persistent-labs-brand",
+      "status": 200
+    },
+    {
+      "brand": "persistent-labs-brand",
+      "resource": "chatbot",
+      "url": "https://raw.githubusercontent.com/nonprophet-max/persistent-labs-design-system/codex/design-bible/plugins/persistent-labs-brand/chatbot.md",
+      "status": 200
+    },
+    {
+      "brand": "fireflow-brand",
+      "resource": "skill",
+      "url": "https://raw.githubusercontent.com/nonprophet-max/persistent-labs-design-system/codex/design-bible/plugins/fireflow-brand/skills/fireflow-brand/SKILL.md",
+      "status": 200
+    },
+    {
+      "brand": "fireflow-brand",
+      "resource": "plugin",
+      "url": "https://github.com/nonprophet-max/persistent-labs-design-system/tree/codex/design-bible/plugins/fireflow-brand",
+      "status": 200
+    },
+    {
+      "brand": "fireflow-brand",
+      "resource": "chatbot",
+      "url": "https://raw.githubusercontent.com/nonprophet-max/persistent-labs-design-system/codex/design-bible/plugins/fireflow-brand/chatbot.md",
+      "status": 200
+    },
+    {
+      "brand": "unfazed-brand",
+      "resource": "skill",
+      "url": "https://raw.githubusercontent.com/nonprophet-max/persistent-labs-design-system/codex/design-bible/plugins/unfazed-brand/skills/unfazed-brand/SKILL.md",
+      "status": 200
+    },
+    {
+      "brand": "unfazed-brand",
+      "resource": "plugin",
+      "url": "https://github.com/nonprophet-max/persistent-labs-design-system/tree/codex/design-bible/plugins/unfazed-brand",
+      "status": 200
+    },
+    {
+      "brand": "unfazed-brand",
+      "resource": "chatbot",
+      "url": "https://raw.githubusercontent.com/nonprophet-max/persistent-labs-design-system/codex/design-bible/plugins/unfazed-brand/chatbot.md",
+      "status": 200
+    },
+    {
+      "brand": "lanni-brand",
+      "resource": "skill",
+      "url": "https://raw.githubusercontent.com/nonprophet-max/persistent-labs-design-system/codex/design-bible/plugins/lanni-brand/skills/lanni-brand/SKILL.md",
+      "status": 200
+    },
+    {
+      "brand": "lanni-brand",
+      "resource": "plugin",
+      "url": "https://github.com/nonprophet-max/persistent-labs-design-system/tree/codex/design-bible/plugins/lanni-brand",
+      "status": 200
+    },
+    {
+      "brand": "lanni-brand",
+      "resource": "chatbot",
+      "url": "https://raw.githubusercontent.com/nonprophet-max/persistent-labs-design-system/codex/design-bible/plugins/lanni-brand/chatbot.md",
+      "status": 200
+    },
+    {
+      "brand": "privateinference-brand",
+      "resource": "skill",
+      "url": "https://raw.githubusercontent.com/nonprophet-max/persistent-labs-design-system/codex/design-bible/plugins/privateinference-brand/skills/privateinference-brand/SKILL.md",
+      "status": 200
+    },
+    {
+      "brand": "privateinference-brand",
+      "resource": "plugin",
+      "url": "https://github.com/nonprophet-max/persistent-labs-design-system/tree/codex/design-bible/plugins/privateinference-brand",
+      "status": 200
+    },
+    {
+      "brand": "privateinference-brand",
+      "resource": "chatbot",
+      "url": "https://raw.githubusercontent.com/nonprophet-max/persistent-labs-design-system/codex/design-bible/plugins/privateinference-brand/chatbot.md",
+      "status": 200
+    },
+    {
+      "brand": "galactica-brand",
+      "resource": "skill",
+      "url": "https://raw.githubusercontent.com/nonprophet-max/persistent-labs-design-system/codex/design-bible/plugins/galactica-brand/skills/galactica-brand/SKILL.md",
+      "status": 200
+    },
+    {
+      "brand": "galactica-brand",
+      "resource": "plugin",
+      "url": "https://github.com/nonprophet-max/persistent-labs-design-system/tree/codex/design-bible/plugins/galactica-brand",
+      "status": 200
+    },
+    {
+      "brand": "galactica-brand",
+      "resource": "chatbot",
+      "url": "https://raw.githubusercontent.com/nonprophet-max/persistent-labs-design-system/codex/design-bible/plugins/galactica-brand/chatbot.md",
+      "status": 200
+    }
+  ]
+}

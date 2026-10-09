@@ -17,6 +17,9 @@ products = source['PRODUCTS']
 E = html.escape
 TOP = [('foundations', 'Foundations'), ('products', 'Products'), ('tokens', 'Tokens'), ('guidelines', 'Guidelines')]
 PRODUCT_IDS = [p['id'] for p in products]
+BRAND_SKILLS = json.loads((ROOT / 'brand-skills.json').read_text())['plugins']
+REPOSITORY = 'https://github.com/nonprophet-max/persistent-labs-design-system'
+RAW_REPOSITORY = 'https://raw.githubusercontent.com/nonprophet-max/persistent-labs-design-system/codex/design-bible'
 foundation_ids = [s[0] for s in sections if s[3] == 'Foundations' and s[0] != 'brand']
 routes = {'/': {'title': 'Design bible', 'ids': []},
           '/foundations/': {'title': 'Foundations', 'ids': foundation_ids},
@@ -73,6 +76,29 @@ def active(current, target):
     return ' aria-current="page"' if current == target else ''
 
 
+def skill_access(route):
+    product_id = route.strip('/').split('/')[-1]
+    name = f'{product_id}-brand' if product_id in PRODUCT_IDS else 'persistent-labs-brand'
+    skill = next(item for item in BRAND_SKILLS if item['name'] == name)
+    for key in ('skill', 'plugin', 'chatbot'):
+        assert (ROOT / skill[key]).exists(), skill[key]
+
+    def resource(key, label, description, url):
+        id = f'brand-resource-{key}'
+        return f'''<div class="skill-resource" data-resource="{key}">
+<div class="skill-resource-label"><strong>{label}</strong><span>{description}</span></div>
+<a class="skill-url" id="{id}" href="{E(url)}" target="_blank" rel="noopener">{E(url)}</a>
+<button class="utility" type="button" data-copy-link="{id}" aria-label="Copy {label} link">Copy link</button></div>'''
+
+    agent = resource('skill', 'Agent skill', 'Give this link to your AI coding agent.', f'{RAW_REPOSITORY}/{skill["skill"]}')
+    plugin = resource('plugin', 'Full plugin', 'Includes instructions, references, logos and fonts.', f'{REPOSITORY}/tree/codex/design-bible/{skill["plugin"]}')
+    chatbot = resource('chatbot', 'Chatbot guide', 'Open, then paste or attach the Markdown to your chat.', f'{RAW_REPOSITORY}/{skill["chatbot"]}')
+    return f'''<aside class="skill-access" aria-label="{E(skill['product'])} AI brand resources" data-brand-skill="{name}">
+<div class="skill-access-title"><span class="skill-access-kicker">Build with AI</span><strong>{E(skill['product'])}</strong></div>
+{agent}<details class="skill-more"><summary>Plugin &amp; chatbot links</summary>{plugin}{chatbot}
+<p>Use the full plugin for work that needs brand assets. Installation depends on your AI tool.</p></details></aside>'''
+
+
 if OUT.exists():
     shutil.rmtree(OUT)
 OUT.mkdir()
@@ -100,7 +126,7 @@ by_id = {s[0]: s[4] for s in sections}
 for route, page in routes.items():
     top = ''.join(f'<a href="/{slug}/"{active("/products/" if route.startswith("/products/") else route, "/"+slug+"/")}>{label}</a>' for slug, label in TOP)
     if route == '/':
-        body = public_content(cover, route) + '<div class="content">' + home_cards
+        body = public_content(cover, route) + '<div class="content">' + skill_access(route) + home_cards
     else:
         crumbs = '<a href="/">Home</a><span aria-hidden="true">/</span>'
         if route.startswith('/products/') and route != '/products/':
@@ -114,7 +140,7 @@ for route, page in routes.items():
                 closing, level, attrs = match.groups()
                 return f'</h{int(level)-1}>' if closing else f'<h{int(level)-1} data-heading-level="{level}"{attrs}>'
             content = re.sub(r'<(/?)h([2-6])(\b[^>]*)>', promote, content)
-        body = '<div class="content"><nav class="breadcrumbs" aria-label="Breadcrumb">' + crumbs + '</nav>' + public_content(content, route)
+        body = '<div class="content"><nav class="breadcrumbs" aria-label="Breadcrumb">' + crumbs + '</nav>' + skill_access(route) + public_content(content, route)
     footer = '<footer class="footer"><span>Persistent Labs / Design system 2.4<br>One foundation. Five product identities.</span><a href="/">Back to overview ↗</a></footer></div>'
     document = f'''<!doctype html>
 <html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><meta name="description" content="{E(page['title'])} — Persistent Labs design bible."><title>{E(page['title'])} — Persistent Labs</title><script>try{{document.documentElement.dataset.theme=localStorage.getItem('persistent-bible-theme')==='dark'?'dark':'light'}}catch{{}}</script><link rel="icon" href="/assets/persistent-labs.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/site.css"><script defer src="/assets/site.js"></script></head><body>

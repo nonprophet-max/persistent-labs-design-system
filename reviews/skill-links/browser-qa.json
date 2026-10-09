@@ -1,0 +1,1179 @@
+{
+  "date": "2026-10-09T13:40:36.933Z",
+  "site": "local HTTP preview",
+  "passed": true,
+  "browser": "154.0.8037.99",
+  "pages": 10,
+  "artifacts": [
+    {
+      "path": "/",
+      "sha256": "0f12a724faedbca78aa07de52ebdf91ef88b92e32c85c127b9c15e4a4ca88510"
+    },
+    {
+      "path": "/foundations/",
+      "sha256": "eb053d88cd6a8959eee2fac65f30bcbffed18ed13de1e4c3b5f2b80b1ea0769a"
+    },
+    {
+      "path": "/products/",
+      "sha256": "8d94b6a1a9151b2b4aca9ffd84868b0d4942dd2afe073e8dfb9ba180c7faab9c"
+    },
+    {
+      "path": "/tokens/",
+      "sha256": "94ea42bdb16190195ebf73ee6fa765eba8df2b56c6fac0ae785fcf547abf6ee5"
+    },
+    {
+      "path": "/guidelines/",
+      "sha256": "86d874dbbf14c214e331084fa5eeca7bfd82cc6b50aa13f447f827ab15dfc626"
+    },
+    {
+      "path": "/products/fireflow/",
+      "sha256": "5e0879b343f988c91eaa017f79a272f9651264c9b20b7bf892cfdbd585be6da2"
+    },
+    {
+      "path": "/products/unfazed/",
+      "sha256": "ff691deb85d4839df4997c964cc331f984127f938a6e2fb5b14058b74119044e"
+    },
+    {
+      "path": "/products/lanni/",
+      "sha256": "c7146ce475bb60ea025511aa98bee8b847573dfce4cfe85f7b6c021077c27016"
+    },
+    {
+      "path": "/products/privateinference/",
+      "sha256": "ea379963766fd0399ba2fb9ab2ca3f413025021be77008bbb2d2ed4381698ddc"
+    },
+    {
+      "path": "/products/galactica/",
+      "sha256": "68ebea87df9148541f1b69b6ec7f8206c9bf18225bf0ab8941e11826da27a655"
+    }
+  ],
+  "matrix": [
+    {
+      "path": "/",
+      "theme": "light",
+      "width": 320,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 54
+    },
+    {
+      "path": "/",
+      "theme": "light",
+      "width": 390,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 54
+    },
+    {
+      "path": "/",
+      "theme": "light",
+      "width": 768,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 54
+    },
+    {
+      "path": "/",
+      "theme": "light",
+      "width": 1024,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 90
+    },
+    {
+      "path": "/",
+      "theme": "light",
+      "width": 1440,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 90
+    },
+    {
+      "path": "/",
+      "theme": "dark",
+      "width": 320,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 54
+    },
+    {
+      "path": "/",
+      "theme": "dark",
+      "width": 390,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 54
+    },
+    {
+      "path": "/",
+      "theme": "dark",
+      "width": 768,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 54
+    },
+    {
+      "path": "/",
+      "theme": "dark",
+      "width": 1024,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 90
+    },
+    {
+      "path": "/",
+      "theme": "dark",
+      "width": 1440,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 90
+    },
+    {
+      "path": "/foundations/",
+      "theme": "light",
+      "width": 320,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 452
+    },
+    {
+      "path": "/foundations/",
+      "theme": "light",
+      "width": 390,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 452
+    },
+    {
+      "path": "/foundations/",
+      "theme": "light",
+      "width": 768,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 462
+    },
+    {
+      "path": "/foundations/",
+      "theme": "light",
+      "width": 1024,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 498
+    },
+    {
+      "path": "/foundations/",
+      "theme": "light",
+      "width": 1440,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 498
+    },
+    {
+      "path": "/foundations/",
+      "theme": "dark",
+      "width": 320,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 452
+    },
+    {
+      "path": "/foundations/",
+      "theme": "dark",
+      "width": 390,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 452
+    },
+    {
+      "path": "/foundations/",
+      "theme": "dark",
+      "width": 768,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 462
+    },
+    {
+      "path": "/foundations/",
+      "theme": "dark",
+      "width": 1024,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 498
+    },
+    {
+      "path": "/foundations/",
+      "theme": "dark",
+      "width": 1440,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 498
+    },
+    {
+      "path": "/products/",
+      "theme": "light",
+      "width": 320,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 60
+    },
+    {
+      "path": "/products/",
+      "theme": "light",
+      "width": 390,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 60
+    },
+    {
+      "path": "/products/",
+      "theme": "light",
+      "width": 768,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 61
+    },
+    {
+      "path": "/products/",
+      "theme": "light",
+      "width": 1024,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 97
+    },
+    {
+      "path": "/products/",
+      "theme": "light",
+      "width": 1440,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 97
+    },
+    {
+      "path": "/products/",
+      "theme": "dark",
+      "width": 320,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 60
+    },
+    {
+      "path": "/products/",
+      "theme": "dark",
+      "width": 390,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 60
+    },
+    {
+      "path": "/products/",
+      "theme": "dark",
+      "width": 768,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 61
+    },
+    {
+      "path": "/products/",
+      "theme": "dark",
+      "width": 1024,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 97
+    },
+    {
+      "path": "/products/",
+      "theme": "dark",
+      "width": 1440,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 97
+    },
+    {
+      "path": "/tokens/",
+      "theme": "light",
+      "width": 320,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 36
+    },
+    {
+      "path": "/tokens/",
+      "theme": "light",
+      "width": 390,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 36
+    },
+    {
+      "path": "/tokens/",
+      "theme": "light",
+      "width": 768,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 37
+    },
+    {
+      "path": "/tokens/",
+      "theme": "light",
+      "width": 1024,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 73
+    },
+    {
+      "path": "/tokens/",
+      "theme": "light",
+      "width": 1440,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 73
+    },
+    {
+      "path": "/tokens/",
+      "theme": "dark",
+      "width": 320,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 36
+    },
+    {
+      "path": "/tokens/",
+      "theme": "dark",
+      "width": 390,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 36
+    },
+    {
+      "path": "/tokens/",
+      "theme": "dark",
+      "width": 768,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 37
+    },
+    {
+      "path": "/tokens/",
+      "theme": "dark",
+      "width": 1024,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 73
+    },
+    {
+      "path": "/tokens/",
+      "theme": "dark",
+      "width": 1440,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 73
+    },
+    {
+      "path": "/guidelines/",
+      "theme": "light",
+      "width": 320,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 93
+    },
+    {
+      "path": "/guidelines/",
+      "theme": "light",
+      "width": 390,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 93
+    },
+    {
+      "path": "/guidelines/",
+      "theme": "light",
+      "width": 768,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 94
+    },
+    {
+      "path": "/guidelines/",
+      "theme": "light",
+      "width": 1024,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 130
+    },
+    {
+      "path": "/guidelines/",
+      "theme": "light",
+      "width": 1440,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 130
+    },
+    {
+      "path": "/guidelines/",
+      "theme": "dark",
+      "width": 320,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 93
+    },
+    {
+      "path": "/guidelines/",
+      "theme": "dark",
+      "width": 390,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 93
+    },
+    {
+      "path": "/guidelines/",
+      "theme": "dark",
+      "width": 768,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 94
+    },
+    {
+      "path": "/guidelines/",
+      "theme": "dark",
+      "width": 1024,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 130
+    },
+    {
+      "path": "/guidelines/",
+      "theme": "dark",
+      "width": 1440,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 130
+    },
+    {
+      "path": "/products/fireflow/",
+      "theme": "light",
+      "width": 320,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 143
+    },
+    {
+      "path": "/products/fireflow/",
+      "theme": "light",
+      "width": 390,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 143
+    },
+    {
+      "path": "/products/fireflow/",
+      "theme": "light",
+      "width": 768,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 144
+    },
+    {
+      "path": "/products/fireflow/",
+      "theme": "light",
+      "width": 1024,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 180
+    },
+    {
+      "path": "/products/fireflow/",
+      "theme": "light",
+      "width": 1440,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 180
+    },
+    {
+      "path": "/products/fireflow/",
+      "theme": "dark",
+      "width": 320,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 143
+    },
+    {
+      "path": "/products/fireflow/",
+      "theme": "dark",
+      "width": 390,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 143
+    },
+    {
+      "path": "/products/fireflow/",
+      "theme": "dark",
+      "width": 768,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 144
+    },
+    {
+      "path": "/products/fireflow/",
+      "theme": "dark",
+      "width": 1024,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 180
+    },
+    {
+      "path": "/products/fireflow/",
+      "theme": "dark",
+      "width": 1440,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 180
+    },
+    {
+      "path": "/products/unfazed/",
+      "theme": "light",
+      "width": 320,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 82
+    },
+    {
+      "path": "/products/unfazed/",
+      "theme": "light",
+      "width": 390,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 82
+    },
+    {
+      "path": "/products/unfazed/",
+      "theme": "light",
+      "width": 768,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 83
+    },
+    {
+      "path": "/products/unfazed/",
+      "theme": "light",
+      "width": 1024,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 119
+    },
+    {
+      "path": "/products/unfazed/",
+      "theme": "light",
+      "width": 1440,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 119
+    },
+    {
+      "path": "/products/unfazed/",
+      "theme": "dark",
+      "width": 320,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 82
+    },
+    {
+      "path": "/products/unfazed/",
+      "theme": "dark",
+      "width": 390,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 82
+    },
+    {
+      "path": "/products/unfazed/",
+      "theme": "dark",
+      "width": 768,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 83
+    },
+    {
+      "path": "/products/unfazed/",
+      "theme": "dark",
+      "width": 1024,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 119
+    },
+    {
+      "path": "/products/unfazed/",
+      "theme": "dark",
+      "width": 1440,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 119
+    },
+    {
+      "path": "/products/lanni/",
+      "theme": "light",
+      "width": 320,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 81
+    },
+    {
+      "path": "/products/lanni/",
+      "theme": "light",
+      "width": 390,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 81
+    },
+    {
+      "path": "/products/lanni/",
+      "theme": "light",
+      "width": 768,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 82
+    },
+    {
+      "path": "/products/lanni/",
+      "theme": "light",
+      "width": 1024,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 118
+    },
+    {
+      "path": "/products/lanni/",
+      "theme": "light",
+      "width": 1440,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 118
+    },
+    {
+      "path": "/products/lanni/",
+      "theme": "dark",
+      "width": 320,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 81
+    },
+    {
+      "path": "/products/lanni/",
+      "theme": "dark",
+      "width": 390,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 81
+    },
+    {
+      "path": "/products/lanni/",
+      "theme": "dark",
+      "width": 768,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 82
+    },
+    {
+      "path": "/products/lanni/",
+      "theme": "dark",
+      "width": 1024,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 118
+    },
+    {
+      "path": "/products/lanni/",
+      "theme": "dark",
+      "width": 1440,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 118
+    },
+    {
+      "path": "/products/privateinference/",
+      "theme": "light",
+      "width": 320,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 132
+    },
+    {
+      "path": "/products/privateinference/",
+      "theme": "light",
+      "width": 390,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 132
+    },
+    {
+      "path": "/products/privateinference/",
+      "theme": "light",
+      "width": 768,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 133
+    },
+    {
+      "path": "/products/privateinference/",
+      "theme": "light",
+      "width": 1024,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 169
+    },
+    {
+      "path": "/products/privateinference/",
+      "theme": "light",
+      "width": 1440,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 169
+    },
+    {
+      "path": "/products/privateinference/",
+      "theme": "dark",
+      "width": 320,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 132
+    },
+    {
+      "path": "/products/privateinference/",
+      "theme": "dark",
+      "width": 390,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 132
+    },
+    {
+      "path": "/products/privateinference/",
+      "theme": "dark",
+      "width": 768,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 133
+    },
+    {
+      "path": "/products/privateinference/",
+      "theme": "dark",
+      "width": 1024,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 169
+    },
+    {
+      "path": "/products/privateinference/",
+      "theme": "dark",
+      "width": 1440,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 169
+    },
+    {
+      "path": "/products/galactica/",
+      "theme": "light",
+      "width": 320,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 106
+    },
+    {
+      "path": "/products/galactica/",
+      "theme": "light",
+      "width": 390,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 106
+    },
+    {
+      "path": "/products/galactica/",
+      "theme": "light",
+      "width": 768,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 107
+    },
+    {
+      "path": "/products/galactica/",
+      "theme": "light",
+      "width": 1024,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 143
+    },
+    {
+      "path": "/products/galactica/",
+      "theme": "light",
+      "width": 1440,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 143
+    },
+    {
+      "path": "/products/galactica/",
+      "theme": "dark",
+      "width": 320,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 106
+    },
+    {
+      "path": "/products/galactica/",
+      "theme": "dark",
+      "width": 390,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 106
+    },
+    {
+      "path": "/products/galactica/",
+      "theme": "dark",
+      "width": 768,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 107
+    },
+    {
+      "path": "/products/galactica/",
+      "theme": "dark",
+      "width": 1024,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 143
+    },
+    {
+      "path": "/products/galactica/",
+      "theme": "dark",
+      "width": 1440,
+      "pageOverflow": false,
+      "overflow": [],
+      "contrast": [],
+      "targets": [],
+      "textPairs": 143
+    }
+  ],
+  "interactions": [
+    {
+      "path": "/",
+      "check": "three brand resource URLs and copy actions"
+    },
+    {
+      "path": "/",
+      "check": "mobile menu focus and Escape"
+    },
+    {
+      "path": "/foundations/",
+      "check": "three brand resource URLs and copy actions"
+    },
+    {
+      "path": "/foundations/",
+      "check": "mobile menu focus and Escape"
+    },
+    {
+      "path": "/products/",
+      "check": "three brand resource URLs and copy actions"
+    },
+    {
+      "path": "/products/",
+      "check": "mobile menu focus and Escape"
+    },
+    {
+      "path": "/tokens/",
+      "check": "three brand resource URLs and copy actions"
+    },
+    {
+      "path": "/tokens/",
+      "check": "mobile menu focus and Escape"
+    },
+    {
+      "path": "/guidelines/",
+      "check": "three brand resource URLs and copy actions"
+    },
+    {
+      "path": "/guidelines/",
+      "check": "mobile menu focus and Escape"
+    },
+    {
+      "path": "/products/fireflow/",
+      "check": "three brand resource URLs and copy actions"
+    },
+    {
+      "path": "/products/fireflow/",
+      "check": "mobile menu focus and Escape"
+    },
+    {
+      "path": "/products/unfazed/",
+      "check": "three brand resource URLs and copy actions"
+    },
+    {
+      "path": "/products/unfazed/",
+      "check": "mobile menu focus and Escape"
+    },
+    {
+      "path": "/products/lanni/",
+      "check": "three brand resource URLs and copy actions"
+    },
+    {
+      "path": "/products/lanni/",
+      "check": "mobile menu focus and Escape"
+    },
+    {
+      "path": "/products/privateinference/",
+      "check": "three brand resource URLs and copy actions"
+    },
+    {
+      "path": "/products/privateinference/",
+      "check": "mobile menu focus and Escape"
+    },
+    {
+      "path": "/products/galactica/",
+      "check": "three brand resource URLs and copy actions"
+    },
+    {
+      "path": "/products/galactica/",
+      "check": "mobile menu focus and Escape"
+    },
+    {
+      "path": "/foundations/",
+      "check": "link navigation and direct reload"
+    },
+    {
+      "path": "/products/",
+      "check": "link navigation and direct reload"
+    },
+    {
+      "path": "/tokens/",
+      "check": "link navigation and direct reload"
+    },
+    {
+      "path": "/guidelines/",
+      "check": "link navigation and direct reload"
+    },
+    {
+      "path": "/products/fireflow/",
+      "check": "link navigation and direct reload"
+    },
+    {
+      "path": "/products/unfazed/",
+      "check": "link navigation and direct reload"
+    },
+    {
+      "path": "/products/lanni/",
+      "check": "link navigation and direct reload"
+    },
+    {
+      "path": "/products/privateinference/",
+      "check": "link navigation and direct reload"
+    },
+    {
+      "path": "/products/galactica/",
+      "check": "link navigation and direct reload"
+    }
+  ],
+  "failures": [],
+  "errors": [],
+  "requests": [],
+  "hostingWarnings": [],
+  "limitations": [
+    "Chromium only; no Safari, Firefox or assistive-technology audit.",
+    "Contrast scan covers solid composited backgrounds.",
+    "Screenshots require separate visual review.",
+    "Artifact hashes identify the local build; Netlify adds its hosting badge to served HTML."
+  ]
+}

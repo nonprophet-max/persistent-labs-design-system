@@ -57,3 +57,7 @@ The public Netlify site and private GitHub repository are published. Live checks
 ## Edition 2.4: supplied Pi identity
 
 The owner-supplied PDF supersedes the prior Pi concept. The new chapter and standalone skill preserve its original vectors, Poppins weights and exact palettes, with implementation recommendations clearly separated. Both web editions are updated and verified live. The owner confirmed public GitHub visibility. See [source review and corrections](pi-identity/review.md) and [current release verification](pi-identity/release-verification.json). Earlier π/lavender/private-repository statements above are historical.
+
+## Per-page AI resource links
+
+The ten-page walkthrough has verified copyable agent-skill, plugin and chatbot links for each brand. Publication is pending because Netlify reports exhausted account credits. See [review and publishing status](skill-links/review.md).

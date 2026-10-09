@@ -50,6 +50,18 @@ try{
     const expectedTop=route.path.startsWith('/products/')?'/products/':route.path;
     check(JSON.stringify(structure.activeTop)===JSON.stringify(route.path==='/'?[]:[expectedTop]),'active-top',{path:route.path,actual:structure.activeTop});
     const expectedProduct=/^\/products\/([^/]+)\/$/.exec(route.path)?.[1];
+    const expectedSkill=`${expectedProduct||'persistent-labs'}-brand`;
+    check(await page.locator('.skill-access').getAttribute('data-brand-skill')===expectedSkill,'brand-resource-mapping',{path:route.path,expectedSkill});
+    await page.locator('.skill-more summary').click();
+    await page.evaluate(()=>{window.copiedBrandLinks=[];Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async text=>{window.copiedBrandLinks.push(text)}}})});
+    for(const resource of ['skill','plugin','chatbot']){
+      const link=page.locator(`#brand-resource-${resource}`),url=await link.getAttribute('href');
+      check(url.includes(`/plugins/${expectedSkill}/`)||url.endsWith(`/plugins/${expectedSkill}`),'brand-resource-target',{path:route.path,resource,url});
+      check(await link.textContent()===url,'brand-resource-visible-url',{path:route.path,resource});
+      await page.locator(`[data-copy-link="brand-resource-${resource}"]`).click();
+      check(await page.evaluate(()=>window.copiedBrandLinks.at(-1))===url,'brand-resource-copy',{path:route.path,resource,url});
+    }
+    interactions.push({path:route.path,check:'three brand resource URLs and copy actions'});
     check(JSON.stringify(structure.products)===JSON.stringify(expectedProduct?[expectedProduct]:[]),'page-isolation',{path:route.path,actual:structure.products});
     check(structure.productLinks.length===5&&structure.productLinks.every(a=>!a.hash),'product-page-links',{path:route.path});
     for(const family of ['Red Hat Display','Red Hat Text','Red Hat Mono'])check(structure.fonts.includes(family),'font-loading',{path:route.path,family});
@@ -86,6 +98,7 @@ try{
         matrix.push({path:route.path,theme,width,...result});
         check(!result.pageOverflow&&!result.overflow.length&&!result.contrast.length&&!result.targets.length,'render',{path:route.path,theme,width,...result});
         if([390,1440].includes(width))await page.screenshot({path:resolve(output,`${route.path.split('/').filter(Boolean).join('-')||'home'}-${theme}-${width}.png`)});
+        if(route.path==='/products/privateinference/'&&[390,1440].includes(width))await page.locator('.skill-access').screenshot({path:resolve(output,`brand-links-${theme}-${width}.png`)});
       }
     }
     await page.setViewportSize({width:390,height:844});
@@ -112,6 +125,9 @@ try{
   await page.goBack();check(new URL(page.url()).pathname==='/products/fireflow/','browser-back');
   await page.goForward();check(new URL(page.url()).pathname==='/tokens/','browser-forward');
   await page.evaluate(()=>Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:()=>Promise.reject(new Error('QA simulated denial'))}}));
+  await page.locator('[data-copy-link="brand-resource-skill"]').click();
+  await page.waitForFunction(()=>document.querySelector('[data-copy-link="brand-resource-skill"]').textContent==='Link selected');
+  check(await page.evaluate(()=>getSelection().toString()===document.querySelector('#brand-resource-skill').href),'brand-resource-clipboard-fallback');
   await page.locator('#copy-tokens').click();await page.waitForFunction(()=>document.querySelector('#copy-tokens').textContent==='Tokens selected');
   check((await page.locator('#live-status').textContent()).includes('Clipboard unavailable'),'clipboard-fallback');
   for(const kind of ['css','json']){const download=page.waitForEvent('download');await page.locator(`[data-download="${kind}"]`).click();check((await download).suggestedFilename()===`persistent-labs.tokens.${kind}`,'token-download',{kind})}

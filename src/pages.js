@@ -28,6 +28,20 @@
     document.querySelectorAll('section[id]').forEach(section=>observer.observe(section));
   }
   const copyButton=document.querySelector('#copy-tokens');
+  document.querySelectorAll('[data-copy-link]').forEach(button=>button.addEventListener('click',async()=>{
+    const link=document.getElementById(button.dataset.copyLink);
+    button.disabled=true;
+    try{
+      button.textContent='Copying…';
+      await Promise.race([navigator.clipboard.writeText(link.href),new Promise((_,reject)=>setTimeout(()=>reject(new Error('Clipboard timeout')),1200))]);
+      button.textContent='Copied';announce('Brand resource link copied to clipboard.');
+    }catch{
+      const range=document.createRange();range.selectNodeContents(link);
+      const selection=getSelection();selection.removeAllRanges();selection.addRange(range);
+      button.textContent='Link selected';announce('Clipboard unavailable. Link selected. Use your system copy shortcut or touch and hold the link to copy it.');
+    }finally{button.disabled=false}
+    setTimeout(()=>button.textContent='Copy link',2500);
+  }));
   copyButton?.addEventListener('click',async()=>{
     const text=document.querySelector('#tokens-src').textContent;
     try{copyButton.textContent='Copying…';await Promise.race([navigator.clipboard.writeText(text),new Promise((_,reject)=>setTimeout(()=>reject(new Error('Clipboard timeout')),1200))]);copyButton.textContent='Tokens copied';announce('CSS tokens copied to clipboard.')}
