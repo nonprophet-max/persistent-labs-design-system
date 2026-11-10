@@ -320,5 +320,30 @@
     "avoid": "Turning a copper accent into a security badge, speculative AI claims, or conflating Galactica with the upcoming PI brand.",
     "radius": "8px controls · 12px disclosure groups · 24px panels",
     "voice": "Assured / lucid / evidence-led"
+  },
+  {
+    "id": "alfred",
+    "name": "Alfred",
+    "role": "A calm interface with character",
+    "status": "Supplied v0.3 identity · proposed product",
+    "headline": "Life, handled.",
+    "description": "Find it. Book it. Buy it.",
+    "evidence": "Latest approved v0.3 colours and font decisions supersede older handoff instructions. Report v5 is absent and is not a build dependency.",
+    "source": "assets/alfred/brand-guide.md",
+    "sourceLabel": "Current Alfred guide",
+    "specs": [
+      [
+        "Current identity",
+        "The scoped Alfred chapter and portable guide are generated from src/alfred-brand.json and identities.alfred. Use that current guide for detailed rules."
+      ],
+      [
+        "Source and scope",
+        "Owner-supplied v0.3 assets and the approved 10 November 2026 design brief. This identity work does not establish live product capabilities."
+      ]
+    ],
+    "do": "Preserve supplied artwork, warm neutrals and restrained yellow.",
+    "avoid": "Retired colours, repeated mascots and unsupported product claims.",
+    "radius": "28px cards · 36px capsules · pill controls",
+    "voice": "Capable / warm / direct"
   }
 ]
