@@ -1,6 +1,6 @@
 # Alfred brand bible and GitHub Pages migration — edition 2.5
 
-Prepared on 10 November 2026. Publication is pending final independent review and the GitHub Pages release; the target URL is not yet claimed live.
+Prepared on 10 November 2026. Final independent whole-branch and rendered review returned **ship**, with no Critical or Important findings. GitHub Pages publication and live verification are pending; the target URL is not yet claimed live.
 
 ## Delivered
 
@@ -31,7 +31,7 @@ The whole eleven-page library is prepared for `https://nonprophet-max.github.io/
 - A fresh agent used only the extracted skill to produce and verify a standalone branded invitation; see `skill-forward-report.md`.
 - Impeccable's detector returned no findings for the changed Alfred UI files. Selected actual screenshots are in `screenshots/`.
 
-Task-scoped independent reviews found no Critical or Important findings. Their two minor copy/history points were corrected. A final whole-branch/visual review follows on the complete release.
+Task-scoped independent reviews found no Critical or Important findings. Their two minor copy/history points were corrected. The final whole-branch/visual review returned **ship**; see `final-review.md`.
 
 ## Limits and provenance
 
