@@ -2,7 +2,7 @@
 
 A shareable design bible with a shared parent system and six distinct product identities: FireFlow, Unfazed.dev, Lanni, Private Inference, Galactica and Alfred.
 
-The complete central walkthrough is being migrated to [GitHub Pages](https://nonprophet-max.github.io/persistent-labs-design-system/). Alfred's chapter is at `/products/alfred/`. See [GitHub Pages build and publishing](docs/github-pages.md) and [the Alfred review/release record](reviews/alfred-brand/review.md) for actual verification and publication status. Historical Netlify deployment records remain in `reviews/`; they are not a dependency of the Pages build.
+The complete central walkthrough is hosted on [GitHub Pages](https://nonprophet-max.github.io/persistent-labs-design-system/). Alfred's chapter is at `/products/alfred/`. See [GitHub Pages build and publishing](docs/github-pages.md) and [the Alfred review/release record](reviews/alfred-brand/review.md) for actual verification and publication status. Historical Netlify deployment records remain in `reviews/`; they are not a dependency of the Pages build.
 
 ## Contents
 

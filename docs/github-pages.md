@@ -1,10 +1,10 @@
 # GitHub Pages publication
 
-The complete multipage brand library targets
+The complete multipage brand library is hosted at
 [nonprophet-max.github.io/persistent-labs-design-system](https://nonprophet-max.github.io/persistent-labs-design-system/).
-This migration prepares publication; a successful deployment and live verification are still required before calling that URL live.
+Publication and live verification passed on 10 November 2026. See [the release record](../reviews/alfred-brand/review.md).
 
-The publication branch remains `codex/design-bible`. In the repository's **Settings → Pages**, select **GitHub Actions** as the build source. The `github-pages` environment must allow deployments from that branch. The checked-in workflow runs on pushes to `codex/design-bible` and can also be started manually from Actions. It packages skills, builds the whole library, uploads only `dist-pages/`, and deploys that artifact using the official GitHub Pages actions. It needs no account credentials or stored deployment tokens.
+The publication branch remains `codex/design-bible`. The repository's **Settings → Pages** source is **GitHub Actions**. The `github-pages` environment allows deployments from that branch. The checked-in workflow runs on pushes to `codex/design-bible` and can also be started manually from Actions. It packages skills, builds the whole library, uploads only `dist-pages/`, and deploys that artifact using the official GitHub Pages actions. It needs no account credentials or stored deployment tokens.
 
 ## Build and check
 
@@ -32,6 +32,6 @@ MemoryTree and FlameChorus remain subordinate parts of FireFlow. Their former ro
 
 All product pages, shared chapters, bundled fonts, assets and token downloads use the deployment prefix. External links and raw GitHub skill/resource links remain unchanged. Alfred's scoped interaction script is copied and defer-loaded on its product page when `src/alfred.js` exists. The generated library's source/archive/plugin directories are excluded as before; resources linked on GitHub stay in the public repository.
 
-Final browser validation must use the deployed prefix in both navigation targets and link expectations. The historical `qa-pages.mjs` suite assumes root paths; setting `SITE_URL` to a prefixed URL alone does not change its absolute route targets. Final live validation should cover navigation, fonts, downloads, light/dark views, mobile controls and both component redirects. Local build results alone do not demonstrate a successful deployment.
+Browser validation uses the deployed prefix in both navigation targets and link expectations. `qa-pages.mjs` derives that prefix from `SITE_URL` or `SITE_BASE_PATH`. For the live library, run `SITE_URL=https://nonprophet-max.github.io/persistent-labs-design-system/ npm run check:pages`. The live suite passed all eleven pages and 110 layout/theme combinations; the focused Alfred suite passed 56 checks. Static component redirects and all hosted content files were also verified. Local build results alone do not demonstrate a successful deployment.
 
 The workflow follows GitHub's [custom Pages workflow guide](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) and [official deploy-pages action](https://github.com/actions/deploy-pages), using the versions verified on 10 November 2026: checkout v6, configure-pages v5, upload-pages-artifact v4 and deploy-pages v4.

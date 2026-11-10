@@ -1,0 +1,23 @@
+[
+  {
+    "path": "plugins/alfred-brand/skills/alfred-brand/SKILL.md",
+    "url": "https://raw.githubusercontent.com/nonprophet-max/persistent-labs-design-system/codex/design-bible/plugins/alfred-brand/skills/alfred-brand/SKILL.md",
+    "status": 200,
+    "matchesLocal": true,
+    "sha256": "b00b1fa5f876c5f9bbbc6a280649d61ea759d73ec29d0623d0f25988f890ea52"
+  },
+  {
+    "path": "plugins/alfred-brand/chatbot.md",
+    "url": "https://raw.githubusercontent.com/nonprophet-max/persistent-labs-design-system/codex/design-bible/plugins/alfred-brand/chatbot.md",
+    "status": 200,
+    "matchesLocal": true,
+    "sha256": "2ddbac04775414c13de8692416308c8c9a021a1c286b56027ae20798e133b8cb"
+  },
+  {
+    "path": "brand-skills.json",
+    "url": "https://raw.githubusercontent.com/nonprophet-max/persistent-labs-design-system/codex/design-bible/brand-skills.json",
+    "status": 200,
+    "matchesLocal": true,
+    "sha256": "c071993ebbf773f94a042012f39ad92420aa02dbe2c8026cc1a7e410945a6028"
+  }
+]

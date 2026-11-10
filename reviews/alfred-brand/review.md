@@ -1,6 +1,6 @@
 # Alfred brand bible and GitHub Pages migration — edition 2.5
 
-Prepared on 10 November 2026. Final independent whole-branch and rendered review returned **ship**, with no Critical or Important findings. GitHub Pages publication and live verification are pending; the target URL is not yet claimed live.
+Prepared on 10 November 2026. Final independent whole-branch and rendered review returned **ship**, with no Critical or Important findings. The whole library is published at [GitHub Pages](https://nonprophet-max.github.io/persistent-labs-design-system/) and verified live.
 
 ## Delivered
 
@@ -42,3 +42,15 @@ The supplied Report v5 is unavailable. Max expressly directed development from t
 Initial preview serving produced one transient SVG connection reset; the exact asset returned HTTP 200 and the focused suite passed without failed requests after increasing the local preview server's request queue. No production asset was changed to mask a server issue.
 
 `verification-summary.json` records final source checks, explicit font samples and the package checksum. Source history, review evidence and plugin directories are excluded from public site output, while intentionally published assets/downloads remain included.
+
+
+## Published release
+
+- Source publication: `0e2ee4981c6e7b0f1b1737c4b338faccd3d4984d` on `codex/design-bible`. Its runtime/source tree matches reviewed `1e7bf2b`; subsequent release-record commits change documentation only.
+- [Successful Pages workflow](https://github.com/nonprophet-max/persistent-labs-design-system/actions/runs/42798313302).
+- [Whole central library](https://nonprophet-max.github.io/persistent-labs-design-system/) and [Alfred walkthrough](https://nonprophet-max.github.io/persistent-labs-design-system/products/alfred/).
+- Live Chromium checks: eleven pages and 110 layout/theme combinations; all pass with zero errors/failed requests. Focused Alfred: 56 checks, all pass.
+- All 74 served content files match the local reviewed build byte for byte, including the portable ZIP. The additional `.nojekyll` configuration marker is uploaded but its public URL returns404; it is not a content/download dependency.
+- GitHub's public Alfred skill, chatbot guide and package registry all return200 and match local bytes.
+
+The workflow emitted upstream GitHub-hosted runner/action runtime notices but completed successfully. Current official action versions were verified during implementation. No runner settings, access grants, local runtime hooks or unrelated account configuration were changed. The temporary owner-account command context was restored after use.

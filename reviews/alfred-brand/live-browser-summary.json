@@ -1,0 +1,9 @@
+{
+  "pagesPassed": true,
+  "pages": 11,
+  "layoutCombinations": 110,
+  "alfredPassed": true,
+  "alfredChecks": 56,
+  "errors": [],
+  "failedRequests": []
+}
