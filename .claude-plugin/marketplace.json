@@ -33,6 +33,11 @@
       "name": "galactica-brand",
       "source": "./plugins/galactica-brand",
       "description": "Brand guidance for Galactica"
+    },
+    {
+      "name": "alfred-brand",
+      "source": "./plugins/alfred-brand",
+      "description": "Brand guidance for Alfred"
     }
   ]
 }

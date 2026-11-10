@@ -128,6 +128,16 @@
   --product-tint: #FFF1E8;
   --product-logo-dot: #F7931A;
 }
+[data-product="alfred"] {
+  --product-accent: #F2BD3C;
+  --product-accent-ink: #3E3D3D;
+  --product-on-accent: #3E3D3D;
+  --product-hover: #3E3D3D;
+  --product-on-hover: #F2BD3C;
+  --product-pressed: #3E3D3D;
+  --product-on-pressed: #F2BD3C;
+  --product-tint: #FFFBF7;
+}
 [data-product="fireflow"] [data-component="orchestration-engine"] {
   --component-accent: #F7931A;
   --component-accent-ink: #8C4900;

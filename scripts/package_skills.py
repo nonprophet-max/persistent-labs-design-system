@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate six self-contained, provider-neutral brand skill plugins."""
+"""Generate seven self-contained, provider-neutral brand skill plugins."""
 from pathlib import Path
 from html.parser import HTMLParser
 import json
@@ -11,6 +11,8 @@ import zipfile
 ROOT=Path(__file__).resolve().parents[1]
 bible=runpy.run_path(str(ROOT/'scripts/build.py'))
 T=bible['T']; PRODUCTS=bible['PRODUCTS']; SECTIONS=bible['SECTIONS']
+alfred=runpy.run_path(str(ROOT/'scripts/alfred_brand.py'))
+alfred['build_assets']()
 
 class Markdown(HTMLParser):
     def __init__(self):
@@ -64,6 +66,10 @@ def write(path,text):path.parent.mkdir(parents=True,exist_ok=True);path.write_te
 def dump(path,value):write(path,json.dumps(value,ensure_ascii=False,indent=2)+'\n')
 def copy(src,dst):dst.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(src,dst)
 
+def alfred_reference():
+    # The same canonical guide, with resource links relative to references/.
+    return alfred['brand_markdown']().split('\n## Files')[0]+'\n## Files\n\nUse the [complete portable guide](../assets/alfred/brand-guide.md), [exact identity tokens](../assets/alfred/tokens.json), [scoped CSS](../assets/alfred/tokens.css) and [font declarations](../assets/alfred/fonts.css). Keep their adjacent fonts, logos, illustrations, licences and provenance files together.\n'
+
 foundations='# Persistent Labs shared foundations\n\nEdition '+T['version']+'. Product-specific exceptions take precedence inside their own product surfaces.\n\n'+ '\n'.join(md(s[4]) for s in SECTIONS if s[3]=='Foundations')
 complete='# Persistent Labs full design bible\n\nEdition '+T['version']+' · 9 October 2026.\n\n'+'\n'.join(md(s[4]) for s in SECTIONS)
 # Local archive links in the reading page are provenance, not portable skill dependencies.
@@ -89,11 +95,13 @@ for plugin_name,label,p in entries:
     skill=plugin/'skills'/plugin_name
     skill.mkdir(parents=True,exist_ok=True)
     is_parent=p is None
-    desc=('Create and review work using the full Persistent Labs design bible and its five product identities. Use for parent-brand or multi-product work; use the individual product skill for work confined to one product.' if is_parent else f'Create and review {label} branded interfaces, pages, copy and collateral using its identity specifications. Use for {label} work, not unrelated brands.')
+    is_alfred=bool(p and p['id']=='alfred')
+    include_alfred=is_parent or is_alfred
+    desc=('Create and review work using the full Persistent Labs design bible and its six product identities. Use for parent-brand or multi-product work; use the individual product skill for work confined to one product.' if is_parent else f'Create and review {label} branded interfaces, pages, copy and collateral using its identity specifications. Use for {label} work, not unrelated brands.')
     if p and p['id']=='fireflow':desc+=' Includes the FireFlow orchestration engine, MemoryTree and FlameChorus as parts of one product.'
     manifest={
       'name':plugin_name,'version':'2.4.0','description':desc,'author':{'name':'Persistent Labs'},'skills':'./skills/',
-      'interface':{'displayName':label+' Brand','shortDescription':('Full design bible and five product identities' if is_parent else label+' identity, assets and design guidance'),'longDescription':desc,'developerName':'Persistent Labs','category':'Productivity','capabilities':[],'defaultPrompt':'Use $'+plugin_name+' for this design brief.','brandColor':T['core']['gold'] if is_parent else T['products'][p['id']]['accent']}
+      'interface':{'displayName':label+' Brand','shortDescription':('Full design bible and six product identities' if is_parent else label+' identity, assets and design guidance'),'longDescription':desc,'developerName':'Persistent Labs','category':'Productivity','capabilities':[],'defaultPrompt':'Use $'+plugin_name+' for this design brief.','brandColor':T['core']['gold'] if is_parent else T['products'][p['id']]['accent']}
     }
     dump(plugin/'.codex-plugin/plugin.json',manifest)
     # Claude-compatible packaging is supplemental; the skill itself is plain Markdown.
@@ -112,30 +120,34 @@ For parent-brand and portfolio work, read [the full design bible](references/des
 
 '''+ '\n'.join(f'- [{q["name"]}](references/{q["id"]}.md): {q["role"]}.' for q in PRODUCTS)+'''
 
-The portfolio is FireFlow, Unfazed.dev, Lanni, Private Inference and Galactica. FireFlow contains its orchestration engine, MemoryTree (persistent memory) and FlameChorus (chat UX engine). Never promote those components into peer product brands. Lanni is built on FireFlow. Galactica is live; Private Inference is upcoming. Their shared portfolio does not imply shared technical architecture.
+The portfolio is FireFlow, Unfazed.dev, Lanni, Private Inference, Galactica and Alfred. FireFlow contains its orchestration engine, MemoryTree (persistent memory) and FlameChorus (chat UX engine). Never promote those components into peer product brands. Lanni is built on FireFlow. Galactica is live; Private Inference is upcoming. Their shared portfolio does not imply shared technical architecture.
 '''
         write(skill/'references/design-bible.md',complete)
-        for q in PRODUCTS:write(skill/f'references/{q["id"]}.md',md(next(s[4] for s in SECTIONS if s[0]==q['id'])))
+        for q in PRODUCTS:write(skill/f'references/{q["id"]}.md',alfred_reference() if q['id']=='alfred' else md(next(s[4] for s in SECTIONS if s[0]==q['id'])))
         selected=T
-        asset_names=['persistent-labs','fireflow','memorytree','unfazed','lanni','privateinference','galactica']
+        asset_names=['persistent-labs','fireflow','memorytree','unfazed','lanni','privateinference','galactica','alfred']
         body=route+'\n'+common+'\n'+refs
     else:
-        chapter=md(next(s[4] for s in SECTIONS if s[0]==p['id']))
+        chapter=alfred_reference() if is_alfred else md(next(s[4] for s in SECTIONS if s[0]==p['id']))
         write(skill/'references/brand.md',chapter)
         selected={k:v for k,v in T.items() if k not in ('products','components','identities')}
-        if p['id']=='privateinference':selected['identities']={'privateinference':T['identities']['privateinference']}
+        if p['id'] in ('privateinference','alfred'):selected['identities']={p['id']:T['identities'][p['id']]}
         selected['products']={p['id']:T['products'][p['id']]}
         selected['components']={'fireflow':T['components']['fireflow']} if p['id']=='fireflow' else {}
         asset_names=['persistent-labs',p['id']]+(['memorytree'] if p['id']=='fireflow' else [])
         invariant={
+          'alfred':'Apply Alfred v0.3 before inherited parent rules. Use the supplied outlined star-and-wordmark, butler artwork and exact identity tokens. The linked current guide is generated from the same canonical rules as the Alfred chapter: follow its palette, heading/body font roles, Cyrillic fallbacks, shape, spacing, interaction states and voice. Keep Alfred styles local to Alfred material. Alfred is a proposed assistant; application examples are illustrative. Preserve its asset/OFL provenance and the limits on product, card and legal claims in the guide.',
           'fireflow':'FireFlow is one product with three core parts: its orchestration engine, MemoryTree for persistent memory and FlameChorus for chat UX. Component accents are subordinate; primary actions stay FireFlow orange. Do not create separate MemoryTree or FlameChorus product brands.',
           'unfazed':'Preserve the unimpressed face, lowercase unfazed wordmark, white ground, system typography, blue accent and 6px corners. Use Unfazed.dev in the portfolio. Do not impose parent gold, pill controls or Red Hat inside Unfazed’s interface.',
           'lanni':'Lanni is built on FireFlow. Preserve coral and the human, clear voice. The L-shaped mark is a proposed extension, and current availability is unverified. Keep proposed actions, review, execution and completion distinguishable.',
           'privateinference':'Use Private Inference (two words), or Pi. The owner-supplied Pi Brand Identity(upd).pdf is authoritative: use the original gold disc with its asymmetric four-point flare, outlined lockups, Poppins 100–800, and the exact light/dark palettes. This supersedes the earlier mathematical π, lavender and Red Hat product treatment. Never publish the source’s placeholder tagline. Upcoming status is inherited from the owner brief; the PDF establishes no capabilities. Do not invent deployment, retention, encryption or locality guarantees.',
           'galactica':'Galactica is live and operates as a privacy technology firm across AI and blockchain. Use the full Galactica.com lockup with the bold orange dot #F7931A. The outlined supplied lockup follows owner direction; copper UI colors are proposed family adaptations. Keep Galactica distinct from upcoming PI and do not infer specific AI or privacy capabilities.'
         }[p['id']]
-        body='## Brand essentials\n\n'+invariant+'\n\nRead [the product identity](references/brand.md) for positioning, logo, palette, typography, geometry, motion, voice and component behavior.\n\n'+common+'\n'+refs
+        product_common=common.replace('Read the brand reference and shared foundations, then choose the surface', 'Read the current Alfred guide first. Consult shared foundations only for parent endorsement or general guidance absent from Alfred’s own rules. Choose the surface') if is_alfred else common
+        body='## Brand essentials\n\n'+invariant+'\n\nRead [the product identity](references/brand.md) for positioning, logo, palette, typography, geometry, motion, voice and component behavior.\n\n'+product_common+'\n'+refs
     skill_text='---\nname: '+plugin_name+'\ndescription: '+json.dumps(desc,ensure_ascii=False)+'\n---\n\n# '+label+' brand\n\n'+body
+    if include_alfred:
+        skill_text+='\n- [Alfred portable guide](assets/alfred/brand-guide.md): load for Alfred visual work; its fonts, tokens, assets and licences are adjacent and self-contained.\n'
     write(skill/'SKILL.md',skill_text)
     write(skill/'references/foundations.md',foundations)
     dump(skill/'references/design-tokens.json',selected)
@@ -144,6 +156,7 @@ The portfolio is FireFlow, Unfazed.dev, Lanni, Private Inference and Galactica. 
     if not is_parent:
         for other in T['products']:
             if other!=p['id']:css=re.sub(r'\[data-product="'+other+r'"\][^{]*\{[^}]*\}\n?','',css)
+    if is_alfred:css=(ROOT/'assets/alfred/tokens.css').read_text()
     write(skill/'assets/tokens.css',css)
     for name in asset_names:copy(ROOT/f'assets/{name}.svg',skill/f'assets/{name}.svg')
     include_pi=is_parent or p['id']=='privateinference'
@@ -151,17 +164,21 @@ The portfolio is FireFlow, Unfazed.dev, Lanni, Private Inference and Galactica. 
         shutil.copytree(ROOT/'assets/pi',skill/'assets/pi',dirs_exist_ok=True)
         body_ref='\n- [Pi source PDF](../assets/pi/brand-identity.pdf), [vector provenance](../assets/pi/provenance.json), and [Poppins sources](../assets/pi/font-provenance.json).\n'
     else:body_ref=''
+    if include_alfred:
+        shutil.copytree(ROOT/'assets/alfred',skill/'assets/alfred',dirs_exist_ok=True)
     for font in (ROOT/'assets/fonts').iterdir():
-        if font.is_file() and (include_pi or ('poppins' not in font.name.lower())):copy(font,skill/'assets/fonts'/font.name)
+        if not is_alfred and font.is_file() and (include_pi or ('poppins' not in font.name.lower())):copy(font,skill/'assets/fonts'/font.name)
     font_css=(ROOT/'src/fonts.css').read_text()+('\n'+(ROOT/'src/pi-fonts.css').read_text() if include_pi else '')
-    write(skill/'assets/fonts.css',re.sub(r'/\*.*?\*/', '/* Link this stylesheet from your page. Keep the adjacent fonts/ directory; rebase URLs if inlining. */', font_css, count=1, flags=re.S).replace('assets/fonts/','fonts/'))
+    if include_alfred:
+        font_css=('' if is_alfred else font_css+'\n')+(ROOT/'assets/alfred/fonts.css').read_text().replace('fonts/', 'alfred/fonts/')
+    write(skill/'assets/fonts.css',re.sub(r'/\*.*?\*/', '/* Link this stylesheet from your page. Keep the adjacent fonts/ directory; rebase URLs if inlining. */', font_css, count=1, flags=re.S).replace('assets/fonts/','fonts/').replace('Keep the adjacent fonts/ directory', 'Keep the adjacent alfred/fonts/ directory' if is_alfred else 'Keep the adjacent fonts/ directory'))
     font_sources=(ROOT/'assets/fonts/SOURCES.md').read_text()
     start=font_sources.index('The weight ranges')
     end=font_sources.index('| File |')
     font_sources=font_sources[:start]+'Load the bundled families by linking assets/fonts.css. Its URLs resolve relative to that stylesheet and its adjacent fonts/ directory. If you inline the CSS into a document, rebase the font URLs to that document. No project build script is required.\n\n'+font_sources[end:]
     if include_pi:
         font_sources+='\n## Poppins for Pi\n\nPoppins weights 100–800 are bundled as eight upright Latin WOFF2 files with OFL-Poppins.txt. Exact CDN URLs and hashes are in [Pi font provenance](../pi/font-provenance.json). The PDF specifies the family and weights; font sizes and UI roles are implementation guidance.\n'
-    write(skill/'assets/fonts/SOURCES.md',font_sources)
+    if not is_alfred:write(skill/'assets/fonts/SOURCES.md',font_sources)
     inventory='# Assets and provenance\n\n'+ '\n'.join(f'- [{name}.svg](../assets/{name}.svg)' for name in asset_names)+'''
 
 Use SVG assets directly, preserving their viewBox and proportions. Assets with currentColor inherit the chosen approved foreground when inlined; external SVG images use their own foreground. The Galactica.com dot is a fixed orange circle and remains orange in full-color lockups. Pi uses its source-extracted disc-and-flare mark. Its outlined wordmark must not be retyped or replaced by a mathematical π.
@@ -172,28 +189,52 @@ Red Hat Display, Text and Mono are bundled with their SIL Open Font Licenses in 
 '''
     if include_pi:
         inventory+='\n## Pi source assets\n\n'+''.join(f'- [{name}.svg](../assets/pi/{name}.svg)\n' for name in ['mark','horizontal','vertical','logotype','horizontal-dark','horizontal-reversed'])+body_ref+'\nColors and path proportions follow the PDF. UI color roles, spacing and motion recommendations are applications, not additional source specifications. The mark SVG uses its own fixed source fills.\n'
+    if is_alfred:
+        inventory='# Alfred assets and provenance\n\nUse the supplied [outlined logo](../assets/alfred/logos/alfred-logo-ink.svg) and the matching ink/paper variants. Preserve artwork proportions and original mascot bytes.\n\nSee [the complete asset rights and OFL notices](../assets/alfred/ASSETS-LICENCES.md) and [source hashes](../assets/alfred/provenance.json). Load [fonts.css](../assets/alfred/fonts.css) with its adjacent fonts directory. Brand assets grant no general ownership, trademark or redistribution rights. Font licences apply to fonts only.\n'
+    elif include_alfred:
+        inventory+='\n## Alfred identity exception\n\n[Alfred assets, licences and font provenance](../assets/alfred/ASSETS-LICENCES.md) live in their own folder. Instrument Serif headings and Outfit body take precedence inside Alfred surfaces; do not apply Red Hat or parent gold there.\n'
     write(skill/'references/assets.md',inventory)
     # This portable document can be attached/pasted without a plugin runtime.
     chatbot=skill_text+'\n\n---\n\n'+(complete if is_parent else (skill/'references/brand.md').read_text()+'\n'+foundations)+'\n\n## Machine-readable tokens\n\n```json\n'+json.dumps(selected,indent=2)+'\n```\n'
+    # The chatbot is plain, self-contained text; its guide and tokens are embedded.
+    if is_alfred:chatbot=re.sub(r'\[([^\]]+)\]\((?!https?://)[^)]+\)',r'\1',chatbot)
     write(plugin/'chatbot.md',chatbot)
     catalog.append({'name':plugin_name,'product':label,'skill':f'plugins/{plugin_name}/skills/{plugin_name}/SKILL.md','chatbot':f'plugins/{plugin_name}/chatbot.md','plugin':f'plugins/{plugin_name}'})
+
+# A stable standalone skill root, plus host metadata adapted to its layout.
+alfred_plugin=ROOT/'plugins/alfred-brand'
+alfred_skill=alfred_plugin/'skills/alfred-brand'
+archive_files={path.relative_to(alfred_skill).as_posix():path.read_bytes() for path in alfred_skill.rglob('*') if path.is_file()}
+archive_files['chatbot.md']=(alfred_plugin/'chatbot.md').read_bytes()
+for host in ('.codex-plugin','.claude-plugin'):
+    manifest=json.loads((alfred_plugin/host/'plugin.json').read_text());manifest['skills']='./'
+    archive_files[host+'/plugin.json']=(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n').encode()
+archive=ROOT/'assets/downloads/alfred-brand.zip';archive.parent.mkdir(parents=True,exist_ok=True)
+with zipfile.ZipFile(archive,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as output:
+    for name,data in sorted(archive_files.items()):
+        info=zipfile.ZipInfo('alfred-brand/'+name,date_time=(1980,1,1,0,0,0));info.create_system=3;info.compress_type=zipfile.ZIP_DEFLATED;info.external_attr=0o100644<<16
+        output.writestr(info,data,compress_type=zipfile.ZIP_DEFLATED,compresslevel=9)
 
 dump(ROOT/'brand-skills.json',{'version':'2.4.0','plugins':catalog})
 # A repository-local Claude catalog; no local app configuration is changed.
 dump(ROOT/'.claude-plugin/marketplace.json',{'name':'persistent-labs-brands','owner':{'name':'Persistent Labs'},'plugins':[{'name':c['name'],'source':'./'+c['plugin'],'description':'Brand guidance for '+c['product']} for c in catalog]})
 write(ROOT/'BRAND-SKILLS.md','''# Portable brand skills
 
-One full-system skill and five independent product plugins. Each product package contains its own references, tokens, vector assets and fonts; it does not depend on installing the parent package.
+One full-system skill and six independent product plugins. Each product package contains its own references, tokens, vector assets and fonts; it does not depend on installing the parent package.
 
 | Brand | Invoke | Skill entrypoint | Chatbot document |
 | --- | --- | --- | --- |
 '''+ '\n'.join(f'| {c["product"]} | `${c["name"]}` | [SKILL.md]({c["skill"]}) | [chatbot.md]({c["chatbot"]}) |' for c in catalog)+'''
 
+## Alfred standalone download
+
+[Download the complete Alfred skill](assets/downloads/alfred-brand.zip). Extract it and copy `alfred-brand/` into the agent’s skill directory. It includes current v0.3 guidance, exact tokens, local CSS/fonts, supplied artwork, licences, host metadata and a chatbot document. Alfred identity overrides inherited parent rules. The archive is reproducible and has no checkout dependencies.
+
 ## Use with an agent
 
 Copy the desired `plugins/<name>/skills/<name>/` directory into the agent’s supported skill directory, or point it directly to that SKILL.md. Hosts with skill discovery can select by the frontmatter description; explicit invocation uses the names above. Host setup varies, so no universal automatic installation is implied. In Claude Code, installed plugin skills use the host’s slash-command namespace (for example `/fireflow-brand:fireflow-brand`); the `$` notation above is for agents that support it.
 
-Each plugin also includes `.codex-plugin/plugin.json` and `.claude-plugin/plugin.json`. Use the host’s supported local/private-repository plugin installation flow. The repository-level Claude marketplace catalog lists all six plugins. None has been silently installed into an account or local app. Packaging follows [Claude Code’s plugin reference](https://code.claude.com/docs/en/plugins-reference) and the bundled Codex plugin manifest schema.
+Each plugin also includes `.codex-plugin/plugin.json` and `.claude-plugin/plugin.json`. Use the host’s supported local/private-repository plugin installation flow. The repository-level Claude marketplace catalog lists all seven plugins. None has been silently installed into an account or local app. Packaging follows [Claude Code’s plugin reference](https://code.claude.com/docs/en/plugins-reference) and the bundled Codex plugin manifest schema.
 
 ## Use with a chatbot
 
@@ -205,4 +246,4 @@ Run `python3 scripts/package_skills.py` after changing the bible sources, then `
 
 The owner confirmed on 9 October 2026 that the GitHub repository should remain public. The website build includes the reading content and brand assets; plugin packages are maintained separately in this repository.
 ''')
-print('Packaged six independent brand skill plugins and chatbot documents.')
+print('Packaged seven independent brand skill plugins and chatbot documents.')

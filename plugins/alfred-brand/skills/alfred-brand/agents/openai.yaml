@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alfred Brand"
+  short_description: "Alfred identity, assets and design guidance"
+  default_prompt: "Use $alfred-brand to apply the Alfred brand to this task."

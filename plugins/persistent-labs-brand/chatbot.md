@@ -1,6 +1,6 @@
 ---
 name: persistent-labs-brand
-description: "Create and review work using the full Persistent Labs design bible and its five product identities. Use for parent-brand or multi-product work; use the individual product skill for work confined to one product."
+description: "Create and review work using the full Persistent Labs design bible and its six product identities. Use for parent-brand or multi-product work; use the individual product skill for work confined to one product."
 ---
 
 # Persistent Labs brand
@@ -14,8 +14,9 @@ For parent-brand and portfolio work, read [the full design bible](references/des
 - [Lanni](references/lanni.md): An agent for getting things done.
 - [Private Inference](references/privateinference.md): Pi · identity from the supplied PDF.
 - [Galactica](references/galactica.md): Privacy technology across AI & blockchain.
+- [Alfred](references/alfred.md): A calm interface with character.
 
-The portfolio is FireFlow, Unfazed.dev, Lanni, Private Inference and Galactica. FireFlow contains its orchestration engine, MemoryTree (persistent memory) and FlameChorus (chat UX engine). Never promote those components into peer product brands. Lanni is built on FireFlow. Galactica is live; Private Inference is upcoming. Their shared portfolio does not imply shared technical architecture.
+The portfolio is FireFlow, Unfazed.dev, Lanni, Private Inference, Galactica and Alfred. FireFlow contains its orchestration engine, MemoryTree (persistent memory) and FlameChorus (chat UX engine). Never promote those components into peer product brands. Lanni is built on FireFlow. Galactica is live; Private Inference is upcoming. Their shared portfolio does not imply shared technical architecture.
 
 ## Apply the identity
 
@@ -34,6 +35,8 @@ Deliver the requested artifact and briefly explain any meaningful deviations, un
 - [Shared foundations](references/foundations.md): parent identity, contrast, typography, spacing, shape, components and motion.
 - [Token values](references/design-tokens.json) and [CSS variables](assets/tokens.css): exact values and scoped usage.
 - [Asset inventory](references/assets.md): available vector files and font provenance.
+
+- [Alfred portable guide](assets/alfred/brand-guide.md): load for Alfred visual work; its fonts, tokens, assets and licences are adjacent and self-contained.
 
 
 ---
@@ -94,12 +97,13 @@ FireFlowEstablished product · extended identityOrchestration, persistent memory
 Unfazed.devLive identity · preserved & documentedDeployment for agents↗
 LanniExisting brand · extended identityAn agent for getting things done↗
 Private InferenceUpcoming product · supplied identityPi · identity from the supplied PDF↗05GalacticaLive product · proposed family adaptationPrivacy technology across AI & blockchain↗
+AlfredSupplied v0.3 identity · proposed productA calm interface with character↗
 
 **FireFlow is one product.** Its three core parts are the FireFlow orchestration engine, MemoryTree for persistent memory and FlameChorus, the chat UX engine. They sit within the FireFlow chapter and share its product identity.
 
-### Five products. A clear hierarchy.
+### Six products. A clear hierarchy.
 
-Persistent Labs creates FireFlow, Unfazed.dev, Lanni, Private Inference and Galactica. Lanni is built on FireFlow. Galactica is a live privacy technology firm across AI and blockchain; Private Inference is an upcoming brand. Their listing together does not imply a shared technical architecture.
+Persistent Labs creates FireFlow, Unfazed.dev, Lanni, Private Inference, Galactica and Alfred. Lanni is built on FireFlow. Galactica is a live privacy technology firm across AI and blockchain; Private Inference is an upcoming brand. Their listing together does not imply a shared technical architecture.
 
 ### Core parts, one FireFlow identity.
 
@@ -177,6 +181,8 @@ Primary #FFFFFF · secondary #CBCDD0 · muted #A8ADB4. Use the light product acc
 | Private Inference portfolio accent | #FBD78E | #1C1E21 | 12.10:1 |
 | Galactica light text | #97502A | #FFFFFF | 6.01:1 |
 | Galactica dark accent | #F4A77A | #1C1E21 | 8.48:1 |
+| Alfred light text | #3E3D3D | #FFFFFF | 10.83:1 |
+| Alfred dark accent | #F2BD3C | #1C1E21 | 9.64:1 |
 
 Ratios are calculated from the source token values with the WCAG sRGB luminance formula. All listed text pairs meet 4.5:1. This is a check of these pairs, not certification of every future interface. Borders that identify controls must meet 3:1; decorative rules may be quieter.
 
@@ -1061,13 +1067,272 @@ Download Galactica.com lockup ↓[Visit Galactica ↗](https://galactica.com/)Do
 
 Owner-directed family lockup: Galactica.com, with a bold orange dot. The downloadable SVG contains outlined lettering and needs no installed font. This is an adapted lockup, not an extracted website master.
 
-Reference / 17
+Brand guide · v0.3Use the brand ↓
+
+## Life, handled.
+
+Alfred brings a calm, contemporary interface together with the character of 1930s rubber-hose animation. Warm paper, expressive serif headlines and a capable butler give the identity its personality. Thin outlines and generous space keep it modern.
+
+Find it. Book it. Buy it.
+
+Use “Life, handled.” as the brand promise and “Find it. Book it. Buy it.” as the functional language. Alfred is a proposed personal assistant; examples here demonstrate its brand, not live product capabilities.
+
+PaperSandInkAccent
+
+Persistent Labs remains the host identity. Scope Alfred’s fonts, colours and components to Alfred material. Instinct is external inspiration; FireFlow is a proposed foundation, not proof of bank readiness.
+
+Meet the identityLogo and markColourTypographyShape and spacingVoiceBrand in useUse the brand
+
+### Logo and mark
+
+#### A signature with a little flourish.
+
+Compare artworkBoth groundsLight groundDark ground
+
+Ink on paper
+½ wordmark height clear space
+
+Paper on ink
+½ wordmark height clear space
+
+Ink logo · SVG↓Paper logo · SVG↓Ink mark · SVG↓Paper mark · SVG↓
+
+**Keep it intact.** Original proportions and generous clear space.**Avoid stretching.** Distortion changes the mark’s character.
+
+Use the supplied outlined star-and-wordmark logo. Preserve its proportions, trail and lettering; never retype it. The standalone star is for small spaces such as avatars and footers.
+
+Use ink artwork on paper or sand, and paper artwork on an ink field. Header logo height: 24px (approximately 132px wide). Footer mark height: 22px. Keep roughly half the visible wordmark height clear on every side.
+
+Do not stretch, outline, recolour yellow or place the artwork on an unprepared photograph. The white fill inside SVG clip paths is a technical mask. The lowercase Archivo Black wordmark and earlier character-head logo are retired.
+
+### Colour
+
+#### Warm neutrals. A purposeful yellow.
+
+PaperSandInk
+
+Ink · text and outlines#3E3D3DCopy ink
+
+Secondary ink · supporting text#6A665FCopy ink2
+
+Paper · main canvas#FFFBF7Copy paper
+
+Sand · grouped surfaces#ECE7DCCopy sand
+
+Yellow · purposeful accent#F2BD3CCopy accent
+
+Helper line · ink at 18%#3E3D3D2ECopy line
+
+Ink on paper **10.5:1**
+
+Secondary ink on sand **4.6:1**
+
+Ink on yellow **6.2:1**
+
+******Give yellow a job.**
+
+A small action against a neutral canvas.
+
+******Avoid a yellow takeover.**
+
+Whole yellow sections bury the hierarchy.
+
+Paper is the main canvas; sand groups supporting material; ink carries text and outlines. Secondary ink creates hierarchy on paper and sand. Pure black, pure white and the retired pink/blue palette are not current Alfred colours.
+
+Use yellow for a primary action, one warning/callout per screen, small meaningful markers or the hero circle decoration. Never flood a section, colour its heading, or use yellow for resting link underlines.
+
+Use ink text on yellow. Secondary ink belongs on paper or sand, not yellow. The proportion study below is an application recommendation, not a fixed mathematical brand ratio.
+
+### Typography
+
+#### A characterful headline. A clear next step.
+
+Try your own wordsA little less to think about.
+
+Latin headings: Instrument Serif. Cyrillic headings: Cormorant Garamond. Cyrillic body: your system font.
+
+Instrument Serif · heading
+
+A little less to think about.
+
+Outfit · body and controls
+
+A little less to think about.
+
+Aa40–76px
+Display · 1.08
+
+Aa36–44px
+Section · 1.08
+
+Aa16px
+Body · 1.6
+
+Aa15px
+Caption · 1.4
+
+Instrument Serif 400 is the approved heading face. Outfit handles body copy, controls, captions, numbers and prices. Headings use −0.005em tracking; body copy stays at 16–17px with generous leading. Nothing is smaller than 14px.
+
+Instrument Serif includes Latin and Latin-ext. Cyrillic headings deliberately use bundled Cormorant Garamond 400 under the Instrument Serif CSS alias. Outfit has no supplied Cyrillic coverage: Cyrillic body text uses system-ui fallback and varies across devices.
+
+All supplied fonts are bundled with SIL OFL notices. Apple/ITC Garamond targets and JetBrains Mono are historical, not current requirements. The corrected Outfit Latin-ext filename preserves the supplied font bytes. Other unsupported scripts use the declared fallback.
+
+### Shape and spacing
+
+#### Room to breathe. One clear outline.
+
+Capsule 36px corners
+
+A generous interior.
+
+24–32px padding keeps the content distinct from its outline.
+
+28px corners · 1.5px outline
+
+14px related gap56px between groups
+
+Copy geometryGet exact tokensA quiet label
+
+Use one 1.5px solid ink outline, with no shadows or doubled borders. Cards and photos have 28px corners, header/footer capsules 36px, and buttons and pills 999px.
+
+Use a maximum container width of 1240px and clamp(20px, 5vw, 56px) side gutters. Sections have a top rule, 36px top padding and clamp(56px, 7vw, 96px) bottom padding. The title rail is 220px, the content basis 560px, and the gap 56px; wrap the rail above content when needed.
+
+Cards use 24–32px internal space, 14px between related cards and 56px between lots. A permitted pair of stat tiles overlaps by 24px; overlap is controlled, never essential text over text. Listing photos keep a fixed 7:6 ratio. No barcodes.
+
+Primary buttons use ink text on yellow and reverse to yellow text on ink on hover. Links are ink and underlined; hover makes the underline yellow and 2px thick. Keep controls at least 44px high and editable text at least 16px.
+
+### Voice
+
+#### Useful first. Warm throughout.
+
+InvitationYour next move starts with a message.
+
+**Instead of:** Unlock limitless AI-powered possibilities.
+
+Offer a familiar starting point.
+
+ApprovalReview the details before you approve.
+
+**Instead of:** Relax. We’ll take care of everything.
+
+Keep the decision visible and specific.
+
+RecoveryThe booking wasn’t confirmed. Here’s the next option.
+
+**Instead of:** Oops! Something went wrong.
+
+Name the problem and give a next step.
+
+Write like a capable, friendly concierge: direct, warm, calm and lightly playful. Lead with the useful outcome. Choose familiar verbs and concrete actions.
+
+Be precise about what happened and what still needs a decision. Humour stays away from money, consent, failures and sensitive choices. Avoid inflated AI language, invented savings and promises that Alfred can do everything.
+
+Product messages in this bible are illustrative future copy. “Completed” requires evidence in a real product; confidence alone is not a confirmation.
+
+### Brand in use
+
+#### The same character, wherever it appears.
+
+Illustrative applications · editorial recommendations
+
+Personal reportA considered
+point of view.
+
+What matters. What to compare.
+What to do next.
+
+Prepared for your next decisionIllustrative cover
+
+Find it.
+Book it.
+Buy it.
+
+A presentation panel.
+One thought, given room.
+
+A note from Alfred.
+
+Your next move starts with a message.
+
+Keep the invitation short. Let a clear next step do the work.
+
+Communication example
+
+These report, presentation and communication examples are illustrative brand applications, not product screenshots or evidence of a deployed service. They demonstrate typography, proportion, hierarchy and tone.
+
+Use the supplied butler once in the introduction, facing into the content. The light-ground file has semi-transparent face/gloves; the dark-ground file has paper-coloured opaque details. Choose the matching file, never fake it with a CSS filter. Preserve the supplied raster bytes; their linework is not pixel-exact to the ink token.
+
+The owner elected to use the mascot as supplied despite the recorded resemblance concern; that is a brand decision, not legal clearance. A future Alfred card remains a verbal concept only. No new card visual, issuer/network branding, credentials or benefits claim is approved here.
+
+### Use the brand
+
+#### Everything starts from the same source.
+
+Complete Alfred skill · ZIP↓
+
+Includes instructions, exact tokens, logos, both illustrations, fonts and licences.
+
+[Open the agent skill](https://raw.githubusercontent.com/nonprophet-max/persistent-labs-design-system/codex/design-bible/plugins/alfred-brand/skills/alfred-brand/SKILL.md)
+
+Use $alfred-brand in a supporting agent, or ask it to read this entrypoint.
+
+[Open the plain chatbot guide](https://raw.githubusercontent.com/nonprophet-max/persistent-labs-design-system/codex/design-bible/plugins/alfred-brand/chatbot.md)
+
+Attach or paste the guide into a chat. Text guidance works without installation.
+
+Current brand guide↓
+
+Readable Markdown for people and AI tools.
+
+Exact tokens · JSON↓
+
+Canonical palette, type, shape and spacing.
+
+Scoped tokens · CSS↓
+
+Use inside data-product="alfred".
+
+Local font declarations↓
+
+Keep the fonts folder beside this file.
+
+Butler · light ground↓
+
+Supplied PNG; use on paper.
+
+Butler · dark ground↓
+
+Supplied PNG with opaque paper details.
+
+Asset rights and font licences↓
+
+Read before reusing or distributing assets.
+
+Asset provenance↓
+
+Original source paths and byte hashes.
+
+A useful starting prompt
+
+Read the Alfred brand guide and use the supplied assets. Apply the current colours, Instrument Serif headings, Outfit body text and restrained yellow. Keep Alfred styles scoped to its material. Label illustrative applications and do not invent product claims.
+
+Copy starting prompt
+
+Use the outlined SVGs, supplied illustrations and bundled fonts. Download the exact tokens and current guide below. Preserve relative asset paths when moving a complete package.
+
+For an AI task, supply the current guide and assets, state what you want to make, and ask the agent to apply the Alfred identity locally. A text-only chatbot can help with writing and specifications; rendering and font loading require suitable tools.
+
+The source guide and portable tokens are generated from the same maintained rules as this chapter. Brand assets are owner-supplied; this package grants no general ownership, trademark or redistribution rights. Fonts retain their individual OFL licences.
+
+Copy manually: select the text below.Close copy text
+
+Reference / 18
 
 ## A living system needs a record.
 
 Use the bible to make decisions, and the review record to understand why they changed. A clean visual treatment must never turn an assumption into a fact.
 
-17
+18
 
 Round 01
 
@@ -1094,7 +1359,7 @@ The three review rounds above cover edition 2.0. The owner-confirmed FireFlow ar
 | Decision | Current treatment | Status |
 | --- | --- | --- |
 | Company name | Persistent Labs, two words. | Resolved by brief |
-| FireFlow architecture | One product: FireFlow orchestration engine + MemoryTree (persistent memory) + FlameChorus (chat UX engine). Five products in the portfolio. | Confirmed by owner |
+| FireFlow architecture | One product: FireFlow orchestration engine + MemoryTree (persistent memory) + FlameChorus (chat UX engine). Six products in the portfolio. | Confirmed by owner |
 | Unfazed identity | Preserve source face, system type, white ground, blue and 6px corners. | Source-grounded |
 | Galactica identity | Fifth product; live privacy technology across AI and blockchain. Proposed copper/monochrome family treatment; Galactica.com lockup with the owner-requested bold orange dot. | Owner brief + public sources |
 | Pi identity | Private Inference: source-extracted disc-and-flare artwork, Poppins, and the exact light/dark palettes. Replaces the earlier π and lavender proposal. | Owner-supplied PDF · 9 Oct 2026 |
@@ -1129,13 +1394,13 @@ How to repeat the multi-agent review
 
 Run the versioned workflow with the current HTML, source evidence and desktop/mobile screenshots. Independent strategy, visual and accessibility reviewers return structured findings. An integrator applies fixes between rounds. See the workflow guide. The current session’s reviews are recorded separately from the reusable harness tests.
 
-Reference / 18
+Reference / 19
 
 ## One source of truth.
 
 The tables, product palettes and downloadable CSS are generated from the same token data. Change a decision once, then regenerate the bible.
 
-18
+19
 
 Copy CSS tokensDownload CSS ↓Download JSON ↓
 
@@ -1269,6 +1534,16 @@ Copy CSS tokensDownload CSS ↓Download JSON ↓
   --product-pressed: #E3986D;
   --product-tint: #FFF1E8;
   --product-logo-dot: #F7931A;
+}
+[data-product="alfred"] {
+  --product-accent: #F2BD3C;
+  --product-accent-ink: #3E3D3D;
+  --product-on-accent: #3E3D3D;
+  --product-hover: #3E3D3D;
+  --product-on-hover: #F2BD3C;
+  --product-pressed: #3E3D3D;
+  --product-on-pressed: #F2BD3C;
+  --product-tint: #FFFBF7;
 }
 [data-product="fireflow"] [data-component="orchestration-engine"] {
   --component-accent: #F7931A;
@@ -1478,6 +1753,16 @@ References above to original archives, review rounds and workflow guides describ
       "pressed": "#E3986D",
       "tint": "#FFF1E8",
       "logo-dot": "#F7931A"
+    },
+    "alfred": {
+      "accent": "#F2BD3C",
+      "accent-ink": "#3E3D3D",
+      "on-accent": "#3E3D3D",
+      "hover": "#3E3D3D",
+      "on-hover": "#F2BD3C",
+      "pressed": "#3E3D3D",
+      "on-pressed": "#F2BD3C",
+      "tint": "#FFFBF7"
     }
   },
   "components": {
@@ -1569,6 +1854,219 @@ References above to original archives, review rounds and workflow guides describ
           "control-border": "#BFBFBF",
           "focus": "#FBD78E"
         }
+      }
+    },
+    "alfred": {
+      "brand": "Alfred",
+      "version": "0.3",
+      "status": "provisional",
+      "source": "Owner-supplied Alfred v0.3 handoff; reconciled by the approved 10 November 2026 design brief. Report v5 was not supplied and was not inspected.",
+      "color": {
+        "ink": "#3E3D3D",
+        "ink2": "#6A665F",
+        "paper": "#FFFBF7",
+        "sand": "#ECE7DC",
+        "accent": "#F2BD3C",
+        "line": "#3E3D3D2E"
+      },
+      "colorNotes": {
+        "ink2": "Lightened from the spec's initial #4F4B44 for clearer hierarchy against ink; verified contrast ratio stays >=4.5:1 on paper and sand (see contrast.json).",
+        "line": "Ink at 18% alpha, for the rare thin helper rule. Most dividers use a solid 1.5px ink line instead.",
+        "removed": "Pure white (#FFFFFF), pure black, and v0.2's pink (#FF4FA0) and blue (#1975FF) are not part of this palette."
+      },
+      "accentGuidance": "Yellow is dosed, used only where it means something: the primary CTA, one warning/callout card per screen, small markers (the star, the arrow-button dot, the lead tag pill), and the circle decoration beside a hero heading. Never section headings, ribbons, whole-section backgrounds, lot numbers, or resting link underlines.",
+      "font": {
+        "display": {
+          "role": "Headings only (h1/h2/h3). Never numbers, prices, the logo, buttons or captions.",
+          "stack": [
+            "Instrument Serif",
+            "Georgia",
+            "serif"
+          ],
+          "bundledFamily": "Instrument Serif",
+          "weight": 400,
+          "declaredWeight": "400",
+          "status": "Instrument Serif 400 is the approved display face for Latin/Latin-ext. Cyrillic headings use bundled Cormorant Garamond 400 under the same CSS family alias; this companion is not Instrument Serif glyphs.",
+          "files": [
+            {
+              "file": "fonts/instrumentserif-400-latin.woff2",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            },
+            {
+              "file": "fonts/instrumentserif-400-latin-ext.woff2",
+              "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF"
+            },
+            {
+              "file": "fonts/cormorantgaramond-400-cyrillic-companion.woff2",
+              "unicodeRange": "U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116",
+              "note": "Real Cormorant Garamond 400 glyphs, declared under the Instrument Serif family name so Cyrillic headings keep a serif that reads the same brand register, instead of dropping to the Georgia fallback."
+            }
+          ]
+        },
+        "body": {
+          "role": "Everything else: body copy, labels, buttons, logo-adjacent UI, big numbers, prices.",
+          "stack": [
+            "Outfit",
+            "system-ui",
+            "-apple-system",
+            "sans-serif"
+          ],
+          "bundledFamily": "Outfit",
+          "weight": "300 700",
+          "declaredWeight": "300 700",
+          "files": [
+            {
+              "file": "fonts/outfit-variable-latin.woff2",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            },
+            {
+              "file": "fonts/outfit-variable-latin-ext.woff2",
+              "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF",
+              "note": "Original handoff filename incorrectly said Cyrillic. Bytes preserved; corrected to Latin-ext."
+            }
+          ],
+          "status": "Bundled Outfit supports Latin and Latin-ext. Cyrillic body copy uses system-ui fallback and will vary by device. No bundled Cyrillic Outfit is claimed."
+        }
+      },
+      "shape": {
+        "borderPx": 1.5,
+        "cardRadiusPx": 28,
+        "capsuleRadiusPx": 36,
+        "pillRadiusPx": 999,
+        "note": "One outline everywhere: 1.5px solid ink. No hard offset shadows, no double borders."
+      },
+      "layout": {
+        "containerMaxPx": 1240,
+        "gutter": {
+          "min": 20,
+          "fluid": "5vw",
+          "max": 56
+        },
+        "headerDividerHidePx": 760,
+        "mascotStackPx": 1100,
+        "railNote": "Section rail (h2) vs content splits by flex-basis (220px vs 560px) and wraps on its own; there is no separate fixed breakpoint for it."
+      },
+      "star": {
+        "note": "The four-point star marker. Fill accent, stroke ink 1.5px.",
+        "path": "M10 1C11 7 13 9 19 10C13 11 11 13 10 19C9 13 7 11 1 10C7 9 9 7 10 1Z"
+      },
+      "typography": {
+        "h1": {
+          "font": "display",
+          "sizePx": 40,
+          "maxSizePx": 76,
+          "fluid": "6.4vw",
+          "weight": 400,
+          "lineHeight": 1.08,
+          "trackingEm": -0.005
+        },
+        "h2": {
+          "font": "display",
+          "sizePx": 36,
+          "maxSizePx": 44,
+          "fluid": "3.6vw",
+          "weight": 400,
+          "lineHeight": 1.08,
+          "trackingEm": -0.005
+        },
+        "h3": {
+          "font": "display",
+          "sizePx": 30,
+          "maxSizePx": 36,
+          "fluid": "3vw",
+          "weight": 400,
+          "lineHeight": 1.14,
+          "trackingEm": -0.005
+        },
+        "lead": {
+          "font": "body",
+          "sizePx": 18,
+          "maxSizePx": 21,
+          "fluid": "1.9vw",
+          "weight": 400,
+          "lineHeight": 1.55,
+          "trackingEm": 0
+        },
+        "body": {
+          "font": "body",
+          "sizePx": 16,
+          "weight": 400,
+          "lineHeight": 1.6,
+          "trackingEm": 0
+        },
+        "caption": {
+          "font": "body",
+          "sizePx": 15,
+          "weight": 500,
+          "lineHeight": 1.4,
+          "trackingEm": 0
+        },
+        "control": {
+          "font": "body",
+          "sizePx": 15,
+          "weight": 600,
+          "lineHeight": 1.3,
+          "trackingEm": 0
+        },
+        "pill": {
+          "font": "body",
+          "sizePx": 14,
+          "weight": 500,
+          "lineHeight": 1.3,
+          "trackingEm": 0
+        },
+        "stat": {
+          "font": "body",
+          "sizePx": 48,
+          "weight": 400,
+          "lineHeight": 1,
+          "trackingEm": -0.005,
+          "tabular": true
+        },
+        "price": {
+          "font": "body",
+          "sizePx": 34,
+          "maxSizePx": 40,
+          "fluid": "3.4vw",
+          "weight": 400,
+          "lineHeight": 1.05,
+          "trackingEm": 0,
+          "tabular": true
+        }
+      },
+      "typographyNotes": "Every size floors at 14px; nothing is set in solid caps or a monospace face. h1 should resolve to 1-2 lines on desktop (text-wrap: balance).",
+      "spacing": {
+        "roles": {
+          "iconGap": 8,
+          "controlGap": 12,
+          "relatedGap": 16,
+          "cardGroupGap": 14,
+          "fieldGroup": 24,
+          "cardPaddingMin": 24,
+          "cardPaddingMax": 32,
+          "lotGap": 56,
+          "railContentGap": 56,
+          "sectionTop": 36,
+          "sectionBottom": {
+            "min": 56,
+            "fluid": "7vw",
+            "max": 96
+          },
+          "heroTop": {
+            "min": 56,
+            "fluid": "8vw",
+            "max": 104
+          },
+          "heroGap": {
+            "min": 16,
+            "fluid": "2vw",
+            "max": 28
+          }
+        },
+        "note": "Values follow the spec's named relationships, not a strict 4px ladder (card-group-gap is 14px by design). When in doubt, use more space, not less."
+      },
+      "web": {
+        "controlMinPx": 44
       }
     }
   }

@@ -1,6 +1,6 @@
 ---
 name: persistent-labs-brand
-description: "Create and review work using the full Persistent Labs design bible and its five product identities. Use for parent-brand or multi-product work; use the individual product skill for work confined to one product."
+description: "Create and review work using the full Persistent Labs design bible and its six product identities. Use for parent-brand or multi-product work; use the individual product skill for work confined to one product."
 ---
 
 # Persistent Labs brand
@@ -14,8 +14,9 @@ For parent-brand and portfolio work, read [the full design bible](references/des
 - [Lanni](references/lanni.md): An agent for getting things done.
 - [Private Inference](references/privateinference.md): Pi · identity from the supplied PDF.
 - [Galactica](references/galactica.md): Privacy technology across AI & blockchain.
+- [Alfred](references/alfred.md): A calm interface with character.
 
-The portfolio is FireFlow, Unfazed.dev, Lanni, Private Inference and Galactica. FireFlow contains its orchestration engine, MemoryTree (persistent memory) and FlameChorus (chat UX engine). Never promote those components into peer product brands. Lanni is built on FireFlow. Galactica is live; Private Inference is upcoming. Their shared portfolio does not imply shared technical architecture.
+The portfolio is FireFlow, Unfazed.dev, Lanni, Private Inference, Galactica and Alfred. FireFlow contains its orchestration engine, MemoryTree (persistent memory) and FlameChorus (chat UX engine). Never promote those components into peer product brands. Lanni is built on FireFlow. Galactica is live; Private Inference is upcoming. Their shared portfolio does not imply shared technical architecture.
 
 ## Apply the identity
 
@@ -34,3 +35,5 @@ Deliver the requested artifact and briefly explain any meaningful deviations, un
 - [Shared foundations](references/foundations.md): parent identity, contrast, typography, spacing, shape, components and motion.
 - [Token values](references/design-tokens.json) and [CSS variables](assets/tokens.css): exact values and scoped usage.
 - [Asset inventory](references/assets.md): available vector files and font provenance.
+
+- [Alfred portable guide](assets/alfred/brand-guide.md): load for Alfred visual work; its fonts, tokens, assets and licences are adjacent and self-contained.

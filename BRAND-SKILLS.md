@@ -1,6 +1,6 @@
 # Portable brand skills
 
-One full-system skill and five independent product plugins. Each product package contains its own references, tokens, vector assets and fonts; it does not depend on installing the parent package.
+One full-system skill and six independent product plugins. Each product package contains its own references, tokens, vector assets and fonts; it does not depend on installing the parent package.
 
 | Brand | Invoke | Skill entrypoint | Chatbot document |
 | --- | --- | --- | --- |
@@ -10,12 +10,17 @@ One full-system skill and five independent product plugins. Each product package
 | Lanni | `$lanni-brand` | [SKILL.md](plugins/lanni-brand/skills/lanni-brand/SKILL.md) | [chatbot.md](plugins/lanni-brand/chatbot.md) |
 | Private Inference | `$privateinference-brand` | [SKILL.md](plugins/privateinference-brand/skills/privateinference-brand/SKILL.md) | [chatbot.md](plugins/privateinference-brand/chatbot.md) |
 | Galactica | `$galactica-brand` | [SKILL.md](plugins/galactica-brand/skills/galactica-brand/SKILL.md) | [chatbot.md](plugins/galactica-brand/chatbot.md) |
+| Alfred | `$alfred-brand` | [SKILL.md](plugins/alfred-brand/skills/alfred-brand/SKILL.md) | [chatbot.md](plugins/alfred-brand/chatbot.md) |
+
+## Alfred standalone download
+
+[Download the complete Alfred skill](assets/downloads/alfred-brand.zip). Extract it and copy `alfred-brand/` into the agent’s skill directory. It includes current v0.3 guidance, exact tokens, local CSS/fonts, supplied artwork, licences, host metadata and a chatbot document. Alfred identity overrides inherited parent rules. The archive is reproducible and has no checkout dependencies.
 
 ## Use with an agent
 
 Copy the desired `plugins/<name>/skills/<name>/` directory into the agent’s supported skill directory, or point it directly to that SKILL.md. Hosts with skill discovery can select by the frontmatter description; explicit invocation uses the names above. Host setup varies, so no universal automatic installation is implied. In Claude Code, installed plugin skills use the host’s slash-command namespace (for example `/fireflow-brand:fireflow-brand`); the `$` notation above is for agents that support it.
 
-Each plugin also includes `.codex-plugin/plugin.json` and `.claude-plugin/plugin.json`. Use the host’s supported local/private-repository plugin installation flow. The repository-level Claude marketplace catalog lists all six plugins. None has been silently installed into an account or local app. Packaging follows [Claude Code’s plugin reference](https://code.claude.com/docs/en/plugins-reference) and the bundled Codex plugin manifest schema.
+Each plugin also includes `.codex-plugin/plugin.json` and `.claude-plugin/plugin.json`. Use the host’s supported local/private-repository plugin installation flow. The repository-level Claude marketplace catalog lists all seven plugins. None has been silently installed into an account or local app. Packaging follows [Claude Code’s plugin reference](https://code.claude.com/docs/en/plugins-reference) and the bundled Codex plugin manifest schema.
 
 ## Use with a chatbot
 

@@ -42,6 +42,13 @@
       "skill": "plugins/galactica-brand/skills/galactica-brand/SKILL.md",
       "chatbot": "plugins/galactica-brand/chatbot.md",
       "plugin": "plugins/galactica-brand"
+    },
+    {
+      "name": "alfred-brand",
+      "product": "Alfred",
+      "skill": "plugins/alfred-brand/skills/alfred-brand/SKILL.md",
+      "chatbot": "plugins/alfred-brand/chatbot.md",
+      "plugin": "plugins/alfred-brand"
     }
   ]
 }

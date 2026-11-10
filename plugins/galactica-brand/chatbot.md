@@ -198,12 +198,13 @@ FireFlowEstablished product · extended identityOrchestration, persistent memory
 Unfazed.devLive identity · preserved & documentedDeployment for agents↗
 LanniExisting brand · extended identityAn agent for getting things done↗
 Private InferenceUpcoming product · supplied identityPi · identity from the supplied PDF↗05GalacticaLive product · proposed family adaptationPrivacy technology across AI & blockchain↗
+AlfredSupplied v0.3 identity · proposed productA calm interface with character↗
 
 **FireFlow is one product.** Its three core parts are the FireFlow orchestration engine, MemoryTree for persistent memory and FlameChorus, the chat UX engine. They sit within the FireFlow chapter and share its product identity.
 
-### Five products. A clear hierarchy.
+### Six products. A clear hierarchy.
 
-Persistent Labs creates FireFlow, Unfazed.dev, Lanni, Private Inference and Galactica. Lanni is built on FireFlow. Galactica is a live privacy technology firm across AI and blockchain; Private Inference is an upcoming brand. Their listing together does not imply a shared technical architecture.
+Persistent Labs creates FireFlow, Unfazed.dev, Lanni, Private Inference, Galactica and Alfred. Lanni is built on FireFlow. Galactica is a live privacy technology firm across AI and blockchain; Private Inference is an upcoming brand. Their listing together does not imply a shared technical architecture.
 
 ### Core parts, one FireFlow identity.
 
@@ -281,6 +282,8 @@ Primary #FFFFFF · secondary #CBCDD0 · muted #A8ADB4. Use the light product acc
 | Private Inference portfolio accent | #FBD78E | #1C1E21 | 12.10:1 |
 | Galactica light text | #97502A | #FFFFFF | 6.01:1 |
 | Galactica dark accent | #F4A77A | #1C1E21 | 8.48:1 |
+| Alfred light text | #3E3D3D | #FFFFFF | 10.83:1 |
+| Alfred dark accent | #F2BD3C | #1C1E21 | 9.64:1 |
 
 Ratios are calculated from the source token values with the WCAG sRGB luminance formula. All listed text pairs meet 4.5:1. This is a check of these pairs, not certification of every future interface. Borders that identify controls must meet 3:1; decorative rules may be quieter.
 

@@ -32,7 +32,7 @@ for product,components in tokens['components'].items():
     palettes.update({product+'/'+name:values for name,values in components.items()})
 for name,t in palettes.items():
     for state in ['accent','hover','pressed']:
-        check_pair(name+' '+state,t['on-accent'],t[state])
+        check_pair(name+' '+state,t.get('on-'+state,t['on-accent']),t[state])
     check_pair(name+' light accent',t['accent-ink'],core['white'])
     check_pair(name+' dark accent',t['accent'],core['ink'])
     check_pair(name+' tint',core['ink'],t['tint'])
@@ -69,12 +69,12 @@ class Links(HTMLParser):
         if tag=='section' and self.sections:self.sections.pop()
 document=(ROOT/'index.html').read_text()
 structure=Links();structure.feed(document)
-expected=['fireflow','unfazed','lanni','privateinference','galactica']
+expected=['fireflow','unfazed','lanni','privateinference','galactica','alfred']
 products=json.loads((ROOT/'src/products.json').read_text())
 if [p['id'] for p in products]!=expected or structure.products!=expected:
-    failures.append('Expected the five owner-defined product identities in order')
+    failures.append('Expected the six owner-defined product identities in order')
 if list(tokens['products'])!=expected:failures.append('Product tokens do not match the portfolio')
-if structure.portfolio!=['#'+p for p in expected]:failures.append('Portfolio links do not match the five products')
+if structure.portfolio!=['#'+p for p in expected]:failures.append('Portfolio links do not match the six products')
 for p in expected:
     if structure.nav.count('#'+p)!=1:failures.append('Expected one product navigation link: '+p)
 for component in ('orchestration-engine','memorytree','flamechorus'):
@@ -94,6 +94,11 @@ for path in font_files:
     if path.read_bytes()[:4]!=b'wOF2':failures.append('Invalid WOFF2 magic: '+path.name)
 if len(list((ROOT/'assets/fonts').glob('OFL*.txt')))!=4:failures.append('Expected four font licenses')
 if not re.search(r'@font-face',document):failures.append('No local font declarations')
+# Alfred's product-specific foregrounds override inherited parent mappings.
+alfred=tokens['identities']['alfred']
+for background in ('paper','sand'):
+    for foreground in ('ink','ink2'):
+        check_pair('Alfred '+foreground+' on '+background,alfred['color'][foreground],alfred['color'][background])
 # Source colors stay exact; functional UI pairs use accessible source combinations.
 pi=tokens['identities']['privateinference']
 assert pi['palettes']['light']==['#FBD78E','#1E1E1E','#FFFFFF','#BFBFBF']
@@ -109,4 +114,4 @@ for surface, values in pi['surfaces'].items():
     check_pair('Pi '+surface+' focus',values['focus'],values['surface'],3)
 if (ROOT/'assets/privateinference.svg').read_bytes()!=(ROOT/'assets/pi/mark.svg').read_bytes():failures.append('Pi compatibility asset differs from source-extracted mark')
 if failures:raise SystemExit('\n'.join(failures))
-print(f'Passed: {checked} color pairs, five-product hierarchy, nested FireFlow core parts, anchors, headings, local references, Red Hat and Poppins offline fonts and licenses.')
+print(f'Passed: {checked} color pairs, six-product hierarchy, nested FireFlow core parts, anchors, headings, local references, Red Hat and Poppins offline fonts and licenses.')

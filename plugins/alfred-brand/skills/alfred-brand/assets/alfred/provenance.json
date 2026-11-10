@@ -1,0 +1,78 @@
+{
+  "origin": "Owner-supplied alfred-brand-v0.3-handoff, received 10 November 2026",
+  "rights": "No general licence to brand marks or mascot is granted. Fonts retain bundled SIL OFL notices.",
+  "mascot": "Owner elected to use supplied mascot despite recorded resemblance concern; not legal clearance. Raster linework is not pixel-exact to the ink token.",
+  "fontCorrection": "Mislabeled Outfit Cyrillic subset renamed Latin-ext without modifying bytes. Cyrillic body copy uses system-ui fallback.",
+  "files": [
+    {
+      "file": "fonts/cormorantgaramond-400-cyrillic-companion.woff2",
+      "source": "owner-supplied handoff / assets/fonts/cormorantgaramond-400-cyrillic-companion.woff2",
+      "sha256": "0d23162e67528fdc5fe1b12bedc525a69bbdc86d5d9f3c2ee9e9ee459934ecd4"
+    },
+    {
+      "file": "fonts/cormorantgaramond-OFL.txt",
+      "source": "owner-supplied handoff / assets/fonts/cormorantgaramond-OFL.txt",
+      "sha256": "60700d351cac4650c51f3f9db318d2a420f8b45052dba2715eb5fec41f0f6956"
+    },
+    {
+      "file": "fonts/instrumentserif-400-latin-ext.woff2",
+      "source": "owner-supplied handoff / assets/fonts/instrumentserif-400-latin-ext.woff2",
+      "sha256": "290e6267dd833bf5f899eba4c29ad0a9b09dbe53f6075b18af38057159e1ff20"
+    },
+    {
+      "file": "fonts/instrumentserif-400-latin.woff2",
+      "source": "owner-supplied handoff / assets/fonts/instrumentserif-400-latin.woff2",
+      "sha256": "5eb09b5ac0e28b67c2f041c8ba6d244604ca0c0980d65912ab2d47fed84ddc31"
+    },
+    {
+      "file": "fonts/instrumentserif-OFL.txt",
+      "source": "owner-supplied handoff / assets/fonts/instrumentserif-OFL.txt",
+      "sha256": "129ed7618959716959f2941fdd5b49e0ad6e6c1d78726761786a00253d865521"
+    },
+    {
+      "file": "fonts/outfit-OFL.txt",
+      "source": "owner-supplied handoff / assets/fonts/outfit-OFL.txt",
+      "sha256": "c676351bf8576b9aba743cd5eaa8c0e7ee0d51f805d720447b4df4ddb6a2e416"
+    },
+    {
+      "file": "fonts/outfit-variable-latin-ext.woff2",
+      "source": "owner-supplied handoff / assets/fonts/outfit-variable-cyrillic.woff2",
+      "sha256": "0f53d1c03b3918d744a843b5039001ee31695ca1e255e3914188df81beb461e9"
+    },
+    {
+      "file": "fonts/outfit-variable-latin.woff2",
+      "source": "owner-supplied handoff / assets/fonts/outfit-variable-latin.woff2",
+      "sha256": "6c18d579fd87c3776be068b762cbc83fde3acb543d49eabd3ade842eb987e887"
+    },
+    {
+      "file": "illustrations/hero-mascot-dark-bg.png",
+      "source": "owner-supplied handoff / assets/illustrations/hero-mascot-dark-bg.png",
+      "sha256": "1adeb6de532ab3f1d1d0cfeb2a9ae9ad14abbdd0f17fcdc7755dd5f1464b044c"
+    },
+    {
+      "file": "illustrations/hero-mascot-light-bg.png",
+      "source": "owner-supplied handoff / assets/illustrations/hero-mascot-light-bg.png",
+      "sha256": "576ee83f7274062fcc4d927d4f40ec6607346f9b93bfd496c76500e16dccd336"
+    },
+    {
+      "file": "logos/alfred-icon-ink.svg",
+      "source": "owner-supplied handoff / assets/logos/alfred-icon-ink.svg",
+      "sha256": "ad4bcb78f989f954cb53c8b9125161d90750ae9af3a55a0b7bf04263347fb0f8"
+    },
+    {
+      "file": "logos/alfred-icon-paper.svg",
+      "source": "owner-supplied handoff / assets/logos/alfred-icon-paper.svg",
+      "sha256": "ef795753c1afff746b12fc4b88e8a653d1d2d43188b567975bd5ae0625feea44"
+    },
+    {
+      "file": "logos/alfred-logo-ink.svg",
+      "source": "owner-supplied handoff / assets/logos/alfred-logo-ink.svg",
+      "sha256": "4aa0100ba6b7d1c2db5a27a729bbda1f0468d3c3b74e3f8cc356e32b7f52d47b"
+    },
+    {
+      "file": "logos/alfred-logo-paper.svg",
+      "source": "owner-supplied handoff / assets/logos/alfred-logo-paper.svg",
+      "sha256": "36c3e9aa765224a94704aca885d9194a51d2fdbae986d3ee247f6f0b1f482de0"
+    }
+  ]
+}

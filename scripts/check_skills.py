@@ -5,7 +5,7 @@ import json,re,xml.etree.ElementTree as ET
 ROOT=Path(__file__).resolve().parents[1]
 catalog=json.loads((ROOT/'brand-skills.json').read_text())['plugins']
 source=json.loads((ROOT/'tokens/design-tokens.json').read_text())
-expected=['persistent-labs-brand','fireflow-brand','unfazed-brand','lanni-brand','privateinference-brand','galactica-brand']
+expected=['persistent-labs-brand','fireflow-brand','unfazed-brand','lanni-brand','privateinference-brand','galactica-brand','alfred-brand']
 assert [p['name'] for p in catalog]==expected
 checks=0
 for item in catalog:
@@ -14,6 +14,11 @@ for item in catalog:
     assert manifest['name']==plugin.name and manifest['version']=='2.4.0'
     entry=(skill/'SKILL.md').read_text()
     assert entry.startswith('---\nname: '+plugin.name+'\n')
+    frontmatter=entry.split('\n---\n',1)[0].removeprefix('---\n').splitlines()
+    assert len(frontmatter)==2 and frontmatter[1].startswith('description: ')
+    description=json.loads(frontmatter[1].removeprefix('description: '))
+    assert isinstance(description,str) and 0<len(description)<=1024
+    assert '<' not in description and '>' not in description and '[TODO:' not in description
     assert json.loads((plugin/'.claude-plugin/plugin.json').read_text())['name']==plugin.name
     tokens=json.loads((skill/'references/design-tokens.json').read_text())
     assert tokens['core']==source['core'] and tokens['type']==source['type']
@@ -29,7 +34,14 @@ for item in catalog:
     for p in skill.rglob('*.svg'):ET.parse(p)
     for link in re.findall(r'url\([\'"]?([^\)\'\"]+)',(skill/'assets/fonts.css').read_text()):
         assert (skill/'assets'/link).is_file()
-    assert all((skill/'assets/fonts'/f'OFL-Red-Hat-{f}.txt').exists() for f in ('Display','Text','Mono'))
+    if plugin.name!='alfred-brand':
+        assert all((skill/'assets/fonts'/f'OFL-Red-Hat-{f}.txt').exists() for f in ('Display','Text','Mono'))
+    if plugin.name in ('alfred-brand','persistent-labs-brand'):
+        assert tokens['identities']['alfred']==source['identities']['alfred']
+        for path in (ROOT/'assets/alfred').rglob('*'):
+            if path.is_file():assert (skill/'assets/alfred'/path.relative_to(ROOT/'assets/alfred')).read_bytes()==path.read_bytes()
+    else:
+        assert not (skill/'assets/alfred').exists(),plugin.name
     assert len((plugin/'chatbot.md').read_text())>5000
     checks+=1
 for name in ('persistent-labs-brand','galactica-brand'):

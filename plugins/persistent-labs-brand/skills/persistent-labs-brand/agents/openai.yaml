@@ -1,4 +1,4 @@
 interface:
   display_name: "Persistent Labs Brand"
-  short_description: "Full design bible and five product identities"
+  short_description: "Full design bible and six product identities"
   default_prompt: "Use $persistent-labs-brand to apply the Persistent Labs brand to this task."

@@ -7,6 +7,7 @@
 - [lanni.svg](../assets/lanni.svg)
 - [privateinference.svg](../assets/privateinference.svg)
 - [galactica.svg](../assets/galactica.svg)
+- [alfred.svg](../assets/alfred.svg)
 
 Use SVG assets directly, preserving their viewBox and proportions. Assets with currentColor inherit the chosen approved foreground when inlined; external SVG images use their own foreground. The Galactica.com dot is a fixed orange circle and remains orange in full-color lockups. Pi uses its source-extracted disc-and-flare mark. Its outlined wordmark must not be retyped or replaced by a mathematical π.
 
@@ -26,3 +27,7 @@ Red Hat Display, Text and Mono are bundled with their SIL Open Font Licenses in 
 - [Pi source PDF](../assets/pi/brand-identity.pdf), [vector provenance](../assets/pi/provenance.json), and [Poppins sources](../assets/pi/font-provenance.json).
 
 Colors and path proportions follow the PDF. UI color roles, spacing and motion recommendations are applications, not additional source specifications. The mark SVG uses its own fixed source fills.
+
+## Alfred identity exception
+
+[Alfred assets, licences and font provenance](../assets/alfred/ASSETS-LICENCES.md) live in their own folder. Instrument Serif headings and Outfit body take precedence inside Alfred surfaces; do not apply Red Hat or parent gold there.
