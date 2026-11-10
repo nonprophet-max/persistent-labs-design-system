@@ -90,12 +90,12 @@ Use a single isolated Desktop checkout because the app's native worktree tool re
 - Consumes final generated reading/site output and standalone package.
 - Produces measured browser results, inspected screenshots, independent review/skill exercise, verified hosted link and Git commit/reference.
 
-- [ ] Run the full applicable static/skill checks once on integrated code. Run reading and multipage browser suites, including Alfred at 320/390/768/1440px and both host reading themes. Explicitly exercise keyboard access, copy success/failure, type editing, asset previews, downloads, long labels, enlarged text and actual loaded fonts.
-- [ ] Capture desktop/mobile Alfred sections and inspect the images. Run Impeccable detector once over changed UI targets and adjudicate findings against the fixed Alfred brief. Independent reviewers inspect actual screenshot evidence for strategy, visual fidelity and accessibility; another fresh agent exercises the skill in an isolated output directory.
-- [ ] Batch material fixes and verify their closure without reopening unchanged code. Preserve original assets and parent identities; disclose browser/platform limits.
-- [ ] Offer Max a concrete working visual preview during this stage while continuing independent packaging/checks. Ask only if a decision changes the agreed identity or deliverable.
-- [ ] Verify current remote branch/hosting state. Commit and upload the complete reviewed addition to the intended public repository. Publish the complete intended generated public output with GitHub Pages; do not expose unrelated files. If external publication is blocked, preserve the complete tested release and report the concrete external requirement.
-- [ ] Verify actual published URLs/assets/ZIP and record the commit, deployment identifiers and evidence. Return walkthrough and skill links with a concise verification summary.
+- [x] Run the full applicable static/skill checks once on integrated code. Run reading and multipage browser suites, including Alfred at 320/390/768/1440px and both host reading themes. Explicitly exercise keyboard access, copy success/failure, type editing, asset previews, downloads, long labels, enlarged text and actual loaded fonts.
+- [x] Capture desktop/mobile Alfred sections and inspect the images. Run Impeccable detector once over changed UI targets and adjudicate findings against the fixed Alfred brief. Independent reviewers inspect actual screenshot evidence for strategy, visual fidelity and accessibility; another fresh agent exercises the skill in an isolated output directory.
+- [x] Batch material fixes and verify their closure without reopening unchanged code. Preserve original assets and parent identities; disclose browser/platform limits.
+- [x] Offer Max a concrete working visual preview during this stage while continuing independent packaging/checks. Ask only if a decision changes the agreed identity or deliverable.
+- [x] Verify current remote branch/hosting state. Commit and upload the complete reviewed addition to the intended public repository. Publish the complete intended generated public output with GitHub Pages; do not expose unrelated files. If external publication is blocked, preserve the complete tested release and report the concrete external requirement.
+- [x] Verify actual published URLs/assets/ZIP and record the commit, deployment identifiers and evidence. Return walkthrough and skill links with a concise verification summary.
 
 ## Plan self-review
 
