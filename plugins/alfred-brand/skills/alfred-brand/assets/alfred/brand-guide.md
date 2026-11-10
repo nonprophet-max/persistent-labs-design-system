@@ -2,7 +2,7 @@
 
 Current v0.3 · 2026-11-10
 
-Latest approved v0.3 colours and font decisions supersede older handoff instructions. Report v5 is absent and is not a build dependency.
+This guide and its exact tokens define the current Alfred identity. Apply these rules within Alfred material and preserve the host brand around it.
 
 ## Meet the identity
 
@@ -10,9 +10,9 @@ Life, handled.
 
 Alfred brings a calm, contemporary interface together with the character of 1930s rubber-hose animation. Warm paper, expressive serif headlines and a capable butler give the identity its personality. Thin outlines and generous space keep it modern.
 
-Use “Life, handled.” as the brand promise and “Find it. Book it. Buy it.” as the functional language. Alfred is a proposed personal assistant; examples here demonstrate its brand, not live product capabilities.
+Use “Life, handled.” as the brand promise and “Find it. Book it. Buy it.” as the functional language. Keep the voice capable, warm and direct.
 
-Persistent Labs remains the host identity. Scope Alfred’s fonts, colours and components to Alfred material. Instinct is external inspiration; FireFlow is a proposed foundation, not proof of bank readiness.
+Persistent Labs remains the host identity. Scope Alfred’s fonts, colours and components to Alfred material; keep the surrounding navigation and other product identities distinct.
 
 ## Logo and mark
 
@@ -42,7 +42,7 @@ Instrument Serif 400 is the approved heading face. Outfit handles body copy, con
 
 Instrument Serif includes Latin and Latin-ext. Cyrillic headings deliberately use bundled Cormorant Garamond 400 under the Instrument Serif CSS alias. Outfit has no supplied Cyrillic coverage: Cyrillic body text uses system-ui fallback and varies across devices.
 
-All supplied fonts are bundled with SIL OFL notices. Apple/ITC Garamond targets and JetBrains Mono are historical, not current requirements. The corrected Outfit Latin-ext filename preserves the supplied font bytes. Other unsupported scripts use the declared fallback.
+Load the bundled font files with their SIL OFL notices. Keep the fonts folder alongside the supplied font stylesheet, and preserve the declared script ranges. Other unsupported scripts use the documented fallback.
 
 ## Shape and spacing
 

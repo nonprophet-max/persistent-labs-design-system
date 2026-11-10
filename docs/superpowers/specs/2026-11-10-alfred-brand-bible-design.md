@@ -19,9 +19,9 @@ The two deliverables are one system:
 
 - Repository: [nonprophet-max/persistent-labs-design-system](https://github.com/nonprophet-max/persistent-labs-design-system).
 - Existing branch: `codex/design-bible`; use an isolated feature checkout for implementation and verify the current remote before integration.
-- Central walkthrough: [persistent-labs-design-pages.netlify.app](https://persistent-labs-design-pages.netlify.app/), built from `dist-pages/`.
-- Intended Alfred URL: `https://persistent-labs-design-pages.netlify.app/products/alfred/`.
-- Existing single-page reading edition: `https://persistent-labs-design-bible.netlify.app/`; rebuild its Alfred chapter from the same source, without replacing the central walkthrough as the primary destination.
+- Primary hosted destination, changed by Max during implementation: [GitHub Pages](https://nonprophet-max.github.io/persistent-labs-design-system/), built from `dist-pages/`. Migrate the whole central library, not only Alfred.
+- Intended Alfred URL: `https://nonprophet-max.github.io/persistent-labs-design-system/products/alfred/`.
+- Preserve the single-page reading edition as a generated/downloadable artifact; GitHub Pages becomes the primary hosted library. Historical Netlify URLs are source history.
 - Relevant current local source checkout: `/Users/max.rabinovitch/.codex/.chatgpt-projects/g-p-6ab3b7765b2881919a97d1559cbda6a6/persistent-labs-design-system`.
 
 ## Agreed foundation
@@ -158,7 +158,7 @@ Collect material findings once, fix them in a batch, then verify those fixes. Re
 
 Max requested hosting and Git publication on completion. Prepare and verify the complete Alfred addition before that final stage. Publish only intended public site output and the intentional portable brand package; do not accidentally expose unrelated local files or review material through a deployment.
 
-Before release, verify current GitHub branch and hosting state. A historical Netlify credit block is recorded, but its present status is unknown.
+Max subsequently instructed migration of the whole site from Netlify to GitHub Pages. Before release, verify the current GitHub branch and Pages state. Add repository-base-path support, a reproducible Pages build/deploy workflow and verify all existing product pages, Alfred, AI resources and downloads at the new URL. No Netlify authentication or credit change is a dependency.
 
 Review checkpoints:
 

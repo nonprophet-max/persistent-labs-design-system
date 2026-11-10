@@ -11,7 +11,7 @@ checks=0
 for item in catalog:
     plugin=ROOT/item['plugin'];skill=(ROOT/item['skill']).parent
     manifest=json.loads((plugin/'.codex-plugin/plugin.json').read_text())
-    assert manifest['name']==plugin.name and manifest['version']=='2.4.0'
+    assert manifest['name']==plugin.name and manifest['version']==source['version']+'.0'
     entry=(skill/'SKILL.md').read_text()
     assert entry.startswith('---\nname: '+plugin.name+'\n')
     frontmatter=entry.split('\n---\n',1)[0].removeprefix('---\n').splitlines()

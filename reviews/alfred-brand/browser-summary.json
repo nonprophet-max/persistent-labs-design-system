@@ -1,0 +1,20 @@
+{
+  "pages": {
+    "passed": true,
+    "pages": 11,
+    "combinations": 110
+  },
+  "alfred": {
+    "passed": true,
+    "checks": 56
+  },
+  "reading": {
+    "passed": true,
+    "combinations": 10
+  },
+  "limits": [
+    "Chromium only",
+    "No assistive technology certification",
+    "Solid background contrast scan"
+  ]
+}

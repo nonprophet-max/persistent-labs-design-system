@@ -66,10 +66,10 @@ for(const theme of ['light','dark']){
     if(result.pageOverflow||result.overflow.length||result.bad.length||result.smallTargets.length)failures.push({type:'render',theme,width,...result});
     if([390,1440].includes(width)){
       await page.screenshot({path:resolve(output,`cover-${theme}-${width}.png`)});
-      for(const id of ['shape','fireflow','unfazed','lanni','privateinference','galactica']){
+      for(const id of ['shape','fireflow','unfazed','lanni','privateinference','galactica','alfred']){
         const target=page.locator('#'+id);await target.scrollIntoViewIfNeeded();
-        await captureElement(target.locator('.product-cover,.nest,.radii').first(),resolve(output,`${id}-${theme}-${width}.png`));
-        if(id!=='shape')await captureElement(target.locator('.product-ui'),resolve(output,`${id}-ui-${theme}-${width}.png`));
+        await captureElement(target.locator('.product-cover,.nest,.radii,#alfred-meet').first(),resolve(output,`${id}-${theme}-${width}.png`));
+        if(id!=='shape')await captureElement(target.locator('.product-ui,#alfred-type').first(),resolve(output,`${id}-ui-${theme}-${width}.png`));
         if(id==='fireflow')await captureElement(target.locator('.fireflow-core'),resolve(output,`fireflow-architecture-${theme}-${width}.png`));
       }
     }
@@ -97,7 +97,7 @@ const architecture=await page.evaluate(()=>({
   standaloneMemory:!!document.querySelector('.nav-link[href="#memorytree"],.portfolio-row[href="#memorytree"],section#memorytree'),
   memoryLinkTarget:document.querySelector('#memorytree')?.closest('section')?.id
 }));
-if(JSON.stringify(architecture.products)!==JSON.stringify(['fireflow','unfazed','lanni','privateinference','galactica'])||JSON.stringify(architecture.coreParts)!==JSON.stringify(['orchestration-engine','memorytree','flamechorus'])||architecture.standaloneMemory||architecture.memoryLinkTarget!=='fireflow')failures.push({type:'product-hierarchy',architecture});
+if(JSON.stringify(architecture.products)!==JSON.stringify(['fireflow','unfazed','lanni','privateinference','galactica','alfred'])||JSON.stringify(architecture.coreParts)!==JSON.stringify(['orchestration-engine','memorytree','flamechorus'])||architecture.standaloneMemory||architecture.memoryLinkTarget!=='fireflow')failures.push({type:'product-hierarchy',architecture});
 await page.locator('#fireflow .core-part[href="#memorytree"]').click();
 if(!page.url().endsWith('#memorytree'))failures.push({type:'memory-component-navigation'});
 await page.locator('#fireflow [data-demo]').click();
@@ -126,7 +126,7 @@ await page.setViewportSize({width:640,height:1000});
 const narrow=await scan();if(narrow.pageOverflow)failures.push({type:'reflow-640'});
 if(errors.length)failures.push({type:'runtime',errors});
 const html=await readFile(file);
-const report={date:new Date().toISOString(),artifact:'index.html',sha256:createHash('sha256').update(html).digest('hex'),browser:await browser.version(),passed:failures.length===0,failures,warnings,matrix,structure,architecture,interactionChecks:['mobile menu','Escape','anchor navigation','theme toggle + persistence','field error + recovery','demo feedback','copy feedback','reduced motion','640px reflow','five-product hierarchy','nested MemoryTree navigation','FireFlow feedback routing'],limitations:['Automated contrast scan uses solid composited backgrounds; does not certify WCAG conformance.','No assistive-technology, Safari or Firefox test performed.','Screenshots require visual review.']};
+const report={date:new Date().toISOString(),artifact:'index.html',sha256:createHash('sha256').update(html).digest('hex'),browser:await browser.version(),passed:failures.length===0,failures,warnings,matrix,structure,architecture,interactionChecks:['mobile menu','Escape','anchor navigation','theme toggle + persistence','field error + recovery','demo feedback','copy feedback','reduced motion','640px reflow','six-product hierarchy','nested MemoryTree navigation','FireFlow feedback routing'],limitations:['Automated contrast scan uses solid composited backgrounds; does not certify WCAG conformance.','No assistive-technology, Safari or Firefox test performed.','Screenshots require visual review.']};
 await writeFile(resolve(output,'browser-qa.json'),JSON.stringify(report,null,2)+'\n');
 await browser.close();
 console.log(JSON.stringify({passed:report.passed,failures:failures.map(f=>({type:f.type,theme:f.theme,width:f.width,bad:f.bad?.slice(0,12),overflow:f.overflow?.slice(0,5),targets:f.smallTargets?.slice(0,5)})),matrix:matrix.map(m=>({width:m.width,theme:m.theme,textPairs:m.tested})),warnings,evidence:output},null,2));

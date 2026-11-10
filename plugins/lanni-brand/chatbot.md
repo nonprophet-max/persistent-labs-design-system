@@ -116,7 +116,7 @@ Download concept mark ↓
 
 # Persistent Labs shared foundations
 
-Edition 2.4. Product-specific exceptions take precedence inside their own product surfaces.
+Edition 2.5. Product-specific exceptions take precedence inside their own product surfaces.
 
 Foundations / 01
 
@@ -126,7 +126,7 @@ One parent. Distinct products. A shared standard of care. This edition turns the
 
 01
 
-**Working edition 2.4 · 9 October 2026.** Core rules are reconciled recommendations. Existing identities, proposed extensions and unconfirmed product decisions are labelled separately. The original bible is preserved in the reference archive.
+**Working edition 2.5 · 10 November 2026.** Core rules are reconciled recommendations. Existing identities, proposed extensions and unconfirmed product decisions are labelled separately. The original bible is preserved in the reference archive.
 
 01
 
@@ -542,7 +542,7 @@ Mentions of the source archive are provenance only. The original archive remains
 
 ```json
 {
-  "version": "2.4",
+  "version": "2.5",
   "core": {
     "ink": "#1C1E21",
     "void": "#121212",

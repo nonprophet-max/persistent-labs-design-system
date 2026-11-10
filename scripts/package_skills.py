@@ -71,7 +71,7 @@ def alfred_reference():
     return alfred['brand_markdown']().split('\n## Files')[0]+'\n## Files\n\nUse the [complete portable guide](../assets/alfred/brand-guide.md), [exact identity tokens](../assets/alfred/tokens.json), [scoped CSS](../assets/alfred/tokens.css) and [font declarations](../assets/alfred/fonts.css). Keep their adjacent fonts, logos, illustrations, licences and provenance files together.\n'
 
 foundations='# Persistent Labs shared foundations\n\nEdition '+T['version']+'. Product-specific exceptions take precedence inside their own product surfaces.\n\n'+ '\n'.join(md(s[4]) for s in SECTIONS if s[3]=='Foundations')
-complete='# Persistent Labs full design bible\n\nEdition '+T['version']+' · 9 October 2026.\n\n'+'\n'.join(md(s[4]) for s in SECTIONS)
+complete='# Persistent Labs full design bible\n\nEdition '+T['version']+' · 10 November 2026.\n\n'+'\n'.join(md(s[4]) for s in SECTIONS)
 # Local archive links in the reading page are provenance, not portable skill dependencies.
 complete+='\n## Portable-package provenance\n\nReferences above to original archives, review rounds and workflow guides describe records in the source repository. They are historical context, not bundled dependencies or instructions to locate missing files. Applying this skill requires only the included references, tokens and assets. Review records apply only to their recorded artifact hashes; validate each new deliverable independently.\n'
 foundations+='\n## Portable-package provenance\n\nMentions of the source archive are provenance only. The original archive remains in the source repository and is not required to apply these shared foundations.\n'
@@ -100,7 +100,7 @@ for plugin_name,label,p in entries:
     desc=('Create and review work using the full Persistent Labs design bible and its six product identities. Use for parent-brand or multi-product work; use the individual product skill for work confined to one product.' if is_parent else f'Create and review {label} branded interfaces, pages, copy and collateral using its identity specifications. Use for {label} work, not unrelated brands.')
     if p and p['id']=='fireflow':desc+=' Includes the FireFlow orchestration engine, MemoryTree and FlameChorus as parts of one product.'
     manifest={
-      'name':plugin_name,'version':'2.4.0','description':desc,'author':{'name':'Persistent Labs'},'skills':'./skills/',
+      'name':plugin_name,'version':T['version']+'.0','description':desc,'author':{'name':'Persistent Labs'},'skills':'./skills/',
       'interface':{'displayName':label+' Brand','shortDescription':('Full design bible and six product identities' if is_parent else label+' identity, assets and design guidance'),'longDescription':desc,'developerName':'Persistent Labs','category':'Productivity','capabilities':[],'defaultPrompt':'Use $'+plugin_name+' for this design brief.','brandColor':T['core']['gold'] if is_parent else T['products'][p['id']]['accent']}
     }
     dump(plugin/'.codex-plugin/plugin.json',manifest)
@@ -215,7 +215,7 @@ with zipfile.ZipFile(archive,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=
         info=zipfile.ZipInfo('alfred-brand/'+name,date_time=(1980,1,1,0,0,0));info.create_system=3;info.compress_type=zipfile.ZIP_DEFLATED;info.external_attr=0o100644<<16
         output.writestr(info,data,compress_type=zipfile.ZIP_DEFLATED,compresslevel=9)
 
-dump(ROOT/'brand-skills.json',{'version':'2.4.0','plugins':catalog})
+dump(ROOT/'brand-skills.json',{'version':T['version']+'.0','plugins':catalog})
 # A repository-local Claude catalog; no local app configuration is changed.
 dump(ROOT/'.claude-plugin/marketplace.json',{'name':'persistent-labs-brands','owner':{'name':'Persistent Labs'},'plugins':[{'name':c['name'],'source':'./'+c['plugin'],'description':'Brand guidance for '+c['product']} for c in catalog]})
 write(ROOT/'BRAND-SKILLS.md','''# Portable brand skills

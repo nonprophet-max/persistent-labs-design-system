@@ -1,0 +1,22 @@
+{
+  "viewports_checked": [
+    360,
+    390,
+    1440
+  ],
+  "browser_checks": "All ten checks per viewport passed: overflow, fonts, images, minimum type and button size, action colors, local resources, keyboard focus, preview action and post-action overflow.",
+  "asset_files_byte_verified": 20,
+  "contrast_ratios": {
+    "#3E3D3D on #FFFBF7": 10.51,
+    "#6A665F on #FFFBF7": 5.54,
+    "#3E3D3D on #F2BD3C": 6.25,
+    "#F2BD3C on #3E3D3D": 6.25
+  },
+  "visual_reviews": [
+    "1440 x 1000 desktop",
+    "390px-wide mobile iframe in an 800 x 1400 capture"
+  ],
+  "dependencies_missing": [],
+  "ambiguity_resolution": "CTA destination was unspecified; the local button announces that no place has been reserved.",
+  "verification_tooling_note": "Python Pillow unavailable; mobile preview retained as an uncropped fixed-width iframe capture."
+}

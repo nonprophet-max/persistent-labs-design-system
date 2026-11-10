@@ -1,0 +1,65 @@
+{
+  "sourceChecks": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exitCode": 0,
+      "output": "test_portable_tokens_and_fonts_round_trip_from_canonical_identity (test_alfred.AlfredTests.test_portable_tokens_and_fonts_round_trip_from_canonical_identity) ... ok\ntest_renderer_links_reach_sections_and_real_downloads (test_alfred.AlfredTests.test_renderer_links_reach_sections_and_real_downloads) ... ok\ntest_archive_matches_generated_skill_and_has_stable_metadata (test_alfred_package.AlfredPackageTests.test_archive_matches_generated_skill_and_has_stable_metadata) ... ok\ntest_exact_identity_assets_and_font_provenance_are_bundled (test_alfred_package.AlfredPackageTests.test_exact_identity_assets_and_font_provenance_are_bundled) ... ok\ntest_extracted_skill_resolves_dependencies_without_checkout (test_alfred_package.AlfredPackageTests.test_extracted_skill_resolves_dependencies_without_checkout) ... ok\ntest_missing_font_is_reported_locally (test_alfred_package.AlfredPackageTests.test_missing_font_is_reported_locally) ... ok\ntest_css_font_and_background_urls_use_base (test_pages_base.PagesBaseTests.test_css_font_and_background_urls_use_base) ... ok\ntest_external_and_raw_repository_urls_stay_intact (test_pages_base.PagesBaseTests.test_external_and_raw_repository_urls_stay_intact) ... ok\ntest_invalid_base_paths_fail_before_replacing_output (test_pages_base.PagesBaseTests.test_invalid_base_paths_fail_before_replacing_output) ... ok\ntest_library_identity_count_follows_product_catalogue (test_pages_base.PagesBaseTests.test_library_identity_count_follows_product_catalogue) ... ok\ntest_navigation_assets_downloads_and_cross_page_fragments_use_base (test_pages_base.PagesBaseTests.test_navigation_assets_downloads_and_cross_page_fragments_use_base) ... ok\ntest_static_redirects_alfred_script_and_manifest (test_pages_base.PagesBaseTests.test_static_redirects_alfred_script_and_manifest) ... ok\ntest_validation_rejects_missing_css_assets (test_pages_base.PagesBaseTests.test_validation_rejects_missing_css_assets) ... ok\ntest_z_root_default_and_trailing_slash_are_compatible (test_pages_base.PagesBaseTests.test_z_root_default_and_trailing_slash_are_compatible) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 1.093s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/check.py"
+      ],
+      "exitCode": 0,
+      "output": "Passed: 117 color pairs, six-product hierarchy, nested FireFlow core parts, anchors, headings, local references, Red Hat and Poppins offline fonts and licenses.\n"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/check_skills.py"
+      ],
+      "exitCode": 0,
+      "output": "Passed: 7 self-contained plugins, scoped tokens, references, SVGs, font assets and chatbot documents.\n"
+    }
+  ],
+  "fontCoverage": [
+    {
+      "file": "assets/alfred/fonts/instrumentserif-400-latin.woff2",
+      "sample": "Life handled",
+      "missing": [],
+      "sha256": "5eb09b5ac0e28b67c2f041c8ba6d244604ca0c0980d65912ab2d47fed84ddc31"
+    },
+    {
+      "file": "assets/alfred/fonts/outfit-variable-latin.woff2",
+      "sample": "Life handled",
+      "missing": [],
+      "sha256": "6c18d579fd87c3776be068b762cbc83fde3acb543d49eabd3ade842eb987e887"
+    },
+    {
+      "file": "assets/alfred/fonts/outfit-variable-latin-ext.woff2",
+      "sample": "ĀāĆć",
+      "missing": [],
+      "sha256": "0f53d1c03b3918d744a843b5039001ee31695ca1e255e3914188df81beb461e9"
+    },
+    {
+      "file": "assets/alfred/fonts/cormorantgaramond-400-cyrillic-companion.woff2",
+      "sample": "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя",
+      "missing": [],
+      "sha256": "0d23162e67528fdc5fe1b12bedc525a69bbdc86d5d9f3c2ee9e9ee459934ecd4"
+    }
+  ],
+  "zipSha256": "82e5aab890a541f4336179127851e7c25dbe2dc3ae199ac093637ecd7eb8e71a",
+  "pages": true,
+  "alfred": true,
+  "publication": "pending"
+}

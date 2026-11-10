@@ -30,6 +30,10 @@
 - Clipboard unavailable: users can still select/copy exact values with visible feedback.
 - Portable skill without parent checkout: all referenced assets, tokens and instructions remain usable.
 
+## Hosting change — authorised by Max
+
+During implementation Max asked to move hosting for the whole site to GitHub Pages. Use `https://nonprophet-max.github.io/persistent-labs-design-system/` as the primary library URL. The complete multipage build needs a configurable repository base path and a reproducible Pages workflow; verify all chapters, assets, skill links and downloads at that subpath. Preserve the source repository and default branch. Existing Netlify hosting is no longer a dependency. A disjoint hosting subtask may run alongside Task 1, owning `scripts/build_pages.py` and Pages workflow/tests; the chapter implementer is explicitly excluded from those files.
+
 ## Execution record
 
 Use a single isolated Desktop checkout because the app's native worktree tool rejected the source repository as outside this chat's workspace folders. Source checkout remains unchanged. Branch: `codex/alfred-brand-bible`. Run the SDD workspace helper and keep task status/rulings in its ledger. Delegate implementation tasks sequentially; root can do independent environment/release preparation while a task runs.
@@ -48,13 +52,13 @@ Use a single isolated Desktop checkout because the app's native worktree tool re
 - Alfred output is under `[data-product="alfred"]` with unique `alfred-*` ids and classes. `src/alfred.js` is loaded by both output modes, with safe absence handling on other pages.
 - Task 2 will use these helpers and canonical assets for packaging; do not patch the package generator in Task 1.
 
-- [ ] Write focused failing tests for the renderer's real link targets and the canonical/portable token round-trip. The tests must show the current absent Alfred module fails before implementation.
-- [ ] Copy supplied SVGs/PNGs/fonts with provenance and OFL notices. Rename the mislabelled Outfit subset to Latin-ext and correct its declared range; preserve original file bytes.
-- [ ] Implement canonical guidance and helpers. Current guidance includes all eight approved sections; superseded fonts/colours are historical, and missing Report v5 is no dependency.
-- [ ] Build the chapter with authored, varied demonstrations: real logos, colour proportions, type hierarchy, spacing/geometry, voice examples, correct/incorrect use, applications and usable resources. Use the mascot once in the chapter introduction. Do not turn the page into repeated equal cards.
-- [ ] Add working copy controls/fallback, editable type specimen, light/dark asset comparison, section navigation and direct downloads where available. Full ZIP becomes available through Task 2. Defaults must remain readable without JS.
-- [ ] Run focused tests, `python3 scripts/build.py`, inspect generated chapter/resource references, and self-review. Browser evidence may follow after Task 2 enables the generated registry/routes.
-- [ ] Commit source, assets and generated reading output; report exact checks and remaining integration dependencies.
+- [x] Write focused failing tests for the renderer's real link targets and the canonical/portable token round-trip. The tests must show the current absent Alfred module fails before implementation.
+- [x] Copy supplied SVGs/PNGs/fonts with provenance and OFL notices. Rename the mislabelled Outfit subset to Latin-ext and correct its declared range; preserve original file bytes.
+- [x] Implement canonical guidance and helpers. Current guidance includes all eight approved sections; superseded fonts/colours are historical, and missing Report v5 is no dependency.
+- [x] Build the chapter with authored, varied demonstrations: real logos, colour proportions, type hierarchy, spacing/geometry, voice examples, correct/incorrect use, applications and usable resources. Use the mascot once in the chapter introduction. Do not turn the page into repeated equal cards.
+- [x] Add working copy controls/fallback, editable type specimen, light/dark asset comparison, section navigation and direct downloads where available. Full ZIP becomes available through Task 2. Defaults must remain readable without JS.
+- [x] Run focused tests, `python3 scripts/build.py`, inspect generated chapter/resource references, and self-review. Browser evidence may follow after Task 2 enables the generated registry/routes.
+- [x] Commit source, assets and generated reading output; report exact checks and remaining integration dependencies.
 
 ### Task 2: Standalone skill and central-library integration
 
@@ -68,12 +72,12 @@ Use a single isolated Desktop checkout because the app's native worktree tool re
 - Produces `plugins/alfred-brand/skills/alfred-brand/SKILL.md`, linked references, exact tokens/CSS/fonts/assets, existing supported host manifests, `plugins/alfred-brand/chatbot.md`, deterministic complete ZIP, registry/catalog membership and `/products/alfred/`.
 - The standalone Alfred skill uses Alfred identity before inherited parent rules. Existing five product packages must not gain Alfred fonts or styling. Parent package may include Alfred as a sixth identity.
 
-- [ ] Write failing integration checks for an independent extracted skill, missing local dependencies and ZIP link resolution. Validate portability by extracting into a temporary directory outside the checkout.
-- [ ] Extend the packager using the shared Alfred source helpers, concise progressive-disclosure skill guidance and plain chatbot instructions. Preserve all brand invariants and asset/OFL provenance. Keep technical history outside the live instruction route.
-- [ ] Generate a stable ZIP containing a complete installable `alfred-brand/` skill folder; include plugin metadata/chatbot guide where clearly organised. Support downloading from the public output.
-- [ ] Extend the public build's asset handling and anchor rewrites where needed; all Alfred nested anchors and resources resolve in both output modes. Fix current explicit expected product/plugin lists to six/seven while retaining FireFlow hierarchy checks.
-- [ ] Run focused package tests, `python3 scripts/package_skills.py`, `python3 scripts/build_pages.py`, `python3 scripts/check.py`, `python3 scripts/check_skills.py` and skill frontmatter validation. Check deterministic regeneration of generated Alfred material.
-- [ ] Commit, self-review and report. Do not publish or change unrelated host settings.
+- [x] Write failing integration checks for an independent extracted skill, missing local dependencies and ZIP link resolution. Validate portability by extracting into a temporary directory outside the checkout.
+- [x] Extend the packager using the shared Alfred source helpers, concise progressive-disclosure skill guidance and plain chatbot instructions. Preserve all brand invariants and asset/OFL provenance. Keep technical history outside the live instruction route.
+- [x] Generate a stable ZIP containing a complete installable `alfred-brand/` skill folder; include plugin metadata/chatbot guide where clearly organised. Support downloading from the public output.
+- [x] Extend the public build's asset handling and anchor rewrites where needed; all Alfred nested anchors and resources resolve in both output modes. Fix current explicit expected product/plugin lists to six/seven while retaining FireFlow hierarchy checks.
+- [x] Run focused package tests, `python3 scripts/package_skills.py`, `python3 scripts/build_pages.py`, `python3 scripts/check.py`, `python3 scripts/check_skills.py` and skill frontmatter validation. Check deterministic regeneration of generated Alfred material.
+- [x] Commit, self-review and report. Do not publish or change unrelated host settings.
 
 ### Task 3: Browser verification, documentation and release
 
@@ -90,7 +94,7 @@ Use a single isolated Desktop checkout because the app's native worktree tool re
 - [ ] Capture desktop/mobile Alfred sections and inspect the images. Run Impeccable detector once over changed UI targets and adjudicate findings against the fixed Alfred brief. Independent reviewers inspect actual screenshot evidence for strategy, visual fidelity and accessibility; another fresh agent exercises the skill in an isolated output directory.
 - [ ] Batch material fixes and verify their closure without reopening unchanged code. Preserve original assets and parent identities; disclose browser/platform limits.
 - [ ] Offer Max a concrete working visual preview during this stage while continuing independent packaging/checks. Ask only if a decision changes the agreed identity or deliverable.
-- [ ] Verify current remote branch/hosting state. Commit and upload the complete reviewed addition to the intended public repository. Publish intended generated public output to the existing sites; do not expose unrelated files. If external publication is blocked, preserve the complete tested release and report the concrete external requirement.
+- [ ] Verify current remote branch/hosting state. Commit and upload the complete reviewed addition to the intended public repository. Publish the complete intended generated public output with GitHub Pages; do not expose unrelated files. If external publication is blocked, preserve the complete tested release and report the concrete external requirement.
 - [ ] Verify actual published URLs/assets/ZIP and record the commit, deployment identifiers and evidence. Return walkthrough and skill links with a concise verification summary.
 
 ## Plan self-review
