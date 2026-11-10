@@ -1,0 +1,50 @@
+name: Deploy brand library to GitHub Pages
+
+on:
+  push:
+    branches: [codex/design-bible]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - uses: actions/checkout@v6
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Check base-path behavior
+        run: python3 -m unittest discover -s scripts -p 'test_pages_base.py' -v
+      - name: Package brand skills
+        run: python3 scripts/package_skills.py
+      - name: Build the complete public library
+        env:
+          SITE_BASE_PATH: /persistent-labs-design-system
+        run: python3 scripts/build_pages.py
+      - name: Upload public pages only
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist-pages
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
