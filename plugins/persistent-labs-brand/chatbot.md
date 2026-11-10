@@ -1067,7 +1067,7 @@ Download Galactica.com lockup ↓[Visit Galactica ↗](https://galactica.com/)Do
 
 Owner-directed family lockup: Galactica.com, with a bold orange dot. The downloadable SVG contains outlined lettering and needs no installed font. This is an adapted lockup, not an extracted website master.
 
-Brand guide · v0.3Use the brand ↓
+Brand guide · v0.3[Agent skill](https://raw.githubusercontent.com/nonprophet-max/persistent-labs-design-system/codex/design-bible/plugins/alfred-brand/skills/alfred-brand/SKILL.md)Use the brand ↓
 
 ## Life, handled.
 
